@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Freshman Compass</title>
+
+
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+  
+  <div class="left">
+    <h1>Welcome to<br>Freshman Compass</h1>
+  </div>
+
+ 
+  <div class="right">
+
+    <div class="card">
+
+     
+      <div class="logo">
+        <img src="img/image.jpg" alt="logo">
+      </div>
+
+      <h2>Sign Up</h2>
+
+      
+      <form action="php/guardar.php" method="POST">
+
+        <input 
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          required
+        >
+
+        <input 
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        >
+
+        <input 
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          required
+        >
+
+        <input 
+          type="text"
+          name="phone"
+          placeholder="Número de teléfono"
+          required
+        >
+
+        <button type="submit">
+          Registrarse
+        </button>
+
+      </form>
+
+    
+      <div class="footer">
+        ¿Ya tienes cuenta?
+        <a href="login.html">Sign In</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>s

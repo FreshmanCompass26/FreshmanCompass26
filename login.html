@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="styles/login.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="card">
+
+        <div class="logo">
+            <img src="img/image.jpg" alt="">
+        </div>
+
+        <h1>
+            ¡Bienvendido <span>de nuevo!</span>
+        </h1>
+
+        <p>
+            Inicia sesión para continuar
+        </p>
+
+        <form action="php/login.php" method="POST">
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+            </div>
+
+           
+          <div class="input-box">
+
+             <i class="fa-solid fa-lock"></i>
+
+             <input 
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Contraseña"
+        required>
+
+            <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+
+            </div>
+
+            <!-- Olvidar contraseña (conectar despuès) -->
+            <a href="#" class="forgot">
+                ¿olvide contraseña?
+            </a>
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+        
+        <div class="bottom-text">
+
+            ¿No tienes cuenta?
+
+            <a href="signup.html">
+                Crear cuenta
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script>
+
+const togglePassword = document.getElementById("togglePassword");
+
+const password = document.getElementById("password");
+
+togglePassword.addEventListener("click", function () {
+
+    const type =
+        password.getAttribute("type") === "password"
+        ? "text"
+        : "password";
+
+    password.setAttribute("type", type);
+
+    this.classList.toggle("fa-eye");
+    this.classList.toggle("fa-eye-slash");
+
+});
+
+</script>
+
+</body>
+</html>

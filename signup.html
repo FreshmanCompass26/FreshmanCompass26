@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear cuenta | Freshman Compass</title>
+
+    <link rel="stylesheet" href="styles/signup.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="signup-container">
+
+    <div class="signup-card">
+
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Logo">
+        </div>
+
+        <h1>
+            Crea <span>tu cuenta</span>
+        </h1>
+
+        <p class="subtitle">
+            Únete a Freshman Compass y comienza tu viaje
+        </p>
+
+        <form action="php/guardar.php" method="POST">
+
+            <div class="input-row">
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" name="apellido" placeholder="Apellido">
+                </div>
+            </div>
+
+            <div class="input-box full">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+
+<div class="input-box full password-box">
+    <i class="fa-solid fa-lock"></i>
+
+    <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        id="password"
+        required
+    >
+
+    <i class="fa-solid fa-eye toggle-password" data-target="password"></i>
+</div>
+
+<div class="input-box full password-box">
+    <i class="fa-solid fa-lock"></i>
+
+    <input
+        type="password"
+        name="confirm_password"
+        placeholder="Confirmar contraseña"
+        id="confirm_password"
+        required
+    >
+
+    <i class="fa-solid fa-eye toggle-password" data-target="confirm_password"></i>
+</div>
+
+            <div class="input-box full">
+                <i class="fa-solid fa-phone"></i>
+                <input type="text" name="phone" placeholder="Número de teléfono (opcional)">
+            </div>
+            <button type="submit" class="signup-btn">
+                Registrarse
+            </button>
+
+        </form>
+
+        <div class="footer-text">
+            ¿Ya tienes cuenta?
+            <a href="login.html">Iniciar sesión</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+document.querySelectorAll(".toggle-password").forEach(icon => {
+    icon.addEventListener("click", () => {
+
+        const inputId = icon.getAttribute("data-target");
+        const input = document.getElementById(inputId);
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            input.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+
+    });
+});
+</script>
+</body>
+</html>

@@ -155,6 +155,17 @@ body{
     gap:30px;
 }
 
+.events-grid-2{
+    display:grid;
+    grid-template-columns:1fr;
+    row-gap:100px;
+    padding:40px;
+}
+
+.event-card-2{
+    margin-bottom:20px;
+}
+
 /* CARDS */
 
 .event-card{
@@ -246,4 +257,46 @@ body{
     text-decoration:none;
     color:black;
 }
+
+.event-card{
+    background: linear-gradient(135deg, #081d58, #1d4ed8);
+    color: white;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.event-card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+.event-card h3{
+    color: #ffd700;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.event-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 18px;
+    background:#ffd700;
+    color:#081d58;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.event-btn:hover{
+    transform:scale(1.08)
+}
+
 

@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </li>
 
     
-        <?php if (isset($_SESSION['usuario_id'])) { ?>
+        <?php if (isset($_SESSION['nombre'])) { ?>
 
         <li>
             <a href="#">
@@ -48,7 +48,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </li>
 
         <li>
-            <a href="#">
+            <a href="eventos.html">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span>Eventos</span>
             </a>

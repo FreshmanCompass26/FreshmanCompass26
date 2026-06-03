@@ -14,7 +14,6 @@ session_start();
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- ESTILOS -->
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
@@ -67,7 +66,7 @@ session_start();
                     <li><hr class="dropdown-divider"></li>
 
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="perfil.html">
                             <i class="fa-regular fa-user"></i> Perfil
                         </a>
                     </li>

@@ -1,98 +1,114 @@
+<?php
+session_start();
 
+$pagina_actual = "eventos";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eventos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshman Compass</title>
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <link rel="stylesheet" href="styles/eventos.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+   
+    
+    
 </head>
     
 <body>
 
-
-    <header class="navbar">
-
-    <div class="logo-navbar">
-        <img src="img/image.png" alt="Logo">
-        <h2>Freshman Compass</h2>
-    </div>
-
-    <div class="search-navbar">
-        <input type="text" placeholder="Buscar...">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-
-    <div class="navbar-icons">
-        <i class="fa-solid fa-bell"></i>
-        <img src="img/Perfil.png" alt="Perfil">
-    </div>
-
-</header>
-
-
-  <div class="fixed top-0 left-0 w-full h-[70px] bg-[#081d58] flex items-center justify-between px-6 shadow-lg z-50"></div>
-
-<div class="container">
-
     
+<div class="top-navbar">
 
-    <!-- SIDEBAR -->
+    <div class="top-right">
 
-    <div class="sidebar">
+        <?php if (isset($_SESSION['nombre'])): ?>
 
-        <ul>
+            <?php 
+                $nombre = $_SESSION['nombre'];
+                $inicial = strtoupper(substr($nombre, 0, 1));
+            ?>
 
-            <li>
-                <i class="fa-solid fa-house"></i>
-                <span>Home</span>
-            </li>
+            <div class="dropdown user-dropdown">
 
-            <li>
-                <i class="fa-solid fa-user"></i>
-                <span>Teachers</span>
-            </li>
+                <div class="user-trigger" data-bs-toggle="dropdown">
 
-            <li class="active">
-                <i class="fa-solid fa-calendar"></i>
-                <span>Eventos</span>
-            </li>
+                    <div class="avatar">
+                        <?php echo $inicial; ?>
+                    </div>
 
-            <li>
-                <i class="fa-solid fa-heart"></i>
-                <span>Consejos</span>
-            </li>
+                    <span class="username">
+                        <?php echo $nombre; ?>
+                    </span>
 
-            <li>
-                <i class="fa-solid fa-comment"></i>
-                <span>Comentarios</span>
-            </li>
+                    <i class="fa-solid fa-chevron-down"></i>
 
-            <li>
-                <i class="fa-solid fa-building"></i>
-                <span>Nuestro Centro</span>
-            </li>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
 
-        </ul>
+                    <li class="dropdown-header-user">
+                        <div class="avatar-lg">
+                            <?php echo $inicial; ?>
+                        </div>
 
-        <div class="sidebar-text">
-            Keep going, your future self will thank you.
-        </div>
+                        <div>
+                            <div class="name"><?php echo $nombre; ?></div>
+                            <div class="sub">Bienvenido</div>
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a class="dropdown-item" href="perfil.html">
+                            <i class="fa-regular fa-user"></i> Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-gear"></i> Configuración
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item logout" href="php/logout.php">
+                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        <?php else: ?>
+
+            <a href="login.html" class="btn-login">
+                Iniciar sesión
+            </a>
+
+            <a href="signup.html" class="btn-signup">
+                Crear Cuenta
+            </a>
+
+        <?php endif; ?>
 
     </div>
 
-    <!-- CONTENIDO -->
+</div>
+
+<?php include 'php/navbar.php'; ?>
+
 
     <div class="main-content">
 
-       
-
-        <!-- TITULO -->
 
         <div class="title-section">
 
@@ -105,11 +121,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         </div>
 
-        <!-- GRID -->
-
         <div class="events-grid">
-
-            <!-- CARD 1 -->
 
             <div class="event-card active-card">
 
@@ -143,8 +155,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 </a>
             </div>
 
-            <!-- CARD 2 -->
-
             <div class="event-card">
 
                 <div class="date-box">
@@ -176,8 +186,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 </a>
             </div>
 
-            <!-- CARD 3 -->
-
             <div class="event-card">
 
                 <div class="date-box">
@@ -207,8 +215,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 </button>
                 </a>
             </div>
-
-            <!-- CARD 4 -->
 
             <div class="event-card">
 
@@ -245,9 +251,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         </div>
 
-        <!-- BOTON -->
-
-      <a href="mas-eventos.html" class="more-btn">
+      <a href="mas-eventos.php" class="more-btn">
              Ver más...
         </a>
 </div>

@@ -14,47 +14,44 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
 
     <ul class="menu">
+<li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
+    <a href="index.php">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </a>
+</li>
 
-       
-        <li class="active">
-            <a href="index.php">
-                <i class="fa-solid fa-house"></i>
-                <span>Inicio</span>
-            </a>
-        </li>
+<?php if (isset($_SESSION['nombre'])) { ?>
 
-    
-        <?php if (isset($_SESSION['nombre'])) { ?>
+<li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+    <a href="teachers.php">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Teachers</span>
+    </a>
+</li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-user-group"></i>
-                <span>Teachers</span>
-            </a>
-        </li>
+<li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+    <a href="nuestro_centro.php">
+        <i class="fa-solid fa-school"></i>
+        <span>Nuestro centro</span>
+    </a>
+</li>
 
-        <li>
-            <a href="nuestro_centro.php">
-                <i class="fa-solid fa-school"></i>
-                <span>Nuestro centro</span>
-            </a>
-        </li>
+<li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+    <a href="#">
+        <i class="fa-solid fa-heart"></i>
+        <span>Consejos</span>
+    </a>
+</li>
 
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-heart"></i>
-                <span>Consejos</span>
-            </a>
-        </li>
+<li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+    <a href="eventos.php">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Eventos</span>
+    </a>
+</li>
 
-        <li>
-            <a href="eventos.html">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Eventos</span>
-            </a>
-        </li>
-
-        <?php } ?>
+<?php } ?>
 
     </ul>
 

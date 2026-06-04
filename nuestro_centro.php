@@ -7,18 +7,18 @@ $pagina_actual = "centro";
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshman Compass</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/centro.css">
-    <link rel="stylesheet" href="styles/navbar.css">
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <title>Freshman Compass</title>
+    <link rel="stylesheet" href="styles/centro.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    
 </head>
 
 <body>
@@ -133,8 +133,7 @@ $pagina_actual = "centro";
   </section>
 
   <section class="cards">
-
-    <div class="card">
+<div class="card">
       <div class="card-icon">
         <i class="fas fa-school"></i>
       </div>
@@ -146,10 +145,13 @@ $pagina_actual = "centro";
         creamos y desarrollamos nuevas ideas.
       </p>
 
-      <button>
+     <a href="classroomss.php">
+       <button>
         <i class="fas fa-arrow-right"></i>
       </button>
+     </a>
     </div>
+
 
     <div class="card">
       <div class="card-icon food">

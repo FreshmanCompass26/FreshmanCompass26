@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <?php if (isset($_SESSION['nombre'])) { ?>
 
 <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-    <a href="#">
+    <a href="teachers.php">
         <i class="fa-solid fa-user-group"></i>
         <span>Teachers</span>
     </a>

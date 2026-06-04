@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 </body>
@@ -5,7 +8,7 @@
 
 </html>
 
-<a href="eventos.html" class="btn-volver">
+<a href="eventos.php" class="btn-volver">
     <i class="fa-solid fa-arrow-left"></i> Volver
 </a>
 

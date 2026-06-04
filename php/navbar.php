@@ -48,7 +48,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </li>
 
         <li>
-            <a href="eventos.html">
+            <a href="eventos.php">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span>Eventos</span>
             </a>

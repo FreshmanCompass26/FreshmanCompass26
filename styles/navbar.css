@@ -2,88 +2,78 @@
 .sidebar{
     width: 250px;
     height: 100vh;
-
-    background: linear-gradient(to bottom, #081847, #102b75);
-
     position: fixed;
     top: 0;
     left: 0;
 
-    padding: 20px 0;
+    background: linear-gradient(to bottom, #081847, #102b75);
 
     display: flex;
     flex-direction: column;
 
+    padding: 20px 0;
+
+    box-shadow: 5px 0 20px rgba(0,0,0,.25);
     z-index: 1000;
-    .sidebar{
-    transition: 0.3s;
-}
+
+    transition: all .3s ease;
 }
 
 .logo{
     display: flex;
     align-items: center;
-
     gap: 12px;
 
     padding: 0 20px;
-
     margin-bottom: 35px;
 }
 
 .logo img{
     width: 42px;
     height: 42px;
-
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .logo span{
     color: #d8ff3e;
-
     font-size: 16px;
     font-weight: 700;
 }
 
+/* ==========================
+   MENU
+========================== */
+
 .menu{
     list-style: none;
-
     padding: 0;
+    margin: 0;
 }
 
 .menu li{
     margin: 8px 15px;
-
     border-radius: 14px;
-
     overflow: hidden;
-
-    transition: 0.3s;
+    transition: .3s ease;
 }
 
 .menu li a{
     display: flex;
     align-items: center;
-
     gap: 15px;
 
     text-decoration: none;
-
     color: white;
 
     padding: 14px 20px;
-
     font-size: 15px;
+    font-weight: 500;
 }
 
-
-   
-    .menu li:hover{
-    background: rgba(255,255,255,0.15);
-
+.menu li:hover{
+    background: rgba(255,255,255,.15);
     transform: translateX(8px);
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .menu li.active{
@@ -92,34 +82,37 @@
 
 .menu li.active a{
     color: #0b1d59;
-
     font-weight: 700;
 }
 
+/* ==========================
+   QUOTE
+========================== */
+
 .quote{
     margin-top: auto;
-
     margin-inline: 18px;
 
-    background: rgba(255,255,255,0.08);
-
-    border-radius: 18px;
+    background: rgba(255,255,255,.08);
 
     padding: 18px;
+    border-radius: 18px;
 
     color: white;
 }
 
 .quote p{
-    line-height: 1.6;
-
     margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .quote small{
     color: #d7d7d7;
 }
 
+/* ==========================
+   TOP NAVBAR
+========================== */
 
 .top-navbar{
     position: fixed;
@@ -133,40 +126,38 @@
     background: #0B205A;
 
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
 
     padding: 0 30px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 
     z-index: 2000;
 }
 
-
-
 .top-right{
     display: flex;
     align-items: center;
-
     gap: 15px;
 }
 
+/* ==========================
+   BOTONES
+========================== */
 
 .btn-login{
     background: #ffc400;
-
     color: black;
 
     text-decoration: none;
 
-    border: none;
-
     padding: 12px 24px;
-
     border-radius: 30px;
 
     font-weight: 600;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .btn-login:hover{
@@ -177,195 +168,183 @@
     background: transparent;
 
     border: 2px solid #ffc400;
-
     color: #ffc400;
 
     text-decoration: none;
 
     padding: 11px 24px;
-
     border-radius: 30px;
 
     font-weight: 600;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .btn-signup:hover{
     background: #ffc400;
-
     color: black;
 }
 
+/* ==========================
+   MAIN CONTENT
+========================== */
 
 .main-content{
     margin-left: 250px;
     margin-top: 90px;
-
-    padding: 20px;
-    
     padding: 30px;
-
 }
 
-.sidebar{
-    box-shadow: 5px 0 20px rgba(0,0,0,0.25);
+/* ==========================
+   USER MENU
+========================== */
+
+.user-dropdown{
+    position: relative;
 }
 
-.top-navbar{
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.user-trigger{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+
+    padding: 8px 12px;
+    border-radius: 12px;
+
+    transition: .2s;
 }
 
-.user-menu {
-  position: relative;
+.user-trigger:hover{
+    background: rgba(255,255,255,.1);
 }
 
-.user-trigger {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.avatar{
+    width: 42px;
+    height: 42px;
 
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 10px;
+    border-radius: 50%;
 
-  transition: 0.2s;
+    background: linear-gradient(135deg,#7c3aed,#a855f7);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(124,58,237,.4);
 }
 
-.user-trigger:hover {
-  background: #f1f5f9;
+.username{
+    color: white;
+    font-weight: 600;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: white;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: bold;
-  font-size: 16px;
-
-  box-shadow: 0 5px 15px rgba(124,58,237,0.4);
+.user-trigger i{
+    color: white;
 }
 
-.user-trigger span {
-  font-weight: 600;
-  color: #1e293b;
-  font-size: 14px;
+/* ==========================
+   DROPDOWN
+========================== */
+
+.custom-dropdown{
+    width: 250px;
+    border: none;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-top: 12px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.2);
 }
 
-.user-trigger i {
-  color: #7c3aed;
-  font-size: 14px;
-  transition: 0.3s;
+.dropdown-header-user{
+    background: linear-gradient(135deg,#7c3aed,#a855f7);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
 }
 
-.user-trigger:hover i {
-  transform: rotate(180deg);
+.avatar-lg{
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
 }
 
-.custom-dropdown {
-  width: 250px;
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 0;
-  margin-top: 12px;
-
-  border: none;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-
-  animation: fadeIn 0.2s ease;
+.name{
+    font-size: 15px;
+    font-weight: bold;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.sub{
+    font-size: 13px;
+    opacity: .8;
 }
 
-
-.dropdown-header-user {
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: white;
-
-  display: flex;
-  gap: 12px;
-  align-items: center;
-
-  padding: 15px;
+.dropdown-item{
+    padding: 12px 15px;
+    transition: .2s;
 }
 
-.avatar-lg {
-  width: 50px;
-  height: 50px;
-
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: bold;
-  font-size: 18px;
+.dropdown-item i{
+    margin-right: 8px;
 }
 
-.welcome {
-  font-size: 17px;
-  opacity: 0.8;
+.dropdown-item:hover{
+    background: #f8fafc;
 }
 
-.name {
-  font-weight: bold;
-  font-size: 15px;
+.logout{
+    color: #dc2626 !important;
 }
 
-
-.item {
-  display: block;
-  padding: 12px 15px;
-  text-decoration: none;
-  color: #334155;
-
-  transition: 0.25s ease;
+.logout:hover{
+    background: #dc2626 !important;
+    color: white !important;
 }
 
+/* ==========================
+   RESPONSIVE
+========================== */
 
-.item i {
-  margin-right: 8px;
-}
+@media(max-width:768px){
 
-.item.perfil:hover {
-  background: #ede9fe;
-  color: #7c3aed;
-}
-.item.config:hover {
-  background: #e0f2fe;
-  color: #0284c7;
-}
+    .sidebar{
+        width: 80px;
+    }
 
-.item.logout {
-  color: #dc2626; 
-}
-.item.logout:hover {
-  background: #dc2626;
-  color: white;
-  transform: scale(1.02);
-}
+    .logo span,
+    .menu li span,
+    .quote{
+        display: none;
+    }
 
-.custom-dropdown hr {
-  margin: 5px 0;
-  border-color: #e5e7eb;
+    .top-navbar{
+        left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .main-content{
+        margin-left: 80px;
+    }
 }

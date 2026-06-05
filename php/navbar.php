@@ -129,7 +129,7 @@ body{
 .yellow{
     background:#ffd000;
     color:black;
-}
+}  
 
 .outline{
     border:2px solid #ffd000;

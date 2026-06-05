@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -8,7 +7,6 @@ $pagina_actual = "inicio";
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freshman Compass</title>
@@ -106,7 +104,6 @@ $pagina_actual = "inicio";
     </div>
 
 </div>
-
 
 <?php include 'php/navbar.php'; ?>
 
@@ -322,6 +319,5 @@ $pagina_actual = "inicio";
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
->>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
 </body>
-</html>
+</htm

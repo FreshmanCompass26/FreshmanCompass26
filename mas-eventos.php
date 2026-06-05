@@ -1,0 +1,163 @@
+<?php 
+session_start(); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+</body>
+
+
+</html>
+
+<a href="eventos.php" class="btn-volver">
+    <i class="fa-solid fa-arrow-left"></i> Volver
+</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Eventos</title>
+
+    <link rel="stylesheet" href="styles/eventos.css">
+</head>
+
+
+<div class="event-card">
+
+    <div class="date-box">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span></span>
+    </div>
+
+    <h3>Spelling Bee</h3>
+
+    <h4>30/4/2026</h4>
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        Centro ¡Supérate! ADOC
+    </div>
+
+    <img src="img/spelling.jpg" class="event-img">
+
+    <small>
+        Competencia académica donde los estudiantes demuestran sus habilidades de pronunciación en el ingles 
+    </small>
+
+    <a href="https://flic.kr/s/aHBqjCSPM1" class="event-btn">
+        Ver más <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+<div class="event-card">
+
+    <div class="date-box">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span></span>
+    </div>
+
+    <h3>Entrega de reconocimientos</h3>
+
+    <h4>27/6/2026</h4>
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        Centro ¡Supérate! ADOC
+    </div>
+
+    <img src="img/reconocimiento.jpg" class="event-img">
+
+    <small>
+        Evento especial dedicado a premiar el esfuerzo, dedicación y logros obtenidos por los estudiantes.
+    </small>
+
+    <a href="https://flic.kr/s/aHBqjCDUCR" class="event-btn">
+        Ver más <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+<div class="event-card">
+
+    <div class="date-box">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span></span>
+    </div>
+
+    <h3>Trips </h3>
+
+    <h4>9/12/2026</h4>
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        Centro ¡Supérate! ADOC
+    </div>
+
+    <img src="img/trips.jpg" class="event-img">
+
+    <small>
+        Actividad educativa y recreativa que permite a los estudiantes aprender y conocer diferentes historias del mundo.
+    </small>
+
+    <a href="https://flic.kr/s/aHBqjCCvdB" class="event-btn">
+        Ver más <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+<div class="event-card">
+
+    <div class="date-box">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span></span>
+    </div>
+
+    <h3>Valentine's Day </h3>
+
+    <h4>14/2/2026</h4>
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        Centro ¡Supérate! ADOC
+    </div>
+
+    <img src="img/valentin's day.jpg" class="event-img">
+
+    <small>
+        Celebración de la amistad y el compañerismo con actividades divertidas y momentos para compartir.
+    </small>
+
+    <a href="https://flic.kr/s/aHBqjCKy1f" class="event-btn">
+        Ver más <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+<div class="event-card">
+
+    <div class="date-box">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span></span>
+    </div>
+
+    <h3>Dia del internet</h3>
+
+    <h4>17/5/2026 </h4>
+
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        Centro ¡Supérate! ADOC jhjhj
+    </div>
+
+    <img src="img/dia del internet.jpg" class="event-img">
+
+    <small>
+        Jornada dedicada a conocer la importancia del internet y la tecnología en la educación y la vida diaria.
+    </small>
+
+    <a href="https://flic.kr/s/aHBqjCeUPr" class="event-btn">
+        Ver más <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+

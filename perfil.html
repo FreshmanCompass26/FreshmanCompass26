@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil del Estudiante</title>
+
+<link rel="stylesheet" href="styles/perfil.css">
+<link rel="stylesheet" href="navbar.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div id="navbar">
+     <?php include 'php/navbar.php'; ?>
+</div>
+
+<div class="perfil-container">
+
+
+    <div class="perfil-card">
+
+        <div class="foto-container">
+
+            <img
+            src="https://via.placeholder.com/170"
+            class="foto-perfil">
+
+            <label class="btn-foto">
+                <i class="fas fa-camera"></i>
+            </label>
+
+        </div>
+
+        <h2>Marito Rivera</h2>
+
+        <span class="badge">
+            Estudiante
+        </span>
+
+        <p class="bio">
+            Apasionado por aprender nuevas cosas,
+            trabajar en equipo y alcanzar metas.
+        </p>
+
+        <div class="info">
+
+            <p>
+                <i class="fas fa-envelope"></i>
+                marito@gmail.com
+            </p>
+
+            <p>
+                <i class="fas fa-phone"></i>
+                7777-8888
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="editar-card">
+
+        <h1>Editar Perfil</h1>
+
+        <form>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Nombre</label>
+                    <input type="text" value="">
+                </div>
+
+                <div class="input-group">
+                    <label>Apellido</label>
+                    <input type="text" value="">
+                </div>
+
+                <div class="input-group">
+                    <label>Usuario</label>
+                    <input type="text" value="">
+                </div>
+
+                <div class="input-group">
+                    <label>Correo</label>
+                    <input type="email" value="">
+                </div>
+
+                <div class="input-group">
+                    <label>Teléfono</label>
+                    <input type="text" value="">
+                </div>
+
+                <div class="input-group">
+                    <label>Fecha Nacimiento</label>
+                    <input type="date">
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Centro Educativo</label>
+
+                <input
+                type="text"
+                value="">
+
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Grado</label>
+                    <input type="text">
+                </div>
+
+                <div class="input-group">
+                    <label>Especialidad</label>
+                    <input type="text">
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Biografía</label>
+
+                <textarea>
+                Me gusta aprender cosas nuevas.
+                </textarea>
+
+            </div>
+
+            <div class="acciones">
+
+                <button type="submit" class="btn-guardar">
+                    Guardar Cambios
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

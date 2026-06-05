@@ -9,8 +9,13 @@ include("php/conexion.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Mi App Educativa</title>
   <link rel="stylesheet" href="styles.css">
+=======
+  <title>Sign up</title>
+  <link rel="stylesheet" href="styles/styles.css">
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -18,7 +23,10 @@ include("php/conexion.php");
 
 <div class="container">
 
+<<<<<<< HEAD
   <!-- SIDEBAR -->
+=======
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
   <aside class="sidebar">
     <h2 class="logo">Freshman Compass</h2>
     <ul>
@@ -45,10 +53,15 @@ include("php/conexion.php");
     </div>
   </aside>
 
+<<<<<<< HEAD
   <!-- MAIN -->
   <main class="main">
 
     <!-- HERO -->
+=======
+  <main class="main">
+
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
     <section class="hero">
       <div>
         <h1>Tu viaje comienza aquí</h1>
@@ -61,7 +74,10 @@ include("php/conexion.php");
       </div>
     </section>
 
+<<<<<<< HEAD
     <!-- CARDS -->
+=======
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
     <section class="cards">
 
       <div class="card">
@@ -86,7 +102,10 @@ include("php/conexion.php");
 
     </section>
 
+<<<<<<< HEAD
     <!-- BENEFICIOS -->
+=======
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
     <section class="beneficios">
       <h2>Beneficios</h2>
       <div class="benefit-grid">
@@ -97,9 +116,14 @@ include("php/conexion.php");
       </div>
     </section>
 
+<<<<<<< HEAD
     <!-- FOOTER -->
     <footer>
       <p>© 2026 Freshman Compass</p>
+=======
+    <footer>
+      <p>© 2026 Freshman Compass- :)</p>
+>>>>>>> 00aaff8d652fe4528c2f5a710b39db98de9049ef
     </footer>
 
   </main>

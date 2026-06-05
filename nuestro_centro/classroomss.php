@@ -5,7 +5,6 @@ session_start();
 $servername = "localhost";
 $username = "root";       // 
 $password = "";           // 
-<<<<<<< HEAD
 $dbname = "nuestro_centrodb"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,8 +23,6 @@ if ($resultado) {
         echo "<h3>" . $fila['classroom'] . "</h3>";
         echo "<p><strong>Descripción:</strong> " . $fila['descripcion'] . "</p>";
         echo "<p><strong>Características:</strong> " . $fila['características'] . "</p>";
-        echo "<p><strong>Caracteristicas:</strong>" . $fila['caracteristicas'] . "</p>";
-
         echo "<p><strong>Normas:</strong> " . $fila['normas'] . "</p>";
         echo "<hr>";
     }

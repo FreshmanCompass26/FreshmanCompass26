@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$pagina_actual = "centro";
 ?>
 
 <!DOCTYPE html>
@@ -7,129 +9,104 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshman Compass</title>
 
-    <link rel="stylesheet" href="styles/centro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <title>Freshman Compass</title>
+    <link rel="stylesheet" href="styles/centro.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    
 </head>
 
 <body>
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<<div class="top-navbar">
+<div class="top-navbar">
 
-<div class="top-right">
+    <div class="top-right">
 
-    <?php if (isset($_SESSION['usuario_id'])) { ?>
+        <?php if (isset($_SESSION['nombre'])): ?>
 
-        <div style="
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            background:#e5e7eb;
-            padding:6px 14px;
-            border-radius:20px;
-            height:40px;
-        ">
+            <?php 
+                $nombre = $_SESSION['nombre'];
+                $inicial = strtoupper(substr($nombre, 0, 1));
+            ?>
 
-            <div style="
-                width:28px;
-                height:28px;
-                border-radius:50%;
-                background:#7c3aed;
-                color:white;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-weight:bold;
-                font-size:13px;
-            ">
-                <?php echo strtoupper(substr($_SESSION['nombre'], 0, 1)); ?>
+            <div class="dropdown user-dropdown">
+
+                <div class="user-trigger" data-bs-toggle="dropdown">
+
+                    <div class="avatar">
+                        <?php echo $inicial; ?>
+                    </div>
+
+                    <span class="username">
+                        <?php echo $nombre; ?>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+
+                    <li class="dropdown-header-user">
+                        <div class="avatar-lg">
+                            <?php echo $inicial; ?>
+                        </div>
+
+                        <div>
+                            <div class="name"><?php echo $nombre; ?></div>
+                            <div class="sub">Bienvenido</div>
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a class="dropdown-item" href="perfil.html">
+                            <i class="fa-regular fa-user"></i> Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-gear"></i> Configuración
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item logout" href="php/logout.php">
+                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
 
-            <span style="font-size:14px; font-weight:500; white-space:nowrap;">
-                <?php echo $_SESSION['nombre']; ?>
-            </span>
+        <?php else: ?>
 
-            <span style="font-size:12px;">▾</span>
+            <a href="login.html" class="btn-login">
+                Iniciar sesión
+            </a>
 
-        </div>
+            <a href="signup.html" class="btn-signup">
+                Crear Cuenta
+            </a>
 
-    <?php } ?>
-
-</div>
-
-</div>
-
-
-
-    
-    <div class="sidebar">
-
-        <div class="logo">
-            <img src="img/image.jpg" alt="">
-            <span>Freshman Compass</span>
-        </div>
-        <ul class="menu">
-
-            <li >
-                <a href="index.php">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Inicio</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
-
-            <li class="active">
-                <a href="nuestro_centro.php">
-                    <i class="fa-solid fa-school"></i>
-                    <span>Nuestro centro</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Consejos</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Eventos</span>
-                </a>
-            </li>
-
-        </ul>
-
-        <div class="quote">
-
-            <span class="icon2">❝</span>
-
-            <p>
-                Don’t count the days,<br>
-                make the days count.
-            </p>
-
-            <small>— Muhammad Ali</small>
-
-        </div>
+        <?php endif; ?>
 
     </div>
 
-  
+</div>
+
+<?php include 'php/navbar.php'; ?>
+
+</div>
+
 
 <div class="main-content">
 
@@ -156,8 +133,7 @@ session_start();
   </section>
 
   <section class="cards">
-
-    <div class="card">
+<div class="card">
       <div class="card-icon">
         <i class="fas fa-school"></i>
       </div>
@@ -169,10 +145,13 @@ session_start();
         creamos y desarrollamos nuevas ideas.
       </p>
 
-      <button>
+     <a href="classroomss.php">
+       <button>
         <i class="fas fa-arrow-right"></i>
       </button>
+     </a>
     </div>
+
 
     <div class="card">
       <div class="card-icon food">

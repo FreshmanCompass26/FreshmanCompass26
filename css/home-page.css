@@ -1,0 +1,266 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+
+.logo img{
+    width:120px;
+    margin-bottom:30px;
+}
+
+.main-content{
+    background:#f3f3f3;
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: 220px;
+    width:calc(100% - 220px);
+}
+
+
+.search-input{
+    width:300px;
+    border-radius:20px;
+}
+
+.icons i{
+    font-size:22px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.banner-section{
+    background:white;
+    margin:30px;
+    border-radius:20px;
+    padding:40px;
+}
+
+.banner-section h1{
+    font-size:48px;
+    font-weight:bold;
+    color:#1d1d1d;
+}
+
+.banner-section h1 span{
+    color:#3b6ff0;
+}
+
+.banner-section p{
+    margin:20px 0;
+    color:#555;
+}
+
+.banner-img{
+    max-width:350px;
+}
+.info-card{
+    background:#84b8d9;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    height:100%;
+    color:white;
+    transition:0.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+}
+
+.info-card i{
+    font-size:40px;
+    margin-bottom:15px;
+}
+.benefits-section{
+    padding:40px;
+}
+
+.title-box{
+    width:250px;
+    margin:auto;
+    text-align:center;
+    background:#6b7c8e;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:40px;
+}
+.benefits-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.benefit-box{
+    background:#84b8d9;
+    padding:25px;
+    border-radius:12px;
+    color:white;
+}
+
+.benefit-box h4{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.student-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.student-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.wide-box{
+    grid-column:span 2;
+}
+.footer{
+    background:#17345f;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.social-icons i{
+    font-size:24px;
+    margin:0 10px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        min-height:auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 220px;
+        background: #17345f;
+        z-index: 1000;
+    }
+
+    .benefits-grid{
+        grid-template-columns:1fr;
+    }
+
+    .wide-box{
+        grid-column:span 1;
+    }
+
+    .banner-section h1{
+        font-size:32px;
+    }
+
+    .search-input{
+        width:180px;
+    }
+}
+
+.student-card2 img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    margin: 150px;
+}
+
+
+.user-box{
+    background: rgba(255,255,255,0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-logout{
+    background: none;
+    border: 2px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-logout:hover{
+    background: #ff4d4d;
+    color: white;
+}
+
+/* CONTENEDOR */
+.benefits-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* FILAS */
+.row-benefits{
+    display: flex;
+    gap: 20px;
+}
+
+/* CARD AZUL */
+
+.benefit-card{
+    background: linear-gradient(135deg, #6ea8d9, #3d7fb3);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.benefit-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #5fa0d0, #2f6fa4);
+}
+
+
+
+/* CARD ANCHA */
+.benefit-card.wide{
+    width: 100%;
+}
+
+/* COLUMNA DERECHA */
+.right-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+/* CARD BLANCA */
+.student-card{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+}
+
+/* PEQUEÑA */
+.student-card.small{
+    width: 250px;
+}
+

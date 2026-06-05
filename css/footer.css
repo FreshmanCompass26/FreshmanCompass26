@@ -1,0 +1,126 @@
+/* FOOTER GENERAL */
+.custom-footer{
+    margin-top: 40px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-top{
+    width: 80%;
+    margin: auto;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 20px;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.footer-logo{
+    width: 55px;
+}
+
+.footer-quote{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b1b1b;
+    text-align: center;
+    flex: 1;
+}
+
+.footer-quote span{
+    color: #28d44e;
+    font-size: 45px;
+    margin-right: 10px;
+}
+
+
+.footer-bottom{
+    background: #173b73;
+    padding: 25px 20px 10px;
+    text-align: center;
+}
+
+.footer-title{
+    color: white;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.social-icons a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+    transform: scale(1.1);
+}
+
+.instagram{
+    color: #ff4fd8;
+}
+
+.facebook{
+    color: #1877f2;
+}
+
+.tiktok{
+    color: black;
+}
+
+.email{
+    color: #173b73;
+}
+
+
+.footer-copy{
+    background: #0d2b57;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
+
+@media(max-width:768px){
+
+    .footer-top{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        width: 95%;
+    }
+
+    .footer-quote{
+        font-size: 20px;
+    }
+
+    .footer-quote span{
+        font-size: 30px;
+    }
+
+    .social-icons a{
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+    }
+
+}

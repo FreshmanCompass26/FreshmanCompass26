@@ -2,12 +2,10 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-// conexión
-
 $servername = "localhost";
 $username   = "root";
 $password   = "";
-$dbname     = "teachers";
+$dbname     = "freshman_db";
 
 $conn = new mysqli(
     $servername,
@@ -23,9 +21,6 @@ die(json_encode([
 ]));
 
 }
-
-
-// consulta
 
 $sql = "SELECT
 id_teacher,

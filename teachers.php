@@ -9,13 +9,14 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="teachers.css">
+
+
 
 </head>
 
 <body>
-
-<!-- NAVBAR -->
 
 <div class="fixed top-0 left-0 w-full h-[70px] bg-[#081d58] flex items-center justify-between px-6 shadow-lg z-50">
 
@@ -101,7 +102,6 @@ background-size:cover;
 
 </div>
 
-<!-- CONTENIDO -->
 
 <div class="flex-1 p-8">
 
@@ -145,14 +145,10 @@ Administración
 
 </div>
 
-<!-- CONTENEDOR DE CARDS -->
-
 <div
 id="teacherContainer"
 class="flex flex-wrap gap-10 mt-10">
 </div>
-
-<!-- BOTON -->
 
 <div class="mt-10 flex justify-center">
 
@@ -180,8 +176,6 @@ Ver más...
 
 
 <script>
-
-// ===== BUSCADOR =====
 
 function searchTeacher(){
 
@@ -211,8 +205,6 @@ text.includes(input)
 
 function filterTeachers(subject, button){
 
-// CAMBIAR COLOR DE BOTONES
-
 document.querySelectorAll(".filter-btn")
 .forEach(btn=>{
 
@@ -238,8 +230,6 @@ button.classList.add(
 "text-white"
 );
 
-
-// FILTRAR TARJETAS
 
 let cards =
 document.querySelectorAll(".teacher-card");
@@ -298,8 +288,6 @@ card.style.display = "none";
 });
 
 
-// MOSTRAR U OCULTAR BOTÓN VER MÁS
-
 let btn =
 document.getElementById("toggleBtn");
 
@@ -314,8 +302,6 @@ btn.style.display = "none";
 }
 
 }
-
-// ===== VER MÁS =====
 
 function toggleTeachers(){
 
@@ -355,8 +341,6 @@ hidden
 
 }
 
-
-// ===== CARGAR MAESTROS =====
 
 async function loadTeachers(){
 

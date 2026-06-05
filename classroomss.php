@@ -5,7 +5,11 @@ session_start();
 $servername = "localhost";
 $username = "root";       // 
 $password = "";           // 
+<<<<<<< HEAD
 $dbname = "nuestro_centrodb"; // 
+=======
+$dbname = "freshman_db"; 
+>>>>>>> 56342930bdb3a90384138d02132b7614c3e36523
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,7 +26,11 @@ if ($resultado) {
     while ($fila = $resultado->fetch_assoc()) {
         echo "<h3>" . $fila['classroom'] . "</h3>";
         echo "<p><strong>Descripción:</strong> " . $fila['descripcion'] . "</p>";
+<<<<<<< HEAD
         echo "<p><strong>Características:</strong> " . $fila['características'] . "</p>";
+=======
+        echo "<p><strong>Caracteristicas:</strong>" . $fila['caracteristicas'] . "</p>";
+>>>>>>> 56342930bdb3a90384138d02132b7614c3e36523
         echo "<p><strong>Normas:</strong> " . $fila['normas'] . "</p>";
         echo "<hr>";
     }

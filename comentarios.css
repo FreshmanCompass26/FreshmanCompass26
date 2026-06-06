@@ -10,8 +10,7 @@ body{
 }
 
 .container{
-    display:flex;
-    min-height:100vh;
+    width:100%;
 }
 
 /* SIDEBAR */
@@ -21,7 +20,11 @@ body{
     background:#0d2356;
     color:#d7ff2f;
     padding:20px;
-    min-height:100vh;
+    height:100vh;
+
+    position:fixed;
+    top:0;
+    left:0;
 }
 
 .logo{
@@ -73,9 +76,8 @@ body{
 }
 
 /* CONTENIDO */
-
 .content{
-    flex:1;
+    margin-left:260px;
     padding:25px;
 }
 

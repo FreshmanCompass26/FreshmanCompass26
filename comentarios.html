@@ -4,29 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comentarios</title>
+
     <link rel="stylesheet" href="comentarios.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    
-<header class="navbar">
-
-    <div class="logo-section">
-        <img src="img/logo.jpeg" alt="Logo">
-
-        <h1>Freshman Compass</h1>
-    </div>
-
-    <div class="user-section">
-
-        <span class="bell">🔔</span>
-
-        <span class="name">Marito Rivera</span>
-
-        <img src="img/perfil.png" alt="Perfil">
-
-    </div>
-
-</header>
 
 <div class="container">
 
@@ -34,48 +20,98 @@
     <aside class="sidebar">
 
         <div class="logo">
-            <img src="img/logo.jpegh cygt" alt="">
+            <img src="img/logo.jpeg" alt="Logo">
+            <span>Freshman Compass</span>
         </div>
 
-        <ul>
-            <li><a href="#"><span>🏠</span> Home</a></li>
-            <li><a href="#"><span>👤</span> Perfil</a></li>
-            <li><a href="#"><span>📚</span> Teachers</a></li>
-            <li><a href="#"><span>📅</span> Eventos</a></li>
-            <li><a href="#"><span>❤️</span> Consejos</a></li>
-            <li><a href="#"><span>💬</span> Comentarios</a></li>
-            <li><a href="#"><span>🏫</span> Nuestro Centro</a></li>
-        </ul>
+       <ul class="menu">
+
+    <li>
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="get_teachers.php">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Teachers</span>
+        </a>
+    </li>
+
+    <!-- ACTIVO -->
+    <li class="active">
+        <a href="nuestro_centro.php">
+            <i class="fa-solid fa-school"></i>
+            <span>Nuestro centro</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="consejos.html">
+            <i class="fa-solid fa-heart"></i>
+            <span>Consejos</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="eventos.php">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Eventos</span>
+        </a>
+    </li>
+
+</ul>
 
     </aside>
 
     <!-- CONTENIDO -->
     <main class="content">
 
+        <!-- TOPBAR -->
         <header class="topbar">
+
             <div></div>
+
             <div class="user">
                 <span>Maria Flores</span>
+<<<<<<< HEAD
                 <img src="img/dayana.png">
+=======
+                <img src="img/user.png" alt="Usuario">
+>>>>>>> 0f71cf3cda919e2b42e7b4cf3061cdad1f65c872
             </div>
+
         </header>
 
         <!-- HERO -->
         <section class="hero">
 
+
             <div class="hero-text">
+
                 <small>Valoramos tu opinión</small>
-                <h1>Tu comentario<br>nos ayuda a crecer</h1>
+
+         <h1>
+             Tu comentario <br>
+           <span>nos ayuda a crecer</span>
+        </h1>
 
                 <p>
                     Nos encanta escuchar tus opiniones,
                     sugerencias o cualquier comentario que
                     tengas.
                 </p>
+
             </div>
 
             <div class="hero-image">
+<<<<<<< HEAD
                 <img src="img/Captura de pantalla 2026-06-04 103639.png">
+=======
+                <img src="img/comentario.png" alt="Comentario">
+>>>>>>> 0f71cf3cda919e2b42e7b4cf3061cdad1f65c872
             </div>
 
         </section>
@@ -83,7 +119,7 @@
         <!-- FORMULARIO -->
         <section class="comentario-box">
 
-            <h2>Comparte tu experiencia</h2>
+            <h2>⭐ Comparte tu experiencia ⭐</h2>
 
             <form>
 
@@ -96,7 +132,9 @@
 
                 <textarea placeholder="Tu comentario..."></textarea>
 
-                <button>Mandar comentario</button>
+                <button type="submit">
+                    Mandar comentario
+                </button>
 
             </form>
 
@@ -107,23 +145,34 @@
         </section>
 
         <!-- OPINIONES -->
-        <section class="opiniones">
+       <section class="opiniones">
 
-            <h2>¿Qué opinan los estudiantes?</h2>
+    <h2>✨ ¿Qué opinan los estudiantes? ✨</h2>
 
-            <div class="card">
+    <div class="opiniones-container">
 
+<<<<<<< HEAD
                 <img src="img/dayana.png">
+=======
+        <div class="card-opinion">
+>>>>>>> 0f71cf3cda919e2b42e7b4cf3061cdad1f65c872
 
-                <div>
-                    <p>
-                        "Tu Centro me ayudó mucho a mejorar."
-                    </p>
-                    <span>- Dayana Mangandi</span>
+            <img src="img/user1.png" alt="">
+
+            <div class="texto">
+                <p>
+                    “En Centro ¡Supérate! ADOC no solo estudio,
+                    me preparo para un futuro donde yo pongo
+                    mis propios límites”
+                </p>
+
+                <div class="info">
+                    <span class="nombre">-Dayana Mangandi</span>
+                    <span class="grado">3° “A”</span>
                 </div>
-
             </div>
 
+<<<<<<< HEAD
             <div class="card">
 
                 <img src="img/gerson.png">
@@ -135,22 +184,66 @@
                     <span>- Gerson Miranda</span>
                 </div>
 
+=======
+            <div class="estrellas">
+                ⭐⭐⭐⭐⭐
+>>>>>>> 0f71cf3cda919e2b42e7b4cf3061cdad1f65c872
             </div>
 
-            <div class="card">
+        </div>
 
+<<<<<<< HEAD
                 <img src="img/freddy.png">
+=======
+        <div class="card-opinion">
+>>>>>>> 0f71cf3cda919e2b42e7b4cf3061cdad1f65c872
 
-                <div>
-                    <p>
-                        "Me siento preparado para la universidad."
-                    </p>
-                    <span>- Fredy Aguilar</span>
+            <img src="img/user2.png" alt="">
+
+            <div class="texto">
+                <p>
+                    “Cada día en Centro ¡Supérate! ADOC es una
+                    oportunidad de convertirme en alguien
+                    que antes creía imposible”
+                </p>
+
+                <div class="info">
+                    <span class="nombre">-Gerson Miranda</span>
+                    <span class="grado">2° “A”</span>
                 </div>
-
             </div>
 
-        </section>
+            <div class="estrellas">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+        </div>
+
+        <div class="card-opinion">
+
+            <img src="img/user3.png" alt="">
+
+            <div class="texto">
+                <p>
+                    “Centro ¡Supérate! ADOC, el lugar donde
+                    todo lo que te propongas se puede hacer realidad”
+                </p>
+
+                <div class="info">
+                    <span class="nombre">-Fredy Aguilar</span>
+                    <span class="grado">3° “A”</span>
+                </div>
+            </div>
+
+            <div class="estrellas">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     </main>
 
@@ -158,4 +251,3 @@
 
 </body>
 </html>
-

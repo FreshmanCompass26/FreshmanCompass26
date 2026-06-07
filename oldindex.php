@@ -9,57 +9,46 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="home-page.css">
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="footer.css">
    
 </head>
 <body>
-    <!-- NAVBAR COMPLETO -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-dark shadow-sm py-3 px-4">
  
     <div class="container-fluid">
  
-        <!-- LOGO -->
         <a class="navbar-brand fw-bold fs-3 text-warning" href="#">
             HomePage
         </a>
  
-        <!-- BOTÓN RESPONSIVE -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarContenido">
             <span class="navbar-toggler-icon"></span>
         </button>
  
-        <!-- CONTENIDO -->
         <div class="collapse navbar-collapse" id="navbarContenido">
  
-            <!-- BUSCADOR CENTRO -->
             <div class="mx-auto w-50">
                 <input type="text"
                     class="form-control rounded-pill px-4"
                     placeholder="Buscar...">
             </div>
  
-            <!-- DERECHA -->
             <div class="d-flex align-items-center gap-3 ms-auto">
  
                 
 
 <?php if (isset($_SESSION['nombre'])): ?>
 
-    <!-- USER -->
     <div class="user-box">
-        👤 <?php echo $_SESSION['nombre']; ?>
+         <?php echo $_SESSION['nombre']; ?>
     </div>
 
-    <!-- BOTÓN -->
     <a href="php/logout.php" class="btn btn-logout">
         Cerrar sesión
     </a>
@@ -83,13 +72,7 @@ session_start();
  
 </nav>
    
- 
-            <!-- DERECHA -->
             <div class="d-flex align-items-center gap-3">
- 
-                
- 
-    
  
 </nav>
 
@@ -101,13 +84,9 @@ session_start();
             <?php include 'php/navbar.php'; ?>
         </div>
         
-
-        <!-- Contenido -->
         <div class="col-md-10 main-content">
 
-           
-
-            <!-- Banner -->
+        
             <section class="banner-section">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -124,7 +103,6 @@ session_start();
                 </div>
             </section>
 
-            <!-- Tarjetas -->
             <section class="cards-section container mt-4">
                 <div class="row g-4 justify-content-center">
 
@@ -162,24 +140,20 @@ session_start();
                 </div>
             </section>
 
-            <!-- Beneficios -->
            <section class="benefits-section">
 
     <h3 class="title-box">Beneficios</h3>
 
     <div class="benefits-container">
 
-        <!-- FILA 1 -->
         <div class="row-benefits">
 
-            <!-- CARD GRANDE IZQUIERDA -->
             <div class="student-card">
                 <p>
                     Mi experiencia en el programa ¡Supérate! fue muy placentera...
                 </p>
             </div>
 
-            <!-- DERECHA -->
             <div class="right-cards">
 
                 <div class="benefit-card">
@@ -196,23 +170,18 @@ session_start();
 
         </div>
 
-        <!-- FILA 2 -->
         <div class="row-benefits">
 
-            <!-- CARD ANCHA -->
             <div class="benefit-card wide">
                 <h4>Desarrollo personal</h4>
                 <p>Fortalece tu liderazgo y disciplina.</p>
             </div>
 
-            <!-- CARD DERECHA -->
             <div class="student-card small">
                 <p>Lorem ipsum dolor sit amet...</p>
             </div>
 
         </div>
-
-        <!-- FILA 3 -->
         <div class="benefit-card wide">
             <h4>Oportunidades profesionales</h4>
             <p>Conecta con nuevas experiencias educativas.</p>
@@ -222,7 +191,6 @@ session_start();
 
 </section>
 
-            <!-- Footer -->
              <?php include 'php/footer.php'; ?>
 
         </div>

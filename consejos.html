@@ -1,214 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consejos</title>
-</head>
-<body>
-   <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freshman Compass - Consejos</title>
-<link rel="stylesheet" href="style.css">
+    <title>Freshman Compass - Consejos</title>
+
+```
+<link rel="stylesheet" href="consejos.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+```
+<aside class="sidebar">
 
-        <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-            <h3>Freshman Compass</h3>
-        </div>
-
-        <nav>
-            <a href="#"><i class="fas fa-home"></i> Inicio</a>
-            <a href="#"><i class="fas fa-user"></i> Perfil</a>
-            <a href="#"><i class="fas fa-chalkboard-teacher"></i> Profesores</a>
-            <a href="#"><i class="fas fa-calendar"></i> Eventos</a>
-
-            <a href="#" class="active">
-                <i class="fas fa-heart"></i> Consejos
-            </a>
-
-            <a href="#"><i class="fas fa-comment"></i> Comentarios</a>
-            <a href="#"><i class="fas fa-building"></i> Nuestro Centro</a>
-        </nav>
-
-        <div class="quote">
-            Success start<br>
-            with the decision<br>
-            to try.
-        </div>
-
-    </aside>
-
-    <!-- MAIN -->
-    <main class="main-content">
-
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Buscar consejos...">
-                <i class="fas fa-search"></i>
-            </div>
-
-            <div class="top-icons">
-                <i class="fas fa-bell"></i>
-
-                <img
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                class="avatar">
-            </div>
-
-        </header>
-
-        <!-- CONTENIDO -->
-        <section class="content">
-
-            <div class="title-area">
-                <span class="emoji">💡</span>
-                <h1>Consejos</h1>
-            </div>
-
-            <!-- CONSEJO PRINCIPAL -->
-            <div class="featured-card">
-
-                <h3>
-                    🟢 Estos son nuestros consejos,
-                    despliega para poder verlos todos.
-                </h3>
-
-                <p>
-                    <span class="badge">1</span>
-                    Practica nuevo vocabulario de acuerdo
-                    con tu nivel de inglés para ponerlo en
-                    práctica todos los días al hablarlo.
-                </p>
-
-                <p>
-                    <span class="badge">2</span>
-                    ¡Nunca te quedes con dudas!
-                    Acércate a tu profesor,
-                    siempre estará ahí para ayudarte.
-                </p>
-
-            </div>
-
-            <!-- GRID -->
-            <div class="tips-grid" id="tipsGrid">
-
-                <div class="tip-card">
-                    <span class="number">4</span>
-
-                    <h4>Organiza tu tiempo</h4>
-
-                    <p>
-                        Mantén el margen y utiliza bien
-                        tu tiempo libre.
-                    </p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="number yellow">5</span>
-
-                    <h4>Duerme adecuadamente</h4>
-
-                    <p>
-                        Dormir 8 horas ayuda a
-                        comenzar bien tu día.
-                    </p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="number purple">6</span>
-
-                    <h4>Siempre toma apuntes</h4>
-
-                    <p>
-                        Las notas son esenciales para
-                        estudiar posteriormente.
-                    </p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="number green">7</span>
-
-                    <h4>No te compares</h4>
-
-                    <p>
-                        Cada proceso es distinto.
-                        Enfócate en tu crecimiento.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="button-container">
-                <button id="showTipsBtn">
-                    Ver más...
-                </button>
-            </div>
-
-        </section>
-
-    </main>
-
-</div>
-
-<!-- MODAL -->
-
-<div class="modal" id="tipsModal">
-
-    <div class="modal-content">
-
-        <span class="close" id="closeModal">
-            &times;
-        </span>
-
-        <h2>Todos los Consejos</h2>
-
-        <ul>
-
-            <li>📚 Lee al menos 20 minutos al día.</li>
-
-            <li>📝 Mantén un calendario académico.</li>
-
-            <li>💧 Mantente hidratado.</li>
-
-            <li>🤝 Participa en actividades grupales.</li>
-
-            <li>🎯 Establece metas semanales.</li>
-
-            <li>😴 Duerme tus 8 horas.</li>
-
-            <li>📖 Practica inglés diariamente.</li>
-
-            <li>💬 Consulta tus dudas con profesores.</li>
-
-        </ul>
-
+    <div class="logo">
+        <img src="img/logo.jpeg">
+        <h3>Freshman Compass</h3>
     </div>
+
+    <nav>
+        <a href="#"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#"><i class="fas fa-user"></i> Perfil</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i> Profesores</a>
+        <a href="#"><i class="fas fa-calendar"></i> Eventos</a>
+
+        <a href="#" class="active">
+            <i class="fas fa-heart"></i> Consejos
+        </a>
+
+        <a href="#"><i class="fas fa-comment"></i> Comentarios</a>
+        <a href="#"><i class="fas fa-building"></i> Nuestro Centro</a>
+    </nav>
+
+    <div class="quote">
+        Success start<br>
+        with the decision<br>
+        to try.
+    </div>
+
+</aside>
+
+<main class="main-content">
+
+    <header class="topbar">
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar consejos...">
+
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="top-icons">
+            <i class="fas fa-bell"></i>
+
+            <img
+            src="img/logo.jpeg"
+            class="avatar">
+        </div>
+
+    </header>
+
+    <section class="content">
+
+        <div class="title-area">
+            <span class="emoji">💡</span>
+            <h1>Consejos</h1>
+        </div>
+
+        <div class="featured-card">
+
+            <h3>
+                🟢 Estos son nuestros consejos,
+                despliega para poder verlos todos.
+            </h3>
+
+            <p>
+                <span class="badge">1</span>
+                Practica nuevo vocabulario de acuerdo con tu nivel de inglés para ponerlo en práctica todos los días al hablarlo.
+            </p>
+
+            <p>
+                <span class="badge">2</span>
+                ¡Nunca te quedes con dudas! Acércate a tu profesor, siempre estará ahí para ayudarte.
+            </p>
+
+        </div>
+
+        <div class="tips-grid" id="tipsGrid">
+
+            <div class="tip-card">
+                <span class="number">4</span>
+                <h4>Organiza tu tiempo</h4>
+                <p>Mantén el margen y utiliza bien tu tiempo libre.</p>
+            </div>
+
+            <div class="tip-card">
+                <span class="number yellow">5</span>
+                <h4>Duerme adecuadamente</h4>
+                <p>Dormir 8 horas ayuda a comenzar bien tu día.</p>
+            </div>
+
+            <div class="tip-card">
+                <span class="number purple">6</span>
+                <h4>Siempre toma apuntes</h4>
+                <p>Las notas son esenciales para estudiar posteriormente.</p>
+            </div>
+
+            <div class="tip-card">
+                <span class="number green">7</span>
+                <h4>No te compares</h4>
+                <p>Cada proceso es distinto. Enfócate en tu crecimiento.</p>
+            </div>
+
+        </div>
+
+        <div class="button-container">
+            <button id="showTipsBtn">
+                Ver más...
+            </button>
+        </div>
+
+    </section>
+
+</main>
+```
 
 </div>
 
 <script src="script.js"></script>
-
-</body>
-</html> 
-
 
 </body>
 </html>

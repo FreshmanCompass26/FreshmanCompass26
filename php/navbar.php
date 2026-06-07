@@ -7,10 +7,8 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="sidebar">
 
     <div class="logo">
-        <img src="img/image.jpg" alt="Logo">
-        <span>
-            Freshman Compass
-        </span>
+        <img src="img/logooooo.jpeg" alt="Logo">
+        
     </div>
 
     <ul class="menu">

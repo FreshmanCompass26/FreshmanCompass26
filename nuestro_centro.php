@@ -138,14 +138,16 @@ $pagina_actual = "centro";
         <i class="fas fa-school"></i>
       </div>
 
+
+      
+   
       <h3>Nuestros salones</h3>
 
       <p>
         Conoce los espacios donde aprendemos,
         creamos y desarrollamos nuevas ideas.
       </p>
-
-     <a href="classroomss.php">
+  <a href="classroomss.php">
        <button>
         <i class="fas fa-arrow-right"></i>
       </button>
@@ -175,17 +177,24 @@ $pagina_actual = "centro";
         <i class="fas fa-users"></i>
       </div>
 
+
+      
       <h3>Testimonios</h3>
 
       <p>
         Historias reales de estudiantes que
         vivieron la experiencia Freshman Compass.
       </p>
+      
 
+      
+      <a href="agregar-testimonio.php">
       <button>
         <i class="fas fa-arrow-right"></i>
       </button>
+      </a>
     </div>
+    
 
   </section>
 

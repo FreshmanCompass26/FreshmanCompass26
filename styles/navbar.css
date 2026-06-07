@@ -29,21 +29,14 @@
 }
 
 .logo img{
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 75%;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
 }
 
-.logo span{
-    color: #d8ff3e;
-    font-size: 16px;
-    font-weight: 700;
-}
 
-/* ==========================
-   MENU
-========================== */
+
 
 .menu{
     list-style: none;

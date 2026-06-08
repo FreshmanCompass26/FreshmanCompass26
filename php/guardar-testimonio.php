@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $testimonio = trim($_POST['testimonio']);
     $puntuacion = $_POST['puntuacion'];
 
-    // FOTO
     $foto = $_FILES['foto'];
 
     if ($foto['error'] == 0) {
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $rutaDestino
         );
 
-        // INSERTAR EN MYSQL
         $sql = "INSERT INTO testimonios
         (nombre, anio_graduacion, foto, testimonio, puntuacion)
         VALUES (?, ?, ?, ?, ?)";

@@ -89,7 +89,7 @@ $pagina_actual = "centro";
                             <label>Sube tu foto</label>
                             <div class="avatar-container">
                                 <div class="preview-foto">
-                                    <img id="preview" src="img/avatar.png" alt="Foto">
+                                    <img id="preview" src="img/perfil.png" alt="Foto">
                                 </div>
                                 <label for="foto" class="badge-mas">+</label>
                                 <input type="file" id="foto" name="foto" accept="image/*" style="display:none;">

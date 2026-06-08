@@ -1,6 +1,3 @@
-/* ==========================================
-   1. RESET Y ARQUITECTURA FIJA (CON INCLUDE)
-   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,19 +8,17 @@
 body {
     background-color: #f3f7fa;
     min-height: 100vh;
-    overflow: hidden; /* Evita que toda la pantalla ruede hacia abajo */
+    overflow: hidden; 
 }
 
-/* El contenedor padre ocupa el alto total de la ventana */
 .layout-principal {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
-/* COLUMNA 1: Tu barra lateral fija */
 .sidebar-izquierda {
-    width: 260px;       /* Ajusta al ancho real de tu menú */
+    width: 260px;     
     min-width: 260px;   
     background-color: #162b61; 
     height: 100vh;      
@@ -31,10 +26,8 @@ body {
     top: 0;
     left: 0;
     z-index: 100;       
-    overflow-y: auto;   /* Permite scroll interno si el menú es muy largo */
+    overflow-y: auto;  
 }
-
-/* Neutraliza posiciones absolutas dañinas que pueda traer tu include */
 .sidebar-izquierda > div, 
 .sidebar-izquierda > nav, 
 .sidebar-izquierda > aside {
@@ -45,19 +38,15 @@ body {
     top: 0 !important;
 }
 
-/* COLUMNA 2: Zona del formulario con scroll independiente */
 .contenido-derecha {
     flex-grow: 1;
     height: 100vh;      
-    overflow-y: auto;   /* ¡Aquí se genera el scroll para el formulario! */
+    overflow-y: auto; 
     padding: 30px 50px 60px 50px;
     background-color: #f3f7fa;
     min-width: 0; 
 }
 
-/* ==========================================
-   2. BARRA SUPERIOR DE USUARIO (DERECHA)
-   ========================================== */
 .header-usuario {
     display: flex;
     justify-content: flex-end;
@@ -102,9 +91,6 @@ body {
     margin-left: 5px;
 }
 
-/* ==========================================
-   3. ENCABEZADO Y TÍTULO DE LA SECCIÓN
-   ========================================== */
 .contenedor-formulario-real {
     max-width: 1000px;
     width: 100%;
@@ -149,9 +135,6 @@ body {
     max-width: 500px;
 }
 
-/* ==========================================
-   4. DISTRIBUCIÓN EN DOS COLUMNAS (FORM)
-   ========================================== */
 .contenido-formulario {
     display: flex;
     gap: 40px;
@@ -180,7 +163,6 @@ body {
     font-size: 15px;
 }
 
-/* Inputs con Iconos Interiores */
 .wrapper-input {
     position: relative;
     display: flex;
@@ -248,10 +230,6 @@ small {
     margin-top: 6px;
     font-size: 13px;
 }
-
-/* ==========================================
-   5. COMPONENTES DEL LADO DERECHO (FOTO Y TIPS)
-   ========================================== */
 .avatar-container {
     position: relative;
     width: 140px;
@@ -273,7 +251,6 @@ small {
     object-fit: cover;
 }
 
-/* Botón flotante amarillo de suma (+) */
 .badge-mas {
     position: absolute;
     bottom: -6px;
@@ -297,7 +274,6 @@ small {
     transform: scale(1.1);
 }
 
-/* Caja de Consejos (Azul) */
 .info-box {
     background-color: #e6f1fc;
     padding: 22px;
@@ -341,7 +317,6 @@ small {
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Caja de Aviso de Moderación (Amarilla) */
 .alerta-seguridad {
     background-color: #fffbeb;
     border-radius: 12px;
@@ -362,9 +337,6 @@ small {
     line-height: 1.3;
 }
 
-/* ==========================================
-   6. SECCIÓN INFERIOR (CALIFICACIÓN Y BOTONES)
-   ========================================== */
 .seccion-inferior-formulario {
     display: flex;
     justify-content: space-between;
@@ -380,7 +352,6 @@ small {
     margin-bottom: 5px;
 }
 
-/* Sistema interactivo de estrellas de derecha a izquierda */
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -404,7 +375,6 @@ small {
     color: #fbbf24;
 }
 
-/* Botones Finales de Acción */
 .botones {
     display: flex;
     gap: 15px;
@@ -419,7 +389,7 @@ small {
     font-weight: 700;
     font-size: 14px;
     color: #162b61;
-    text-transform: lowercase; /* Mantiene el "cancelar" en minúsculas */
+    text-transform: lowercase; 
     transition: background 0.2s;
 }
 
@@ -450,9 +420,6 @@ small {
     font-size: 16px;
 }
 
-/* ==========================================
-   7. RESPONSIVIDAD PARA DISPOSITIVOS MÓVILES
-   ========================================== */
 @media(max-width: 950px){
     .layout-principal {
         flex-direction: column;

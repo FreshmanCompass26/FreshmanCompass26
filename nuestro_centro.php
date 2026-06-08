@@ -188,7 +188,7 @@ $pagina_actual = "centro";
       
 
       
-      <a href="agregar-testimonio.php">
+      <a href="testimonios.php">
       <button>
         <i class="fas fa-arrow-right"></i>
       </button>

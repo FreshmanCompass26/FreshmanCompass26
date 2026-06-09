@@ -51,7 +51,15 @@ $resultado = $conexion->query($query);
             <?php 
             if ($resultado && $resultado->num_rows > 0):
                 while($row = $resultado->fetch_assoc()): 
-                    $rutaFoto = (!empty($row['foto'])) ? $row['foto'] : 'img/perfil.png';
+                    
+                    // SEGURIDAD EXTRA: Validamos que el campo no esté vacío Y QUE EL ARCHIVO REALMENTE EXISTA
+                    if (!empty($row['foto']) && file_exists($row['foto'])) {
+                        $rutaFoto = $row['foto'];
+                    } else {
+                        // Si no hay foto o el archivo se borró/no existe, usa la de perfil por defecto
+                        $rutaFoto = 'img/perfil.png';
+                    }
+                    
                     $puntuacion = intval($row['puntuacion']);
             ?>
                 <div class="tarjeta-testimonio">

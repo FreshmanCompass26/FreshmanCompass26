@@ -46,7 +46,7 @@ $pagina_actual = "centro";
                 </div>
             </div>
 
-            <form action="guardar-testimonio.php" method="POST" enctype="multipart/form-data">
+            <form action="php/guardar-testimonio.php" method="POST" enctype="multipart/form-data">
                 <div class="contenido-formulario">
                     
                     <div class="lado-izquierdo">

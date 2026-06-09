@@ -4,8 +4,8 @@ session_start();
 $servername = "localhost";
 $username = "root";       
 $password = "";           
-<<<<<<< HEAD
-$dbname = "nuestro_centrodb"; // 
+
+$dbname = "freshman_db"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,14 +15,14 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT * FROM classroomss";
+$sql = "SELECT * FROM classrooms";
 $resultado = $conn->query($sql);
 
 if ($resultado) {
     while ($fila = $resultado->fetch_assoc()) {
         echo "<h3>" . $fila['classroom'] . "</h3>";
         echo "<p><strong>Descripción:</strong> " . $fila['descripcion'] . "</p>";
-        echo "<p><strong>Características:</strong> " . $fila['características'] . "</p>";
+        echo "<p><strong>Características:</strong> " . $fila['caracteristicas'] . "</p>";
         echo "<p><strong>Caracteristicas:</strong>" . $fila['caracteristicas'] . "</p>";
 
         echo "<p><strong>Normas:</strong> " . $fila['normas'] . "</p>";
@@ -43,7 +43,7 @@ if ($resultado) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classrooms</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/classrroms.css">
 
   
     <link rel="stylesheet"
@@ -353,7 +353,7 @@ if ($resultado) {
   });
 </script>
 
-
+ 
   
 
 

@@ -32,7 +32,7 @@ horario,
 frase,
 imagen,
 cumple
-FROM usuarios";
+FROM teachers";
 
 
 $result = $conn->query($sql);

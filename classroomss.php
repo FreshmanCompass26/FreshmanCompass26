@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-// Conexión directa a MySQL
 $servername = "localhost";
-$username = "root";       // 
-$password = "";           // 
+$username = "root";       
+$password = "";           
 <<<<<<< HEAD
-$dbname = "nuestro_centrodb"; // 
+$dbname = "freshman_db"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -16,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT * FROM classroomss";
+$sql = "SELECT * FROM classrooms";
 $resultado = $conn->query($sql);
 
 if ($resultado) {
@@ -44,17 +43,15 @@ if ($resultado) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classrooms</title>
 
-     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/classroom.css">
 
-    <!-- ICONOS -->
+  
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
     
-<!-- ===== TOP NAVBAR ===== -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -62,7 +59,6 @@ if ($resultado) {
 
 
 
-    <!-- RIGHT -->
  <div class="top-right">
 
     <button class="btn-login">
@@ -78,17 +74,13 @@ if ($resultado) {
 </div>
 
     
-
-    <!-- ===== NAVBAR ===== -->
     <div class="sidebar">
 
-         <!-- LOGO -->
         <div class="logo">
             <img src="img/image7.png" alt="">
             <span>Freshman Compass</span>
         </div>
 
-       <!-- MENU -->
         <ul class="menu">
 
             <li>

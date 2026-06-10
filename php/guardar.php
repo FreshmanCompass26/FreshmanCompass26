@@ -14,7 +14,7 @@ $phone = $_POST['phone'];
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 
-$sql = "INSERT INTO usuarioss
+$sql = "INSERT INTO usuarios
 (nombre, apellido, email, password, phone)
 VALUES (?, ?, ?, ?, ?)";
 

@@ -1,0 +1,160 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* FONDO */
+body{
+    display:flex;
+    background-image:url("../img/WhatsApp Image 2026-05-03 at 5.58.08 PM.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#0b1f4b;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+}
+
+.sidebar h2{
+    font-size:16px;
+    color:#f5c542;
+    margin-bottom:30px;
+}
+
+/* MENÚ */
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:15px;
+    border-radius:10px;
+}
+
+.sidebar li a{
+    text-decoration:none;
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 12px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar li a:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+.sidebar li.activo a{
+    background:#d9dee9;
+    color:#0b1f4b;
+}
+
+/* CONTENIDO */
+.contenido{
+    flex:1;
+    padding:40px;
+}
+
+/* TITULO */
+.contenido h1{
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+/* CONTENEDOR */
+.contenedor-principal{
+    display:flex;
+    gap:50px;
+}
+
+/* TARJETA PERFIL */
+.tarjeta-perfil{
+    width:400px;
+    background:rgba(255,255,255,0.7);
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.tarjeta-perfil img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit: cover;   /* ✅ ESTO LO ARREGLA TODO */
+}
+
+
+.tarjeta-perfil h2{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.tarjeta-perfil p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* FORMULARIO */
+.datos{
+    flex:1;
+    background:rgba(255,255,255,0.7);
+    border-radius:20px;
+    padding:35px;
+}
+
+/* CAMPOS */
+.campo{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    gap:25px;
+}
+
+.campo label{
+    width:40%;
+    background:#cde3df;
+    padding:14px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.campo input{
+    width:60%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+
+/* BOTÓN */
+button{
+    background:#ff6a00;
+    color:white;
+    padding:14px 35px;   /* más grande */
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    float:right;
+    font-size:14px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}

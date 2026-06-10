@@ -75,7 +75,7 @@ background-size:cover;
 <div class="flex flex-col gap-4 mt-10">
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-🏠 Home
+<a href="../index.php">🏠 Inicio</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 bg-white text-black font-bold">
@@ -83,11 +83,11 @@ background-size:cover;
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-📅 Eventos
+<a href="../eventos.php">📅 Eventos</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-❤️ Consejos
+<a href="consejos.php">❤️ Consejos</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
@@ -95,7 +95,7 @@ background-size:cover;
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-🏫 Nuestro Centro
+<a href=" nuestro_centro.php">🏫 Nuestro Centro</a>
 </button>
 
 </div>

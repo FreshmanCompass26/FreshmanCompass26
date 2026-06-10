@@ -22,7 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <?php if (isset($_SESSION['nombre'])) { ?>
 
 <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-    <a href="teachers.php">
+    <a href="php/teachers.php">
         <i class="fa-solid fa-user-group"></i>
         <span>Teachers</span>
     </a>
@@ -36,7 +36,7 @@ if (session_status() == PHP_SESSION_NONE) {
 </li>
 
 <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-    <a href="#">
+    <a href="php/consejos.php">
         <i class="fa-solid fa-heart"></i>
         <span>Consejos</span>
     </a>

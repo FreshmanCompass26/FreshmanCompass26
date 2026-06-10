@@ -5,7 +5,7 @@ $servername = "localhost";
 $username = "root";       
 $password = "";           
 <<<<<<< HEAD
-$dbname = "nuestro_centrodb"; // 
+$dbname = "freshman_db"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT * FROM classroomss";
+$sql = "SELECT * FROM classrooms";
 $resultado = $conn->query($sql);
 
 if ($resultado) {
@@ -43,7 +43,7 @@ if ($resultado) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classrooms</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/classroom.css">
 
   
     <link rel="stylesheet"

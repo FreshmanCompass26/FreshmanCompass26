@@ -5,7 +5,7 @@ header('Content-Type: application/json; charset=utf-8');
 $servername = "localhost";
 $username   = "root";
 $password   = "";
-$dbname     = "teachers";
+$dbname     = "freshman_db";
 
 $conn = new mysqli(
     $servername,
@@ -32,7 +32,7 @@ horario,
 frase,
 imagen,
 cumple
-FROM usuarios";
+FROM teachers";
 
 
 $result = $conn->query($sql);

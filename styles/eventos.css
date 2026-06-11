@@ -62,17 +62,20 @@ body{
 }
 
 .sidebar li{
-    width:100%;
-    height:65px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:5px;
-    cursor:pointer;
-    transition:0.3s;
-    font-size:11px;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+    margin: 8px auto;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
 }
+
+
 
 .sidebar li i{
     font-size:18px;
@@ -171,39 +174,52 @@ body{
 
 /* CARDS */
 
+/* ========================= */
+/* TARJETAS DE EVENTOS */
+/* ========================= */
+
 .event-card{
-    background:#dcdcdc;
-    border-radius:18px;
-    padding:20px;
-    position:relative;
-    min-height:260px;
-    overflow:hidden;
+    background: #FEFEFE;
+    color: #2C4B66;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(44,75,102,0.15);
+    transition: all 0.4s ease;
+    border: 2px solid #94CED7;
 }
 
-.active-card{
-    border:3px solid #3aa0ff;
+.event-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(44, 75, 102, 0.20);
 }
 
 /* FECHA */
 
 .date-box{
-    color:#b64545;
+    color: #94CED7;
     display:flex;
     align-items:center;
     gap:5px;
     margin-bottom:10px;
     font-size:13px;
+    font-weight:bold;
 }
 
 /* TITULOS */
 
 .event-card h3{
-    color:#17345f;
-    font-size:28px;
-    margin-bottom:10px;
-}
+    color: #2C4B66;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-shadow: none;
+} 
+
 
 .event-card h4{
+    color:#2C4B66;
     font-size:18px;
     margin-bottom:15px;
 }
@@ -211,23 +227,28 @@ body{
 /* UBICACION */
 
 .location{
+    color:#6b7280;
     font-size:13px;
     margin-bottom:20px;
 }
 
-/* TEXTO */
+/* DESCRIPCION */
 
 .event-card small{
     display:block;
     width:60%;
-    line-height:1.5;
-    font-size:12px;
+    line-height:1.7;
+    font-size:14px;
+    color:#4d4d4d;
 }
 
-/* IMAGENES */
+/* IMAGEN */
 
 .event-img{
-    width:120px;
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:15px;
     position:absolute;
     right:15px;
     top:50px;
@@ -235,71 +256,23 @@ body{
 
 /* BOTON */
 
-.event-card button{
-    margin-top:20px;
-    background:yellow;
-    border:none;
-    padding:10px 15px;
-    border-radius:5px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* BOTON FINAL */
-
-.more-btn{
-    width:180px;
-    background:yellow;
-    text-align:center;
-    margin:35px auto;
-    padding:12px;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-    display:block;
-    text-decoration:none;
-    color:black;
-}
-
-.event-card{
-    background: linear-gradient(135deg, #081d58, #1d4ed8);
-    color: white;
-    border-radius: 25px;
-    padding: 25px;
-    position: relative;
-    min-height: 280px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    transition: all 0.4s ease;
-    border: 2px solid rgba(255,255,255,0.2);
-}
-
-.event-card:hover{
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
-}
-
-.event-card h3{
-    color: #ffd700;
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
 .event-btn{
     display:inline-block;
     margin-top:15px;
     padding:12px 18px;
-    background:#ffd700;
-    color:#081d58;
+    background:#2C4B66;
+    color:#FEFEFE;
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
     transition:0.3s;
 }
 
+
 .event-btn:hover{
-    transform:scale(1.08)
+    background:#94CED7;
+    color:#2C4B66;
+    transform:scale(1.08);
 }
 
 /* NAVBAR */

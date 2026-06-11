@@ -7,50 +7,66 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="sidebar">
 
     <div class="logo">
-        <img src="img/logooooo.jpeg" alt="Logo">
-        
+        <img src="img/fc.logo.png" alt="Logo">
     </div>
 
     <ul class="menu">
-<li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-    <a href="index.php">
-        <i class="fa-solid fa-house"></i>
-        <span>Inicio</span>
-    </a>
-</li>
+        <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
+            <a href="index.php">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+        </li>
 
-<?php if (isset($_SESSION['nombre'])) { ?>
+        <?php if (isset($_SESSION['nombre'])) { ?>
 
+<<<<<<< HEAD
 <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
     <a href="php/teachers.php">
         <i class="fa-solid fa-user-group"></i>
         <span>Teachers</span>
     </a>
 </li>
+=======
+            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+                <a href="teachers.php">
+                    <i class="fa-solid fa-user-group"></i>
+                    <span>Teachers</span>
+                </a>
+            </li>
+>>>>>>> 605e3b1effb6c73579facd94478ddf88b5b06cc6
 
-<li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-    <a href="nuestro_centro.php">
-        <i class="fa-solid fa-school"></i>
-        <span>Nuestro centro</span>
-    </a>
-</li>
+            <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+                <a href="nuestro_centro.php">
+                    <i class="fa-solid fa-school"></i>
+                    <span>Nuestro centro</span>
+                </a>
+            </li>
 
+<<<<<<< HEAD
 <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
     <a href="php/consejos.php">
         <i class="fa-solid fa-heart"></i>
         <span>Consejos</span>
     </a>
 </li>
+=======
+            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+                <a href="#">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Consejos</span>
+                </a>
+            </li>
+>>>>>>> 605e3b1effb6c73579facd94478ddf88b5b06cc6
 
-<li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-    <a href="eventos.php">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span>Eventos</span>
-    </a>
-</li>
+            <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+                <a href="eventos.php">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Eventos</span>
+                </a>
+            </li>
 
-<?php } ?>
-
+        <?php } ?>
     </ul>
 
     <div class="quote">

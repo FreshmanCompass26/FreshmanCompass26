@@ -1,5 +1,7 @@
 <footer class="custom-footer">
 
+<link rel="stylesheet" href="styles/footer.css">
+
     <!-- CAJA BLANCA -->
     <div class="footer-top">
 

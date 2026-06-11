@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "freshman_db";
+$db   = "fcompass_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 

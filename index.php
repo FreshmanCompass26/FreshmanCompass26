@@ -18,9 +18,27 @@ $pagina_actual = "inicio";
 
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
    
     
+
+    <style>
+        .logo {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 0 20px !important;
+            margin-bottom: 35px !important;
+        }
+        .logo img {
+            width: 100% !important;
+            max-width: 160px !important;
+            height: auto !important;
+            object-fit: contain !important;
+            mix-blend-mode: multiply !important;
+            display: block !important;
+        }
+    </style>
+</head>
     
 </head>
 
@@ -68,7 +86,7 @@ $pagina_actual = "inicio";
                     <li><hr class="dropdown-divider"></li>
 
                     <li>
-                        <a class="dropdown-item" href="perfil.html">
+                        <a class="dropdown-item" href="profile.php">
                             <i class="fa-regular fa-user"></i> Perfil
                         </a>
                     </li>
@@ -320,4 +338,4 @@ $pagina_actual = "inicio";
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</htm
+</html>

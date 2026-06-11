@@ -37,7 +37,7 @@ session_start();
         Centro ¡Supérate! ADOC
     </div>
 
-    <img src="img/spelling.jpg" class="event-img">
+    <img src="img/Spelling Bee.jpg" class="event-img">
 
     <small>
         Competencia académica donde los estudiantes demuestran sus habilidades de pronunciación en el ingles 
@@ -65,7 +65,7 @@ session_start();
         Centro ¡Supérate! ADOC
     </div>
 
-    <img src="img/reconocimiento.jpg" class="event-img">
+    <img src="img/Entrega reconocimientos.jpg" class="event-img">
 
     <small>
         Evento especial dedicado a premiar el esfuerzo, dedicación y logros obtenidos por los estudiantes.
@@ -93,7 +93,7 @@ session_start();
         Centro ¡Supérate! ADOC
     </div>
 
-    <img src="img/trips.jpg" class="event-img">
+    <img src="img/Trips.jpg" class="event-img">
 
     <small>
         Actividad educativa y recreativa que permite a los estudiantes aprender y conocer diferentes historias del mundo.
@@ -121,7 +121,7 @@ session_start();
         Centro ¡Supérate! ADOC
     </div>
 
-    <img src="img/valentin's day.jpg" class="event-img">
+    <img src="img/Valentines Day.jpg" class="event-img">
 
     <small>
         Celebración de la amistad y el compañerismo con actividades divertidas y momentos para compartir.
@@ -149,7 +149,7 @@ session_start();
         Centro ¡Supérate! ADOC jhjhj
     </div>
 
-    <img src="img/dia del internet.jpg" class="event-img">
+    <img src="img/Dia de internet.jpg" class="event-img">
 
     <small>
         Jornada dedicada a conocer la importancia del internet y la tecnología en la educación y la vida diaria.

@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";       
 $password = "";           
-<<<<<<< HEAD
+
 $dbname = "freshman_db"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);

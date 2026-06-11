@@ -139,7 +139,7 @@ $pagina_actual = "eventos";
                     Centro ¡Supérate! ADOC
                 </div>
 
-                <img src="img/Thanksgiving.png" class="event-img">
+                <img src="img/Thanksgiving.jpg" class="event-img">
 
                 <small>
                     Un día lleno de agradecimiento y sobre todo diversión
@@ -171,7 +171,7 @@ $pagina_actual = "eventos";
                     Centro ¡Supérate! ADOC
                 </div>
 
-                <img src="img/Hackathon.png" class="event-img">
+                <img src="img/Hackathon.jpg" class="event-img">
 
                 <small>
                     La creación y diseño de tu propia app,
@@ -202,7 +202,7 @@ $pagina_actual = "eventos";
                     Centro ¡Supérate! ADOC
                 </div>
 
-                <img src="img/Childrensday.png" class="event-img">
+                <img src="img/Children Day.jpg" class="event-img">
 
                 <small>
                     No te detienes mucho... pero este día es otro nivel.
@@ -232,7 +232,7 @@ $pagina_actual = "eventos";
                     Centro ¡Supérate! ADOC
                 </div>
 
-                <img src="img/Expo.png" class="event-img">
+                <img src="img/Expo.jpg" class="event-img">
 
                 <small>
                     Los estudiantes de 2° año realizan una expo donde

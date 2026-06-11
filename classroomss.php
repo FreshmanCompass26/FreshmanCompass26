@@ -5,7 +5,7 @@ $servername = "localhost";
 $username = "root";       
 $password = "";           
 
-$dbname = "freshman_db"; // 
+$dbname = "fcompass_db"; // 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,7 +22,7 @@ if ($resultado) {
     while ($fila = $resultado->fetch_assoc()) {
         echo "<h3>" . $fila['classroom'] . "</h3>";
         echo "<p><strong>Descripción:</strong> " . $fila['descripcion'] . "</p>";
-        echo "<p><strong>Características:</strong> " . $fila['características'] . "</p>";
+       echo "<p><strong>Características:</strong> " . $fila['caracteristicas'] . "</p>";
         echo "<p><strong>Caracteristicas:</strong>" . $fila['caracteristicas'] . "</p>";
 
         echo "<p><strong>Normas:</strong> " . $fila['normas'] . "</p>";

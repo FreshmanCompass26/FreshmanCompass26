@@ -1,162 +1,118 @@
-<?php 
-session_start(); 
+<?php
+session_start();
+
+$pagina_actual = "eventos";
+
+include "php/conexion.php";
+
+$sql = "SELECT * FROM eventos ORDER BY evento_ID ASC LIMIT 4,5";
+$result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-</body>
-
-
-</html>
-
-<a href="eventos.php" class="btn-volver">
-    <i class="fa-solid fa-arrow-left"></i> Volver
-</a>
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Más Eventos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/eventos.css">
+<title>Más Eventos | Freshman Compass</title>
+
+<link rel="stylesheet" href="styles/eventos.css">
+<link rel="stylesheet" href="styles/navbar.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
+<body>
 
-<div class="event-card">
+<?php include "php/navbar.php"; ?>
 
-    <div class="date-box">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span></span>
+<div class="main-content">
+
+    
+    <div class="hero">
+        <h1>Más Eventos</h1>
+
+        <p>
+            Descubre más actividades, celebraciones y experiencias
+            que forman parte de la vida estudiantil en nuestro centro.
+        </p>
     </div>
 
-    <h3>Spelling Bee</h3>
+    <div class="events-grid">
 
-    <h4>30/4/2026</h4>
+        <?php while($evento = $result->fetch_assoc()) { ?>
 
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        Centro ¡Supérate! ADOC
+        <div class="event-card">
+
+            <img
+                src="img/<?php echo $evento['imagen']; ?>"
+                alt="<?php echo $evento['nombre']; ?>"
+                class="event-img"
+            >
+
+            <div class="event-content">
+
+                <div class="event-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <?php
+                    echo date(
+                        "d/m/Y",
+                        strtotime($evento['fecha'])
+                    );
+                    ?>
+                </div>
+
+                <h2>
+                    <?php echo $evento['nombre']; ?>
+                </h2>
+
+                <div class="event-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <?php echo $evento['ubicacion']; ?>
+                </div>
+
+                <p>
+                    <?php echo $evento['descripcion']; ?>
+                </p>
+
+                <a
+                    href="<?php echo $evento['enlace']; ?>"
+                    target="_blank"
+                    class="event-btn"
+                >
+                    Ver más
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <?php } ?>
+
     </div>
+    <div class="events-grid">
 
-    <img src="img/Spelling Bee.jpg" class="event-img">
+    <?php while($evento = $result->fetch_assoc()) { ?>
 
-    <small>
-        Competencia académica donde los estudiantes demuestran sus habilidades de pronunciación en el ingles 
-    </small>
+        <!-- card -->
 
-    <a href="https://flic.kr/s/aHBqjCSPM1" class="event-btn">
-        Ver más <i class="fa-solid fa-arrow-right"></i>
-    </a>
+    <?php } ?>
 
 </div>
 
-<div class="event-card">
-
-    <div class="date-box">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span></span>
-    </div>
-
-    <h3>Entrega de reconocimientos</h3>
-
-    <h4>27/6/2026</h4>
-
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        Centro ¡Supérate! ADOC
-    </div>
-
-    <img src="img/Entrega reconocimientos.jpg" class="event-img">
-
-    <small>
-        Evento especial dedicado a premiar el esfuerzo, dedicación y logros obtenidos por los estudiantes.
-    </small>
-
-    <a href="https://flic.kr/s/aHBqjCDUCR" class="event-btn">
-        Ver más <i class="fa-solid fa-arrow-right"></i>
+<div class="more-container">
+    <a href="eventos.php" class="more-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver a Eventos
     </a>
-
 </div>
 
-<div class="event-card">
-
-    <div class="date-box">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span></span>
-    </div>
-
-    <h3>Trips </h3>
-
-    <h4>9/12/2026</h4>
-
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        Centro ¡Supérate! ADOC
-    </div>
-
-    <img src="img/Trips.jpg" class="event-img">
-
-    <small>
-        Actividad educativa y recreativa que permite a los estudiantes aprender y conocer diferentes historias del mundo.
-    </small>
-
-    <a href="https://flic.kr/s/aHBqjCCvdB" class="event-btn">
-        Ver más <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
+</div>
 </div>
 
-<div class="event-card">
-
-    <div class="date-box">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span></span>
-    </div>
-
-    <h3>Valentine's Day </h3>
-
-    <h4>14/2/2026</h4>
-
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        Centro ¡Supérate! ADOC
-    </div>
-
-    <img src="img/Valentines Day.jpg" class="event-img">
-
-    <small>
-        Celebración de la amistad y el compañerismo con actividades divertidas y momentos para compartir.
-    </small>
-
-    <a href="https://flic.kr/s/aHBqjCKy1f" class="event-btn">
-        Ver más <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-</div>
-
-<div class="event-card">
-
-    <div class="date-box">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span></span>
-    </div>
-
-    <h3>Dia del internet</h3>
-
-    <h4>17/5/2026 </h4>
-
-    <div class="location">
-        <i class="fa-solid fa-location-dot"></i>
-        Centro ¡Supérate! ADOC jhjhj
-    </div>
-
-    <img src="img/Dia de internet.jpg" class="event-img">
-
-    <small>
-        Jornada dedicada a conocer la importancia del internet y la tecnología en la educación y la vida diaria.
-    </small>
-
-    <a href="https://flic.kr/s/aHBqjCeUPr" class="event-btn">
-        Ver más <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-</div>
+</body>
+</html>

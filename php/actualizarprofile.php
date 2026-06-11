@@ -23,6 +23,6 @@ WHERE id=$idUsuario
 
 $conexion->query($sqlActualizar);
 
-header("Location: perfil.php");
-
+header("Location: profile.php");
+exit();
 ?>

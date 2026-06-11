@@ -86,7 +86,7 @@ $pagina_actual = "inicio";
                     <li><hr class="dropdown-divider"></li>
 
                     <li>
-                        <a class="dropdown-item" href="perfil.html">
+                        <a class="dropdown-item" href="profile.php">
                             <i class="fa-regular fa-user"></i> Perfil
                         </a>
                     </li>

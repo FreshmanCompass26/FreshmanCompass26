@@ -2,7 +2,7 @@
 session_start();
 $pagina_actual = "centro"; 
 
-$conexion = new mysqli("localhost", "root", "", "freshman_db");
+$conexion = new mysqli("localhost", "root", "", "fcompass_db");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);

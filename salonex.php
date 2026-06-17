@@ -25,8 +25,6 @@ $resultado = mysqli_query($conn, $sql);
 
     <main class="contenido">
 
-        <!-- HERO -->
-
         <section class="hero-salones">
 
             <div class="hero-overlay">
@@ -51,8 +49,6 @@ $resultado = mysqli_query($conn, $sql);
             </div>
 
         </section>
-
-        <!-- INFO -->
 
         <section class="info-salones">
 

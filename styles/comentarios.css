@@ -248,10 +248,6 @@ button:hover{
     background:#d8dbe5;
     padding:30px;
     border-radius:15px;
-
-    display:flex;
-    flex-direction:column;
-    gap:20px;
 }
 
 .card-opinion{

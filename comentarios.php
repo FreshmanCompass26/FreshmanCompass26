@@ -1,3 +1,10 @@
+<?php
+session_start();
+$pagina_actual = "centro";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +13,7 @@
     <title>Comentarios</title>
 
     <link rel="stylesheet" href="styles/comentarios.css">
+    <link rel="stylesheet" href="styles/navbar.css"><link rel="stylesheet" href="styles/navbar.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
@@ -13,75 +21,22 @@
 </head>
 
 <body>
+    
 
 <div class="container">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+  <?php include 'php/navbar.php'; ?>
 
-        <div class="logo">
-            <img src="img/logo.jpeg" alt="Logo">
-            <span>Freshman Compass</span>
-        </div>
 
-       <ul class="menu">
-
-    <li>
-        <a href="index.html">
-            <i class="fa-solid fa-house"></i>
-            <span>Inicio</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="get_teachers.php">
-            <i class="fa-solid fa-user-group"></i>
-            <span>Teachers</span>
-        </a>
-    </li>
-
-    <!-- ACTIVO -->
-    <li class="active">
-        <a href="nuestro_centro.php">
-            <i class="fa-solid fa-school"></i>
-            <span>Nuestro centro</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="consejos.html">
-            <i class="fa-solid fa-heart"></i>
-            <span>Consejos</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="eventos.php">
-            <i class="fa-solid fa-calendar-days"></i>
-            <span>Eventos</span>
-        </a>
-    </li>
-
-</ul>
-
-    </aside>
+      
 
     <!-- CONTENIDO -->
     <main class="content">
 
         <!-- TOPBAR -->
-        <header class="topbar">
-
-            <div></div>
-
-            <div class="user">
-                <span>Maria Flores</span>
-
-                <img src="img/dayana.png">
-                
-            </div>
-
-        </header>
+       <aside class="sidebar">
+    <?php include 'php/navbar.php'; ?>
+</aside>
 
         <!-- HERO -->
         <section class="hero">
@@ -166,7 +121,7 @@
         </div>
 
         <div class="estrellas">⭐⭐⭐⭐⭐</div>
-        
+
     </div>
 
     <div class="card-opinion">

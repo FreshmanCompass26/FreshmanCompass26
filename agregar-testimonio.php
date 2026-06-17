@@ -80,7 +80,7 @@ $pagina_actual = "centro";
                                 <span class="comilla-decorativa">“</span>
                                 <textarea name="testimonio" maxlength="500" placeholder="Comparte tu experiencia..." required></textarea>
                             </div>
-                            <small>0/500 caracteres</small>
+                        
                         </div>
                     </div>
 

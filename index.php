@@ -140,9 +140,6 @@ $pagina_actual = "inicio";
                     Fortalece competencias digitales mientras exploras tu futuro académico y profesional.
                 </p>
 
-                <button class="btn btn-warning">
-                    Comienza
-                </button>
             </div>
 
             <div class="col-md-6 text-center">

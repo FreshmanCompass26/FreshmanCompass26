@@ -10,7 +10,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <link rel="stylesheet" href="styles/style.css">
-<link rel="stylesheet" href="styles/steachers.css">
+<link rel="stylesheet" href="styles/teachers.css">
 
 
 
@@ -75,7 +75,7 @@ background-size:cover;
 <div class="flex flex-col gap-4 mt-10">
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-🏠 Home
+<a href="../index.php">🏠 Inicio</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 bg-white text-black font-bold">
@@ -83,11 +83,11 @@ background-size:cover;
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-📅 Eventos
+<a href="../eventos.php">📅 Eventos</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-❤️ Consejos
+<a href="consejos.php">❤️ Consejos</a>
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
@@ -95,7 +95,7 @@ background-size:cover;
 </button>
 
 <button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-🏫 Nuestro Centro
+<a href=" nuestro_centro.php">🏫 Nuestro Centro</a>
 </button>
 
 </div>
@@ -344,69 +344,61 @@ hidden
 
 async function loadTeachers(){
 
-try{
+async function loadTeachers(){
 
-let res =
-await fetch("get_teachers.php");
+    let container = document.getElementById("teacherContainer");
 
-let data =
-await res.json();
+    try{
 
-let container =
-document.getElementById("teacherContainer");
+        const res = await fetch("get_teachers.php");
+        const data = await res.json();
 
-container.innerHTML = "";
+        container.innerHTML = "";
 
-data.forEach((t,index)=>{
+        data.forEach((t,index)=>{
 
-container.innerHTML += `
+            container.innerHTML += `
+                <div class="teacher-card">
 
-<div class="teacher-card ${index >= 4 ? "extra hidden" : ""}" data-subject="${t.materia}">
+                    <img
+                    src="img/${t.imagen || 'default.jpg'}"
+                    class="teacher-img">
 
-<img src="img/${t.imagen}" class="teacher-img">
+                    <h2 class="teacher-name">
+                        ${t.nombre}
+                    </h2>
 
-<h2 class="teacher-name">
-${t.nombre}
-</h2>
+                    <p class="teacher-subject">
+                        ${t.materia}
+                    </p>
 
-<p class="teacher-subject">
-${t.materia}
-</p>
+                    <p class="teacher-email">
+                        ${t.correo}
+                    </p>
 
-<div class="teacher-icon">✉️</div>
+                    <p class="teacher-schedule">
+                        ${t.dias}<br>
+                        ${t.horario}
+                    </p>
 
-<p class="teacher-email">
-${t.correo}
-</p>
+                    <p class="teacher-date">
+                        ${t.cumple}
+                    </p>
 
-<div class="teacher-icon">📅</div>
+                </div>
+            `;
 
-<p class="teacher-schedule">
-${t.dias}<br>
-${t.horario}
-</p>
+        });
 
-<div class="teacher-icon">🎂</div>
+    }catch(error){
 
-<p class="teacher-date">
-${t.cumple}
-</p>
+        console.log(error);
 
-<div class="teacher-quote">
-"${t.frase}" 👨‍🏫
-</div>
-
-</div>
-
-`;
-
-});
-
-}catch(error){
-
-console.log("Error:", error);
+    }
 
 }
+
+loadTeachers();
 
 }
 

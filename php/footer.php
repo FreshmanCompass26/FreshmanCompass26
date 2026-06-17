@@ -1,7 +1,24 @@
 <footer class="footer">
 
+<<<<<<< HEAD
     <div class="footer-containe
         <div class="footer-left">
+=======
+<link rel="stylesheet" href="styles/footer.css">
+
+    <!-- CAJA BLANCA -->
+    <div class="footer-top">
+
+        <img src="img/logo.jpeg" class="footer-logo" alt="logo">
+
+        <div class="footer-quote">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <span>
+                La mejor manera de predecir tu futuro es crearlo.
+            </span>
+>>>>>>> 5ab1f3969b9a01b80656e64eb78a23ba36a45b0e
 
         </div>
 

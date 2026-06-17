@@ -1,145 +1,221 @@
 <!DOCTYPE html>
-
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freshman Compass - Consejos</title>
 
-```
-<link rel="stylesheet" href="styles/consejos.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Freshman Compass | Consejos</title>
+
+<link rel="stylesheet" href="consejos.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-```
-
 </head>
 
 <body>
 
 <div class="container">
 
-```
-<aside class="sidebar">
+    <aside class="sidebar">
 
-    <div class="logo">
-        <img src="img/logo.jpeg">
-        <h3>Freshman Compass</h3>
-    </div>
+        <div class="logo">
+            <img src="img/logo.jpeg">
+            <h2>Freshman Compass</h2>
+        </div>
 
-    <nav>
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-user"></i> Perfil</a>
-        <a href="#"><i class="fas fa-chalkboard-teacher"></i> Profesores</a>
-        <a href="#"><i class="fas fa-calendar"></i> Eventos</a>
+        <nav>
 
-        <a href="#" class="active">
-            <i class="fas fa-heart"></i> Consejos
-        </a>
+            <a href="#">
+                <i class="fas fa-home"></i>
+                Inicio
+            </a>
 
-        <a href="#"><i class="fas fa-comment"></i> Comentarios</a>
-        <a href="#"><i class="fas fa-building"></i> Nuestro Centro</a>
-    </nav>
+            <a href="#">
+                <i class="fas fa-user"></i>
+                Perfil
+            </a>
 
-    <div class="quote">
-        Success start<br>
-        with the decision<br>
-        to try.
-    </div>
+            <a href="#">
+                <i class="fas fa-users"></i>
+                Profesores
+            </a>
 
-</aside>
+            <a href="#">
+                <i class="fas fa-calendar"></i>
+                Eventos
+            </a>
 
-<main class="main-content">
+            <a href="#" class="active">
+                <i class="fas fa-heart"></i>
+                Consejos
+            </a>
 
-    <header class="topbar">
+            <a href="#">
+                <i class="fas fa-comments"></i>
+                Comentarios
+            </a>
 
-        <div class="search-box">
-            <input
+            <a href="#">
+                <i class="fas fa-school"></i>
+                Nuestro centro
+            </a>
+
+        </nav>
+
+        <div class="quote">
+            Success start with the decision to try.
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <input
                 type="text"
                 id="searchInput"
                 placeholder="Buscar consejos...">
 
-            <i class="fas fa-search"></i>
-        </div>
+                <i class="fas fa-search"></i>
 
-        <div class="top-icons">
-            <i class="fas fa-bell"></i>
-
-            <img
-            src="img/logo.jpeg"
-            class="avatar">
-        </div>
-
-    </header>
-
-    <section class="content">
-
-        <div class="title-area">
-            <span class="emoji">💡</span>
-            <h1>Consejos</h1>
-        </div>
-
-        <div class="featured-card">
-
-            <h3>
-                🟢 Estos son nuestros consejos,
-                despliega para poder verlos todos.
-            </h3>
-
-            <p>
-                <span class="badge">1</span>
-                Practica nuevo vocabulario de acuerdo con tu nivel de inglés para ponerlo en práctica todos los días al hablarlo.
-            </p>
-
-            <p>
-                <span class="badge">2</span>
-                ¡Nunca te quedes con dudas! Acércate a tu profesor, siempre estará ahí para ayudarte.
-            </p>
-
-        </div>
-
-        <div class="tips-grid" id="tipsGrid">
-
-            <div class="tip-card">
-                <span class="number">4</span>
-                <h4>Organiza tu tiempo</h4>
-                <p>Mantén el margen y utiliza bien tu tiempo libre.</p>
             </div>
 
-            <div class="tip-card">
-                <span class="number yellow">5</span>
-                <h4>Duerme adecuadamente</h4>
-                <p>Dormir 8 horas ayuda a comenzar bien tu día.</p>
+            <div class="top-icons">
+                <i class="fas fa-bell"></i>
+                <img src="img/avatar.png" class="avatar">
             </div>
 
-            <div class="tip-card">
-                <span class="number purple">6</span>
-                <h4>Siempre toma apuntes</h4>
-                <p>Las notas son esenciales para estudiar posteriormente.</p>
+        </header>
+
+        <section class="content">
+
+            <div class="title-section">
+
+                <img
+                src="img/foco.png"
+                class="bulb">
+
+                <h1>Consejos</h1>
+
             </div>
 
-            <div class="tip-card">
-                <span class="number green">7</span>
-                <h4>No te compares</h4>
-                <p>Cada proceso es distinto. Enfócate en tu crecimiento.</p>
+            <div class="featured">
+
+                <h3>
+                    🟢 Estos son nuestros consejos, despliega para poder verlos todos.
+                </h3>
+
+                <p>
+                    <span class="badge">1</span>
+                    Practica nuevo vocabulario de acuerdo con tu nivel de inglés.
+                </p>
+
+                <p>
+                    <span class="badge">2</span>
+                    Nunca te quedes con dudas. Acércate a tu profesor.
+                </p>
+
             </div>
 
-        </div>
+            <div class="tips-grid" id="tipsGrid">
 
-        <div class="button-container">
-            <button id="showTipsBtn">
-                Ver más...
-            </button>
-        </div>
+                <div class="tip-card">
 
-    </section>
+                    <span class="number">4</span>
 
-</main>
+                    <div class="tip-info">
 
+                        <div>
+                            <h4>Organiza tu tiempo</h4>
+                            <p>
+                                Utiliza bien tu tiempo libre y prioriza actividades.
+                            </p>
+                        </div>
+
+                        <img src="img/calendario.png">
+
+                    </div>
+
+                </div>
+
+                <div class="tip-card">
+
+                    <span class="number yellow">5</span>
+
+                    <div class="tip-info">
+
+                        <div>
+                            <h4>Duerme adecuadamente</h4>
+                            <p>
+                                Dormir 8 horas ayuda a comenzar bien el día.
+                            </p>
+                        </div>
+
+                        <img src="img/dormir.png">
+
+                    </div>
+
+                </div>
+
+                <div class="tip-card">
+
+                    <span class="number purple">6</span>
+
+                    <div class="tip-info">
+
+                        <div>
+                            <h4>Siempre toma apuntes</h4>
+                            <p>
+                                Las notas ayudan a recordar información importante.
+                            </p>
+                        </div>
+
+                        <img src="img/apuntes.png">
+
+                    </div>
+
+                </div>
+
+                <div class="tip-card">
+
+                    <span class="number green">7</span>
+
+                    <div class="tip-info">
+
+                        <div>
+                            <h4>No te compares</h4>
+                            <p>
+                                Cada estudiante tiene su propio ritmo.
+                            </p>
+                        </div>
+
+                        <img src="img/cerebro.png">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="btn-container">
+
+                <button id="showTipsBtn">
+                    Ver más...
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </div>
 
-<script src="js/consejosscript.jss"></script>
+<script src="Js/consejosscript.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,232 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* FONDO */
+body{
+    display:flex;
+    background-image:url("../img/WhatsApp Image 2026-05-03 at 5.58.08 PM.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #081847, #102b75);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, .25);
+    transition: all .3s ease;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 35px;
+}
+
+.logo img {
+    width: 100% !important;
+    max-width: 160px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    mix-blend-mode: multiply !important;
+    display: block !important;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 8px 15px;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu li:hover {
+    background: rgba(255, 255, 255, .15);
+    transform: translateX(8px);
+}
+
+.menu li.active {
+    background: white;
+}
+
+.menu li.active a {
+    color: #0b1d59;
+    font-weight: 700;
+}
+
+.quote {
+    margin-top: auto;
+    margin-inline: 18px;
+    background: rgba(255, 255, 255, .08);
+    padding: 18px;
+    border-radius: 18px;
+    color: white;
+}
+
+.quote p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.quote small {
+    color: #d7d7d7;
+}
+
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 80px;
+    z-index: 2000;
+    background: #0B205A;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+
+/* CONTENIDO */
+.contenido{
+    flex:1;
+    padding:40px;
+    margin-left: 250px;   /* ✅ para el sidebar */
+    margin-top: 20px;
+
+}
+
+/* TITULO */
+.contenido h1{
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+/* CONTENEDOR */
+.contenedor-principal{
+    display:flex;
+    gap:50px;
+}
+
+/* TARJETA PERFIL */
+.tarjeta-perfil{
+    width:400px;
+    background:rgba(255,255,255,0.7);
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.tarjeta-perfil img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit: cover;   /* ✅ ESTO LO ARREGLA TODO */
+}
+
+
+.tarjeta-perfil h2{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.tarjeta-perfil p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* FORMULARIO */
+.datos{
+    flex:1;
+    background:rgba(255,255,255,0.7);
+    border-radius:20px;
+    padding:35px;
+}
+
+/* CAMPOS */
+.campo{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    gap:25px;
+}
+
+.campo label{
+    width:40%;
+    background:#cde3df;
+    padding:14px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.campo input{
+    width:60%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+
+/* BOTÓN */
+button{
+    background:#ff6a00;
+    color:white;
+    padding:14px 35px;   /* más grande */
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    float:right;
+    font-size:14px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+
+
+button:hover{
+    transform:scale(1.05);
+}

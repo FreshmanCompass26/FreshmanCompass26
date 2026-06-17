@@ -30,7 +30,7 @@
 
         <div class="social-icons">
 
-            <a href="#" class="instagram">
+            <a href="https://www.instagram.com/freshman_compasss?utm_source=qr" class="instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
 
@@ -38,7 +38,7 @@
                 <i class="fa-brands fa-facebook-f"></i>
             </a>
 
-            <a href="#" class="tiktok">
+            <a href="https://www.tiktok.com/@freshman.compass?_r=1&_t=ZS-978L25IB0SO" class="tiktok">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
 

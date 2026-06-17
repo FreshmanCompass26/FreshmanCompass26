@@ -9,8 +9,8 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="stylesheet" href="styles/style.css">
-<link rel="stylesheet" href="styles/teachers.css">
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/teachers.css">
 
 
 
@@ -350,7 +350,7 @@ async function loadTeachers(){
 
     try{
 
-        const res = await fetch("get_teachers.php");
+        const res = await fetch("../get_teachers.php");
         const data = await res.json();
 
         container.innerHTML = "";

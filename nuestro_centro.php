@@ -147,7 +147,7 @@ $pagina_actual = "centro";
         Conoce los espacios donde aprendemos,
         creamos y desarrollamos nuevas ideas.
       </p>
-  <a href="classroomss.php">
+  <a href="salones.php">
        <button>
         <i class="fas fa-arrow-right"></i>
       </button>

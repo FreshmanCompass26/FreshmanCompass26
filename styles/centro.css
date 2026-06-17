@@ -486,6 +486,55 @@ body{
     font-size: 22px;
     font-weight: 700;
 }
+.ubicacion{
+    margin-top:40px;
+    background:white;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.ubicacion h2{
+    color:#0d2a68;
+    margin-bottom:15px;
+}
+
+.ubicacion p{
+    color:#555;
+    margin-bottom:25px;
+}
+
+.btn-mapa{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#0d2a68;
+    color:white;
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.school-marker{
+    font-size:32px;
+    text-align:center;
+    line-height:40px;
+}
+#map{
+    height:450px;
+    width:100%;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
 
 @media(max-width: 768px){
 

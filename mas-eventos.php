@@ -32,7 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     
     <div class="hero">
-        <h1>Más Eventos</h1>
+        <h1>Más eventos</h1>
 
         <p>
             Descubre más actividades, celebraciones y experiencias

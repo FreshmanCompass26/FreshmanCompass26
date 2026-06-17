@@ -20,29 +20,15 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['nombre'])) { ?>
 
-<<<<<<< HEAD
            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/teachers.php">
                 <i class="fa-solid fa-user-group"></i>
                 <span>Teachers</span>
-=======
-<<<<<<< HEAD
-<li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-    <a href="php/teachers.php">
-        <i class="fa-solid fa-user-group"></i>
-        <span>Teachers</span>
-    </a>
-</li>
-=======
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
->>>>>>> 99b4aafe5ee80d8b339bc0b260951fe58322f55f
+
                 </a>
             </li>
 
->>>>>>> b7f5c962051354219e9a08827888d37004a5ccc6
+
 
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
@@ -51,24 +37,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-<<<<<<< HEAD
 <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
     <a href="php/consejos.php">
         <i class="fa-solid fa-heart"></i>
         <span>Consejos</span>
     </a>
 </li>
-=======
-
-
-            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="php/consejos.php">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Consejos</span>
-                </a>
-            </li>
-
->>>>>>> b7f5c962051354219e9a08827888d37004a5ccc6
 
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">

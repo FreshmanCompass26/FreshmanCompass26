@@ -147,11 +147,7 @@ $pagina_actual = "centro";
         Conoce los espacios donde aprendemos,
         creamos y desarrollamos nuevas ideas.
       </p>
-<<<<<<< HEAD
       <a href="salones.php">
-=======
-      <a href="salonex.php">
->>>>>>> 5ab1f3969b9a01b80656e64eb78a23ba36a45b0e
        <button>
         <i class="fas fa-arrow-right"></i>
       </button>
@@ -292,11 +288,45 @@ $pagina_actual = "centro";
     </div>
 
   </section>
+   <section class="ubicacion">
 
+    <h2>
+        <i class="fas fa-map-marker-alt"></i>
+        Nuestra Ubicación
+    </h2>
+
+    <p>Centro ¡Supérate! ADOC</p>
+    
+    <div id="map" style="height:450px; width:100%;"></div>
+
+</section>
   <div class="final-quote">
     “Transformando vidas vía educación”
   </div>
 
 </div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+window.onload = function() {
+
+    const map = L.map('map').setView([13.695831, -89.153296], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    L.marker([13.695831, -89.153296])
+    .addTo(map)
+    .bindPopup('<b>Centro ¡Supérate! ADOC</b>')
+    .openPopup();
+
+};
+</script>
 </body>
 </html>

@@ -5,6 +5,8 @@ if(!$conexion){
     die("Error de conexión: " . mysqli_connect_error());
 }
 
+$buscar = "";
+
 /* BUSCADOR */
 if(isset($_GET['buscar']) && $_GET['buscar'] != ''){
     $buscar = mysqli_real_escape_string($conexion, $_GET['buscar']);
@@ -16,14 +18,26 @@ if(isset($_GET['buscar']) && $_GET['buscar'] != ''){
     $sql = "SELECT * FROM consejos";
 }
 
-$resultado = mysqli_query($conexion,$sql);
+$resultado = mysqli_query($conexion, $sql);
+
+if(!$resultado){
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+
+/* GUARDAR RESULTADOS */
+$cards = [];
+while($fila = mysqli_fetch_assoc($resultado)){
+    $cards[] = $fila;
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freshman Compass - Consejos</title>
+<title>Consejos - Freshman Compass</title>
 
 <link rel="stylesheet" href="../styles/consejos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -33,6 +47,7 @@ $resultado = mysqli_query($conexion,$sql);
 
 <div class="container">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="logo">
             <img src="../img/logo.jpeg" alt="">
@@ -46,22 +61,23 @@ $resultado = mysqli_query($conexion,$sql);
             <a href="#"><i class="fas fa-calendar"></i> Eventos</a>
             <a href="#" class="active"><i class="fas fa-heart"></i> Consejos</a>
             <a href="#"><i class="fas fa-comment"></i> Comentarios</a>
-            <a href="#"><i class="fas fa-building"></i> Nuestro Centro</a>
+            <a href="#"><i class="fas fa-building"></i> Centro</a>
         </nav>
 
         <div class="quote">
-            Success start<br>
+            Success starts<br>
             with the decision<br>
             to try.
         </div>
     </aside>
 
+    <!-- MAIN -->
     <main class="main-content">
 
         <header class="topbar">
             <form method="GET" class="search-box">
                 <input type="text" name="buscar" placeholder="Buscar consejos..."
-                value="<?php echo isset($_GET['buscar']) ? $_GET['buscar'] : ''; ?>">
+                value="<?php echo htmlspecialchars($buscar); ?>">
                 <i class="fas fa-search"></i>
             </form>
 
@@ -79,37 +95,35 @@ $resultado = mysqli_query($conexion,$sql);
             </div>
 
             <div class="featured-card">
-                <h3>🟢 Consejos para mejorar tu aprendizaje</h3>
-                <p><span class="badge">1</span> Practica vocabulario diariamente según tu nivel.</p>
-                <p><span class="badge">2</span> Pregunta siempre que tengas dudas.</p>
+                <h3>Consejos para mejorar tu aprendizaje</h3>
+                <p><span class="badge">1</span> Organiza tu tiempo diariamente</p>
+                <p><span class="badge">2</span> Pregunta cuando tengas dudas</p>
             </div>
 
             <div class="tips-grid">
 
 <?php
-$contador = 0;
 $index = 0;
 
-while($fila = mysqli_fetch_assoc($resultado)){
+foreach($cards as $i => $fila){
 
-    // 🎨 COLORES SUAVES (PASTEL MODERNO)
-    $hue = ($index * 45) % 360;
+    $hue = ($i * 45) % 360;
+    $visible = ($i < 8) ? "" : "oculto";
 ?>
 
-<div class="tip-card <?php echo ($contador >= 4) ? 'oculto' : ''; ?>"
+<div class="tip-card <?php echo $visible; ?>"
      style="background: linear-gradient(135deg,
      hsl(<?php echo $hue; ?>, 45%, 92%),
      hsl(<?php echo $hue + 20; ?>, 45%, 85%));">
 
-    <!-- 🔥 NÚMERO DESTACADO -->
     <span class="number"
           style="background:hsl(<?php echo $hue; ?>, 60%, 55%);">
         <?php echo $fila['id']; ?>
     </span>
 
     <div class="tip-text">
-        <h4><?php echo $fila['titulo']; ?></h4>
-        <p><?php echo $fila['descripcion']; ?></p>
+        <h4><?php echo htmlspecialchars($fila['titulo']); ?></h4>
+        <p><?php echo htmlspecialchars($fila['descripcion']); ?></p>
 
         <div class="meta">
             <span>📌 Consejo útil</span>
@@ -123,23 +137,13 @@ while($fila = mysqli_fetch_assoc($resultado)){
 
 </div>
 
-<?php
-$contador++;
-$index++;
-}
-?>
+<?php } ?>
 
             </div>
 
-            <div class="decoracion-consejos">
-                <div class="linea-izq-1"></div>
-                <div class="linea-izq-2"></div>
-                <div class="linea-der-1"></div>
-                <div class="linea-der-2"></div>
-            </div>
-
+            <!-- BOTÓN -->
             <div class="button-container">
-                <button id="showMoreBtn">Ver más...</button>
+                <button id="showMoreBtn">Ver más</button>
             </div>
 
         </section>
@@ -148,19 +152,44 @@ $index++;
 
 </div>
 
+<!-- JS CONTROL BLOQUES -->
 <script>
 const boton = document.getElementById("showMoreBtn");
-const ocultos = document.querySelectorAll(".oculto");
+const cards = document.querySelectorAll(".tip-card");
 
-let abiertos = false;
+let paso = 0;
+const bloques = [8, 20, 30, 40, 50];
+
+function actualizarVista(limite){
+    cards.forEach((card, i) => {
+        if(i < limite){
+            card.classList.remove("oculto");
+        } else {
+            card.classList.add("oculto");
+        }
+    });
+}
+
+actualizarVista(bloques[0]);
 
 boton.addEventListener("click", () => {
-    ocultos.forEach(card => {
-        card.style.display = abiertos ? "none" : "flex";
-    });
 
-    abiertos = !abiertos;
-    boton.textContent = abiertos ? "Ver menos" : "Ver más...";
+    paso++;
+
+    if(paso >= bloques.length){
+        paso = 0; // 🔄 volver al inicio
+    }
+
+    let mostrar = bloques[paso];
+
+    actualizarVista(mostrar);
+
+    if(paso === bloques.length - 1){
+        boton.textContent = "Volver al principio";
+    } else {
+        boton.textContent = "Ver más";
+    }
+
 });
 </script>
 

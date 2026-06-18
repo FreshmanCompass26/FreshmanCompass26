@@ -1,170 +1,106 @@
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
-}
-
-/* BODY */
-body{
+body {
     display:flex;
-    background:linear-gradient(135deg,#e0e7ff,#f1f5f9);
+    background-image:url("../img/WhatsApp Image 2026-05-03 at 5.58.08 PM.jpeg");
+    background-size:cover;
+    background-position:center;
 }
 
-/* SIDEBAR */
-.sidebar{
-    width:250px;
-    height:100vh;
-    position:fixed;
-    top:0;
-    left:0;
 
-    background: linear-gradient(to bottom, #081847, #102b75);
-
-    display:flex;
-    flex-direction:column;
-    padding:20px 0;
-
-    box-shadow:5px 0 20px rgba(0,0,0,.2);
+/* CONTENEDOR PRINCIPAL (divide en 2 columnas) */
+.contenedor {
+    display: flex;
+    gap: 40px;
+    width: 80%;
+    margin: 50px auto;
 }
 
-.sidebar h2{
-    color:#ffc400;
-    margin-bottom:30px;
-    text-align:center;
+/* CARD FOTO */
+.card-foto {
+    width: 30%;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* MENU */
-.sidebar ul{
-    list-style:none;
+.card-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.sidebar li{
-    margin:8px 15px;
-    border-radius:14px;
+.card-foto p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    
+ background: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+
 }
 
-.sidebar li a{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:14px 20px;
-    color:white;
-    text-decoration:none;
+
+
+/* CARD FORMULARIO */
+.card-form {
+    width: 70%;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.sidebar li:hover{
-    background:rgba(255,255,255,.15);
+/* ASEGURAR QUE FORM NO ROMPA */
+form {
+    display: block;
 }
 
-.sidebar li.activo{
-    background:white;
+/* CADA CAMPO (fila) */
+.campo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px; /* ✅ más separación */
+    gap: 20px;
 }
 
-.sidebar li.activo a{
-    color:#081d58;
-    font-weight:bold;
+/* LABEL (verde) */
+.campo label {
+    width: 40%;
+    background: #cde3df;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
-/* CONTENIDO */
-.contenido{
-    margin-left:250px;
-    padding:40px;
+/* INPUT (gris) */
+.campo input {
+    width: 60%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #ddd;
 }
 
-/* TITULO */
-.contenido h1{
-    font-size:28px;
-    color:#081d58;
-    margin-bottom:30px;
+/* EFECTO AL ESCRIBIR (pro 🔥) */
+.campo input:focus {
+    outline: 2px solid #ff6a00;
 }
 
-/* CONTENEDOR */
-.contenedor-principal{
-    display:flex;
-    gap:40px;
+/* BOTÓN */
+.guardar {
+    background: #ff6a00;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    transition: 0.3s;
 }
 
-/* CARD PERFIL */
-.tarjeta-perfil{
-    width:280px;
-    background:white;
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-.tarjeta-perfil img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
-}
-
-.tarjeta-perfil h2{
-    font-size:18px;
-}
-
-/* FORM */
-.datos{
-    flex:1;
-    background:white;
-    border-radius:20px;
-    padding:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-/* CAMPOS */
-.campo{
-    display:flex;
-    gap:20px;
-    margin-bottom:15px;
-}
-
-.campo label{
-    width:40%;
-    background:#cde3df;
-    padding:12px;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-.campo input{
-    width:60%;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-    background:#f8fafc;
-}
-
-/* FOCUS */
-.campo input:focus{
-    box-shadow:0 0 0 2px #ff6a00;
-}
-
-/* BOTON */
-button{
-    background:linear-gradient(135deg,#ff6a00,#ff8c00);
-    color:white;
-
-    padding:14px 30px;
-    border:none;
-    border-radius:12px;
-
-    font-weight:bold;
-    cursor:pointer;
-
-    float:right;
-    transition:0.3s;
-}
-
-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
+.guardar:hover {
+    transform: scale(1.05);
 }

@@ -35,7 +35,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
 
             <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="#">
+                <a href="consejos.php">
                     <i class="fa-solid fa-heart"></i>
                     <span>Consejos</span>
                 </a>

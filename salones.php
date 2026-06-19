@@ -204,10 +204,11 @@ $resultado = mysqli_query($conn, $sql);
                         <?php echo $salon['descripcion']; ?>
                     </p>
 
-                    <a href="<?php echo $salon['link_conocer']; ?>" class="btn-salon">
-                        Conocer salón
-                        <i class="fa-solid fa-arrow-right"></i>
+                   <a href="detalle_classroom.php?id=<?php echo $salon['id']; ?>" class="btn-salon">
+                          Conocer salón
+                      <i class="fa-solid fa-arrow-right"></i>
                     </a>
+                    
 
                 </div>
 
@@ -216,8 +217,6 @@ $resultado = mysqli_query($conn, $sql);
             <?php } ?>
 
         </section>
-
-        <!-- FRASE -->
 
         <section class="frase-final">
 

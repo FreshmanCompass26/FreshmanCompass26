@@ -1,4 +1,3 @@
-
 <?php
 include("php/profile_conexion.php");
 
@@ -51,6 +50,7 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
 
     <ul class="menu">
+
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
             <a href="index.php">
                 <i class="fa-solid fa-house"></i>
@@ -60,35 +60,36 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['nombre'])) { ?>
 
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+            <a href="teachers.php">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Teachers</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-                <a href="nuestro_centro.php">
-                    <i class="fa-solid fa-school"></i>
-                    <span>Nuestro centro</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+            <a href="nuestro_centro.php">
+                <i class="fa-solid fa-school"></i>
+                <span>Nuestro centro</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="#">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Consejos</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+            <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                <span>Consejos</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-                <a href="eventos.php">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Eventos</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+            <a href="eventos.php">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Eventos</span>
+            </a>
+        </li>
 
         <?php } ?>
+
     </ul>
 
     <div class="quote">
@@ -104,18 +105,16 @@ if (session_status() == PHP_SESSION_NONE) {
 </div>
 
 
-
 <main class="contenido">
 
     <h1>Perfil de Estudiante</h1>
 
     <div class="contenedor-principal">
 
-      
+        <!-- TARJETA -->
         <div class="tarjeta-perfil">
 
-          <img src="img/<?php echo $perfil['foto_perfil'] ?? 'carlos.jpeg'; ?>" alt="Foto Perfil"> </img>
-          
+            <img src="img/<?php echo $perfil['foto_perfil'] ?? 'default.png'; ?>" alt="Foto Perfil">
 
             <h2>
                 <?php echo $perfil['nombre'] ?? 'Usuario'; ?>
@@ -127,52 +126,38 @@ if (session_status() == PHP_SESSION_NONE) {
 
         </div>
 
-        <!-- ✅ FORMULARIO -->
+        <!-- DATOS SOLO LECTURA -->
         <div class="datos">
 
-            <form action="php/actualizar_perfil.php" method="POST">
+            <div class="campo">
+                <label>Nombre</label>
+                <p><?php echo $perfil['nombre'] ?? ''; ?></p>
+            </div>
 
-                <div class="campo">
-                    <label>Nombre</label>
-                    <input type="text" name="nombre"
-                    value="<?php echo $perfil['nombre'] ?? ''; ?>">
-                </div>
+            <div class="campo">
+                <label>Fecha de nacimiento</label>
+                <p><?php echo $perfil['fecha_nacimiento'] ?? ''; ?></p>
+            </div>
 
-                <div class="campo">
-                    <label>Fecha de nacimiento</label>
-                    <input type="date" name="fecha_nacimiento"
-                    value="<?php echo $perfil['fecha_nacimiento'] ?? ''; ?>">
-                </div>
+            <div class="campo">
+                <label>Email</label>
+                <p><?php echo $perfil['email'] ?? ''; ?></p>
+            </div>
 
-                <div class="campo">
-                    <label>Email</label>
-                    <input type="email" name="email"
-                    value="<?php echo $perfil['email'] ?? ''; ?>">
-                </div>
+            <div class="campo">
+                <label>Centro Escolar</label>
+                <p><?php echo $perfil['centro_escolar'] ?? ''; ?></p>
+            </div>
 
-                <div class="campo">
-                    <label>Centro Escolar</label>
-                    <input type="text" name="centro_escolar"
-                    value="<?php echo $perfil['centro_escolar'] ?? ''; ?>">
-                </div>
+            <div class="campo">
+                <label>Usuario</label>
+                <p><?php echo $perfil['username'] ?? ''; ?></p>
+            </div>
 
-                <div class="campo">
-                    <label>Usuario</label>
-                    <input type="text" name="username"
-                    value="<?php echo $perfil['username'] ?? ''; ?>">
-                </div>
-                
-                <button>
-
-                 <a href="editar_perfil.php" class="btn-editar">
-                     Edita tu profile
-                </a>
-
-                </button>
-               
-
-
-            </form>
+        
+            <a href="php/editar-profile.php" class="btn-editar">
+                Edita tu profile
+            </a>
 
         </div>
 

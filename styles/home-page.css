@@ -149,7 +149,7 @@ body{
 }
 
 .benefit-box{
-    background:#84b8d9;
+    background:#123766;
     padding:25px;
     border-radius:12px;
     color:white;
@@ -188,26 +188,7 @@ body{
     grid-column:span 2;
 }
 
-.footer{
-    background:#17345f;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
 
-.social-icons i{
-    font-size:24px;
-    margin:0 10px;
-    cursor:pointer;
-}
-
-.user-box{
-    background:rgba(255,255,255,0.15);
-    padding:8px 16px;
-    border-radius:20px;
-    color:white;
-    font-weight:500;
-}
 
 .btn-logout{
     background:none;
@@ -339,19 +320,19 @@ body{
 }
 
 .blue-card{
-    background:#edf2ff;
+    background:#6ea8d9;
 }
 
 .green-card{
-    background:#eefbf7;
+    background:#6ea8d9;
 }
 
 .yellow-card{
-    background:#fff7ea;
+    background:#6ea8d9;
 }
 
 .purple-card{
-    background:#f4efff;
+    background:#6ea8d9;
 }
 
 .icon-circle{

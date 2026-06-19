@@ -8,46 +8,17 @@
 body {
     background-color: #f3f7fa;
     min-height: 100vh;
-    overflow: hidden; 
 }
 
-.layout-principal {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
-.sidebar-izquierda {
-    width: 260px;       
-    min-width: 260px;   
-    background-color: #162b61; 
-    height: 100vh;      
-    position: sticky;   
-    top: 0;
-    left: 0;
-    z-index: 100;       
-    overflow-y: auto;   
-}
-
-.sidebar-izquierda > div, 
-.sidebar-izquierda > nav, 
-.sidebar-izquierda > aside {
-    position: relative !important; 
-    width: 100% !important;
-    height: 100% !important;
-    left: 0 !important;
-    top: 0 !important;
-}
-
-.contenido-derecha {
-    flex-grow: 1;
-    height: 100vh;      
-    overflow-y: auto;   
-    padding: 40px 50px 40px 50px;
-    background-color: #f3f7fa;
+.main-content {
+    margin-left: 250px; 
+    padding-top: 110px; 
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
 }
 
 .header-testimonio {
@@ -121,27 +92,31 @@ body {
     opacity: 0.6;
 }
 
-.grid-testimonios {
+.grid-testimonios, .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    /* Fuerza exactamente dos columnas de igual tamaño */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
     width: 100%;
     margin-bottom: 40px;
 }
 
-.tarjeta-testimonio {
+.tarjeta-testimonio, .card {
     background-color: #e2e8f0;
     border-radius: 16px;
-    padding: 24px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    transition: transform 0.2s;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    width: 100%;
 }
 
-.tarjeta-testimonio:hover {
-    transform: translateY(-3px);
+.tarjeta-testimonio:hover, .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
 }
 
 .tarjeta-header {
@@ -157,30 +132,28 @@ body {
     overflow: hidden;
     background: white;
     border: 2px solid white;
-    /* Evita que el contenedor colapse o cambie de tamaño */
     flex-shrink: 0; 
 }
 
 .avatar-usuario img {
-    /* CORRECCIÓN: Ajustamos al 100% para ocupar todo el círculo de 55px perfectamente */
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.info-usuario h3 {
+.info-usuario h3, .card h3 {
     color: #0f172a;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 2px;
 }
 
-.info-usuario p {
+.info-usuario p, .card p {
     color: #1e3a8a;
-    /* CORRECCIÓN: Estaba en 75px, lo cambiamos a un tamaño ideal para subtítulos */
-    font-size: 13px; 
+    font-size: 14px; 
     font-weight: 600;
 }
+
 
 .estrellas-puntuacion {
     display: flex;
@@ -204,23 +177,29 @@ body {
     font-size: 14px;
     line-height: 1.5;
     text-align: justify;
-    /* CORRECCIÓN: Fuerza a los textos infinitos sin espacios a romperse e ir abajo */
     overflow-wrap: break-word; 
     word-break: break-word;
 }
 
-.sin-testimonios {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
-    font-size: 16px;
+.ubicacion {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.ubicacion h2 {
+    color: #162b61;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .banner-compartir {
     background-color: #dbeafe;
     border-radius: 16px;
-    padding: 20px 30px;
+    padding: 25px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,6 +223,7 @@ body {
     justify-content: center;
     font-size: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0;
 }
 
 .texto-banner h3 {
@@ -269,38 +249,44 @@ body {
     gap: 8px;
     font-size: 14px;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .btn-dejar-testimonio:hover {
     background-color: #d0c000;
+    color: black;
 }
 
-@media (max-width: 900px) {
-    .layout-principal {
-        flex-direction: column;
-        height: auto;
-        overflow: auto;
+.final-quote {
+    text-align: center;
+    font-style: italic;
+    color: #64748b;
+    margin-top: 40px;
+    font-size: 16px;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .grid-testimonios, .cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
     }
-    .sidebar-izquierda {
-        width: 100%;
-        height: auto;
-    }
-    .contenido-derecha {
-        height: auto;
-        padding: 20px;
-    }
+
     .header-testimonio {
         flex-direction: column;
         gap: 20px;
     }
+
     .decoracion-globos-vista {
         display: none; 
     }
+
     .banner-compartir {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
+
     .banner-izquierdo {
         flex-direction: column;
     }

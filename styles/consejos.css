@@ -146,35 +146,12 @@ body{
     color:#24135c;
 }
 
-/* INTRO CARD */
+/* FEATURED CARD */
 .featured-card{
     background:#ebe7f8;
     padding:20px;
     border-radius:15px;
     margin-bottom:20px;
-}
-
-.featured-card h3{
-    margin-bottom:10px;
-}
-
-.featured-card p{
-    display:flex;
-    gap:10px;
-    margin-bottom:8px;
-    line-height:1.4;
-}
-
-.badge{
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:#39c95c;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
 }
 
 /* GRID */
@@ -184,7 +161,7 @@ body{
     gap:20px;
 }
 
-/* CARD PRO */
+/* CARD */
 .tip-card{
     position:relative;
     display:flex;
@@ -205,37 +182,27 @@ body{
     box-shadow:0 12px 25px rgba(0,0,0,.15);
 }
 
-/* COLORES 20 TARJETAS (SOLO UNO, SIN DUPLICADOS) */
-.color-1{background:linear-gradient(135deg,#fceabb,#f8b500);}
-.color-2{background:linear-gradient(135deg,#74ebd5,#acb6e5);}
-.color-3{background:linear-gradient(135deg,#ff9a9e,#fad0c4);}
-.color-4{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);}
-.color-5{background:linear-gradient(135deg,#d4fc79,#96e6a1);}
-.color-6{background:linear-gradient(135deg,#fddb92,#d1fdff);}
-.color-7{background:linear-gradient(135deg,#c2e9fb,#a1c4fd);}
-.color-8{background:linear-gradient(135deg,#ffecd2,#fcb69f);}
-.color-9{background:linear-gradient(135deg,#f6d365,#fda085);}
-.color-10{background:linear-gradient(135deg,#a18cd1,#fbc2eb);}
-.color-11{background:linear-gradient(135deg,#89f7fe,#66a6ff);}
-.color-12{background:linear-gradient(135deg,#f093fb,#f5576c);}
-.color-13{background:linear-gradient(135deg,#4facfe,#00f2fe);}
-.color-14{background:linear-gradient(135deg,#43e97b,#38f9d7);}
-.color-15{background:linear-gradient(135deg,#fa709a,#fee140);}
-.color-16{background:linear-gradient(135deg,#30cfd0,#330867);}
-.color-17{background:linear-gradient(135deg,#a8edea,#fed6e3);}
-.color-18{background:linear-gradient(135deg,#ffdde1,#ee9ca7);}
-.color-19{background:linear-gradient(135deg,#667eea,#764ba2);}
-.color-20{background:linear-gradient(135deg,#89f7fe,#fbc2eb);}
-/* NUMERO */
+/* NÚMERO FIJO (ESQUINA IZQUIERDA) */
 .number{
     position:absolute;
-    top:10px;
-    left:10px;
-    padding:5px 10px;
+    top:12px;
+    left:12px;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     border-radius:8px;
+
     color:white;
-    font-size:12px;
+    font-size:13px;
     font-weight:bold;
+
+    z-index:10;
+    pointer-events:none;
 }
 
 /* TEXTO */
@@ -259,6 +226,8 @@ body{
 .tip-img img{
     width:140px;
     object-fit:contain;
+    position:relative;
+    z-index:1;
 }
 
 /* META */
@@ -282,33 +251,7 @@ body{
     margin-top:30px;
 }
 
-.linea-izq-1,
-.linea-der-1{
-    position:absolute;
-    width:180px;
-    height:12px;
-    background:#0f2d7c;
-    border-radius:20px;
-    bottom:20px;
-}
-
-.linea-izq-1{left:-25px;}
-.linea-der-1{right:-25px;}
-
-.linea-izq-2,
-.linea-der-2{
-    position:absolute;
-    width:80px;
-    height:12px;
-    background:#2e4bc2;
-    border-radius:20px;
-    bottom:45px;
-}
-
-.linea-izq-2{left:40px;}
-.linea-der-2{right:40px;}
-
-/* BOTON */
+/* BOTÓN */
 .button-container{
     display:flex;
     justify-content:center;
@@ -324,11 +267,23 @@ body{
     font-weight:bold;
     cursor:pointer;
     transition:.3s;
+    
 }
 
 #showMoreBtn:hover{
     transform:scale(1.05);
     background:#ffd600;
+}
+.tip-card{
+    opacity:1;
+    transform:translateY(0);
+    transition: all .4s ease;
+}
+
+.tip-card.oculto{
+    opacity:0;
+    transform:translateY(20px);
+    pointer-events:none;
 }
 
 /* RESPONSIVE */

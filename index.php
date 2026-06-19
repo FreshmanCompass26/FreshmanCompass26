@@ -143,7 +143,7 @@ $pagina_actual = "inicio";
             </div>
 
             <div class="col-md-6 text-center">
-                <img src="img/fondo_homepg.jpeg" class="img-fluid banner-img">
+                <img src="img/freshmancompassfondix.jpeg" class="img-fluid banner-img">
             </div>
 
         </div>

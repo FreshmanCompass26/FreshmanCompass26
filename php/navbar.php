@@ -27,20 +27,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
-<li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-    <a href="php/teachers.php">
-        <i class="fa-solid fa-user-group"></i>
-        <span>Teachers</span>
-    </a>
-</li>
-
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
-
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
@@ -48,15 +34,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-
-
-
-<li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-    <a href="php/consejos.php">
-        <i class="fa-solid fa-heart"></i>
-        <span>Consejos</span>
-    </a>
-</li>
 
 
 

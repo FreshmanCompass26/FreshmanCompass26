@@ -8,6 +8,7 @@ $pagina_actual = "centro";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Testimonio - Freshman Compass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/agregar-testimonio.css">
     <link rel="stylesheet" href="styles/navbar.css">
 </head>
@@ -28,7 +29,7 @@ $pagina_actual = "centro";
                         <?php echo strtoupper(substr($_SESSION['nombre'], 0, 1)); ?>
                     </div>
                     <span class="user-name"><?php echo $_SESSION['nombre']; ?></span>
-                    <a href="php/logout.php" class="btn-logout-link">Cerrar sesión</a>
+                    <a href="php/logout.php" class="btn-logout-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Salir</a>
                 <?php else: ?>
                     <a href="login.html" class="btn-login-simple">Iniciar sesión</a>
                 <?php endif; ?>
@@ -53,7 +54,7 @@ $pagina_actual = "centro";
                         <div class="campo">
                             <label>Tu nombre</label>
                             <div class="wrapper-input">
-                                <span class="icono-placeholder">👤</span>
+                                <span class="icono-placeholder"><i class="fa-solid fa-user"></i></span>
                                 <input type="text" name="nombre" placeholder="Escribe tu nombre..." required>
                             </div>
                         </div>
@@ -61,7 +62,7 @@ $pagina_actual = "centro";
                         <div class="campo">
                             <label>Año de graduación</label>
                             <div class="wrapper-input">
-                                <span class="icono-placeholder">🎓</span>
+                                <span class="icono-placeholder"><i class="fa-solid fa-graduation-cap"></i></span>
                                 <select name="anio_graduacion" required>
                                     <option value="">Selecciona tu año de graduación</option>
                                     <?php
@@ -78,9 +79,8 @@ $pagina_actual = "centro";
                             <label>Tu testimonio</label>
                             <div class="wrapper-textarea">
                                 <span class="comilla-decorativa">“</span>
-                                <textarea name="testimonio" maxlength="500" placeholder="Comparte tu experiencia..." required></textarea>
+                                <textarea name="testimonio" maxlength="500" placeholder="Comparte tu experiencia en los salones..." required></textarea>
                             </div>
-                        
                         </div>
                     </div>
 
@@ -89,25 +89,34 @@ $pagina_actual = "centro";
                             <label>Sube tu foto</label>
                             <div class="avatar-container">
                                 <div class="preview-foto">
-                                    <img id="preview" src="img/perfil.png" alt="Foto">
+                                    <img id="preview" src="img/perfil.png" alt="Foto por defecto">
                                 </div>
-                                <label for="foto" class="badge-mas">+</label>
-                                <input type="file" id="foto" name="foto" accept="image/*" style="display:none;">
+                                <label for="foto" class="badge-mas"><i class="fa-solid fa-camera"></i></label>
+                                <input type="file" id="foto" name="foto" accept="image/*" style="display:none;" onchange="previewImage(event)">
                             </div>
                         </div>
 
                         <div class="info-box">
                             <h3>Consejos para tu testimonio</h3>
                             <ul>
-                                <li><span class="bullet-blue">💬</span> <div><strong>Sé sincero</strong> y cuenta tu historia.</div></li>
-                                <li><span class="bullet-blue">💡</span> <div><strong>Habla de los retos</strong> superados.</div></li>
-                                <li><span class="bullet-blue">👥</span> <div>Tu consejo puede ayudar a otros.</div></li>
+                                <li>
+                                    <span class="bullet-blue"><i class="fa-solid fa-comment"></i></span> 
+                                    <div><strong>Sé sincero:</strong> Cuenta lo que más te gustó de tu experiencia.</div>
+                                </li>
+                                <li>
+                                    <span class="bullet-blue"><i class="fa-solid fa-lightbulb"></i></span> 
+                                    <div><strong>Habla de retos:</strong> Describe cómo superaste los obstáculos académicos.</div>
+                                </li>
+                                <li>
+                                    <span class="bullet-blue"><i class="fa-solid fa-users"></i></span> 
+                                    <div>Tu opinión guiará a las nuevas generaciones.</div>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="alerta-seguridad">
-                            <span class="icono-alerta">🛡️</span>
-                            <p>Todos los testimonios son revisados antes de publicarse.</p>
+                            <span class="icono-alerta"><i class="fa-solid fa-shield-halved"></i></span>
+                            <p>Por seguridad comunitaria, todos los testimonios pasan por una revisión breve antes de publicarse.</p>
                         </div>
                     </div>
 
@@ -126,8 +135,8 @@ $pagina_actual = "centro";
                     </div>
 
                     <div class="botones">
-                        <button type="reset" class="btn-cancelar">cancelar</button>
-                        <button type="submit" class="btn-publicar">Publicar testimonio <span class="flecha-btn">→</span></button>
+                        <button type="reset" class="btn-cancelar">Cancelar</button>
+                        <button type="submit" class="btn-publicar">Enviar testimonio <span class="flecha-btn">→</span></button>
                     </div>
                 </div>
             </form>
@@ -135,5 +144,15 @@ $pagina_actual = "centro";
     </main>
 </div>
 
+<script>
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>
 </body>
 </html>

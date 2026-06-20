@@ -94,7 +94,6 @@ body {
 
 .grid-testimonios, .cards {
     display: grid;
-    /* Fuerza exactamente dos columnas de igual tamaño */
     grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
     width: 100%;
@@ -122,30 +121,35 @@ body {
 .tarjeta-header {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
 }
 
 .avatar-usuario {
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     overflow: hidden;
     background: white;
-    border: 2px solid white;
-    flex-shrink: 0; 
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .avatar-usuario img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .info-usuario h3, .card h3 {
     color: #0f172a;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .info-usuario p, .card p {
@@ -153,7 +157,6 @@ body {
     font-size: 14px; 
     font-weight: 600;
 }
-
 
 .estrellas-puntuacion {
     display: flex;
@@ -238,7 +241,7 @@ body {
 }
 
 .btn-dejar-testimonio {
-    background-color: #e4d300; 
+    background-color: #F4AD0D; 
     color: black;
     text-decoration: none;
     font-weight: 700;
@@ -253,7 +256,7 @@ body {
 }
 
 .btn-dejar-testimonio:hover {
-    background-color: #d0c000;
+    background-color: #F4AD0D;
     color: black;
 }
 

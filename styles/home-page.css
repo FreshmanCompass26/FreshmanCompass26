@@ -67,7 +67,7 @@ body{
     position:sticky;
     top:0;
     z-index:999;
-    background:linear-gradient(135deg, #123766, #1f4f89);
+    background:linear-gradient(135deg, #123766, );
     color:white;
     padding:12px 20px;
 }

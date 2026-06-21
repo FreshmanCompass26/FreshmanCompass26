@@ -243,6 +243,12 @@
     margin-top: 90px;
     padding: 30px;
 }
+.quote p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    transition: opacity 0.3s ease;
+}
 
 @media (max-width: 768px) {
     .sidebar {

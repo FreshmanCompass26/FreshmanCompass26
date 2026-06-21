@@ -5,168 +5,173 @@ box-sizing:border-box;
 }
 
 .footer{
-
 width:100%;
-
-background:
-linear-gradient(
+background:linear-gradient(
 90deg,
 #001747,
 #002f88
 );
-
-
-
+padding:40px 60px;
 overflow:hidden;
-
 }
 
 .footer-container{
-
 max-width:1600px;
-
 margin:auto;
 
+
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
 
 gap:50px;
 
+
 }
 
+/* IZQUIERDA */
 
-
+.footer-left{
+flex:1;
+}
 
 /* CENTRO */
 
 .footer-center{
-
 flex:1;
-
 text-align:center;
-
 }
 
 .footer-logo{
-
 width:85px;
-
-margin-bottom:15px;
-
+margin:0 auto 15px;
 display:block;
-
-margin-left:auto;
-
-margin-right:auto;
-
 }
 
 .footer-center h2{
+color:white;
+font-size:42px;
+margin-bottom:15px;
+}
 
+.footer-title{
+color:white;
+font-size:20px;
+margin-top:20px;
+margin-bottom:15px;
+letter-spacing:2px;
+}
+
+/* REDES SOCIALES */
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.social-icons a{
+width:50px;
+height:50px;
+
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+text-decoration:none;
+
+background:rgba(255,255,255,.12);
 color:white;
 
-font-size:56px;
+transition:.3s;
 
-margin-bottom:10px;
-
-}
-
-.footer-center p{
-
-color:#d8e4ff;
-
-font-size:20px;
 
 }
 
+.social-icons a:hover{
+transform:translateY(-4px);
+background:#ffc931;
+color:#001747;
+}
+
+.social-icons i{
+font-size:22px;
+}
 
 /* DERECHA */
 
 .footer-right{
+flex:1;
+
 
 display:flex;
-
+justify-content:center;
 gap:45px;
-
 flex-wrap:wrap;
 
-justify-content:center;
 
 }
 
 .footer-right a{
-
 text-decoration:none;
-
 color:white;
 
 display:flex;
-
 flex-direction:column;
-
 align-items:center;
 
 gap:10px;
 
 transition:.3s;
 
+
 }
 
 .footer-right a:hover{
-
-transform:
-translateY(-4px);
-
+transform:translateY(-4px);
 }
 
 .footer-right i{
-
 font-size:36px;
-
 color:#ffc931;
-
 }
 
 .footer-right span{
-
 font-size:17px;
-
+text-align:center;
 }
 
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
+
 .footer{
-
-padding:40px 25px;
-
+    padding:40px 25px;
 }
 
 .footer-container{
-
-flex-direction:column;
-
+    flex-direction:column;
+    text-align:center;
 }
 
 .footer-left{
-
-display:none;
-
+    display:none;
 }
 
 .footer-right{
-
-gap:30px;
-
+    gap:30px;
 }
 
 .footer-center h2{
-
-font-size:34px;
-
+    font-size:32px;
 }
+
+.footer-title{
+    font-size:18px;
+}
+
 
 }

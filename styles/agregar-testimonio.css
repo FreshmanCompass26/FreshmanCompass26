@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+
 }
 
 body {
     background-color: #f3f7fa;
     min-height: 100vh;
-    overflow: hidden; 
+    overflow: hidden;
+    font-family:'Montserrat', sans-serif;
 }
 
 .layout-principal {
@@ -25,7 +26,7 @@ body {
     position: sticky;   
     top: 0;
     left: 0;
-    z-index: 100;       
+    z-index: 100;      
     overflow-y: auto;  
 }
 .sidebar-izquierda > div, 
@@ -68,7 +69,7 @@ body {
 .user-avatar-circle {
     width: 32px;
     height: 32px;
-    background-color: #a855f7;
+    background-color: #162b61;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -122,7 +123,7 @@ body {
 .linea {
     width: 110px;
     height: 4px;
-    background-color: #e4d300;
+    background-color: #F4AD0D;
     margin: 15px 0;
     border-radius: 4px;
 }
@@ -190,7 +191,6 @@ body {
     transition: border-color 0.2s;
 }
 
-/* Textarea del Testimonio */
 .wrapper-textarea {
     position: relative;
 }
@@ -257,7 +257,7 @@ small {
     left: -6px;
     width: 34px;
     height: 34px;
-    background-color: #e4d300;
+    background-color: #F4AD0D;
     color: black;
     border-radius: 50%;
     display: flex;
@@ -337,10 +337,11 @@ small {
     line-height: 1.3;
 }
 
+
 .seccion-inferior-formulario {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center; /* Alineado al centro para equilibrar con las estrellas grandes */
     margin-top: 30px;
 }
 
@@ -349,12 +350,15 @@ small {
     font-weight: 700;
     color: #162b61;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
+/* Contenedor de estrellas */
 .rating {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
 }
 
 .rating input {
@@ -362,17 +366,29 @@ small {
 }
 
 .rating label {
-    font-size: 38px;
+    font-size: 50px; 
     cursor: pointer;
     color: #cbd5e1;
-    transition: .2s;
-    margin-right: 3px;
+    display: inline-block;
+    line-height: 1;
+    transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Hover e Iluminación con Resplandor */
 .rating label:hover,
 .rating label:hover ~ label,
 .rating input:checked ~ label {
-    color: #fbbf24;
+    color: #F4AD0D;
+    text-shadow: 0 0 10px rgba(244, 173, 13, 0.35);
+}
+
+.rating label:hover {
+    transform: scale(1.25) rotate(-3deg);
+}
+
+.rating label:active {
+    transform: scale(0.95);
 }
 
 .botones {
@@ -381,45 +397,60 @@ small {
 }
 
 .btn-cancelar {
-    padding: 12px 30px;
-    border-radius: 10px;
+    height: 50px; 
+    padding: 0 30px;
+    border-radius: 12px;
     background: white;
     border: 2px solid #cbd5e1;
     cursor: pointer;
     font-weight: 700;
     font-size: 14px;
     color: #162b61;
-    text-transform: lowercase; 
-    transition: background 0.2s;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
 }
 
 .btn-cancelar:hover {
     background: #f8fafc;
+    border-color: #94a3b8;
 }
 
 .btn-publicar {
-    padding: 12px 35px;
+    height: 50px;
+    padding: 0 35px;
     border: none;
-    border-radius: 10px;
-    background: #e4d300;
+    border-radius: 12px;
+    background: #F4AD0D;
     color: black;
     cursor: pointer;
     font-weight: 700;
     font-size: 14px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
 }
 
 .btn-publicar:hover {
-    opacity: 0.9;
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(244, 173, 13, 0.2);
 }
 
 .flecha-btn {
     font-size: 16px;
+    transition: transform 0.2s ease;
 }
 
+.btn-publicar:hover .flecha-btn {
+    transform: translateX(4px); /* Animación interactiva en la flecha */
+}
+
+/* Media Queries */
 @media(max-width: 950px){
     .layout-principal {
         flex-direction: column;
@@ -451,4 +482,10 @@ small {
         flex: 1;
         justify-content: center;
     }
+}
+
+.titulo h1,
+.titulo h2,
+.info-box h3 {
+    font-family: Arial, Helvetica, sans-serif;
 }

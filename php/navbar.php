@@ -20,12 +20,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['nombre'])) { ?>
 
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+           <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
+                <i class="fa-solid fa-user-group"></i>
+                <span>Teachers</span>
+
 
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
@@ -34,13 +33,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="consejos.php">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Consejos</span>
-                </a>
-            </li>
-
+            
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>

@@ -18,6 +18,12 @@ $pagina_actual = "inicio";
 
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
+     <style>
+        .banner-section {
+            margin-top: 60px !important;
+        }
    
     
 

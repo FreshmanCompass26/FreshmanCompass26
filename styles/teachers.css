@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f5f6f8;
 }
 
@@ -160,4 +160,15 @@ p {
     border: none;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* Los títulos mantienen Arial */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, sans-serif;
 }

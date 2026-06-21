@@ -52,11 +52,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
-           
 
 
-
-
+            
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>

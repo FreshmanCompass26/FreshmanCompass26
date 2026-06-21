@@ -2,11 +2,12 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+
 }
 
 body{
     background:#f1f1f1;
+    font-family:'Montserrat', sans-serif;
 }
 
 .container{
@@ -327,4 +328,12 @@ button:hover{
 /* Hover */
 .menu li a:hover{
     background:rgba(255,255,255,0.15);
+}
+
+/* Títulos sin Montserrat */
+
+.hero-text h1,
+.comentario-box h2,
+.opiniones h2{
+    font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,14 +1,8 @@
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+
 
 /* FONDO */
 body{
-    display:flex;
+    font-family:'Montserrat', sans-serif;
     background-image:url("../img/WhatsApp Image 2026-05-03 at 5.58.08 PM.jpeg");
     background-size:cover;
     background-position:center;
@@ -247,4 +241,13 @@ word-break: break-word;
 
 .btn-editar:hover{
     transform:scale(1.05);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: Arial, Helvetica, sans-serif;
 }

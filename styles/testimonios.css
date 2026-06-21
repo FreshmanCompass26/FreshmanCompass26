@@ -1,7 +1,25 @@
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Montserrat para todo el sitio */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f3f7fa;
+    min-height: 100vh;
+}
+
+/* Mantener otra fuente en los títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 

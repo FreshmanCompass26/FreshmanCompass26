@@ -1,416 +1,120 @@
+<?php
+include("conexion.php");
+
+$query = "SELECT * FROM teachers";
+$resultado = $conn->query($query);
+
+if (!$resultado) {
+    die("Error: " . $conn->error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Teachers</title>
 
-<title>Freshman Compass</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="../styles/style.css">
-<link rel="stylesheet" href="../styles/teachers.css">
-
-
-
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/teachers.css">
 </head>
 
 <body>
 
-<div class="fixed top-0 left-0 w-full h-[70px] bg-[#081d58] flex items-center justify-between px-6 shadow-lg z-50">
+<?php include("navbar.php"); ?>
 
-<div class="flex items-center gap-3">
+<div class="main">
 
-<img src="img/IMG-20260417-WA0021.jpg"
-class="w-12 h-12 rounded-full bg-white p-1">
+    <h1>Conoce nuestros maestros</h1>
+    <p>Nuestros profesores están aquí para guiarte, inspirarte y ayudarte a alcanzar tus metas</p>
 
-<h1 class="text-yellow-300 font-bold text-xl">
-Freshman Compass
-</h1>
+    <!-- ✅ BOTONES CON FILTRO -->
+    <div class="filtros">
+        <button class="active" onclick="filtrar('all', this)">Todos los maestros</button>
+        <button onclick="filtrar('English', this)">English</button>
+        <button onclick="filtrar('Computing', this)">Computing</button>
+        <button onclick="filtrar('Values', this)">Values</button>
+        <button onclick="filtrar('Administración', this)">Administración</button>
+    </div>
 
-</div>
+    <div class="cards">
 
-<div class="bg-white rounded-full px-4 py-2 w-[450px] flex">
+        <?php while($row = $resultado->fetch_assoc()) { ?>
 
-<input
-id="searchInput"
-type="text"
-placeholder="Buscar..."
-class="flex-1 outline-none">
+        <!-- ✅ data-materia conecta botón con card -->
+        <div class="card" data-materia="<?php echo $row['materia']; ?>">
 
-<button onclick="searchTeacher()">
-🔍
-</button>
+            <div class="img-container">
+                <img src="../img/<?php echo $row['imagen']; ?>" class="foto">
+            </div>
 
-</div>
+            <h3><?php echo $row['nombre']; ?></h3>
+            <span class="materia"><?php echo $row['materia']; ?></span>
 
-<div class="flex gap-4">
+            <div class="info">
+                <p><?php echo $row['correo']; ?></p>
+                <p><?php echo $row['dias']; ?></p>
+                <p><?php echo $row['horario']; ?></p>
+            </div>
 
-<span class="text-yellow-400 text-xl">
-🔔
-</span>
+            <div class="fecha"><?php echo $row['cumple']; ?></div>
 
-<img
-src="https://i.pravatar.cc/100?img=13"
-class="w-10 h-10 rounded-full">
+            <div class="frase">
+                "<?php echo $row['frase']; ?>"
+            </div>
 
-</div>
+        </div>
 
-</div>
+        <?php } ?>
 
+    </div>
 
-<!-- CONTENEDOR -->
-
-<div class="flex min-h-screen pt-[70px]"
-style="
-background-image:url('img/IMG-20260502-WA0016.jpg');
-background-size:cover;
-">
-
-<!-- SIDEBAR -->
-
-<div class="w-[250px] bg-[#081d58] text-white flex flex-col py-6">
-
-<div class="flex flex-col gap-4 mt-10">
-
-<button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-<a href="../index.php">🏠 Inicio</a>
-</button>
-
-<button class="flex items-center gap-4 px-8 py-4 bg-white text-black font-bold">
-👤 Teachers
-</button>
-
-<button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-<a href="../eventos.php">📅 Eventos</a>
-</button>
-
-<button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-<a href="consejos.php">❤️ Consejos</a>
-</button>
-
-<button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-💬 Comentarios
-</button>
-
-<button class="flex items-center gap-4 px-8 py-4 hover:bg-[#102f7d]">
-<a href=" nuestro_centro.php">🏫 Nuestro Centro</a>
-</button>
+    <div class="btn-container">
+        <button id="verMas" class="vermas">Ver más</button>
+    </div>
 
 </div>
 
-</div>
-
-
-<div class="flex-1 p-8">
-
-<h1 class="text-6xl font-bold">
-Conoce nuestros maestros
-</h1>
-
-<p class="mt-5 italic font-bold text-3xl max-w-[800px]">
-
-Nuestros profesores están aquí para guiarte,
-inspirarte y ayudarte a alcanzar tus metas
-
-</p>
-
-<div class="flex gap-6 mt-10 flex-wrap">
-
-<button onclick="filterTeachers('Todos', this)"
-class="filter-btn bg-[#16256B] text-white px-6 py-3 rounded-full">
-Todos los maestros
-</button>
-
-<button onclick="filterTeachers('English', this)"
-class="filter-btn bg-sky-200 px-8 py-3 rounded-full">
-English
-</button>
-
-<button onclick="filterTeachers('Computing', this)"
-class="filter-btn bg-sky-200 px-8 py-3 rounded-full">
-Computing
-</button>
-
-<button onclick="filterTeachers('Values', this)"
-class="filter-btn bg-sky-200 px-8 py-3 rounded-full">
-Values
-</button>
-
-<button onclick="filterTeachers('Administracion', this)"
-class="filter-btn bg-sky-200 px-8 py-3 rounded-full">
-Administración
-</button>
-
-</div>
-
-<div
-id="teacherContainer"
-class="flex flex-wrap gap-10 mt-10">
-</div>
-
-<div class="mt-10 flex justify-center">
-
-<button
-id="toggleBtn"
-onclick="toggleTeachers()"
-
-class="bg-yellow-300
-px-8
-py-4
-rounded-2xl
-font-bold
-shadow-lg
-hover:bg-yellow-400">
-
-Ver más...
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
+<!-- ✅ SCRIPT FILTROS + VER MÁS -->
 <script>
 
-function searchTeacher(){
+// ✅ FILTRO POR MATERIA
+function filtrar(materia, boton) {
 
-let input =
-document.getElementById("searchInput")
-.value
-.toLowerCase();
+    let cards = document.querySelectorAll(".card");
 
-let cards =
-document.querySelectorAll(".teacher-card");
+    cards.forEach(card => {
+        if (materia === "all") {
+            card.style.display = "block";
+        } else if (card.getAttribute("data-materia") === materia) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
 
-cards.forEach(card=>{
+    // ✅ cambiar botón activo
+    document.querySelectorAll(".filtros button").forEach(btn => {
+        btn.classList.remove("active");
+    });
 
-let text =
-card.innerText.toLowerCase();
+    boton.classList.add("active");
+}
 
-card.style.display =
-text.includes(input)
-?
-"block"
-:
-"none";
+
+// ✅ VER MÁS (solo si estás en "todos")
+document.getElementById("verMas").addEventListener("click", function(){
+
+    let hidden = document.querySelectorAll(".card");
+
+    hidden.forEach(card => {
+        card.style.display = "block";
+    });
+
+    this.style.display = "none";
 
 });
 
-}
-
-function filterTeachers(subject, button){
-
-document.querySelectorAll(".filter-btn")
-.forEach(btn=>{
-
-btn.classList.remove(
-"bg-[#16256B]",
-"text-white"
-);
-
-btn.classList.add(
-"bg-sky-200",
-"text-black"
-);
-
-});
-
-button.classList.remove(
-"bg-sky-200",
-"text-black"
-);
-
-button.classList.add(
-"bg-[#16256B]",
-"text-white"
-);
-
-
-let cards =
-document.querySelectorAll(".teacher-card");
-
-cards.forEach(card=>{
-
-let materia =
-card.dataset.subject;
-
-if(subject === "Todos"){
-
-if(card.classList.contains("extra")){
-
-card.style.display = "none";
-
-}else{
-
-card.style.display = "block";
-
-}
-
-return;
-
-}
-
-if(subject === "Administracion"){
-
-if(
-materia === "Administradora" ||
-materia === "Director" ||
-materia === "Sub-directora"
-){
-
-card.style.display = "block";
-
-}else{
-
-card.style.display = "none";
-
-}
-
-return;
-
-}
-
-if(materia === subject){
-
-card.style.display = "block";
-
-}else{
-
-card.style.display = "none";
-
-}
-
-});
-
-
-let btn =
-document.getElementById("toggleBtn");
-
-if(subject === "Todos"){
-
-btn.style.display = "block";
-
-}else{
-
-btn.style.display = "none";
-
-}
-
-}
-
-function toggleTeachers(){
-
-let cards =
-document.querySelectorAll(".extra");
-
-let btn =
-document.getElementById("toggleBtn");
-
-if(!cards.length) return;
-
-let hidden =
-cards[0].classList.contains("hidden");
-
-cards.forEach(card=>{
-
-if(hidden){
-
-card.classList.remove("hidden");
-card.style.display = "block";
-
-}else{
-
-card.classList.add("hidden");
-card.style.display = "none";
-
-}
-
-});
-
-btn.innerText =
-hidden
-?
-"Ver menos..."
-:
-"Ver más...";
-
-}
-
-
-async function loadTeachers(){
-
-async function loadTeachers(){
-
-    let container = document.getElementById("teacherContainer");
-
-    try{
-
-        const res = await fetch("../get_teachers.php");
-        const data = await res.json();
-
-        container.innerHTML = "";
-
-        data.forEach((t,index)=>{
-
-            container.innerHTML += `
-                <div class="teacher-card">
-
-                    <img
-                    src="img/${t.imagen || 'default.jpg'}"
-                    class="teacher-img">
-
-                    <h2 class="teacher-name">
-                        ${t.nombre}
-                    </h2>
-
-                    <p class="teacher-subject">
-                        ${t.materia}
-                    </p>
-
-                    <p class="teacher-email">
-                        ${t.correo}
-                    </p>
-
-                    <p class="teacher-schedule">
-                        ${t.dias}<br>
-                        ${t.horario}
-                    </p>
-
-                    <p class="teacher-date">
-                        ${t.cumple}
-                    </p>
-
-                </div>
-            `;
-
-        });
-
-    }catch(error){
-
-        console.log(error);
-
-    }
-
-}
-
-loadTeachers();
-
-}
-
-document
-.getElementById("searchInput")
-.addEventListener("keyup", searchTeacher);
-
-loadTeachers();
-filterTeachers(
-"Todos",
-document.querySelector(".filter-btn")
-);
 </script>
 
 </body>

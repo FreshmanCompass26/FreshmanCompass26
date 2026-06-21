@@ -27,7 +27,12 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 
-
+<li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+    <a href="php/teachers.php">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Teachers</span>
+    </a>
+</li>
 
             <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="teachers.php">
@@ -43,15 +48,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-
-
-
-<li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-    <a href="php/consejos.php">
-        <i class="fa-solid fa-heart"></i>
-        <span>Consejos</span>
-    </a>
-</li>
 
 
 

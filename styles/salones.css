@@ -1,15 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-    background: #f5f7fb;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f6f8;
 }
 
 /* --- CONTROL DE ESTRUCTURA Y EVITAR SOLAPAMIENTO --- */
@@ -337,4 +329,15 @@ body {
     color: #6b5b2d;
     font-size: 0.95rem;
     font-weight: 500;
+}
+
+/* Los títulos mantienen Arial */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, sans-serif;
 }

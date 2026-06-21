@@ -18,6 +18,11 @@ $resultado = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="styles/centro.css">
     <link rel="stylesheet" href="styles/testimonios.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
 

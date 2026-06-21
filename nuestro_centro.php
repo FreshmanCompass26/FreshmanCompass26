@@ -18,6 +18,8 @@ $pagina_actual = "centro";
 
     <link rel="stylesheet" href="styles/centro.css">
     <link rel="stylesheet" href="styles/navbar.css">
+
+  
     
 </head>
 

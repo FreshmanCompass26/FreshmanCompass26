@@ -1,13 +1,12 @@
 body {
-<<<<<<< HEAD
+
 margin: 0;
 font-family: Arial, sans-serif;
 background-color: #f5f6f8;
-=======
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f5f6f8;
->>>>>>> 18ba50ef55805862120eefba85e24abcd6d69024
+
+margin: 0;
+font-family: 'Montserrat', sans-serif;
+background-color: #f5f6f8;
 }
 
 .main {
@@ -129,7 +128,6 @@ margin-top: 40px;
 }
 
 .vermas {
-<<<<<<< HEAD
 background: yellow;
 padding: 14px 50px;
 border-radius: 10px;
@@ -137,23 +135,3 @@ border: none;
 font-size: 16px;
 cursor: pointer;
 }
-=======
-    background: yellow;
-    padding: 14px 50px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Los títulos mantienen Arial */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Arial, sans-serif;
-}
->>>>>>> 18ba50ef55805862120eefba85e24abcd6d69024

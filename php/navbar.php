@@ -26,33 +26,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <span>Teachers</span>
 
 
-
-<li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-    <a href="php/teachers.php">
-        <i class="fa-solid fa-user-group"></i>
-        <span>Teachers</span>
-    </a>
-</li>
-
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
-
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
                     <span>Nuestro centro</span>
                 </a>
             </li>
-
-
-
-
-
-
 
             
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">

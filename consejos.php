@@ -1,3 +1,10 @@
+<?php
+$pagina_actual = "consejos";
+include("navbar.php");
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 

@@ -20,11 +20,12 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['nombre'])) { ?>
 
-           <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/teachers.php">
-                <i class="fa-solid fa-user-group"></i>
-                <span>Teachers</span>
-
+                    <i class="fa-solid fa-user-group"></i>
+                    <span>Teachers</span>
+                </a>
+            </li>
 
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
@@ -32,7 +33,6 @@ if (session_status() == PHP_SESSION_NONE) {
                     <span>Nuestro centro</span>
                 </a>
             </li>
-
             
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">
@@ -45,13 +45,10 @@ if (session_status() == PHP_SESSION_NONE) {
     </ul>
 
     <div class="quote">
-        <p>
-            Don’t count the days,<br>
-            make the days count.
-        </p>
-        <small>
-            — Muhammad Ali
-        </small>
+        <p id="texto-frase">Cargando...</p>
+        <small id="autor-frase"></small>
     </div>
 
 </div>
+
+<script src="navbar.js"></script>

@@ -1,14 +1,12 @@
-
 <?php
 $pagina_actual = "teachers";
 include("conexion.php");
-?>
 
 $query = "SELECT * FROM teachers";
 $resultado = $conn->query($query);
 
 if (!$resultado) {
-    die("Error: " . $conn->error);
+    die("Error en la consulta: " . $conn->error);
 }
 ?>
 
@@ -36,25 +34,11 @@ if (!$resultado) {
     </p>
 
     <div class="filtros">
-        <button class="active" onclick="filtrar('all', this)">
-            Todos los maestros
-        </button>
-
-        <button onclick="filtrar('English', this)">
-            English
-        </button>
-
-        <button onclick="filtrar('Computing', this)">
-            Computing
-        </button>
-
-        <button onclick="filtrar('Values', this)">
-            Values
-        </button>
-
-        <button onclick="filtrar('Administración', this)">
-            Administración
-        </button>
+        <button class="active" onclick="filtrar('all', this)">Todos los maestros</button>
+        <button onclick="filtrar('English', this)">English</button>
+        <button onclick="filtrar('Computing', this)">Computing</button>
+        <button onclick="filtrar('Values', this)">Values</button>
+        <button onclick="filtrar('Administración', this)">Administración</button>
     </div>
 
     <div class="cards">
@@ -62,26 +46,23 @@ if (!$resultado) {
         <?php
         $contador = 0;
 
-        while ($row = $resultado->fetch_assoc()) {
+        if ($resultado->num_rows > 0) {
+            while ($row = $resultado->fetch_assoc()) {
 
-            $original = trim($row['materia']);
+                $original = trim($row['materia']);
 
-            // 🔥 REGLA IMPORTANTE
-            if (
-                $original == "English" ||
-                $original == "Computing" ||
-                $original == "Values"
-            ) {
-                $materia = $original;
-            } else {
-                $materia = "Administración";
-            }
+                if (
+                    $original == "English" ||
+                    $original == "Computing" ||
+                    $original == "Values"
+                ) {
+                    $materia = $original;
+                } else {
+                    $materia = "Administración";
+                }
 
-            $ocultar = ($contador >= 4)
-                ? 'style="display:none;"'
-                : '';
-
-            $contador++;
+                $ocultar = ($contador >= 4) ? 'style="display:none;"' : '';
+                $contador++;
         ?>
 
         <div class="card"
@@ -94,14 +75,10 @@ if (!$resultado) {
 
             <h3><?php echo $row['nombre']; ?></h3>
 
-            <span class="materia">
-                <?php echo $materia; ?>
-            </span>
+            <span class="materia"><?php echo $materia; ?></span>
 
             <div class="correo">
-                <p class="correo-texto">
-                    <?php echo $row['correo']; ?>
-                </p>
+                <p class="correo-texto"><?php echo $row['correo']; ?></p>
             </div>
 
             <div class="horario">
@@ -121,27 +98,28 @@ if (!$resultado) {
 
         </div>
 
-        <?php } ?>
+        <?php
+            }
+        } else {
+            echo "<p>No hay registros en la tabla teachers.</p>";
+        }
+        ?>
 
     </div>
 
     <div class="btn-container">
-        <button id="verMas" class="vermas">
-            Ver más...
-        </button>
+        <button id="verMas" class="vermas">Ver más...</button>
     </div>
 
 </div>
 
 <script>
-
 const cards = document.querySelectorAll(".card");
 const botonVerMas = document.getElementById("verMas");
 
 let filtroActual = "all";
 
-function filtrar(materia, boton){
-
+function filtrar(materia, boton) {
     filtroActual = materia;
 
     document.querySelectorAll(".filtros button")
@@ -152,47 +130,33 @@ function filtrar(materia, boton){
     let contador = 0;
 
     cards.forEach(card => {
-
-        const coincide =
-            materia === "all" ||
-            card.dataset.materia === materia;
+        const coincide = materia === "all" || card.dataset.materia === materia;
 
         if (coincide) {
-
             if (contador < 4) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
             }
-
             contador++;
-
         } else {
             card.style.display = "none";
         }
-
     });
 
-    botonVerMas.style.display =
-        contador > 4 ? "inline-block" : "none";
+    botonVerMas.style.display = contador > 4 ? "inline-block" : "none";
 }
 
 botonVerMas.addEventListener("click", function () {
-
+    let contador = 0;
     cards.forEach(card => {
-
-        if (
-            filtroActual === "all" ||
-            card.dataset.materia === filtroActual
-        ) {
+        if (filtroActual === "all" || card.dataset.materia === filtroActual) {
             card.style.display = "block";
+            contador++;
         }
-
     });
-
     this.style.display = "none";
 });
-
 </script>
 
 </body>

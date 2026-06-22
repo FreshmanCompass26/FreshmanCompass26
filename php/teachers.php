@@ -1,5 +1,8 @@
+
 <?php
+$pagina_actual = "teachers";
 include("conexion.php");
+?>
 
 $query = "SELECT * FROM teachers";
 $resultado = $conn->query($query);

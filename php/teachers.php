@@ -15,29 +15,8 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <title>Teachers</title>
 
-  <?php
-include("conexion.php");
-
-$query = "SELECT * FROM teachers";
-$resultado = $conn->query($query);
-
-if (!$resultado) {
-    die("Error: " . $conn->error);
-}
-?>
-
-<!DOCTYPE html>
-
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Teachers</title>
-
-```
-<link rel="stylesheet" href="../styles/navbar.css">
-<link rel="stylesheet" href="../styles/teachers.css">
-```
-
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/teachers.css">
 </head>
 
 <body>
@@ -46,93 +25,108 @@ if (!$resultado) {
 
 <div class="main">
 
-```
-<h1>Conoce nuestros maestros</h1>
+    <h1>Conoce nuestros maestros</h1>
 
-<p>
-    Nuestros profesores están aquí para guiarte,
-    inspirarte y ayudarte a alcanzar tus metas.
-</p>
+    <p>
+        Nuestros profesores están aquí para guiarte,
+        inspirarte y ayudarte a alcanzar tus metas.
+    </p>
 
-<div class="filtros">
-    <button class="active" onclick="filtrar('all', this)">
-        Todos los maestros
-    </button>
+    <div class="filtros">
+        <button class="active" onclick="filtrar('all', this)">
+            Todos los maestros
+        </button>
 
-    <button onclick="filtrar('English', this)">
-        English
-    </button>
+        <button onclick="filtrar('English', this)">
+            English
+        </button>
 
-    <button onclick="filtrar('Computing', this)">
-        Computing
-    </button>
+        <button onclick="filtrar('Computing', this)">
+            Computing
+        </button>
 
-    <button onclick="filtrar('Values', this)">
-        Values
-    </button>
+        <button onclick="filtrar('Values', this)">
+            Values
+        </button>
 
-    <button onclick="filtrar('Administración', this)">
-        Administración
-    </button>
-</div>
+        <button onclick="filtrar('Administración', this)">
+            Administración
+        </button>
+    </div>
 
-<div class="cards">
+    <div class="cards">
 
-    <?php
-    $contador = 0;
+        <?php
+        $contador = 0;
 
-    while($row = $resultado->fetch_assoc()) {
+        while ($row = $resultado->fetch_assoc()) {
 
-        $ocultar = ($contador >= 4)
-            ? 'style="display:none;"'
-            : '';
+            $original = trim($row['materia']);
 
-        $contador++;
-    ?>
+            // 🔥 REGLA IMPORTANTE
+            if (
+                $original == "English" ||
+                $original == "Computing" ||
+                $original == "Values"
+            ) {
+                $materia = $original;
+            } else {
+                $materia = "Administración";
+            }
 
-    <div class="card"
-         data-materia="<?php echo $row['materia']; ?>"
-         <?php echo $ocultar; ?>>
+            $ocultar = ($contador >= 4)
+                ? 'style="display:none;"'
+                : '';
 
-        <div class="img-container">
-            <img
-                src="../img/<?php echo $row['imagen']; ?>"
-                class="foto"
-                alt="">
+            $contador++;
+        ?>
+
+        <div class="card"
+             data-materia="<?php echo $materia; ?>"
+             <?php echo $ocultar; ?>>
+
+            <div class="img-container">
+                <img src="../img/<?php echo $row['imagen']; ?>" class="foto" alt="">
+            </div>
+
+            <h3><?php echo $row['nombre']; ?></h3>
+
+            <span class="materia">
+                <?php echo $materia; ?>
+            </span>
+
+            <div class="correo">
+                <p class="correo-texto">
+                    <?php echo $row['correo']; ?>
+                </p>
+            </div>
+
+            <div class="horario">
+                <p><strong>Schedule</strong></p>
+                <p><?php echo $row['dias']; ?></p>
+                <p><?php echo $row['horario']; ?></p>
+            </div>
+
+            <div class="fecha">
+                <p><strong>Birthday</strong></p>
+                <p><?php echo $row['cumple']; ?></p>
+            </div>
+
+            <div class="frase">
+                "<?php echo $row['frase']; ?>"
+            </div>
+
         </div>
 
-        <h3><?php echo $row['nombre']; ?></h3>
-
-        <span class="materia">
-            <?php echo $row['materia']; ?>
-        </span>
-
-        <div class="info">
-            <p><?php echo $row['correo']; ?></p>
-            <p><?php echo $row['dias']; ?></p>
-            <p><?php echo $row['horario']; ?></p>
-        </div>
-
-        <div class="fecha">
-            <?php echo $row['cumple']; ?>
-        </div>
-
-        <div class="frase">
-            "<?php echo $row['frase']; ?>"
-        </div>
+        <?php } ?>
 
     </div>
 
-    <?php } ?>
-
-</div>
-
-<div class="btn-container">
-    <button id="verMas" class="vermas">
-        Ver más
-    </button>
-</div>
-```
+    <div class="btn-container">
+        <button id="verMas" class="vermas">
+            Ver más...
+        </button>
+    </div>
 
 </div>
 
@@ -160,17 +154,17 @@ function filtrar(materia, boton){
             materia === "all" ||
             card.dataset.materia === materia;
 
-        if(coincide){
+        if (coincide) {
 
-            if(contador < 4){
+            if (contador < 4) {
                 card.style.display = "block";
-            }else{
+            } else {
                 card.style.display = "none";
             }
 
             contador++;
 
-        }else{
+        } else {
             card.style.display = "none";
         }
 
@@ -180,21 +174,20 @@ function filtrar(materia, boton){
         contador > 4 ? "inline-block" : "none";
 }
 
-botonVerMas.addEventListener("click", function(){
+botonVerMas.addEventListener("click", function () {
 
     cards.forEach(card => {
 
-        if(
+        if (
             filtroActual === "all" ||
             card.dataset.materia === filtroActual
-        ){
+        ) {
             card.style.display = "block";
         }
 
     });
 
     this.style.display = "none";
-
 });
 
 </script>

@@ -26,8 +26,11 @@
     max-width: 160px !important;
     height: auto !important;
     object-fit: contain !important;
-    mix-blend-mode: multiply !important;
+
     display: block !important;
+
+
+    mix-blend-mode: normal !important;
 }
 
 .menu {

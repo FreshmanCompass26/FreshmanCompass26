@@ -27,13 +27,20 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
+            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+                <a href="consejos.php">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Consejos</span>
+                </a>
+            </li>
+
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
                     <span>Nuestro centro</span>
                 </a>
             </li>
-            
+
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>

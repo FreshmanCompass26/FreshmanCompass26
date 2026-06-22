@@ -1,0 +1,227 @@
+/* GENERAL */
+body{
+    font-family:'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f4f6fb, #ece9ff);
+    margin: 0;
+}
+
+/* BADGE ARRIBA */
+.badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+
+    margin-bottom: 25px;
+
+    align-self: center; /* 👈 esto lo centra con todo */
+}
+/* FONDO DECORATIVO */
+.bg-shapes{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    opacity:0.3;
+}
+
+.circle1{
+    width:180px;
+    height:180px;
+    background:#c4b5fd;
+    top:50px;
+    left:50px;
+}
+
+.circle2{
+    width:140px;
+    height:140px;
+    background:#ddd6fe;
+    top:200px;
+    right:80px;
+}
+
+.dots{
+    position:absolute;
+    width:120px;
+    height:120px;
+    background-image: radial-gradient(#c4b5fd 2px, transparent 2px);
+    background-size: 12px 12px;
+    top:150px;
+    left:200px;
+}
+
+/* CARDS MÁS SUAVES */
+.card{
+    background:#ffffff;
+    box-shadow:0 15px 35px rgba(124,58,237,0.1);
+}
+
+/* CAJA INFERIOR MÁS PRO */
+.form-box{
+    background:#f8f7ff;
+    border:1px solid #eee;
+}
+
+/* INPUTS MÁS PRO */
+.input-group input{
+    background:#ffffff;
+    border:1px solid #eee;
+}
+
+/* ICONOS EN INPUT (extra pro) */
+.input-group label::before{
+    content:"📅 ";
+}
+
+
+
+/* CONTENEDOR */
+.container{
+    Margin: 120px auto 60px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* TITULO */
+h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h1 span{
+    color: #7c3aed;
+}
+
+.sub{
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* CARD INDIVIDUAL */
+.card{
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+}
+
+/* IMG */
+.card img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.card h4{
+    margin: 8px 0;
+}
+
+.card span{
+    display: block;
+    color: #7c3aed;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* BOTONES */
+.card button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #7c3aed, #9333ea);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.card button:hover{
+    transform: scale(1.05);
+}
+
+/* FORM BOX ABAJO */
+.form-box{
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column; /* 🔥 clave: vertical */
+    gap: 20px;
+}
+
+/* INPUT GROUP */
+.input-group{
+    width: 100%;
+    text-align: left;
+}
+
+.input-group label{
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* INPUTS */
+.input-group input{
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+/* BOTÓN CONFIRMAR */
+.confirm-btn{
+    align-self: flex-end;
+
+    background: linear-gradient(45deg, #7c3aed, #9333ea);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover{
+    transform: scale(1.05);
+}

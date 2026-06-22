@@ -1,177 +1,162 @@
+/* RESET */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+/* FOOTER */
 .footer{
-width:100%;
-background:linear-gradient(
-90deg,
-#001747,
-#002f88
-);
-padding:40px 60px;
-overflow:hidden;
+    width:100%;
+    background:#062b63;
+    position:relative;
+    overflow:hidden;
+    padding-top:25px;
 }
 
+/* CONTENEDOR */
 .footer-container{
-max-width:1600px;
-margin:auto;
-
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-gap:50px;
-
-
+    max-width:1600px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    padding:20px 50px 100px;
+    flex-wrap:wrap;
 }
 
-/* IZQUIERDA */
-
-.footer-left{
-flex:1;
+/* ROBOT */
+.footer-robot img{
+    width:170px;
+    display:block;
 }
 
-/* CENTRO */
-
-.footer-center{
-flex:1;
-text-align:center;
-}
-
-.footer-logo{
-width:85px;
-margin:0 auto 15px;
-display:block;
-}
-
-.footer-center h2{
-color:white;
-font-size:42px;
-margin-bottom:15px;
-}
-
-.footer-title{
-color:white;
-font-size:20px;
-margin-top:20px;
-margin-bottom:15px;
-letter-spacing:2px;
-}
-
-/* REDES SOCIALES */
-
-.social-icons{
-display:flex;
-justify-content:center;
-gap:20px;
-}
-
-.social-icons a{
-width:50px;
-height:50px;
-
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:50%;
-text-decoration:none;
-
-background:rgba(255,255,255,.12);
-color:white;
-
-transition:.3s;
-
-
-}
-
-.social-icons a:hover{
-transform:translateY(-4px);
-background:#ffc931;
-color:#001747;
-}
-
-.social-icons i{
-font-size:22px;
-}
-
-/* DERECHA */
-
-.footer-right{
-flex:1;
-
-
-display:flex;
-justify-content:center;
-gap:45px;
-flex-wrap:wrap;
-
-
-}
-
-.footer-right a{
-text-decoration:none;
-color:white;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-gap:10px;
-
-transition:.3s;
-
-
-}
-
-.footer-right a:hover{
-transform:translateY(-4px);
-}
-
-.footer-right i{
-font-size:36px;
-color:#ffc931;
-}
-
-.footer-right span{
-font-size:17px;
-text-align:center;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-
-.footer{
-    padding:40px 25px;
-}
-
-.footer-container{
-    flex-direction:column;
+/* GLOBO */
+.footer-bubble{
+    background:#d6eafc;
+    padding:18px 25px;
+    border-radius:25px;
+    color:#163a6b;
+    min-width:220px;
     text-align:center;
 }
 
-.footer-left{
-    display:none;
+.footer-bubble h3{
+    font-size:24px;
+    margin-bottom:8px;
 }
 
-.footer-right{
-    gap:30px;
-}
-
-.footer-center h2{
-    font-size:32px;
-}
-
-.footer-title{
+.footer-bubble p{
     font-size:18px;
 }
 
+/* LOGO */
+.footer-brand{
+    text-align:center;
+    color:white;
+}
 
+.footer-brand img{
+    width:300px;
+    margin-bottom:10px;
+}
+
+.footer-brand p{
+    font-size:16px;
+    opacity:.9;
+}
+
+/* INFO */
+.footer-info{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.info-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    color:white;
+    min-width:150px;
+    padding:0 20px;
+    border-left:1px solid rgba(255,255,255,.2);
+}
+
+.info-item:first-child{
+    border-left:none;
+}
+
+.info-item i{
+    width:70px;
+    height:70px;
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+/* NUBES */
+.footer-clouds{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:90px;
+    background:
+    radial-gradient(circle at 50px 50px,#84bdf5 45px,transparent 46px),
+    radial-gradient(circle at 150px 40px,#84bdf5 50px,transparent 51px),
+    radial-gradient(circle at 260px 50px,#84bdf5 45px,transparent 46px),
+    radial-gradient(circle at 370px 45px,#84bdf5 50px,transparent 51px),
+    radial-gradient(circle at 500px 50px,#84bdf5 45px,transparent 46px);
+    background-size:550px 100px;
+    background-repeat:repeat-x;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+
+    .footer-container{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .footer-info{
+        justify-content:center;
+    }
+
+    .info-item{
+        border:none;
+    }
+}
+
+@media(max-width:768px){
+
+    .footer{
+        padding-top:15px;
+    }
+
+    .footer-container{
+        padding:20px 20px 100px;
+        flex-direction:column;
+    }
+
+    .footer-robot img{
+        width:130px;
+    }
+
+    .footer-brand img{
+        width:220px;
+    }
+
+    .footer-info{
+        flex-direction:column;
+        gap:25px;
+    }
 }

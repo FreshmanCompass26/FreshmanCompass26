@@ -1,6 +1,6 @@
 <?php
 $pagina_actual = "consejos";
-include("navbar.php");
+include("php/navbar.php");
 ?>
 
 

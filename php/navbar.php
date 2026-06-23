@@ -28,7 +28,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
 
             <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="consejos.php">
+                <a href="/freshmancompass26/php/consejos.php">
                     <i class="fa-solid fa-lightbulb"></i>
                     <span>Consejos</span>
                 </a>

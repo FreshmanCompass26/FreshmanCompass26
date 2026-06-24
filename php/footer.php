@@ -10,7 +10,7 @@
 
         <!-- Logo derecha -->
         <div class="footer-brand">
-            <img src="img/logooooo.jpeg" alt="Freshman Compass">
+            <img src="img/logoooooo.png" alt="Freshman Compass">
             <p>Tu brújula para comenzar en ¡Supérate!</p>
         </div>
 

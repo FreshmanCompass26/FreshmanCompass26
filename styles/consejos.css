@@ -1,311 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Montserrat', sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:#f3f3f3;
+    background:#F2F2F2;
 }
 
-/* LAYOUT */
-.container{
-    display:flex;
-    min-height:100vh;
-}
-
-/* SIDEBAR */
-.sidebar{
-    width:250px;
-    background:#081f5c;
-    color:white;
+.contenido{
+    margin-left:260px;
     padding:20px;
-    display:flex;
-    flex-direction:column;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:40px;
+.bombilla{
+    font-size:60px;
 }
 
-.logo img{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-}
-
-.logo h3{
-    color:#d7ff3f;
-    font-size:16px;
-}
-
-.sidebar nav{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-
-.sidebar nav a{
-    color:white;
-    text-decoration:none;
-    padding:12px;
-    border-radius:10px;
-    transition:.3s;
-    font-size:15px;
-}
-
-.sidebar nav a:hover{
-    background:#203f8c;
-}
-
-.sidebar .active{
-    background:#5f2eea;
-}
-
-.quote{
-    margin-top:auto;
-    font-style:italic;
-    line-height:1.5;
-}
-
-/* MAIN */
-.main-content{
-    flex:1;
-}
-
-/* TOPBAR */
-.topbar{
-    background:#081f5c;
-    height:70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 25px;
-}
-
-.search-box{
-    width:55%;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    padding:12px 45px 12px 20px;
-    border:none;
-    border-radius:25px;
-    outline:none;
-}
-
-.search-box i{
-    position:absolute;
-    right:15px;
-    top:12px;
-    color:#888;
-}
-
-/* ICONOS */
-.top-icons{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.top-icons i{
-    color:#ffd500;
-}
-
-.avatar{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-}
-
-/* CONTENT */
-.content{
-    padding:25px;
-}
-
-/* TITULO */
-.title-area{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.emoji{
+.titulo h1{
+    color:#2C4B66;
     font-size:50px;
+    margin-top:10px;
 }
 
-.title-area h1{
-    font-size:38px;
-    color:#24135c;
-}
-
-/* FEATURED CARD */
-.featured-card{
-    background:#ebe7f8;
-    padding:20px;
+.banner-consejo{
+    background:#94CED7;
     border-radius:15px;
+    padding:18px;
     margin-bottom:20px;
+    color:#2C4B66;
 }
 
-/* GRID */
-.tips-grid{
+.banner-consejo h3{
+    margin-bottom:12px;
+    font-size:22px;
+    color:#2C4B66;
+}
+
+.tip-superior{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+
+.numero-verde{
+    background:#2C4B66;
+    color:#FEFEFE;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.consejos-container{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:18px;
 }
 
-/* CARD */
-.tip-card{
+.card{
     position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    height:240px;
-    padding:25px;
     border-radius:18px;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
-    overflow:hidden;
+    min-height:180px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px;
+    background:#FEFEFE;
+    border:2px solid #94CED7;
     transition:.3s;
 }
 
-.tip-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 25px rgba(0,0,0,.15);
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 4px 12px rgba(44,75,102,0.15);
 }
 
-/* NÚMERO FIJO (ESQUINA IZQUIERDA) */
-.number{
+.numero{
     position:absolute;
-    top:12px;
-    left:12px;
-
-    width:34px;
-    height:34px;
-
+    top:10px;
+    left:10px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+    background:#2C4B66;
+    color:#FEFEFE;
     display:flex;
-    align-items:center;
     justify-content:center;
-
-    border-radius:8px;
-
-    color:white;
-    font-size:13px;
+    align-items:center;
     font-weight:bold;
-
-    z-index:10;
-    pointer-events:none;
 }
 
-/* TEXTO */
-.tip-text{
-    width:60%;
+.info{
+    width:55%;
 }
 
-.tip-text h4{
-    font-size:18px;
-    margin-bottom:10px;
-    color:#2d1b69;
+.info h3{
+    color:#2C4B66;
+    margin-bottom:8px;
+    font-size:20px;
 }
 
-.tip-text p{
-    font-size:13px;
+.info p{
     color:#555;
+    font-size:14px;
     line-height:1.5;
 }
 
-/* IMAGEN */
-.tip-img img{
+.imagen img{
     width:140px;
+    height:140px;
     object-fit:contain;
-    position:relative;
-    z-index:1;
 }
 
-/* META */
-.meta{
-    margin-top:10px;
-    font-size:12px;
-    color:#666;
-    display:flex;
-    gap:10px;
-}
-
-/* OCULTOS */
-.oculto{
-    display:none;
-}
-
-/* DECORACION */
-.decoracion-consejos{
-    position:relative;
-    height:120px;
-    margin-top:30px;
-}
-
-/* BOTÓN */
-.button-container{
+.botones{
     display:flex;
     justify-content:center;
-    margin-top:10px;
+    margin-top:25px;
 }
 
-#showMoreBtn{
-    width:160px;
-    height:45px;
-    border:none;
+.btn{
+    background:#2C4B66;
+    color:#FEFEFE;
+    text-decoration:none;
+    padding:12px 70px;
     border-radius:25px;
-    background:#ffe600;
     font-weight:bold;
-    cursor:pointer;
     transition:.3s;
-    
 }
 
-#showMoreBtn:hover{
-    transform:scale(1.05);
-    background:#ffd600;
-}
-.tip-card{
-    opacity:1;
-    transform:translateY(0);
-    transition: all .4s ease;
+.btn:hover{
+    background:#94CED7;
+    color:#2C4B66;
 }
 
-.tip-card.oculto{
-    opacity:0;
-    transform:translateY(20px);
-    pointer-events:none;
-}
-
-/* RESPONSIVE */
 @media(max-width:900px){
-    .sidebar{display:none;}
 
-    .tips-grid{
+    .contenido{
+        margin-left:0;
+    }
+
+    .consejos-container{
         grid-template-columns:1fr;
     }
 
-    .search-box{
-        width:70%;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-family: Arial, sans-serif;
 }

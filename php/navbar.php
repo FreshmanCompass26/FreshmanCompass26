@@ -20,13 +20,26 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php if (isset($_SESSION['nombre'])) { ?>
 
-           <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/teachers.php">
+<<<<<<< HEAD
                 <i class="fa-solid fa-user-group"></i>
                 <span>Teachers</span>
                 </a>
                   </li>
+=======
+                    <i class="fa-solid fa-user-group"></i>
+                    <span>Teachers</span>
+                </a>
+            </li>
+>>>>>>> 382651a3d8fde1f45a4cdf73aa3d99716d46696b
 
+            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+                <a href="/freshmancompass26/php/consejos.php">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Consejos</span>
+                </a>
+            </li>
 
                  <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
             <a href="consejos.php">
@@ -49,7 +62,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-            
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
                 <a href="eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>
@@ -61,13 +73,10 @@ if (session_status() == PHP_SESSION_NONE) {
     </ul>
 
     <div class="quote">
-        <p>
-            Don’t count the days,<br>
-            make the days count.
-        </p>
-        <small>
-            — Muhammad Ali
-        </small>
+        <p id="texto-frase">Cargando...</p>
+        <small id="autor-frase"></small>
     </div>
 
 </div>
+
+<script src="navbar.js"></script>

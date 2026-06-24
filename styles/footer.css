@@ -1,177 +1,140 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
 
 .footer{
-width:100%;
-background:linear-gradient(
-90deg,
-#001747,
-#002f88
-);
-padding:40px 60px;
-overflow:hidden;
+    background:#17356f;
+    color:white;
+    padding:50px 40px;
+    margin-top:50px;
 }
 
-.footer-container{
-max-width:1600px;
-margin:auto;
+/* PARTE SUPERIOR */
 
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-gap:50px;
-
-
+.footer-top{
+    max-width:1200px;
+    margin:auto;
+    position:relative;
+    min-height:180px;
 }
 
-/* IZQUIERDA */
+/* BURBUJA CENTRADA */
 
-.footer-left{
-flex:1;
+.footer-bubble{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    
+    background:#d7eaff;
+    color:#20497d;
+    
+    padding:25px 40px;
+    border-radius:25px;
+    
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-/* CENTRO */
-
-.footer-center{
-flex:1;
-text-align:center;
+.footer-bubble h3{
+    margin:0;
+    font-size:2.5rem;
+    font-weight:700;
 }
 
-.footer-logo{
-width:85px;
-margin:0 auto 15px;
-display:block;
+.footer-bubble p{
+    margin-top:10px;
+    font-size:1.2rem;
 }
 
-.footer-center h2{
-color:white;
-font-size:42px;
-margin-bottom:15px;
+/* LOGO DERECHA */
+
+.footer-brand{
+    position:absolute;
+    right:0;
+    top:15px;
+    
+    width:250px;
+    text-align:center;
 }
 
-.footer-title{
-color:white;
-font-size:20px;
-margin-top:20px;
-margin-bottom:15px;
-letter-spacing:2px;
+.footer-brand img{
+    width:120px;
+    height:auto;
+    margin-bottom:10px;
 }
 
-/* REDES SOCIALES */
-
-.social-icons{
-display:flex;
-justify-content:center;
-gap:20px;
+.footer-brand p{
+    margin:0;
+    line-height:1.5;
+    font-size:1rem;
 }
 
-.social-icons a{
-width:50px;
-height:50px;
+/* LINEA */
 
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:50%;
-text-decoration:none;
-
-background:rgba(255,255,255,.12);
-color:white;
-
-transition:.3s;
-
-
+.footer-divider{
+    width:100%;
+    max-width:1200px;
+    height:1px;
+    background:rgba(255,255,255,.2);
+    margin:30px auto 40px;
 }
 
-.social-icons a:hover{
-transform:translateY(-4px);
-background:#ffc931;
-color:#001747;
+/* INFO */
+
+.footer-info{
+    max-width:1000px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:20px;
 }
 
-.social-icons i{
-font-size:22px;
+.info-item{
+    text-align:center;
 }
 
-/* DERECHA */
+.info-item i{
+    width:70px;
+    height:70px;
 
-.footer-right{
-flex:1;
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:50%;
 
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-display:flex;
-justify-content:center;
-gap:45px;
-flex-wrap:wrap;
-
-
+    font-size:28px;
+    margin:0 auto 15px;
 }
 
-.footer-right a{
-text-decoration:none;
-color:white;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-gap:10px;
-
-transition:.3s;
-
-
-}
-
-.footer-right a:hover{
-transform:translateY(-4px);
-}
-
-.footer-right i{
-font-size:36px;
-color:#ffc931;
-}
-
-.footer-right span{
-font-size:17px;
-text-align:center;
+.info-item span{
+    font-size:1rem;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
 
+    .footer-top{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:30px;
+        min-height:auto;
+    }
 
-.footer{
-    padding:40px 25px;
-}
+    .footer-bubble,
+    .footer-brand{
+        position:static;
+        transform:none;
+    }
 
-.footer-container{
-    flex-direction:column;
-    text-align:center;
-}
+    .footer-brand{
+        width:auto;
+    }
 
-.footer-left{
-    display:none;
-}
-
-.footer-right{
-    gap:30px;
-}
-
-.footer-center h2{
-    font-size:32px;
-}
-
-.footer-title{
-    font-size:18px;
-}
-
-
+    .footer-info{
+        flex-direction:column;
+        gap:30px;
+    }
 }

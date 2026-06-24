@@ -1,137 +1,259 @@
 body {
-
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f5f6f8;
-
-margin: 0;
-font-family: 'Montserrat', sans-serif;
-background-color: #f5f6f8;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../img/fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FFFFFF;
 }
 
+/* =======================
+   SIDEBAR
+======================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #0A1A2F;
+    color: #E3E9F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.sidebar a {
+    color: #E3E9F0;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 12px 0;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #F9D65D; /* solo sidebar cambia */
+    transform: translateX(5px);
+}
+
+/* =======================
+   CONTENEDOR PRINCIPAL
+======================= */
 .main {
-margin-left: 240px;
-padding: 40px;
+    margin-left: 240px;
+    padding: 40px;
 }
 
 h1 {
-font-size: 40px;
-margin-bottom: 10px;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
 .main > p {
-font-size: 16px;
-margin-bottom: 25px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
+/* =======================
+   FILTROS
+======================= */
 .filtros {
-margin-bottom: 40px;
-display: flex;
-gap: 15px;
-flex-wrap: wrap;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .filtros button {
-padding: 12px 28px;
-border-radius: 25px;
-border: none;
-background: #ccd7e1;
-font-size: 16px;
-cursor: pointer;
-transition: 0.2s;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #0A1A2F;
+    backdrop-filter: blur(4px);
 }
 
 .filtros button:hover {
-transform: scale(1.05);
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .filtros .active {
-background: #1e2f5b;
-color: white;
+    background: #142850;
+    color: white;
 }
 
+/* =======================
+   CARDS
+======================= */
 .cards {
-display: grid;
-grid-template-columns: repeat(4, 240px);
-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .card {
-background: #f4f4f4;
-border-radius: 25px;
-text-align: center;
-padding: 25px 20px 0;
-box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-overflow: hidden;
-transition: transform 0.2s;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 25px;
+    text-align: center;
+    padding: 25px 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    transition: transform 0.2s;
+    font-size: 15px;
+    color: #0A1A2F;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
+/* IMAGEN */
 .img-container {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .foto {
-width: 90px;
-height: 90px;
-border-radius: 50%;
-border: 5px solid #e6e6e6;
-object-fit: cover;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid #e6e6e6;
+    object-fit: cover;
 }
 
+/* NOMBRE */
 .card h3 {
-margin: 10px 0 5px;
-font-size: 18px;
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #0A1A2F;
 }
 
+/* MATERIA */
 .materia {
-color: #5da1d5;
-font-size: 14px;
+    color: #142850; /* azul profundo fijo */
+    font-size: 14px;
+}
+/* 🔧 Importante: NO hay hover aquí, así nunca cambia a blanco */
+
+/* =======================
+   CORREO
+======================= */
+.card .correo {
+    width: 100%;
+    padding: 0 10px;
 }
 
-.info p {
-margin: 5px 0;
-font-size: 13px;
-word-break: break-word;
+.card .correo p {
+    font-size: 15px;
+    margin: 8px 0;
+    color: #0A1A2F;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.4;
 }
 
+/* =======================
+   HORARIO
+======================= */
+.horario p {
+    margin: 3px 0;
+    font-size: 15px;
+    color: #0A1A2F;
+}
+
+/* =======================
+   FECHA
+======================= */
 .fecha {
-margin: 10px 0;
-font-weight: bold;
-font-size: 15px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 15px;
+    color: #0A1A2F;
 }
 
+/* =======================
+   FRASE
+======================= */
 .frase {
-background: linear-gradient(to right, #4a8ec2, #2f6fa5);
-color: white;
-padding: 15px;
-font-size: 12px;
-margin-top: 15px;
-margin-left: -20px;
-margin-right: -20px;
-border-bottom-left-radius: 25px;
-border-bottom-right-radius: 25px;
-min-height: 65px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
+    background: linear-gradient(to right, #4a8ec2, #2f6fa5);
+    color: white;
+    padding: 12px 15px;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
 }
 
+/* =======================
+   BOTÓN VER MÁS
+======================= */
 .btn-container {
-text-align: center;
-margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .vermas {
-background: yellow;
-padding: 14px 50px;
-border-radius: 10px;
-border: none;
-font-size: 16px;
-cursor: pointer;
+    background: #F9D65D;
+    padding: 14px 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #0A1A2F;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.vermas:hover {
+    background: #FFD84A;
+    transform: scale(1.05);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 1100px) {
+    .cards {
+        grid-template-columns: repeat(2, 240px);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main {
+        margin-left: 0;
+    }
 }

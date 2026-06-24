@@ -1,11 +1,12 @@
 <?php
+$pagina_actual = "teachers";
 include("conexion.php");
 
 $query = "SELECT * FROM teachers";
 $resultado = $conn->query($query);
 
 if (!$resultado) {
-    die("Error: " . $conn->error);
+    die("Error en la consulta: " . $conn->error);
 }
 ?>
 
@@ -15,6 +16,7 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <title>Teachers</title>
 
+<<<<<<< HEAD
   <?php
 include("conexion.php");
 
@@ -40,6 +42,10 @@ if (!$resultado) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
+=======
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/teachers.css">
+>>>>>>> 382651a3d8fde1f45a4cdf73aa3d99716d46696b
 </head>
 
 <body>
@@ -48,105 +54,100 @@ if (!$resultado) {
 
 <div class="main">
 
-```
-<h1>Conoce nuestros maestros</h1>
+    <h1>Conoce nuestros maestros</h1>
 
-<p>
-    Nuestros profesores están aquí para guiarte,
-    inspirarte y ayudarte a alcanzar tus metas.
-</p>
+    <p>
+        Nuestros profesores están aquí para guiarte,
+        inspirarte y ayudarte a alcanzar tus metas.
+    </p>
 
-<div class="filtros">
-    <button class="active" onclick="filtrar('all', this)">
-        Todos los maestros
-    </button>
+    <div class="filtros">
+        <button class="active" onclick="filtrar('all', this)">Todos los maestros</button>
+        <button onclick="filtrar('English', this)">English</button>
+        <button onclick="filtrar('Computing', this)">Computing</button>
+        <button onclick="filtrar('Values', this)">Values</button>
+        <button onclick="filtrar('Administración', this)">Administración</button>
+    </div>
 
-    <button onclick="filtrar('English', this)">
-        English
-    </button>
+    <div class="cards">
 
-    <button onclick="filtrar('Computing', this)">
-        Computing
-    </button>
+        <?php
+        $contador = 0;
 
-    <button onclick="filtrar('Values', this)">
-        Values
-    </button>
+        if ($resultado->num_rows > 0) {
+            while ($row = $resultado->fetch_assoc()) {
 
-    <button onclick="filtrar('Administración', this)">
-        Administración
-    </button>
-</div>
+                $original = trim($row['materia']);
 
-<div class="cards">
+                if (
+                    $original == "English" ||
+                    $original == "Computing" ||
+                    $original == "Values"
+                ) {
+                    $materia = $original;
+                } else {
+                    $materia = "Administración";
+                }
 
-    <?php
-    $contador = 0;
+                $ocultar = ($contador >= 4) ? 'style="display:none;"' : '';
+                $contador++;
+        ?>
 
-    while($row = $resultado->fetch_assoc()) {
+        <div class="card"
+             data-materia="<?php echo $materia; ?>"
+             <?php echo $ocultar; ?>>
 
-        $ocultar = ($contador >= 4)
-            ? 'style="display:none;"'
-            : '';
+            <div class="img-container">
+                <img src="../img/<?php echo $row['imagen']; ?>" class="foto" alt="">
+            </div>
 
-        $contador++;
-    ?>
+            <h3><?php echo $row['nombre']; ?></h3>
 
-    <div class="card"
-         data-materia="<?php echo $row['materia']; ?>"
-         <?php echo $ocultar; ?>>
+            <span class="materia"><?php echo $materia; ?></span>
 
-        <div class="img-container">
-            <img
-                src="../img/<?php echo $row['imagen']; ?>"
-                class="foto"
-                alt="">
+            <div class="correo">
+                <p class="correo-texto"><?php echo $row['correo']; ?></p>
+            </div>
+
+            <div class="horario">
+                <p><strong>Schedule</strong></p>
+                <p><?php echo $row['dias']; ?></p>
+                <p><?php echo $row['horario']; ?></p>
+            </div>
+
+            <div class="fecha">
+                <p><strong>Birthday</strong></p>
+                <p><?php echo $row['cumple']; ?></p>
+            </div>
+
+            <div class="frase">
+                "<?php echo $row['frase']; ?>"
+            </div>
+
         </div>
 
-        <h3><?php echo $row['nombre']; ?></h3>
-
-        <span class="materia">
-            <?php echo $row['materia']; ?>
-        </span>
-
-        <div class="info">
-            <p><?php echo $row['correo']; ?></p>
-            <p><?php echo $row['dias']; ?></p>
-            <p><?php echo $row['horario']; ?></p>
-        </div>
-
-        <div class="fecha">
-            <?php echo $row['cumple']; ?>
-        </div>
-
-        <div class="frase">
-            "<?php echo $row['frase']; ?>"
-        </div>
+        <?php
+            }
+        } else {
+            echo "<p>No hay registros en la tabla teachers.</p>";
+        }
+        ?>
 
     </div>
 
-    <?php } ?>
-
-</div>
-
-<div class="btn-container">
-    <button id="verMas" class="vermas">
-        Ver más
-    </button>
-</div>
-```
+    <div class="btn-container">
+        <button id="verMas" class="vermas">Ver más...</button>
+    </div>
 
 </div>
 
 <script>
-
 const cards = document.querySelectorAll(".card");
 const botonVerMas = document.getElementById("verMas");
 
 let filtroActual = "all";
 
-function filtrar(materia, boton){
-
+function filtrar(materia, boton) {
     filtroActual = materia;
 
     document.querySelectorAll(".filtros button")
@@ -157,48 +158,33 @@ function filtrar(materia, boton){
     let contador = 0;
 
     cards.forEach(card => {
+        const coincide = materia === "all" || card.dataset.materia === materia;
 
-        const coincide =
-            materia === "all" ||
-            card.dataset.materia === materia;
-
-        if(coincide){
-
-            if(contador < 4){
+        if (coincide) {
+            if (contador < 4) {
                 card.style.display = "block";
-            }else{
+            } else {
                 card.style.display = "none";
             }
-
             contador++;
-
-        }else{
+        } else {
             card.style.display = "none";
         }
-
     });
 
-    botonVerMas.style.display =
-        contador > 4 ? "inline-block" : "none";
+    botonVerMas.style.display = contador > 4 ? "inline-block" : "none";
 }
 
-botonVerMas.addEventListener("click", function(){
-
+botonVerMas.addEventListener("click", function () {
+    let contador = 0;
     cards.forEach(card => {
-
-        if(
-            filtroActual === "all" ||
-            card.dataset.materia === filtroActual
-        ){
+        if (filtroActual === "all" || card.dataset.materia === filtroActual) {
             card.style.display = "block";
+            contador++;
         }
-
     });
-
     this.style.display = "none";
-
 });
-
 </script>
 
 </body>

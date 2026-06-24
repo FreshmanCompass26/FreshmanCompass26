@@ -146,14 +146,7 @@ $resultado = mysqli_query($conn, $sql);
         <?php endif; ?>
     </div>
 
-    <section class="ubicacion">
-        <h2>
-            <i class="fas fa-map-marker-alt"></i>
-            Nuestra Ubicación
-        </h2>
-        <p>Centro ¡Supérate! ADOC</p>
-        <div id="map" style="height:450px; width:100%; border-radius: 16px; margin-top: 15px;"></div>
-    </section>
+    
 
     <div class="banner-compartir">
         <div class="banner-izquierdo">

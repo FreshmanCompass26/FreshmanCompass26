@@ -18,7 +18,13 @@ $pagina_actual = "inicio";
 
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/navbar.css">
-   
+    <link rel="stylesheet" href="styles/footer.css">
+
+     <style>
+        .banner-section {
+            margin-top: 60px !important;
+        }
+      </style>
     
 
     <style>
@@ -297,7 +303,7 @@ $pagina_actual = "inicio";
         </div>
         <div class="testimonial-card">
 
-            <img src="img/men.png">
+            <img src="img/bebesita.jpg">
 
             <p>
                 “Aquí aprendí que los retos son oportunidades.”
@@ -311,7 +317,7 @@ $pagina_actual = "inicio";
 
         <div class="testimonial-card">
 
-            <img src="img/men.png">
+            <img src="img/freddy.png">
 
             <p>
                 “Las herramientas y apoyo cambiaron mi vida.”
@@ -328,11 +334,83 @@ $pagina_actual = "inicio";
 </section>
 
 
-    <?php include 'php/footer.php'; ?>
+</section>
+
+
+<section class="about-cards-section">
+
+    <h2 class="about-title">
+        Conoce Freshman Compass
+    </h2>
+
+    <div class="about-cards">
+
+        <div class="about-card">
+            <div class="card-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+
+            <h3>Misión</h3>
+
+            <p>
+                Ayudamos a los estudiantes de nuevo ingreso del Centro ¡Supérate! ADOC
+                a adaptarse de forma más fácil, segura y confiada mediante orientación,
+                acompañamiento y recursos útiles.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="card-icon">
+                <i class="fas fa-users"></i>
+            </div>
+
+            <h3>Valores</h3>
+
+            <p>
+                Empatía, Responsabilidad y Confianza para acompañar a cada estudiante
+                durante su proceso de adaptación.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="card-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+
+            <h3>Historia</h3>
+
+            <p>
+                Freshman Compass nació para apoyar a los estudiantes de primer año
+                mediante consejos, experiencias y orientación práctica.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="card-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+
+            <h3>Visión</h3>
+
+            <p>
+                Convertirse en la plataforma líder de orientación estudiantil para
+                estudiantes de nuevo ingreso de ¡Supérate! ADOC.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<?php include 'php/footer.php'; ?>
+
 
 </div>
-
+<script src="js/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<a href="php/compassbot.php" class="compass-float">
+    🤖
+</a>
 
 </body>
 </html>

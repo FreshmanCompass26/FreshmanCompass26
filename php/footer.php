@@ -1,69 +1,40 @@
 <footer class="footer">
 
+    <div class="footer-top">
 
-<div class="footer-container">
+        <!-- Burbuja centrada -->
+        <div class="footer-bubble">
+            <h3>¿Necesitas ayuda?</h3>
+            <p>¡Estoy aquí para ayudarte!</p>
+        </div>
 
-    <!-- Izquierda -->
-    <div class="footer-left">
-    </div>
-
-    <!-- Centro -->
-    <div class="footer-center">
-
-        <img
-            src="assets/img/logo.png"
-            alt="Logo"
-            class="footer-logo">
-
-        <h2>FreshmanCompass</h2>
-
-        <h2 class="footer-title">
-            SÍGUENOS
-        </h2>
-
-        <div class="social-icons">
-
-            <a href="https://www.instagram.com/freshman_compasss?utm_source=qr" class="instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#" class="facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-
-            <a href="https://www.tiktok.com/@freshman.compass?_r=1&_t=ZS-978L25IB0SO" class="tiktok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-
-            <a href="#" class="email">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-
+        <!-- Logo derecha -->
+        <div class="footer-brand">
+            <img src="img/logooooo.jpeg" alt="Freshman Compass">
+            <p>Tu brújula para comenzar en ¡Supérate!</p>
         </div>
 
     </div>
 
-    <!-- Derecha -->
-    <div class="footer-right">
+    <div class="footer-divider"></div>
 
-        <a href="https://www.instagram.com/freshman_compasss?utm_source=qr" target="_blank">
+    <div class="footer-info">
+
+        <div class="info-item">
             <i class="fab fa-instagram"></i>
-            <span>@freshman_compasss</span>
-        </a>
+            <span>@freshmancompass</span>
+        </div>
 
-        <a href="mailto:info@freshmancompass.com">
+        <div class="info-item">
             <i class="far fa-envelope"></i>
-            <span>Correo</span>
-        </a>
+            <span>info@freshmancompass.com</span>
+        </div>
 
-        <a href="contacto.php">
+        <div class="info-item">
             <i class="fas fa-school"></i>
-            <span>Centro</span>
-        </a>
+            <span>Centro ¡Supérate! ADOC</span>
+        </div>
 
     </div>
-
-</div>
-
 
 </footer>

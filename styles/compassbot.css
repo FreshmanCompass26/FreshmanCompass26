@@ -130,3 +130,41 @@ body{
 .avatar {
     background: transparent !important;
 }
+.sugerencias{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:15px 0;
+}
+
+.sugerencia-btn{
+    border:none;
+    background:#e8f5f5;
+    color:#008080;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.sugerencia-btn:hover{
+    background:#008080;
+    color:white;
+    transform:translateY(-2px);
+}
+
+.escribiendo{
+    font-style:italic;
+    opacity:.8;
+}
+
+.avatar1 img{
+    animation:flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}

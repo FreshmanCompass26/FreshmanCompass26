@@ -55,7 +55,17 @@ include("navbar.php");
         </div>
 
     </div>
+    <div class="sugerencias">
 
+        <button class="sugerencia-btn">¿Qué es Súperate?</button>
+
+        <button class="sugerencia-btn">Dame un consejo</button>
+
+        <button class="sugerencia-btn">Tengo nervios</button>
+
+        <button class="sugerencia-btn">Dato curioso</button>
+
+    </div>
     <div class="entrada-chat">
 
         <input

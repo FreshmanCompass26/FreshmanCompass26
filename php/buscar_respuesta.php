@@ -6,7 +6,68 @@ if(isset($_POST['pregunta'])){
 
     $pregunta = strtolower(trim($_POST['pregunta']));
 
+    /* 🧮 OPERACIONES MATEMÁTICAS */
+
+    if (preg_match('/^\s*\d+\s*[\+\-\*\/]\s*\d+\s*$/', $pregunta)) {
+
+        preg_match('/(\d+)\s*([\+\-\*\/])\s*(\d+)/', $pregunta, $partes);
+
+        $num1 = $partes[1];
+        $operador = $partes[2];
+        $num2 = $partes[3];
+
+        switch($operador){
+
+            case '+':
+                $resultado = $num1 + $num2;
+                break;
+
+            case '-':
+                $resultado = $num1 - $num2;
+                break;
+
+            case '*':
+                $resultado = $num1 * $num2;
+                break;
+
+            case '/':
+                if($num2 == 0){
+                    echo "❌ No se puede dividir entre cero.";
+                    exit;
+                }
+
+                $resultado = $num1 / $num2;
+                break;
+        }
+
+        echo "🧮 El resultado es: ".$resultado;
+        exit;
+    }
+
+    /* 🕒 HORA */
+
+    if(strpos($pregunta, "hora") !== false){
+
+        date_default_timezone_set('America/El_Salvador');
+
+        echo "🕒 La hora actual es: ".date("h:i A");
+        exit;
+    }
+
+    /* 📅 FECHA */
+
+    if(
+        strpos($pregunta, "fecha") !== false ||
+        strpos($pregunta, "dia") !== false ||
+        strpos($pregunta, "hoy") !== false
+    ){
+
+        echo "📅 Hoy es: ".date("d/m/Y");
+        exit;
+    }
+
     /* 🧠 1. SÚPERATE / ADOC */
+
     if (preg_match('/superate|adoc/i', $pregunta)) {
 
         $respuestas = [
@@ -20,6 +81,7 @@ if(isset($_POST['pregunta'])){
     }
 
     /* 🌱 2. EMOCIONES / ADAPTACIÓN */
+
     if (preg_match('/me siento|estoy|no tengo|no me siento|tengo miedo|me cuesta|no entiendo|me siento solo|me siento perdido|me da nervios|estoy nervioso/i', $pregunta)) {
 
         $respuestas = [
@@ -34,13 +96,96 @@ if(isset($_POST['pregunta'])){
         exit;
     }
 
-    /* 🤖 3. AYUDA GENERAL */
+    /* 🤖 AYUDA GENERAL */
+
     if (preg_match('/ayuda|help|no entiendo/i', $pregunta)) {
-        echo "🤖 Claro, dime qué necesitas y te ayudo paso a paso.";
+
+        echo "🤖 Claro, dime qué necesitas y te ayudaré paso a paso.";
         exit;
     }
+    /* 👋 SALUDOS */
 
-    /* 📚 4. BASE DE DATOS (ESTUDIOS) */
+if(preg_match('/^hola$|^hello$|^buenas$|^hola compassbot$/i', $pregunta)){
+
+    $saludos = [
+
+        "👋 ¡Hola! ¿Cómo puedo ayudarte hoy?",
+
+        "🤖 ¡Hola! Estoy listo para responder tus preguntas.",
+
+        "💙 ¡Bienvenido! ¿En qué necesitas ayuda?",
+
+        "🌟 ¡Hola! Pregúntame lo que quieras."
+
+    ];
+
+    echo $saludos[array_rand($saludos)];
+    exit;
+}
+
+/* 😂 CHISTES */
+
+if(preg_match('/chiste|chistes|broma|bromas/i', $pregunta)){
+
+    $chistes = [
+
+        "😂 ¿Por qué el libro de matemáticas estaba triste? Porque tenía muchos problemas.",
+
+        "🤣 ¿Qué le dijo un vector a otro? Tenemos la misma dirección.",
+
+        "😆 Estudiar es como entrenar, mientras más practicas mejor te vuelves."
+
+    ];
+
+    echo $chistes[array_rand($chistes)];
+    exit;
+}
+
+/* 💡 CONSEJOS */
+
+if(preg_match('/consejo|consejos/i', $pregunta)){
+
+    $consejos = [
+
+        "📚 Estudia en bloques de 25 minutos y descansa 5 minutos.",
+
+        "💧 Mantente hidratado mientras estudias.",
+
+        "🎯 Empieza por la tarea más difícil para aprovechar tu energía.",
+
+        "😴 Dormir bien mejora la memoria y la concentración.",
+
+        "📝 Organiza tus tareas en una lista para no olvidar nada."
+
+    ];
+
+    echo $consejos[array_rand($consejos)];
+    exit;
+}
+
+/* 🌎 DATOS CURIOSOS */
+
+if(preg_match('/dato curioso|datos curiosos|curiosidad|curiosidades/i', $pregunta)){
+
+    $datos = [
+
+        "🧠 El cerebro utiliza alrededor del 20% de la energía del cuerpo.",
+
+        "🌎 La Tierra gira a unos 1670 km/h.",
+
+        "📚 Leer 20 minutos diarios mejora la comprensión lectora.",
+
+        "💡 Aprender algo nuevo fortalece las conexiones neuronales.",
+
+        "🚀 El espacio es completamente silencioso porque no hay aire para transmitir el sonido."
+
+    ];
+
+    echo $datos[array_rand($datos)];
+    exit;
+}
+
+    /* 📚 RESPUESTAS DE LA BASE DE DATOS */
 
     $sql = "SELECT * FROM chatbot_respuestas";
     $resultado = $conn->query($sql);
@@ -56,6 +201,7 @@ if(isset($_POST['pregunta'])){
             $palabra = trim($palabra);
 
             if(strpos($pregunta, $palabra) !== false){
+
                 $respuestas[] = $fila['respuesta'];
             }
         }
@@ -67,18 +213,27 @@ if(isset($_POST['pregunta'])){
 
         $variaciones = [
             $respuesta,
-            "💬 " . $respuesta,
-            "🌱 " . $respuesta,
-            "💡 " . $respuesta,
-            $respuesta . " ¿quieres que te explique más?"
+            "💬 ".$respuesta,
+            "🌱 ".$respuesta,
+            "💡 ".$respuesta,
+            $respuesta." ¿Quieres que te explique más?"
         ];
 
         echo $variaciones[array_rand($variaciones)];
         exit;
     }
 
-    /* ❌ 5. FALLBACK */
-    echo "Lo siento 😔 aún no tengo información sobre eso.";
+    /* ❌ RESPUESTA POR DEFECTO */
 
+    $fallback = [
+        "😔 Lo siento, aún no tengo información sobre eso.",
+        "🤔 No conozco la respuesta todavía.",
+        "📚 Aún estoy aprendiendo sobre ese tema.",
+        "💡 Intenta formular tu pregunta de otra manera.",
+        "🤖 No encontré información relacionada con tu consulta."
+    ];
+
+    echo $fallback[array_rand($fallback)];
 }
+
 ?>

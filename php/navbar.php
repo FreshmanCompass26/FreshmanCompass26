@@ -22,17 +22,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/teachers.php">
-<<<<<<< HEAD
+
                 <i class="fa-solid fa-user-group"></i>
                 <span>Teachers</span>
                 </a>
-                  </li>
-=======
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
->>>>>>> 382651a3d8fde1f45a4cdf73aa3d99716d46696b
 
             <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/php/consejos.php">
@@ -40,13 +33,6 @@ if (session_status() == PHP_SESSION_NONE) {
                     <span>Consejos</span>
                 </a>
             </li>
-
-                 <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-            <a href="consejos.php">
-                <i class="fa-solid fa-lightbulb"></i>
-                <span>Consejos</span>
-            </a>
-        </li>
 
         <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
             <a href="psicologas.html">

@@ -35,17 +35,15 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <title>Teachers</title>
 
-```
+
 <link rel="stylesheet" href="../styles/navbar.css">
 <link rel="stylesheet" href="../styles/teachers.css">
-```
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-=======
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/teachers.css">
->>>>>>> 382651a3d8fde1f45a4cdf73aa3d99716d46696b
 </head>
 
 <body>
@@ -54,7 +52,7 @@ if (!$resultado) {
 
 <div class="main">
 
-    <h1>Conoce nuestros maestros</h1>
+    <h1>Conoce nuestros maestros:</h1>
 
     <p>
         Nuestros profesores están aquí para guiarte,

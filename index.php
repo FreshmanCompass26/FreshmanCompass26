@@ -323,7 +323,7 @@ $pagina_actual = "inicio";
                 “Las herramientas y apoyo cambiaron mi vida.”
             </p>
 
-            <h4>Andrés M.</h4>
+            <h4>Freddy A.</h4>
 
             <span>Graduado del Centro ¡Supérate! ADOC</span>
 

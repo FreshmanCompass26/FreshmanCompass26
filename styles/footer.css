@@ -138,6 +138,3 @@
         gap:30px;
     }
 }
-.footer-brand img {
-  filter: hue-rotate(180deg) saturate(120%);
-}

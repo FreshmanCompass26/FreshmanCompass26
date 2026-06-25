@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="sidebar">
 
     <div class="logo">
-        <img src="img/fc.logo.png" alt="Logo">
+        <img src="img/logoooooo.png" alt="Logo">
     </div>
 
     <ul class="menu">
@@ -34,12 +34,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
-                 <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-            <a href="consejos.php">
-                <i class="fa-solid fa-lightbulb"></i>
-                <span>Consejos</span>
-            </a>
-        </li>
 
         <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
             <a href="psicologas.html">

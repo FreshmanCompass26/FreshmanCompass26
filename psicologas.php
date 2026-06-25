@@ -1,3 +1,11 @@
+<?php
+
+$pagina_actual="psicologas";
+
+include("navbar.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,8 +33,6 @@
     </div>
   </div>
  
-
-<div class="sidebar">
 
     <div class="logo">
         <img src="img/fc.logo.png" alt="Logo">

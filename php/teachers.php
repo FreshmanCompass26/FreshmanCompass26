@@ -1,9 +1,10 @@
 <?php
 
-$pagina_actual = "teachers";
+$pagina_actual="teachers";
 
-include("conexion.php");
+include("navbar.php");
 
+?>
 $query = "SELECT * FROM teachers";
 
 $resultado = $conn->query($query);

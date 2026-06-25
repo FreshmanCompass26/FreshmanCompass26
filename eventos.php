@@ -7,6 +7,7 @@ include "php/conexion.php";
 
 $sql = "SELECT * FROM eventos ORDER BY evento_ID ASC LIMIT 4";
 $result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>

@@ -16,8 +16,36 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <title>Teachers</title>
 
+<<<<<<< HEAD
+  <?php
+include("conexion.php");
+
+$query = "SELECT * FROM teachers";
+$resultado = $conn->query($query);
+
+if (!$resultado) {
+    die("Error: " . $conn->error);
+}
+?>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+
+```
+<link rel="stylesheet" href="../styles/navbar.css">
+<link rel="stylesheet" href="../styles/teachers.css">
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+=======
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/teachers.css">
+>>>>>>> 382651a3d8fde1f45a4cdf73aa3d99716d46696b
 </head>
 
 <body>

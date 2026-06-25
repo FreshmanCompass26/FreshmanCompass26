@@ -1,7 +1,10 @@
 <?php
-session_start();
-$pagina_actual = "centro";
-include("php/conexion.php");
+
+$pagina_actual="centro";
+
+include("php/navbar.php");
+
+?>
 
 $sql = "SELECT * FROM testimonios ORDER BY id DESC";
 $resultado = mysqli_query($conn, $sql);

@@ -1,25 +1,26 @@
 <?php
 
-$pagina_actual="teachers";
+$pagina_actual = "teachers";
+
 
 include("navbar.php");
 
-?>
-$query = "SELECT * FROM teachers";
 
+include("conexion.php");
+
+
+$query = "SELECT * FROM teachers";
 $resultado = $conn->query($query);
 
 
 if (!$resultado) {
-
     die("Error en la consulta: " . $conn->error);
-
 }
-
-
 ?>
 
-<<<<<<< HEAD
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,8 +37,8 @@ if (!$resultado) {
     die("Error: " . $conn->error);
 }
 ?>
-=======
->>>>>>> 104b211dc6db9421dd440923ee6569803e6c4f12
+
+
 
 <!DOCTYPE html>
 

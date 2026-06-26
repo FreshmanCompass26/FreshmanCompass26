@@ -286,7 +286,10 @@ body {
     font-size: 16px;
     width: 100%;
 }
-
+.imagen img {
+    width: 400px;   /* cambia este valor */
+    height: auto;   /* mantiene proporción */
+}
 @media (max-width: 992px) {
     .grid-testimonios, .cards {
         grid-template-columns: 1fr; 

@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <title>Agendar cita</title>
 
-    <!-- CSS propio -->
     <link rel="stylesheet" href="../styles/agendar.css">
-
-    <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- FLATPICKR -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
@@ -20,84 +15,65 @@
     <i class="fas fa-calendar"></i> Agenda tu bienestar
 </div>
 
-<div class="bg-shapes">
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="dots"></div>
-</div>
-
-
-
 <div class="container">
 
     <h1>Agenda una cita con nuestras <span>psicólogas</span></h1>
-    <p class="sub">
-        Habla con una de nuestras psicólogas. Todas las sesiones son confidenciales.
-    </p>
+    <p class="sub">Sesiones confidenciales y seguras.</p>
 
-    <div class="cards">
+    <form id="citaForm">
 
-        <div class="card">
-            <img src="../img/analu.jpeg">
-            <h4>Psic. Ana Lucía Nieto</h4>
-            <span>Psicóloga Educativa</span>
+        <!-- PSICÓLOGAS -->
+        <div class="cards">
 
-            <button onclick="seleccionar('Ana Lucía Nieto')">
-                <i class="fas fa-calendar"></i> Seleccionar
+            <div class="card" onclick="seleccionar('Ana Lucía Nieto', this)">
+                <img src="../img/analu.jpeg">
+                <h4>Ana Lucía Nieto</h4>
+                <span>Psicóloga Educativa</span>
+            </div>
+
+            <div class="card" onclick="seleccionar('Blanca Marielos', this)">
+                <img src="../img/marielos.jpeg">
+                <h4>Blanca Marielos</h4>
+                <span>Psicóloga Clínica</span>
+            </div>
+
+            <div class="card" onclick="seleccionar('Blanca Meléndez', this)">
+                <img src="../img/blanca2.jpg">
+                <h4>Blanca Meléndez</h4>
+                <span>Psicóloga Familiar</span>
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+        <div class="form-box">
+
+            <div class="input-group">
+                <label>Psicóloga seleccionada</label>
+                <input type="text" id="psicologa" name="psicologa" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Fecha de cita</label>
+                <input type="text" id="fecha" name="fecha" placeholder="Elige una fecha" required>
+            </div>
+
+            <button class="confirm-btn" type="submit">
+                Confirmar cita
             </button>
+
         </div>
-
-        <div class="card">
-            <img src="../img/marielos.jpeg">
-            <h4>Psic. Blanca Marielos</h4>
-            <span>Psicóloga Clínica</span>
-
-            <button onclick="seleccionar('Blanca Marielos')">
-                <i class="fas fa-calendar"></i> Seleccionar
-            </button>
-        </div>
-
-        <div class="card">
-            <img src="../img/blanca2.jpg">
-            <h4>Psic. Blanca Meléndez</h4>
-            <span>Psicóloga Familiar</span>
-
-            <button onclick="seleccionar('Blanca Meléndez')">
-                <i class="fas fa-calendar"></i> Seleccionar
-            </button>
-        </div>
-
-    </div>
-
-    
-
-    <div class="form-box">
-
-        <div class="input-group">
-            <label>Selecciona la psicóloga</label>
-            <input type="text" id="psicologa" name="psicologa" placeholder="Elige una psicóloga" readonly>
-        </div>
-
-        <div class="input-group">
-            <label>Selecciona una fecha</label>
-            <input type="text" id="fecha" name="fecha" placeholder="Elige una fecha" required>
-        </div>
-
-        <button class="confirm-btn" type="submit">
-            Confirmar cita
-        </button>
-
-    </div>
-
-</form>
 
     </form>
+
+    <!-- MENSAJE -->
+    <div id="mensaje"></div>
 
 </div>
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="../Js/agendar.js"></script>
+<script src="../JS/agendar.js"></script>
 
 </body>
 </html>

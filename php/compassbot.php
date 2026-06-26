@@ -81,7 +81,7 @@ include("navbar.php");
 
 </div>
 
-<script src="../styles//Js/compassbot.js"></script>
+<script src="../Js/compassbot.js"></script>
 
 </body>
 </html>

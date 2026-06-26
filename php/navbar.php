@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
         <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
-            <a href="psicologas.html">
+            <a href="psicologas.php">
                 <i class="fa-solid fa-heart"></i>
                 <span>Psicólogas</span>
             </a>

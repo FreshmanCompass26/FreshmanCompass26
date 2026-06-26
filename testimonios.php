@@ -109,7 +109,7 @@ $resultado = mysqli_query($conn, $sql);
     <div class="grid-testimonios">
         <?php 
         if ($resultado && mysqli_num_rows($resultado) > 0):
-            while($testimonio = mysqli_fetch_assoc($resultado)): 
+            while($testimonios = mysqli_fetch_assoc($resultado)): 
         ?>
             <div class="tarjeta-testimonio">
                 <div class="tarjeta-header">

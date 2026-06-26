@@ -95,7 +95,7 @@
 
             </p>
 
-            <a href="#" class="play">
+            <a href="triviasuperate.php" class="play">
 
                 Jugar ahora
 
@@ -160,6 +160,35 @@
     </section>
 
 </div>
+
+<!-- Agrega esto al final de tu archivo de la página principal (actividades.php) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Leemos si el navegador guardó que ya se completó la trivia
+        const completado = localStorage.getItem('triviaSuperateCompletada');
+        const puntajeMaximo = localStorage.getItem('triviaSuperateScore');
+
+        if (completado === 'true') {
+            // Buscamos la tarjeta de súpérate usando la clase que le pusimos antes
+            const tarjetaSuperate = document.querySelector('.item-superate');
+            
+            if (tarjetaSuperate) {
+                // Le cambiamos el estilo para que resalte que ya se ganó
+                tarjetaSuperate.style.border = "2px solid #2ecc71";
+                
+                // Creamos un pequeño texto que muestre el score guardado
+                const scoreBadge = document.createElement('div');
+                scoreBadge.style.color = "#2ecc71";
+                scoreBadge.style.fontWeight = "bold";
+                scoreBadge.style.marginTop = "10px";
+                scoreBadge.innerHTML = `✅ ¡Completado! Record: ${puntajeMaximo}/10`;
+                
+                // Lo metemos dentro de la tarjeta
+                tarjetaSuperate.appendChild(scoreBadge);
+            }
+        }
+    });
+</script>
 
 <script src="js/actividades.js"></script>
 

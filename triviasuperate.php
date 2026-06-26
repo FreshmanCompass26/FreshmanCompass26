@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia ¡Súpérate! - FreshmanCompass</title>
-    <!-- Vinculamos tu archivo CSS separado -->
+    <title>Trivia ¡Súpérate!</title
     <link rel="stylesheet" href="styles/triviasp.css">
 </head>
 <body>

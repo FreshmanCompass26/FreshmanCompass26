@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="sidebar">
 
     <div class="logo">
-        <img src="img/logoooooo.png" alt="Logo">
+    <img src="../img/logoooooo.png" alt="Logo">
     </div>
 
     <ul class="menu">
@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
         <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
-            <a href="psicologas.html">
+            <a href="psicologas.php">
                 <i class="fa-solid fa-heart"></i>
                 <span>Psicólogas</span>
             </a>

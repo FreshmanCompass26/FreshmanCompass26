@@ -12,13 +12,11 @@ include("navbar.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freshman Compass</title>
-    <link rel="stylesheet" href="styles/psicologas.css">
+    <link rel="stylesheet" href="../styles/psicologas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-   <div class="sidebar">
-    <h2 class="logo">Freshman Compass</h2>
     <ul class="nav">
       <li><i class="fas fa-home"></i> Inicio</li>
       <li><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
@@ -31,13 +29,6 @@ include("navbar.php");
       <span>— Muhammad Ali</span>
     </div>
   </div>
-<<<<<<< HEAD:psicologas.html
-=======
- 
-
-    <div class="logo">
-        <img src="img/fc.logo.png" alt="Logo">
-    </div>
 
     <ul class="menu">
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
@@ -84,9 +75,6 @@ include("navbar.php");
     </div>
 
 </div>
-
-
->>>>>>> 104b211dc6db9421dd440923ee6569803e6c4f12:psicologas.php
 
     <!-- Contenido -->
     <main class="content">

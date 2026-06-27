@@ -17,10 +17,10 @@ include("navbar.php");
 </head>
 <body>
 
-        <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-            <a href="index.php">
-                <i class="fa-solid fa-house"></i>
-                <span>Inicio</span>
+        <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
+            <a href="/freshmancompass26/php/psicologas.php">
+             <i class="fa-solid fa-heart"></i>
+             <span>Psicólogas</span>
             </a>
         </li>
 

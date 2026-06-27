@@ -1,4 +1,3 @@
-// Banco de datos con las 10 preguntas fijas de la trivia
 const quizData = [
     { q: "¿En qué año nació el Programa Empresarial ¡Súpérate!?", a: ["2004", "2010", "1998", "2015"], correct: 0 },
     { q: "¿Cuáles son las tres áreas principales de estudio en ¡Súpérate!?", a: ["Matemáticas, Ciencias y Lenguaje", "Inglés, Informática y Valores", "Programación, Diseño y Oratoria", "Contabilidad, Inglés y Administración"], correct: 1 },
@@ -15,24 +14,20 @@ const quizData = [
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Temporizador inicial: 2.5 segundos de carga y cambia a la Pantalla de Información
 setTimeout(() => {
     changeScreen('screen-loading', 'screen-info');
 }, 2500);
 
-// Cambiador de pantallas aplicando las clases CSS
 function changeScreen(hideId, showId) {
     document.getElementById(hideId).classList.remove('active');
     document.getElementById(showId).classList.add('active');
 }
 
-// Iniciar cuestionario al presionar el botón de entendido
 function startQuiz() {
     changeScreen('screen-info', 'screen-quiz');
     loadQuestion();
 }
 
-// Carga la pregunta actual en la interfaz
 function loadQuestion() {
     document.getElementById('btn-next').style.display = 'none';
     const feedback = document.getElementById('feedback');
@@ -47,7 +42,6 @@ function loadQuestion() {
     const optionsBlock = document.getElementById('options-block');
     optionsBlock.innerHTML = '';
 
-    // Creación de botones para las respuestas
     currentQuestion.a.forEach((option, index) => {
         const button = document.createElement('button');
         button.className = 'option-btn';
@@ -57,38 +51,43 @@ function loadQuestion() {
     });
 }
 
-// Lógica al seleccionar una respuesta
 function selectAnswer(selectedIndex, selectedButton) {
     const currentQuestion = quizData[currentQuestionIndex];
     const allButtons = document.querySelectorAll('.option-btn');
     const feedback = document.getElementById('feedback');
 
-    // Deshabilita los botones inmediatamente para evitar cambios
     allButtons.forEach(btn => btn.disabled = true);
 
     if (selectedIndex === currentQuestion.correct) {
         selectedButton.classList.add('correct');
         score++;
         
-        const correctMsgs = ["¡Excelente! Sigue así ⚡", "¡Qué pro! Totalmente correcto ⭐", "¡Así es! Vas por buen camino 🎯"];
+        //Audio Éxito
+        const audioCorrecto = new Audio('audio/correcto.mp3');
+        audioCorrecto.volume = 0.5;
+        audioCorrecto.play().catch(e => console.log("Audio bloqueado:", e));
+
+        const correctMsgs = ["¡Excelente! Sigue así", "¡Qué pro! Totalmente correcto", "¡Así es! Vas por buen camino"];
         feedback.innerText = correctMsgs[Math.floor(Math.random() * correctMsgs.length)];
         feedback.classList.add('correct');
     } else {
         selectedButton.classList.add('wrong');
-        // Pone en verde la correcta para retroalimentación
         allButtons[currentQuestion.correct].classList.add('correct');
         
-        feedback.innerText = "Ups, esa no era la correcta... 🚀 Suerte en la próxima";
+        //Audio Error
+        const audioError = new Audio('audio/error.mp3');
+        audioError.volume = 0.5;
+        audioError.play().catch(e => console.log("Audio bloqueado:", e));
+
+        feedback.innerText = "Ups, esa no era la correcta...  Suerte en la próxima";
         feedback.classList.add('wrong');
     }
 
     document.getElementById('btn-next').style.display = 'inline-block';
 }
 
-// Avanza a la siguiente pregunta o finaliza
 function nextQuestion() {
     currentQuestionIndex++;
-    
     if (currentQuestionIndex < quizData.length) {
         loadQuestion();
     } else {
@@ -96,15 +95,12 @@ function nextQuestion() {
     }
 }
 
-// Muestra la pantalla de score final evaluando el puntaje, animando el contador y guardando localmente
 function showFinalResults() {
     changeScreen('screen-quiz', 'screen-results');
     
-    // 1. GUARDADO LOCAL: Almacenamos el score para usarlo en actividades.php
     localStorage.setItem('triviaSuperateCompletada', 'true');
     localStorage.setItem('triviaSuperateScore', score);
 
-    // 2. CONTADOR ANIMADO: El número sube de forma interactiva
     const scoreElement = document.getElementById('final-score');
     let currentCount = 0;
     
@@ -112,25 +108,23 @@ function showFinalResults() {
         let counterInterval = setInterval(() => {
             currentCount++;
             scoreElement.innerText = currentCount;
-            
             if (currentCount >= score) {
-                clearInterval(counterInterval); // Se detiene cuando llega al puntaje real
+                clearInterval(counterInterval);
             }
-        }, 80); // Velocidad del contador (en milisegundos)
+        }, 80);
     } else {
         scoreElement.innerText = 0;
     }
 
-    // 3. Evaluar rango y mostrar mensajes chivos
     const rankMessage = document.getElementById('rank-message');
     if (score === 10) {
-        rankMessage.innerText = "¡Nivel Dios! Un verdadero Freshman de ¡Súpérate! 🏆";
+        rankMessage.innerText = "¡Nivel Dios! Un verdadero Freshman de ¡Súpérate! ";
         rankMessage.style.color = "var(--success)";
     } else if (score >= 7) {
-        rankMessage.innerText = "¡Puntaje Intermedio/Alto! Estás súper listo. 👍";
+        rankMessage.innerText = "¡Puntaje Intermedio/Alto! Estás súper listo.";
         rankMessage.style.color = "var(--primary)";
     } else {
-        rankMessage.innerText = "Score Básico/Normal. ¡Puedes volver a repasar la info! 💪";
+        rankMessage.innerText = "Score Básico/Normal. ¡Puedes volver a repasar la info!";
         rankMessage.style.color = "#e67e22";
     }
-}
+}   

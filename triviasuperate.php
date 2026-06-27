@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia ¡Súpérate!</title
-    <link rel="stylesheet" href="styles/triviasp.css">
+    <title>Trivia ¡Súpérate!</title>
+
+<link rel="stylesheet" href="styles/triviasp.css">
 </head>
 <body>
 

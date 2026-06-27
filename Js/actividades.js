@@ -1,7 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     // ==========================================
-    // 1. EFECTO ANIMACIÓN AL HACER SCROLL (SHOW)
+    // 1. MÚSICA DE FONDO INTERACTIVA 
+    // ==========================================
+    const musicaFondo = new Audio('audio/fondo.mp3');
+    musicaFondo.loop = true;  // Hace que la canción se repita infinitamente
+    musicaFondo.volume = 0.15; // Volumen sutil (15%) para que no sature el ambiente
+
+    // Función para arrancar la música una vez que el usuario interactúe con la web
+    function iniciarMusica() {
+        musicaFondo.play()
+            .then(() => {
+                // Al reproducirse con éxito, quitamos los listeners para evitar duplicados
+                document.removeEventListener('click', iniciarMusica);
+                document.removeEventListener('scroll', iniciarMusica);
+            })
+            .catch(error => {
+                console.log("Esperando interacción real del usuario para activar audio de fondo:", error);
+            });
+    }
+
+    // Escuchamos el primer clic o scroll del usuario en la pantalla principal
+    document.addEventListener('click', iniciarMusica);
+    document.addEventListener('scroll', iniciarMusica);
+
+
+    // ==========================================
+    // 2. EFECTO ANIMACIÓN AL HACER SCROLL (SHOW)
     // ==========================================
     const cards = document.querySelectorAll(".card");
 
@@ -19,13 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // ==========================================
-    // 2. DETECTOR DE RECORD PARA TRIVIA SÚPERATE
+    // 3. DETECTOR DE RECORD PARA TRIVIA SÚPERATE
     // ==========================================
     const completado = localStorage.getItem('triviaSuperateCompletada');
     const puntajeMaximo = localStorage.getItem('triviaSuperateScore');
 
     if (completado === 'true') {
-        // Buscamos la tarjeta usando la nueva clase que agregamos
+        // Buscamos la tarjeta usando la clase identificadora
         const tarjetaSuperate = document.querySelector('.item-superate');
         
         if (tarjetaSuperate) {

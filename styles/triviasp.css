@@ -1,0 +1,221 @@
+
+/* --- VARIABLES Y CONFIGURACIÓN --- */
+:root {
+    --primary: #0066ff;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --dark: #0a2540;
+    --bg: #f0f7ff;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-box {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
+    text-align: center;
+    position: relative;
+}
+
+/* Control de pantallas alternadas por JS */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Animación Chiva de Desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 1. PANTALLA DE CARGA --- */
+.loader-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e4ecf5;
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- 2. PANTALLA DE INFORMACIÓN --- */
+.info-content h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.info-text {
+    text-align: left;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.info-text p {
+    margin-bottom: 15px;
+}
+
+/* --- BOTONES COMUNES --- */
+.btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0052cc;
+    transform: translateY(-2px);
+}
+
+/* --- 3. PANTALLA DE JUEGO (PREGUNTAS) --- */
+.progress-bar {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    padding: 16px;
+    border-radius: 15px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: #edf2f7;
+    border-color: #cbd5e1;
+}
+
+/* Clases que se añaden dinámicamente al responder */
+.option-btn.correct {
+    background-color: #d1fae5 !important;
+    border-color: var(--success) !important;
+    color: #065f46;
+}
+
+.option-btn.wrong {
+    background-color: #fee2e2 !important;
+    border-color: var(--danger) !important;
+    color: #991b1b;
+}
+
+.feedback-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    height: 30px;
+}
+
+.feedback-message.correct { color: var(--success); }
+.feedback-message.wrong { color: var(--danger); }
+
+/* --- 4. PANTALLA DE RESULTADOS --- */
+.results-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.score-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #f0f7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    border: 4px solid var(--primary);
+}
+
+.score-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.score-total {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+
+.rank-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}

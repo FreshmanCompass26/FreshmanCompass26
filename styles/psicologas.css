@@ -2,375 +2,470 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    
 }
 
 body{
-    font-family:'Montserrat', sans-serif;
+    font-family:'Montserrat',sans-serif;
+    background:#f6f8fc;
+    overflow-x:hidden;
 }
 
+/* ================= SIDEBAR ================= */
 
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: linear-gradient(to bottom, #081847, #081847);
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, .25);
-    transition: all .3s ease;
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100vh;
+    background:#081847;
+    display:flex;
+    flex-direction:column;
+    padding:20px 0;
+    box-shadow:5px 0 20px rgba(0,0,0,.2);
+    z-index:999;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 35px;
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:35px;
 }
 
-.logo img {
-    width: 100% !important;
-    max-width: 160px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    mix-blend-mode: multiply !important;
-    display: block !important;
+.logo img{
+    width:160px;
+    height:auto;
+    object-fit:contain;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.menu{
+    list-style:none;
+    padding:0;
 }
 
-.menu li {
-    margin: 8px 15px;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: .3s ease;
+.menu li{
+    margin:8px 15px;
 }
 
-.menu li a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-    color: white;
-    padding: 14px 20px;
-    font-size: 15px;
-    font-weight: 500;
+.menu li a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 18px;
+    border-radius:14px;
+    transition:.3s;
 }
 
-.menu li:hover {
-    background: rgba(255, 255, 255, .15);
-    transform: translateX(8px);
+.menu li:hover{
+    background:rgba(255,255,255,.15);
+    transform:translateX(6px);
 }
 
-.menu li.active {
-    background: white;
+.menu li.active{
+    background:#fff;
 }
 
-.menu li.active a {
-    color: #0b1d59;
-    font-weight: 700;
+.menu li.active a{
+    color:#081847;
+    font-weight:bold;
 }
 
-.quote {
-    margin-top: auto;
-    margin-inline: 18px;
-    background: rgba(255, 255, 255, .08);
-    padding: 18px;
-    border-radius: 18px;
-    color: white;
+.quote{
+    margin-top:auto;
+    margin-inline:18px;
+    background:rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:18px;
+    color:#fff;
 }
 
-.quote p {
-    margin-bottom: 10px;
-    line-height: 1.6;
+.quote p{
+    line-height:1.5;
+    margin-bottom:8px;
 }
 
-.quote small {
-    color: #d7d7d7;
+.quote small{
+    color:#ddd;
 }
 
-.top-navbar {
-    position: fixed;
-    top: 0;
-    left: 250px;
-    width: calc(100% - 250px);
-    height: 80px;
-    z-index: 2000;
-    background: #0B205A;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+/* ================= CONTENIDO ================= */
+
+.content{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    min-height:100vh;
+    padding:20px 40px 40px;
 }
+/* ================= HERO ================= */
 
-/* CONTENIDO */
-.content {
-    margin-left: 250px;
-    margin-top: 0px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-
-
-/* HERO */
 .hero{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin:20px 0;
+    gap:50px;
+    margin:0;
+    padding:0;
+}
+
+.hero-text{
+    flex:1;
 }
 
 .hero h1{
-    font-size:50px;
-    font-weight:bold;
+    font-size:58px;
+    color:#111;
+    font-weight:800;
 }
 
 .hero p{
-    margin-top:5px;
+    margin-top:6px;
+    color:#444;
 }
 
 .line{
     width:220px;
     height:8px;
-    background:#4f46e5;
+    background:#3f51d7;
     border-radius:20px;
-    margin:15px 0;
+    margin:18px 0;
 }
 
 .description{
-    background:white;
-    width:400px;
-    padding:10px;
-    border-radius:10px;
+    width:430px;
+    background:#fff;
+    padding:12px 15px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .hero img{
-    width:220px;
+    width:280px;
+    max-width:100%;
 }
+
+section{
+    margin-bottom:60px;
+}
+
+h2{
+    font-size:38px;
+    margin-bottom:20px;
+    color:#111;
+} 
+
+/* ================= CARDS ================= */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:25px;
-    margin-top:20px;
+    grid-template-columns:repeat(2,minmax(320px,1fr));
+    gap:22px;
+    margin-top:25px;
 }
 
 .card{
-    position: relative;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    background:#efefef;
+    border-radius:18px;
+    padding:22px;
+    overflow:hidden;
+    transition:.3s;
 }
 
 .card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
 }
 
-
-/* ICONOS */
 .icon{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    width:65px;
+    height:65px;
+    border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size: 26px;
-    flex-shrink: 0;
+    align-items:center;
+    font-size:24px;
+    flex-shrink:0;
 }
 
-/* COLORES ICONOS */
 .heart{
-    background: radial-gradient(circle, #ede9fe, #ddd6fe);
-    color: #7c3aed;
+    background:#e7d7f7;
+    color:#7c3aed;
 }
 
 .users{
-    background: radial-gradient(circle, #fce7f3, #fbcfe8);
-    color: #db2777;
+    background:#eadcf9;
+    color:#7c3aed;
 }
 
 .book{
-    background: radial-gradient(circle, #dbeafe, #bfdbfe);
-    color: #2563eb;
+    background:#eadcf9;
+    color:#7c3aed;
 }
 
 .star{
-    background: radial-gradient(circle, #fef3c7, #fde68a);
-    color: #f59e0b;
+    background:#eadcf9;
+    color:#7c3aed;
 }
 
-/* TEXTO */
+.card-text{
+    flex:1;
+}
+
 .card-text h3{
-    margin: 0;
-    font-size: 20px;
+    font-size:28px;
+    margin-bottom:10px;
+    color:#111;
 }
 
 .card-text p{
-    margin-top: 8px;
-    color: #555;
-    font-size: 14px;
+    color:#333;
+    line-height:1.5;
+    font-size:17px;
 }
 
-/* LINEITA */
 .underline{
-    width: 40px;
-    height: 4px;
-    border-radius: 10px;
-    margin: 8px 0;
+    width:55px;
+    height:5px;
+    border-radius:10px;
+    margin-bottom:12px;
 }
 
-.purple{ background:#7c3aed; }
-.pink{ background:#db2777; }
-.blue{ background:#2563eb; }
-.yellow{ background:#f59e0b; }
+.purple{background:#7c3aed;}
+.pink{background:#db2777;}
+.blue{background:#2563eb;}
+.yellow{background:#f59e0b;}
 
-/* DECORACIÓN (curvita + puntitos) */
 .decor{
-    position: absolute;
-    right: -40px;
-    bottom: -40px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    opacity: 0.2;
+    display:none;
 }
 
-.decor-purple{ background:#c4b5fd; }
-.decor-pink{ background:#f9a8d4; }
-.decor-blue{ background:#93c5fd; }
-.decor-yellow{ background:#fde68a; }
+/* ================= PSICÓLOGAS ================= */
 
-
-
-/* PSICOLOGAS */
 .sub{
-    color:#666;
-    margin-bottom:20px;
+    color:#555;
+    margin-bottom:25px;
+    font-size:18px;
 }
 
-/* GRID */
 .psychologists{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-/* CARD */
 .psych-card{
-    background: #fff;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    position: relative;
+    background:#efe5fb;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+    position:relative;
 }
 
 .psych-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
 }
 
-/* IMAGEN */
 .img-container{
-    position: relative;
-    margin-bottom: 15px;
+    position:relative;
+    margin-bottom:18px;
 }
 
 .img-container img{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #f3f3f3;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #fff;
 }
 
-/* ICONO DE MENSAJE */
 .mail-icon{
-    position: absolute;
-    top: 0;
-    right: 20%;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #ede9fe;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7c3aed;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    position:absolute;
+    right:10px;
+    bottom:0;
+    width:34px;
+    height:34px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#222;
+    box-shadow:0 5px 10px rgba(0,0,0,.15);
 }
 
-/* TEXTO */
 .psych-card h3{
-    margin: 10px 0 5px;
-    font-size: 18px;
+    font-size:26px;
+    margin-bottom:8px;
 }
 
 .psych-card span{
-    color: #7c3aed;
-    font-size: 14px;
-    font-weight: 500;
+    color:#6b21a8;
+    font-weight:600;
 }
 
 .psych-card hr{
-    margin: 15px 0;
-    border: none;
-    height: 1px;
-    background: #eee;
+    margin:15px 0;
+    border:none;
+    height:1px;
+    background:#d7d7d7;
 }
 
 .psych-card p{
-    font-size: 14px;
-    color: #555;
+    color:#444;
+    line-height:1.5;
 }
 
-/* AGENDA */
+/* ================= AGENDA ================= */
+
 .appointment{
-    margin-top:20px;
+    margin-top:40px;
     background:#d9d9d9;
-    padding:20px;
-    border-radius:12px;
+    border-radius:18px;
+    padding:25px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.appointment button{
-    background:#31327b;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
+.appointment div{
+    flex:1;
 }
 
-h1,
+.appointment h4{
+    font-size:28px;
+    margin-bottom:10px;
+    color:#111;
+}
 
+.appointment p{
+    color:#444;
+    line-height:1.6;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:240px;
+    height:58px;
+    padding:0 25px;
+    background:#35358f;
+    color:#fff;
+    text-decoration:none;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.btn i{
+    font-size:22px;
+}
+
+/* ================= TITULOS ================= */
+
+h1,
+h2,
 h3,
 h4,
 h5,
 h6{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:700;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1100px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .psychologists{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .description{
+        width:100%;
+        max-width:500px;
+        margin:auto;
+    }
+
+    .line{
+        margin:18px auto;
+    }
+}
+
+@media (max-width:768px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .content{
+        margin-left:220px;
+        width:calc(100% - 220px);
+        padding:25px;
+    }
+
+    .psychologists{
+        grid-template-columns:1fr;
+    }
+
+    .appointment{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    h2{
+        font-size:30px;
+    }
+
+    .card-text h3{
+        font-size:22px;
+    }
+
+    .psych-card h3{
+        font-size:22px;
+    }
+}
+
+@media (max-width:600px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .content{
+        margin-left:0;
+        width:100%;
+    }
+
+    .hero{
+        margin-top:20px;
+    }
 }

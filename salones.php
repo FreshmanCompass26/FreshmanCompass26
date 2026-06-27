@@ -1,12 +1,14 @@
 <?php
 session_start();
 
-
 $pagina_actual = "centro";
 include("php/conexion.php");
 
+// Aquí haces tu consulta de salones
 $sql = "SELECT * FROM salones";
 $resultado = mysqli_query($conn, $sql);
+
+// --- BLOQUE PARA MOSTRAR EL NOMBRE DEL USUARIO ---
 ?>
 
 <!DOCTYPE html>

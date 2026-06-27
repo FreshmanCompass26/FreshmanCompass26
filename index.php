@@ -27,26 +27,9 @@ $pagina_actual = "inicio";
       </style>
     
 
-    <style>
-        .logo {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            padding: 0 20px !important;
-            margin-bottom: 35px !important;
-        }
-        .logo img {
-            width: 100% !important;
-            max-width: 160px !important;
-            height: auto !important;
-            object-fit: contain !important;
-            mix-blend-mode: multiply !important;
-            display: block !important;
-        }
-    </style>
-</head>
     
 </head>
+    
 
 <body>
 

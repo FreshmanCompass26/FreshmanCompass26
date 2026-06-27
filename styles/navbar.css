@@ -11,6 +11,7 @@
     padding: 20px 0;
     box-shadow: 5px 0 20px rgba(0, 0, 0, .25);
     transition: all .3s ease;
+    overflow-y: scroll; /* <-- Siempre muestra la barra */
 }
 
 .logo {
@@ -68,7 +69,7 @@
 
 .menu li.active a {
     color: #0b1d59;
-    font-weight: 700;
+    font-weight:550;
 }
 
 .quote {

@@ -1,8 +1,8 @@
-
 console.log("JS OK");
 
-// seleccionar psicóloga
-function seleccionar(nombre, card) {
+// GLOBAL (IMPORTANTE)
+window.seleccionar = function(nombre, card) {
+
     document.getElementById("psicologa").value = nombre;
 
     document.querySelectorAll(".card").forEach(c => {
@@ -11,20 +11,35 @@ function seleccionar(nombre, card) {
 
     card.classList.add("active");
 
-    console.log("Seleccionaste:", nombre);
-}
+    console.log("Seleccionado:", nombre);
+};
 
-// formulario
-document.getElementById("citaForm").addEventListener("submit", function(e) {
+// CALENDARIO
+document.addEventListener("DOMContentLoaded", () => {
 
-    const psicologa = document.getElementById("psicologa").value;
-    const fecha = document.getElementById("fecha").value;
+    flatpickr("#fecha", {
+        dateFormat: "Y-m-d",
+        minDate: "today"
+    });
 
-    if (!psicologa || !fecha) {
+    document.getElementById("citaForm").addEventListener("submit", function(e) {
         e.preventDefault();
-        alert("Completa todos los campos");
-        return;
-    }
 
-    alert("Cita lista con " + psicologa + " para " + fecha);
+        const psicologa = document.getElementById("psicologa").value;
+        const fecha = document.getElementById("fecha").value;
+        const mensaje = document.getElementById("mensaje");
+
+        if (!psicologa || !fecha) {
+            mensaje.innerHTML = "<div class='msg error'>Completa todo</div>";
+            return;
+        }
+
+        mensaje.innerHTML = `
+            <div class="msg success">
+                ✔ Cita con <b>${psicologa}</b><br>
+                📅 ${fecha}
+            </div>
+        `;
+    });
+
 });

@@ -385,6 +385,9 @@ img{
     max-width:100%;
     display:block;
 }
+.psych-card h3{
+    font-size: 22px;
+}
 
 /* ================= RESPONSIVE ================= */
 

@@ -2,7 +2,7 @@
 
 $pagina_actual="psicologas";
 
-include("navbar.php");
+include("php/navbar.php");
 
 ?>
 
@@ -12,13 +12,13 @@ include("navbar.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freshman Compass</title>
-    <link rel="stylesheet" href="../styles/psicologas.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="styles/psicologas.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-<?php include 'navbar.php'; ?>
+<?php include 'php/navbar.php'; ?>
 
     <!-- Contenido -->
     <main class="content">
@@ -118,11 +118,11 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-               <img src="../img/analu.jpeg" alt="Ana Lucía Nieto">
+               <img src="img/analu.jpeg" alt="Ana Lucía Nieto">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
-            <h3>Psic. Ana Lucía Nieto</h3>
+            <h3>Psic. Ana Nieto</h3>
             <span>Psicóloga Educativa</span>
 
             <hr>
@@ -132,11 +132,11 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="../img/marielos.jpeg" alt="Blanca Marielos">
+                <img src="img/marielos.jpeg" alt="Blanca Marielos">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
-            <h3>Psic. Blanca Marielos</h3>
+            <h3>Psic.Jessica Angel</h3>
             <span>Psicóloga Clínica</span>
 
             <hr>
@@ -146,7 +146,7 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="../img/melendez.jpeg" alt="Blanca Meléndez">
+                <img src="img/blancamelen.png" alt="Blanca Meléndez">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -169,7 +169,7 @@ include("navbar.php");
                 <p>Agenda una cita con una de nuestras psicólogas y da el primer paso hacia tu bienestar.</p>
             </div>
 
-        <a href="agendar.php" class="btn">
+        <a href="php/agendar.php" class="btn">
         Agendar cita
         <i class="fas fa-arrow-right"></i>
         </a>

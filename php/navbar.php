@@ -82,17 +82,17 @@ if ($pagina_actual == "nuestro_centro") {
         <?php } elseif ($pagina_actual == "teachers") { ?>
 
             <p>Un buen maestro puede cambiar una vida.</p>
-            <small>Anónimo</small>
+            <small>Freshman Compass</small>
 
         <?php } elseif ($pagina_actual == "consejos") { ?>
 
             <p>Los pequeños hábitos crean grandes resultados.</p>
-            <small>James Clear</small>
+            <small>Freshman Compass</small>
 
         <?php } elseif ($pagina_actual == "psicologas") { ?>
 
             <p>Pedir ayuda también es una muestra de fortaleza.</p>
-            <small>Anónimo</small>
+            <small>Freshman Compass</small>
 
         <?php } elseif ($pagina_actual == "eventos") { ?>
 
@@ -102,6 +102,17 @@ if ($pagina_actual == "nuestro_centro") {
         <?php } elseif ($pagina_actual == "centro") { ?>
 
             <p>Tu escuela también es parte de tu historia.</p>
+            <small>Freshman Compass</small>
+
+
+        <?php } elseif ($pagina_actual == "salones") { ?>
+
+            <p>Tu lugar de estudio te da buenas vibras.</p>
+            <small>Freshman Compass</small>
+        
+        <?php } elseif ($pagina_actual == "compassbot") { ?>
+
+            <p>Una ayuda hace más que millones de dolares.</p>
             <small>Freshman Compass</small>
 
         <?php } ?>

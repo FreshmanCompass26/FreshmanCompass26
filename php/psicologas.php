@@ -17,13 +17,6 @@ include("navbar.php");
 </head>
 <body>
 
-    <ul class="nav">
-      <li><i class="fas fa-home"></i> Inicio</li>
-      <li><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
-      <li><i class="fas fa-school"></i> Nuestro centro</li>
-      <li><i class="fas fa-lightbulb"></i> Consejos</li>
-      <li><i class="fas fa-calendar-alt"></i> Eventos</li>
-    </ul>
     <div class="quote">
       <p>"Don’t count the days, make the days count."</p>
       <span>— Muhammad Ali</span>
@@ -63,18 +56,6 @@ include("navbar.php");
 
         <?php } ?>
     </ul>
-
-    <div class="quote">
-        <p>
-            Don’t count the days,<br>
-            make the days count.
-        </p>
-        <small>
-            — Muhammad Ali
-        </small>
-    </div>
-
-</div>
 
     <!-- Contenido -->
     <main class="content">
@@ -163,8 +144,6 @@ include("navbar.php");
 
 </div>
 
-
-
         </section>
 
         <!-- Psicólogas -->
@@ -176,7 +155,7 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="img/analu.jpeg" alt="Ana Lucía Nieto">
+               <img src="../img/analu.jpeg" alt="Ana Lucía Nieto">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -190,7 +169,7 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="img/marielos.jpeg" alt="Blanca Marielos">
+                <img src="../img/marielos.jpeg" alt="Blanca Marielos">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -204,7 +183,7 @@ include("navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="img/melendez.jpeg" alt="Blanca Meléndez">
+                <img src="../img/melendez.jpeg" alt="Blanca Meléndez">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -227,7 +206,10 @@ include("navbar.php");
                 <p>Agenda una cita con una de nuestras psicólogas y da el primer paso hacia tu bienestar.</p>
             </div>
 
-            <a href="php/agendar.php" class="btn">Agendar cita</a>
+        <a href="agendar.php" class="btn">
+        Agendar cita
+        <i class="fas fa-arrow-right"></i>
+        </a>
         </section>
 
     </main>

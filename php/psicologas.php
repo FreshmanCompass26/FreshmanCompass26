@@ -17,13 +17,6 @@ include("navbar.php");
 </head>
 <body>
 
-    <div class="quote">
-      <p>"Don’t count the days, make the days count."</p>
-      <span>— Muhammad Ali</span>
-    </div>
-  </div>
-
-    <ul class="menu">
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
             <a href="index.php">
                 <i class="fa-solid fa-house"></i>

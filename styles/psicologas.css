@@ -97,9 +97,8 @@ body{
     margin-left:250px;
     width:calc(100% - 250px);
     min-height:100vh;
-    padding:40px;
+    padding:20px 40px 40px;
 }
-
 /* ================= HERO ================= */
 
 .hero{
@@ -107,7 +106,8 @@ body{
     justify-content:space-between;
     align-items:center;
     gap:50px;
-    margin-bottom:60px;
+    margin:0;
+    padding:0;
 }
 
 .hero-text{
@@ -468,29 +468,4 @@ img{
     .hero{
         margin-top:20px;
     }
-}
-
-html,
-body{
-    margin:0;
-    padding:0;
-}
-
-main.content{
-    margin-top:0 !important;
-    padding-top:20px !important;
-}
-
-.hero{
-    margin-top:0 !important;
-    padding-top:0 !important;
-    align-items:flex-start !important;
-}
-
-.content > section:first-child{
-    margin-top:0 !important;
-}
-
-.sidebar{
-    top:0;
 }

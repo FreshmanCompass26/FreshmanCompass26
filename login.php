@@ -1,208 +1,116 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Freshman Compass | Login</title>
-
-<link rel="stylesheet" href="styles/auth.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freshman Compass – Login</title>
+  <link rel="stylesheet" href="styles/auth.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
 </head>
-
 <body>
 
-<div class="background"></div>
+<div class="auth-wrapper">
+  <div class="auth-box" id="authBox">
 
-<div class="container">
+    <!-- ── PANEL IZQUIERDO ── -->
+    <div class="panel panel-left" id="panelLeft">
 
-    <!-- LEFT -->
+      <!-- Estado A: Login form -->
+      <div class="form-section" id="loginForm">
+        <div class="logo-area">
+          <img src="img/logoooooo.png" alt="Freshman Compass" class="logo-img">
+        </div>
+        <h2 class="form-title">Welcome back</h2>
+        <p class="form-subtitle">Sign in to your account</p>
+        <form action="php/login.php" method="POST" class="form" novalidate>
+          <div class="field">
+            <label for="l-email">Email</label>
+            <input type="email" id="l-email" name="email" placeholder="you@example.com" required/>
+            <span class="field-icon">✉</span>
+          </div>
+          <div class="field">
+            <label for="l-pass">Password</label>
+            <input type="password" id="l-pass" name="password" placeholder="••••••••" required/>
+            <span class="field-icon">🔒</span>
+          </div>
+          <a href="auth/forgot.php" class="forgot-link">Forgot password?</a>
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+        <p class="switch-text">
+          Don't have an account?
+          <button class="switch-btn" id="goSignup">Create account</button>
+        </p>
+      </div>
 
-    <div class="left-panel">
+      <!-- Estado B: Mensaje de bienvenida (modo signup) -->
+      <div class="welcome-section hidden" id="signupWelcome">
+        <h1>Welcome to,<br/>Freshman Compass!</h1>
+        <p>Tu camino ya comenzó. Inicia sesión y sigue creciendo con nosotros.</p>
+        <button class="btn-outline" id="goLoginFromWelcome">Sign In</button>
+      </div>
 
-    <div class="brand">
-
-    <img src="img/logooooo.jpeg" alt="Logo" class="logo-img">
-
-    <div>
-        <h2>Freshman Compass</h2>
-        <span>Your academic guide</span>
     </div>
 
+    <!-- ── PANEL DERECHO ── -->
+    <div class="panel panel-right" id="panelRight">
+
+      <!-- Estado A: Mensaje de bienvenida (modo login) -->
+      <div class="welcome-section" id="loginWelcome">
+        <h1>Hello,<br/>Freshman!</h1>
+        <p>Bienvenido a <strong>Freshman Compass,</strong> crece, aprende y alcanza el éxito en el Centro ¡Supérate! ADOC.</p>
+        <button class="btn-outline" id="goSignupFromWelcome">Create Account</button>
+      </div>
+
+      <!-- Estado B: Signup form (modo signup) -->
+      <div class="form-section hidden" id="signupForm">
+        <div class="logo-area">
+          <img src="img/logoooooo.png" alt="Freshman Compass" class="logo-img">
+        </div>
+        <h2 class="form-title">Create account</h2>
+        <p class="form-subtitle">Join Freshman Compass today</p>
+        <form action="php/signup.php" method="POST" class="form" novalidate>
+          <div class="fields-row">
+            <div class="field">
+              <label for="s-fname">First Name</label>
+              <input type="text" id="s-fname" name="first_name" placeholder="John" required/>
+            </div>
+            <div class="field">
+              <label for="s-lname">Last Name</label>
+              <input type="text" id="s-lname" name="last_name" placeholder="Doe" required/>
+            </div>
+          </div>
+          <div class="field">
+            <label for="s-email">Email</label>
+            <input type="email" id="s-email" name="email" placeholder="you@example.com" required/>
+            <span class="field-icon">✉</span>
+          </div>
+          <div class="field">
+            <label for="s-phone">Phone</label>
+            <input type="tel" id="s-phone" name="phone" placeholder="+503 0000-0000" required/>
+            <span class="field-icon">📱</span>
+          </div>
+          <div class="field">
+            <label for="s-pass">Password</label>
+            <input type="password" id="s-pass" name="password" placeholder="Min. 8 characters" required/>
+            <span class="field-icon">🔒</span>
+          </div>
+          <button type="submit" class="btn-primary teal-btn">Create Account</button>
+        </form>
+        <p class="switch-text teal-switch">
+          Already have an account?
+          <button class="switch-btn teal-switch-btn" id="goLoginFromForm">Sign in</button>
+        </p>
+      </div>
+
+      <img src="img/orbitt_transparent.png" class="orbit-character">
+
+    </div>
+
+  </div>
 </div>
 
-        <div class="form-content">
-
-        <?php if (isset($_GET['signup'])): ?>
-    <p class="success-msg"> Cuenta creada, ahora inicia sesión</p>
-<?php endif; ?>
-
-            <span class="tag">
-                Welcome Back 👋
-            </span>
-
-            <h1>
-                Sign in to your account
-            </h1>
-
-            <p>
-                Continue your academic journey with Freshman Compass.
-            </p>
-
-            <form action="php/login.php" method="POST">
-
-                <div class="input-group">
-
-                    <label>Email</label>
-
-                    <div class="input">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                        <input
-                        type="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        required>
-
-                    </div>
-
-                </div>
-
-                <div class="input-group">
-
-                    <label>Password</label>
-
-                    <div class="input">
-
-                        <i class="fa-solid fa-lock"></i>
-
-                        <input
-                        type="password"
-                        name="password"
-                        placeholder="••••••••"
-                        required>
-
-                    </div>
-
-                </div>
-
-                <div class="options">
-
-                    <a href="#">
-                        Forgot password?
-                    </a>
-
-                </div>
-
-                <button class="login-btn">
-
-                    Sign In
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </button>
-
-            </form>
-
-            <div class="signup-link">
-
-                Don't have an account?
-
-             <a href="#" onclick="toggleForm()">
-                 Create account
-            </a>
-
-            </div>
-
-        </div>
-
-     <form class="signup-form" id="signupForm" style="display:none;">
-
-<h2>Create account</h2>
-
-<input type="text" name="nombre" placeholder="Nombre">
-<input type="email" name="email" placeholder="Email">
-<input type="password" name="password" placeholder="Password">
-
-<button>Registrarse</button>
-
-<p onclick="toggleForm()">Ya tengo cuenta</p>
-
-</form>
-
-    </div>
-
-    <!-- RIGHT -->
-
-    <div class="right-panel">
-
-        <div class="glass-card">
-
-            <span class="mini-tag">
-
-                Freshman Compass
-
-            </span>
-
-            <h2>
-
-                Everything a freshman needs.
-
-            </h2>
-
-            <p>
-
-                Discover resources, guides, communities and opportunities in one place.
-
-            </p>
-
-            <div class="floating-card">
-
-                🧭
-                <strong>Start your journey</strong>
-
-                <small>
-
-                    Learn. Connect. Grow.
-
-                </small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<script>
-function toggleForm() {
-
-    const login = document.getElementById("loginForm");
-    const signup = document.getElementById("signupForm");
-
-    if (login.style.display === "none") {
-        login.style.display = "block";
-        signup.style.display = "none";
-    } else {
-        login.style.display = "none";
-        signup.style.display = "block";
-    }
-}
-</script>
-
-
-
+<script src="Js/auth.js"></script>
 </body>
-
 </html>

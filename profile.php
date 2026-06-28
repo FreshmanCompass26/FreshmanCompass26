@@ -1,26 +1,22 @@
 <?php
+session_start();
 include("php/profile_conexion.php");
 
-$idUsuario = 3;
+// 🔥 PROTECCIÓN
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+
+$idUsuario = $_SESSION['usuario_id'];
 
 $consulta = $conexion->query("
-SELECT * FROM estudiantes WHERE id = $idUsuario
+SELECT * FROM usuarios WHERE usuario_ID = $idUsuario
 ");
 
 $perfil = $consulta->fetch_assoc();
-
-if (!$perfil) {
-    $perfil = [
-        "nombre" => "",
-        "descripcion" => "Sin descripción",
-        "email" => "",
-        "centro_escolar" => "",
-        "username" => "",
-        "fecha_nacimiento" => "",
-        "foto_perfil" => "default.png"
-    ];
-}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

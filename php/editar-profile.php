@@ -1,15 +1,21 @@
 <?php
+session_start();
 include("profile_conexion.php");
 
-$idUsuario = 3;
+// 🔥 PROTECCIÓN
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: ../login.html");
+    exit();
+}
+
+$idUsuario = $_SESSION['usuario_id'];
 
 $consulta = $conexion->query("
-SELECT * FROM estudiantes WHERE id = $idUsuario
+SELECT * FROM usuarios WHERE usuario_ID = $idUsuario
 ");
 
 $perfil = $consulta->fetch_assoc();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

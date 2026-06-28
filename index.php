@@ -281,34 +281,34 @@ $pagina_actual = "inicio";
 
             <h4>Ricardo L.</h4>
 
-            <span>Graduado del Centro ¡Supérate! ADOC</span>
+            <span>Graduado del Centro ¡Supérate! ADOC <br> PROM 2025</span>
 
         </div>
         <div class="testimonial-card">
 
-            <img src="img/bebesita.jpg">
+            <img src="img/willito.jpeg">
 
             <p>
-                “Aquí aprendí que los retos son oportunidades.”
+                “¡Supérate! fue más que una familia, un lugar que transforma vidas.” 
             </p>
 
-            <h4>María G.</h4>
+            <h4>Wilfredo M.</h4>
 
-            <span>Graduada del Centro ¡Supérate! ADOC</span>
+            <span>Graduado del Centro ¡Supérate! ADOC <br> PROM 2011</span>
 
         </div>
 
         <div class="testimonial-card">
 
-            <img src="img/freddy.png">
+            <img src="img/xander.jpeg">
 
             <p>
-                “Las herramientas y apoyo cambiaron mi vida.”
+                “CSA, dejó una huella en mi vida al impulsar mi potencial y abrirme las puertas a nuevas oportunidades.”
             </p>
 
-            <h4>Freddy A.</h4>
+            <h4>Xander P.</h4>
 
-            <span>Graduado del Centro ¡Supérate! ADOC</span>
+            <span>Graduado del Centro ¡Supérate! ADOC <br> PROM 2025</span>
 
         </div>
 

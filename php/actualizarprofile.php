@@ -2,10 +2,18 @@
 
 include("profile_conexion.php");
 
-session_start(); // 🔥 AGREGA ESTO ARRIBA
+session_start();
 
-$idUsuario = 3;
+// 🔥 PROTECCIÓN
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: ../login.html");
+    exit();
+}
 
+// ✅ USAR EL USUARIO REAL
+$idUsuario = $_SESSION['usuario_id'];
+
+// 📥 DATOS DEL FORM
 $nombre = $_POST['nombre'];
 $fechaNacimiento = $_POST['fecha_nacimiento'];
 $email = $_POST['email'];
@@ -13,6 +21,7 @@ $centroEscolar = $_POST['centro_escolar'];
 $username = $_POST['username'];
 $descripcion = $_POST['descripcion'];
 
+// 🖼 FOTO
 $fotoNombre = $_FILES['foto']['name'];
 
 if($fotoNombre != ""){
@@ -24,8 +33,9 @@ if($fotoNombre != ""){
     $fotoSQL = "";
 }
 
+// ✅ QUERY CORRECTA
 $sqlActualizar = "
-UPDATE estudiantes
+UPDATE usuarios
 SET
 nombre='$nombre',
 fecha_nacimiento='$fechaNacimiento',
@@ -34,14 +44,17 @@ centro_escolar='$centroEscolar',
 username='$username',
 descripcion='$descripcion'
 $fotoSQL
-WHERE id=$idUsuario
+WHERE usuario_ID=$idUsuario
 ";
 
+// ✅ Ejecutar
 $conexion->query($sqlActualizar);
 
-// 🔥 ACTUALIZA LA SESIÓN AQUÍ
+// ✅ ACTUALIZAR SESIÓN
 $_SESSION['nombre'] = $nombre;
+$_SESSION['email'] = $email;
 
+// ✅ Volver al perfil
 header("Location: ../profile.php");
 exit();
 ?>

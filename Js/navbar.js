@@ -6,17 +6,23 @@ const frases = [
   { texto: "Nunca dejes de aprender, porque la vida nunca deja de enseñar.", autor: "— Autor desconocido" },
   { texto: "Tu futuro se construye con lo que haces hoy, no mañana.", autor: "— Inspirada en Robert Kiyosaki" },
   { texto: "El éxito no llega por suerte, llega por esfuerzo.", autor: "— Autor desconocido." },
-    { texto: "La constancia siempre termina dando resultados.", autor: "— TheGrefg" },
- { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" },
-
+  { texto: "La constancia siempre termina dando resultados.", autor: "— TheGrefg" },
+  { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" }
 ];
 
 function mostrarFraseAleatoria() {
-  const indiceAleatorio = Math.floor(Math.random() * frases.length);
-  const fraseSeleccionada = frases[indiceAleatorio];
-  
-  document.getElementById("texto-frase").innerHTML = fraseSeleccionada.texto;
-  document.getElementById("autor-frase").textContent = fraseSeleccionada.autor;
+  const elTexto = document.getElementById("texto-frase");
+  const elAutor = document.getElementById("autor-frase");
+
+  // 📌 Seguridad: Solo ejecuta si los elementos existen en la página actual
+  if (elTexto && elAutor) {
+    const indiceAleatorio = Math.floor(Math.random() * frases.length);
+    const fraseSeleccionada = frases[indiceAleatorio];
+    
+    elTexto.textContent = fraseSeleccionada.texto; // Usamos textContent por seguridad
+    elAutor.textContent = fraseSeleccionada.autor;
+  }
 }
 
+// Ejecuta cuando el HTML esté completamente cargado
 window.addEventListener('DOMContentLoaded', mostrarFraseAleatoria);

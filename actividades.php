@@ -83,7 +83,7 @@
 
         <div class="card">
 
-            <img src="img/image5.png">
+            <img src="img/triviasp.jpeg">
 
             <span class="badge trivia">TRIVIA</span>
 
@@ -107,15 +107,43 @@
 
         <div class="card">
 
-            <img src="img/image5.png">
+            <img src="img/trivaadoc.jpeg">
 
-            <span class="badge empresa">TRIVIA</span>
+            <span class="badge trivia">TRIVIA</span>
 
             <h3>Trivia ADOC</h3>
 
             <p>
 
                 Descubre la historia y valores de ADOC.
+
+            </p>
+
+            <a href="triviaadoc.php" class="play">
+
+                Jugar ahora
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+                <div class="card">
+
+            <img src="img/gerson.png">
+
+            <span class="badge trivia">
+
+                TRIVIA
+
+            </span>
+
+            <h3>Trivia ¡Supérate! ADOC</h3>
+
+            <p>
+
+                Aprende paso a paso cómo crear tu correo institucional.
 
             </p>
 
@@ -131,9 +159,9 @@
 
         <div class="card">
 
-            <img src="img/image5.png">
+            <img src="img/correo.jpeg">
 
-            <span class="badge correo">
+            <span class="badge trivia">
 
                 MINI JUEGO
 
@@ -161,29 +189,23 @@
 
 </div>
 
-<!-- Agrega esto al final de tu archivo de la página principal (actividades.php) -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Leemos si el navegador guardó que ya se completó la trivia
         const completado = localStorage.getItem('triviaSuperateCompletada');
         const puntajeMaximo = localStorage.getItem('triviaSuperateScore');
 
         if (completado === 'true') {
-            // Buscamos la tarjeta de súpérate usando la clase que le pusimos antes
             const tarjetaSuperate = document.querySelector('.item-superate');
             
             if (tarjetaSuperate) {
-                // Le cambiamos el estilo para que resalte que ya se ganó
                 tarjetaSuperate.style.border = "2px solid #2ecc71";
                 
-                // Creamos un pequeño texto que muestre el score guardado
                 const scoreBadge = document.createElement('div');
                 scoreBadge.style.color = "#2ecc71";
                 scoreBadge.style.fontWeight = "bold";
                 scoreBadge.style.marginTop = "10px";
                 scoreBadge.innerHTML = `✅ ¡Completado! Record: ${puntajeMaximo}/10`;
                 
-                // Lo metemos dentro de la tarjeta
                 tarjetaSuperate.appendChild(scoreBadge);
             }
         }

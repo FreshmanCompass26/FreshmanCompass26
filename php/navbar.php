@@ -121,4 +121,4 @@ if ($pagina_actual == "nuestro_centro") {
 
 </div>
 
-<script src="../Js/navbar.js"></script>
+<script src="../js/navbar.js"></script>

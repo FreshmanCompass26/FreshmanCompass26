@@ -1,117 +1,92 @@
-
-.footer{
-    background:#17356f;
-    color:white;
-    padding:50px 40px;
-    margin-top:50px;
+.footer {
+  background:#17356f; /* azul oscuro */
+  color:white;
+  padding:40px 20px;
 }
 
-/* PARTE SUPERIOR */
-
-.footer-top{
-    max-width:1200px;
-    margin:auto;
-    position:relative;
-    min-height:180px;
+.footer-container {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
 }
 
-/* BURBUJA CENTRADA */
-
-.footer-bubble{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    
-    background:#d7eaff;
-    color:#20497d;
-    
-    padding:25px 40px;
-    border-radius:25px;
-    
-    text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+/* Robot + burbuja */
+.footer-robot {
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.footer-bubble h3{
-    margin:0;
-    font-size:2.5rem;
-    font-weight:700;
+.robot-img {
+  width:100px;
+  height:auto;
 }
 
-.footer-bubble p{
-    margin-top:10px;
-    font-size:1.2rem;
+.footer-bubble {
+  background:#d7eaff; /* celeste */
+  color:#20497d;
+  padding:20px 30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-/* LOGO DERECHA */
-
-.footer-brand{
-    position:absolute;
-    right:0;
-    top:15px;
-    
-    width:250px;
-    text-align:center;
+.footer-bubble h3 {
+  margin:0;
+  font-size:1.5rem;
+  font-weight:700;
 }
 
-.footer-brand img{
-    width:120px;
-    height:auto;
-    margin-bottom:10px;
+.footer-bubble p {
+  margin-top:5px;
+  font-size:1rem;
 }
 
-.footer-brand p{
-    margin:0;
-    line-height:1.5;
-    font-size:1rem;
+/* Logo */
+.footer-brand {
+  text-align:center;
 }
 
-/* LINEA */
-
-.footer-divider{
-    width:100%;
-    max-width:1200px;
-    height:1px;
-    background:rgba(255,255,255,.2);
-    margin:30px auto 40px;
+.logo-img {
+  width:120px;
+  height:auto;
+  margin-bottom:10px;
 }
 
-/* INFO */
-
-.footer-info{
-    max-width:1000px;
-    margin:auto;
-
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    gap:20px;
+.footer-brand p {
+  margin:0;
+  font-size:1rem;
 }
 
-.info-item{
-    text-align:center;
+/* Contactos */
+.footer-info {
+  display:flex;
+  gap:20px;
 }
 
-.info-item i{
-    width:70px;
-    height:70px;
-
-    border:2px solid rgba(255,255,255,.4);
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:28px;
-    margin:0 auto 15px;
+.info-item {
+  text-align:center;
 }
 
-.info-item span{
-    font-size:1rem;
+.info-item i {
+  width:50px;
+  height:50px;
+  border:2px solid rgba(255,255,255,.4);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:22px;
+  margin:0 auto 10px;
 }
 
-/* RESPONSIVE */
+
+
+
 
 @media(max-width:900px){
 

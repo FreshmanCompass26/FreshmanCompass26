@@ -2,15 +2,28 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
+/* 📌 Detecta página actual automáticamente */
+$pagina_actual = basename($_SERVER['PHP_SELF'], ".php");
+
+/* 📌 Ajustes para que coincida con tus nombres */
+if ($pagina_actual == "index") {
+    $pagina_actual = "inicio";
+}
+
+if ($pagina_actual == "nuestro_centro") {
+    $pagina_actual = "centro";
+}
 ?>
 
 <div class="sidebar">
 
     <div class="logo">
-        <img src="img/fc.logo.png" alt="Logo">
+        <img src="/freshmancompass26/img/logoooooo.png" alt="Logo">
     </div>
 
     <ul class="menu">
+
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
             <a href="index.php">
                 <i class="fa-solid fa-house"></i>
@@ -34,6 +47,13 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </li>
 
+            <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
+                <a href="../psicologas.php">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Psicólogas</span>
+                </a>
+            </li>
+
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
@@ -49,13 +69,56 @@ if (session_status() == PHP_SESSION_NONE) {
             </li>
 
         <?php } ?>
+
     </ul>
 
     <div class="quote">
-        <p id="texto-frase">Cargando...</p>
-        <small id="autor-frase"></small>
+
+        <?php if ($pagina_actual == "inicio") { ?>
+
+            <p>Cada nuevo comienzo trae nuevas oportunidades.</p>
+            <small>Freshman Compass</small>
+
+        <?php } elseif ($pagina_actual == "teachers") { ?>
+
+            <p>Un buen maestro puede cambiar una vida.</p>
+            <small>Freshman Compass</small>
+
+        <?php } elseif ($pagina_actual == "consejos") { ?>
+
+            <p>Los pequeños hábitos crean grandes resultados.</p>
+            <small>Freshman Compass</small>
+
+        <?php } elseif ($pagina_actual == "psicologas") { ?>
+
+            <p>Pedir ayuda también es una muestra de fortaleza.</p>
+            <small>Freshman Compass</small>
+
+        <?php } elseif ($pagina_actual == "eventos") { ?>
+
+            <p>Cada experiencia es una oportunidad para crecer.</p>
+            <small>Freshman Compass</small>
+
+        <?php } elseif ($pagina_actual == "centro") { ?>
+
+            <p>Tu escuela también es parte de tu historia.</p>
+            <small>Freshman Compass</small>
+
+
+        <?php } elseif ($pagina_actual == "salones") { ?>
+
+            <p>Tu lugar de estudio te da buenas vibras.</p>
+            <small>Freshman Compass</small>
+        
+        <?php } elseif ($pagina_actual == "compassbot") { ?>
+
+            <p>Una ayuda hace más que millones de dolares.</p>
+            <small>Freshman Compass</small>
+
+        <?php } ?>
+
     </div>
 
 </div>
 
-<script src="navbar.js"></script>
+<script src="../Js/navbar.js"></script>

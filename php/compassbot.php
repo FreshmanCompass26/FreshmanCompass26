@@ -12,6 +12,8 @@ include("navbar.php");
 
     <link rel="stylesheet" href="../styles/compassbot.css">
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -55,7 +57,17 @@ include("navbar.php");
         </div>
 
     </div>
+    <div class="sugerencias">
 
+        <button class="sugerencia-btn">¿Qué es Súperate?</button>
+
+        <button class="sugerencia-btn">Dame un consejo</button>
+
+        <button class="sugerencia-btn">Tengo nervios</button>
+
+        <button class="sugerencia-btn">Dato curioso</button>
+
+    </div>
     <div class="entrada-chat">
 
         <input

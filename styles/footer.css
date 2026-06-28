@@ -1,162 +1,140 @@
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-/* FOOTER */
 .footer{
-    width:100%;
-    background:#062b63;
-    position:relative;
-    overflow:hidden;
-    padding-top:25px;
+    background:#17356f;
+    color:white;
+    padding:50px 40px;
+    margin-top:50px;
 }
 
-/* CONTENEDOR */
-.footer-container{
-    max-width:1600px;
+/* PARTE SUPERIOR */
+
+.footer-top{
+    max-width:1200px;
     margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-    padding:20px 50px 100px;
-    flex-wrap:wrap;
+    position:relative;
+    min-height:180px;
 }
 
-/* ROBOT */
-.footer-robot img{
-    width:170px;
-    display:block;
-}
+/* BURBUJA CENTRADA */
 
-/* GLOBO */
 .footer-bubble{
-    background:#d6eafc;
-    padding:18px 25px;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    
+    background:#d7eaff;
+    color:#20497d;
+    
+    padding:25px 40px;
     border-radius:25px;
-    color:#163a6b;
-    min-width:220px;
+    
     text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 .footer-bubble h3{
-    font-size:24px;
-    margin-bottom:8px;
+    margin:0;
+    font-size:2.5rem;
+    font-weight:700;
 }
 
 .footer-bubble p{
-    font-size:18px;
+    margin-top:10px;
+    font-size:1.2rem;
 }
 
-/* LOGO */
+/* LOGO DERECHA */
+
 .footer-brand{
+    position:absolute;
+    right:0;
+    top:15px;
+    
+    width:250px;
     text-align:center;
-    color:white;
 }
 
 .footer-brand img{
-    width:300px;
+    width:120px;
+    height:auto;
     margin-bottom:10px;
 }
 
 .footer-brand p{
-    font-size:16px;
-    opacity:.9;
+    margin:0;
+    line-height:1.5;
+    font-size:1rem;
+}
+
+/* LINEA */
+
+.footer-divider{
+    width:100%;
+    max-width:1200px;
+    height:1px;
+    background:rgba(255,255,255,.2);
+    margin:30px auto 40px;
 }
 
 /* INFO */
+
 .footer-info{
+    max-width:1000px;
+    margin:auto;
+
     display:flex;
+    justify-content:space-around;
     align-items:center;
-    gap:50px;
-    flex-wrap:wrap;
+    gap:20px;
 }
 
 .info-item{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
     text-align:center;
-    color:white;
-    min-width:150px;
-    padding:0 20px;
-    border-left:1px solid rgba(255,255,255,.2);
-}
-
-.info-item:first-child{
-    border-left:none;
 }
 
 .info-item i{
     width:70px;
     height:70px;
+
     border:2px solid rgba(255,255,255,.4);
     border-radius:50%;
+
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:30px;
-    margin-bottom:15px;
+    align-items:center;
+
+    font-size:28px;
+    margin:0 auto 15px;
 }
 
-/* NUBES */
-.footer-clouds{
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:100%;
-    height:90px;
-    background:
-    radial-gradient(circle at 50px 50px,#84bdf5 45px,transparent 46px),
-    radial-gradient(circle at 150px 40px,#84bdf5 50px,transparent 51px),
-    radial-gradient(circle at 260px 50px,#84bdf5 45px,transparent 46px),
-    radial-gradient(circle at 370px 45px,#84bdf5 50px,transparent 51px),
-    radial-gradient(circle at 500px 50px,#84bdf5 45px,transparent 46px);
-    background-size:550px 100px;
-    background-repeat:repeat-x;
+.info-item span{
+    font-size:1rem;
 }
 
 /* RESPONSIVE */
-@media(max-width:1100px){
 
-    .footer-container{
-        justify-content:center;
-        text-align:center;
-    }
+@media(max-width:900px){
 
-    .footer-info{
-        justify-content:center;
-    }
-
-    .info-item{
-        border:none;
-    }
-}
-
-@media(max-width:768px){
-
-    .footer{
-        padding-top:15px;
-    }
-
-    .footer-container{
-        padding:20px 20px 100px;
+    .footer-top{
+        display:flex;
         flex-direction:column;
+        align-items:center;
+        gap:30px;
+        min-height:auto;
     }
 
-    .footer-robot img{
-        width:130px;
+    .footer-bubble,
+    .footer-brand{
+        position:static;
+        transform:none;
     }
 
-    .footer-brand img{
-        width:220px;
+    .footer-brand{
+        width:auto;
     }
 
     .footer-info{
         flex-direction:column;
-        gap:25px;
+        gap:30px;
     }
 }

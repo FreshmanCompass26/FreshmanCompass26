@@ -31,6 +31,9 @@
 
 
     mix-blend-mode: normal !important;
+
+    filter: brightness(0) invert(1);
+    
 }
 
 .menu {

@@ -26,8 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
 
-        header("Location: ../login.html");
-        exit();
+       header("Location: ../index.php?signup=success");
+exit();
+
 
     } else {
 

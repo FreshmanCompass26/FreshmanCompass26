@@ -166,7 +166,6 @@ if (!$resultado) {
 
     </div>
 
-    <!-- BANNER -->
     <div class="banner-compartir">
         <div class="banner-izquierdo">
             <i class="fa-solid fa-comment-dots"></i>

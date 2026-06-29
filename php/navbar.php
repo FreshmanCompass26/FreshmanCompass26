@@ -48,21 +48,21 @@ if ($pagina_actual == "nuestro_centro") {
             </li>
 
             <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
-                <a href="../psicologas.php">
+                <a href="/freshmancompass26/psicologas.php">
                     <i class="fa-solid fa-heart"></i>
                     <span>Psicólogas</span>
                 </a>
             </li>
 
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-                <a href="nuestro_centro.php">
+                <a href="/freshmancompass26/nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
                     <span>Nuestro centro</span>
                 </a>
             </li>
 
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-                <a href="eventos.php">
+                <a href="/freshmancompass26/eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>
                     <span>Eventos</span>
                 </a>

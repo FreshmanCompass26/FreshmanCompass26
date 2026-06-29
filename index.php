@@ -98,11 +98,11 @@ $pagina_actual = "inicio";
 
         <?php else: ?>
 
-            <a href="login.html" class="btn-login">
+            <a href="/freshmancompass26/login.php" class="btn-login">
                 Iniciar sesión
             </a>
 
-            <a href="signup.html" class="btn-signup">
+            <a href="/freshmancompass26/signup.html" class="btn-signup">
                 Crear Cuenta
             </a>
 

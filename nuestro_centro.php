@@ -122,10 +122,10 @@ $pagina_actual = "centro";
         y prepárate para una experiencia increíble.
       </p>
 
-      <button class="explore-btn">
-        <i class="fas fa-compass"></i>
-        Explorar centro
-      </button>
+     <button class="explore-btn" onclick="window.location.href='actividades.php'">
+    <i class="fas fa-compass"></i>
+    Explora y Aprende
+</button>
     </div>
 
     <div class="hero-image">
@@ -157,22 +157,27 @@ $pagina_actual = "centro";
     </div>
 
 
-    <div class="card">
-      <div class="card-icon food">
-        <i class="fas fa-utensils"></i>
-      </div>
+ <div class="card">
 
-      <h3>Nuestra cafetería</h3>
-
-      <p>
-        Un espacio para descansar, compartir
-        y recargar energías.
-      </p>
-
-      <button>
-        <i class="fas fa-arrow-right"></i>
-      </button>
+    <div class="card-icon learning">
+          <i class="fas fa-graduation-cap"></i>
     </div>
+
+    <h3>Centro de Recursos</h3>
+
+    <p>
+        Accede a materiales de Inglés,
+        Informática y Valores para seguir
+        aprendiendo y fortaleciendo tus habilidades.
+    </p>
+
+    <a href="recursos.php">
+        <button>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </a>
+
+</div>
 
     <div class="card">
       <div class="card-icon">

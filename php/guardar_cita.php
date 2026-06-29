@@ -2,53 +2,98 @@
 session_start();
 include "conexion.php";
 
-// Verifica que sea método POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    // Obtener datos
-    $usuario = $_SESSION['nombre'] ?? null;
-    $psicologa = $_POST['psicologa'] ?? null;
-    $fecha = $_POST['fecha'] ?? null;
-
-    // VALIDAR DATOS
-    if (empty($usuario) || empty($psicologa) || empty($fecha)) {
-        echo "<script>
-                alert('⚠️ Faltan datos para agendar la cita');
-                window.history.back();
-              </script>";
-        exit();
-    }
-
-    // EVITAR CITAS DUPLICADAS (mismo usuario misma fecha)
-    $check = "SELECT * FROM citas 
-              WHERE usuario='$usuario' AND fecha='$fecha'";
-    
-    $resultado = $conn->query($check);
-
-    if ($resultado->num_rows > 0) {
-        echo "<script>
-                alert('⚠️ Ya tienes una cita agendada ese día');
-                window.history.back();
-              </script>";
-        exit();
-    }
-
-    // INSERTAR CITA
-    $sql = "INSERT INTO citas (usuario, psicologa, fecha)
-            VALUES ('$usuario', '$psicologa', '$fecha')";
-
-    if ($conn->query($sql) === TRUE) {
-
-        echo "<script>
-                alert('✅ Cita agendada correctamente');
-                window.location.href='agendar.php';
-              </script>";
-
-    } else {
-        echo "Error al guardar: " . $conn->error;
-    }
-
-} else {
-    echo "Acceso no permitido";
+// Solo aceptar solicitudes POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    exit("Acceso no permitido");
 }
+
+// Verificar sesión
+if (!isset($_SESSION['nombre'])) {
+    exit("Debes iniciar sesión.");
+}
+
+$usuario   = $_SESSION['nombre'];
+$psicologa = trim($_POST['psicologa'] ?? '');
+$fecha     = trim($_POST['fecha'] ?? '');
+$hora      = trim($_POST['hora'] ?? '');
+$motivo    = trim($_POST['motivo'] ?? '');
+
+// Validar campos
+if (
+    empty($psicologa) ||
+    empty($fecha) ||
+    empty($hora) ||
+    empty($motivo)
+) {
+    exit("Completa todos los campos.");
+}
+
+/* Verificar si el usuario ya tiene una cita ese día */
+$sql = "SELECT id FROM citas WHERE usuario = ? AND fecha = ?";
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    exit("Error SQL: " . $conn->error);
+}
+
+$stmt->bind_param("ss", $usuario, $fecha);
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+if ($resultado->num_rows > 0) {
+    $stmt->close();
+    exit("Ya tienes una cita programada para esa fecha.");
+}
+
+$stmt->close();
+
+/* Verificar si la psicóloga ya tiene cita en esa fecha y hora */
+$sql = "SELECT id FROM citas WHERE psicologa = ? AND fecha = ? AND hora = ?";
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    exit("Error SQL: " . $conn->error);
+}
+
+$stmt->bind_param("sss", $psicologa, $fecha, $hora);
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+if ($resultado->num_rows > 0) {
+    $stmt->close();
+    exit("La psicóloga ya tiene una cita en ese horario.");
+}
+
+$stmt->close();
+
+/* Guardar cita */
+$sql = "INSERT INTO citas (usuario, psicologa, fecha, hora, motivo)
+        VALUES (?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    exit("Error SQL: " . $conn->error);
+}
+
+$stmt->bind_param(
+    "sssss",
+    $usuario,
+    $psicologa,
+    $fecha,
+    $hora,
+    $motivo
+);
+
+if ($stmt->execute()) {
+    echo "ok";
+} else {
+    echo "Error SQL: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
 ?>

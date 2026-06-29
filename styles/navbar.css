@@ -93,18 +93,8 @@
 }
 
 .top-navbar {
-    position: fixed;
-    top: 0;
-    left: 250px;
-    width: calc(100% - 250px);
-    height: 80px;
-    z-index: 2000;
-    background: #0B205A;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    display: none;
+
 }
 
 .top-right {

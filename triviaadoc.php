@@ -10,7 +10,6 @@
 
     <div class="game-box">
 
-        <!-- PANTALLA 1: ANIMACIÓN DE INICIO / CARGA -->
         <div id="screen-loading" class="screen active">
             <div class="loader-content">
                 <h1>Trivia ADOC</h1>
@@ -19,7 +18,6 @@
             </div>
         </div>
 
-        <!-- PANTALLA 2: LECTURA DE INFORMACIÓN -->
         <div id="screen-info" class="screen">
             <div class="info-content">
                 <h2>¿Qué es Empresas ADOC?</h2>
@@ -33,20 +31,17 @@
             </div>
         </div>
 
-        <!-- PANTALLA 3: EL JUEGO (PREGUNTAS) -->
         <div id="screen-quiz" class="screen">
             <div class="progress-bar">Pregunta <span id="current-num">1</span> de 10</div>
             <div id="question-title" class="question-text">Cargando pregunta...</div>
             
             <div class="options-container" id="options-block">
-                <!-- Se generan dinámicamente con JS -->
             </div>
 
             <div id="feedback" class="feedback-message"></div>
             <button id="btn-next" class="btn" style="display: none;" onclick="nextQuestion()">Siguiente Pregunta ❯</button>
         </div>
 
-        <!-- PANTALLA 4: RESULTADOS FINALES -->
         <div id="screen-results" class="screen">
             <div class="results-content">
                 <h2>¡Misión Cumplida!</h2>
@@ -59,7 +54,7 @@
 
                 <div id="rank-message" class="rank-text">Evaluando rango...</div>
                 
-                <a href="actividades.php" class="btn">Volver a Actividades 🏠</a>
+                <a href="actividades.php" class="btn">Volver a Actividades</a>
             </div>
         </div>
 

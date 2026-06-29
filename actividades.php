@@ -131,7 +131,7 @@
 
                 <div class="card">
 
-            <img src="img/gerson.png">
+            <img src="img/spadoc.jpeg">
 
             <span class="badge trivia">
 
@@ -147,7 +147,7 @@
 
             </p>
 
-            <a href="#" class="play">
+            <a href="triviasuperateadoc.php" class="play">
 
                 Jugar ahora
 

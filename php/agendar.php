@@ -89,7 +89,9 @@
                         <p>
                             <i class="fa-solid fa-clock"></i>
                             Disponible
-                        </p>
+                        </p> 
+
+                        
 
                     </div>
 
@@ -146,7 +148,8 @@
 
             <!-- MELENDEZ -->
             <div class="card"
-                onclick="seleccionar('Blanca Meléndez',this)">
+                onclick="seleccionar('Blanca
+                 Meléndez',this)">
 
                 <div class="card-top">
                     <img src="../img/blancamelen1.png" alt="">

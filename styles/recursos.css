@@ -1,0 +1,170 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+
+body{
+    background: linear-gradient(180deg,#f4f8ff,#eef4ff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    max-width: 1250px;
+}
+
+/* ===========================
+   TITULO
+=========================== */
+
+.titulo{
+    color:#0B2A59;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    color:#6c757d;
+    font-size:1.1rem;
+}
+
+/* ===========================
+   ACORDEON
+=========================== */
+
+.accordion-item{
+    border:none;
+    border-radius:18px !important;
+    overflow:hidden;
+    margin-bottom:25px;
+    box-shadow:0 15px 35px rgba(15,50,110,.08);
+}
+
+.accordion-button{
+    background:#fff;
+    color:#0B2A59;
+    font-size:1.2rem;
+    font-weight:700;
+    padding:22px 25px;
+    border:none;
+}
+
+.accordion-button:not(.collapsed){
+    background:#edf4ff;
+    color:#0B2A59;
+    box-shadow:none;
+}
+
+.accordion-button:focus{
+    box-shadow:none;
+}
+
+.accordion-body{
+    background:#f8fbff;
+    padding:30px;
+}
+
+/* ===========================
+   TARJETAS
+=========================== */
+
+.resource-card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    text-align:center;
+    height:100%;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+    border:1px solid #edf2fb;
+}
+
+.resource-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.card-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#0B2A59,#2f6ed8);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+.resource-card h4{
+
+    color:#0B2A59;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.resource-card p{
+
+    color:#6f7b90;
+    font-size:15px;
+    min-height:55px;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#0B2A59,#1f5ec9);
+    border:none;
+    border-radius:12px;
+
+    padding:10px 22px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(135deg,#15468d,#347dff);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.titulo{
+    font-size:2.2rem;
+}
+
+.resource-card{
+    margin-bottom:20px;
+}
+
+.accordion-button{
+    font-size:1rem;
+}
+
+}

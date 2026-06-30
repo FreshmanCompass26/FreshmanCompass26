@@ -1,102 +1,152 @@
+/* =======================
+   BODY (FONDO PRO FIXED)
+======================= */
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-image: url('../img/fondo.jpeg');
+    font-family: 'Poppins', sans-serif;
+
+    /* Fondo con contraste pro */
+    background: 
+        linear-gradient(
+            rgba(10, 26, 47, 0.55),
+            rgba(10, 26, 47, 0.80)
+        ),
+        url('../img/fondo.jpeg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #FFFFFF;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
+
+/* Overlay glass global */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 26, 47, 0.20);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: -1;
+}
+
 /* =======================
-   CONTENEDOR PRINCIPAL
+   MAIN CONTAINER
 ======================= */
 .main {
     margin-left: 250px;
     margin-top: 80px;
     padding: 40px;
     min-height: calc(100vh - 80px);
+
+    position: relative;
+    z-index: 1;
+
+    color: rgba(255, 255, 255, 0.95);
 }
 
+/* =======================
+   TITULO Y TEXTO
+======================= */
 h1 {
-    font-size: 40px;
+    font-size: 42px;
+    font-weight: 700;
     margin-bottom: 10px;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
 .main > p {
     font-size: 16px;
+    font-weight: 300;
+    opacity: 0.75;
+    max-width: 700px;
     margin-bottom: 25px;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 /* =======================
    FILTROS
 ======================= */
 .filtros {
-    margin-bottom: 40px;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .filtros button {
-    padding: 12px 28px;
+    padding: 12px 26px;
     border-radius: 25px;
     border: none;
-    background: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
+
+    background: rgba(255, 255, 255, 0.75);
     color: #0A1A2F;
-    backdrop-filter: blur(4px);
+
+    cursor: pointer;
+    transition: 0.25s ease;
+
+    backdrop-filter: blur(8px);
 }
 
 .filtros button:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px) scale(1.05);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .filtros .active {
     background: #142850;
-    color: white;
+    color: #fff;
 }
 
 /* =======================
-   CARDS
+   GRID CARDS
 ======================= */
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 240px);
     gap: 30px;
     justify-content: center;
-    align-items: stretch;
 }
 
+/* =======================
+   CARD GLASS PRO
+======================= */
 .card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
     border-radius: 25px;
-    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
     padding: 25px 20px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    overflow: hidden;
-    transition: transform 0.2s;
-    font-size: 15px;
-    color: #0A1A2F;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    color: #0A1A2F;
+
+    transition: 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
 }
 
-/* IMAGEN */
+/* =======================
+   IMAGEN
+======================= */
 .img-container {
     display: flex;
     justify-content: center;
@@ -106,82 +156,54 @@ h1 {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    border: 5px solid #e6e6e6;
     object-fit: cover;
+    border: 4px solid #e6e6e6;
 }
 
-/* NOMBRE */
+/* =======================
+   TEXTO CARD
+======================= */
 .card h3 {
-    margin: 10px 0 5px;
     font-size: 18px;
-    color: #0A1A2F;
+    margin: 10px 0 5px;
 }
 
-/* MATERIA */
 .materia {
-    color: #142850; /* azul profundo fijo */
     font-size: 14px;
+    font-weight: 500;
+    color: #142850;
 }
 
-/* =======================
-   CORREO
-======================= */
-.card .correo {
-    width: 100%;
-    padding: 0 10px;
-}
-
-.card .correo p {
-    font-size: 15px;
-    margin: 8px 0;
-    color: #0A1A2F;
+.card .correo p,
+.horario p,
+.fecha p {
+    font-size: 14px;
+    margin: 5px 0;
     word-break: break-word;
-    overflow-wrap: break-word;
-    text-align: center;
-    line-height: 1.4;
 }
 
 /* =======================
-   HORARIO
-======================= */
-.horario p {
-    margin: 3px 0;
-    font-size: 15px;
-    color: #0A1A2F;
-}
-
-/* =======================
-   FECHA
-======================= */
-.fecha {
-    margin: 10px 0;
-    font-weight: bold;
-    font-size: 15px;
-    color: #0A1A2F;
-}
-
-/* =======================
-   FRASE
+   FRASE GLASS
 ======================= */
 .frase {
     background: linear-gradient(to right, #4a8ec2, #2f6fa5);
     color: white;
+
     padding: 12px 15px;
     font-size: 13px;
-    margin-top: 15px;
-    margin-left: -20px;
-    margin-right: -20px;
+
+    margin: 15px -20px 0;
+
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+
     height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
-    line-height: 1.2;
-    box-sizing: border-box;
-    white-space: normal;
-    word-break: break-word;
 }
 
 /* =======================
@@ -194,14 +216,17 @@ h1 {
 
 .vermas {
     background: #F9D65D;
+    color: #0A1A2F;
+
     padding: 14px 50px;
     border-radius: 10px;
     border: none;
+
     font-size: 16px;
+    font-weight: 600;
+
     cursor: pointer;
-    color: #0A1A2F;
-    font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .vermas:hover {

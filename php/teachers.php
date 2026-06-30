@@ -17,6 +17,9 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <title>Teachers</title>
 
+    <!-- Google Font (MEJOR TIPOGRAFÍA) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,6 +36,7 @@ if (!$resultado) {
 <body>
 
 <?php include("navbar.php"); ?>
+
 <div class="top-navbar">
     <div class="top-right">
 
@@ -143,16 +147,12 @@ if ($resultado->num_rows > 0) {
             $original == "Computing" ||
             $original == "Values"
         ) {
-
             $materia = $original;
-
         } else {
-
             $materia = "Administración";
         }
 
         $ocultar = ($contador >= 4) ? 'style="display:none;"' : '';
-
         $contador++;
 ?>
 
@@ -161,21 +161,15 @@ if ($resultado->num_rows > 0) {
             <?php echo $ocultar; ?>>
 
             <div class="img-container">
-
                 <img
                     src="../img/<?php echo $row['imagen']; ?>"
                     class="foto"
                     alt="Teacher">
-
             </div>
 
-            <h3>
-                <?php echo $row['nombre']; ?>
-            </h3>
+            <h3><?php echo $row['nombre']; ?></h3>
 
-            <span class="materia">
-                <?php echo $materia; ?>
-            </span>
+            <span class="materia"><?php echo $materia; ?></span>
 
             <div class="correo">
                 <p><?php echo $row['correo']; ?></p>
@@ -202,13 +196,13 @@ if ($resultado->num_rows > 0) {
     }
 
 } else {
-
     echo "<p>No hay registros en la tabla teachers.</p>";
 }
 ?>
 
     </div>
-        <div class="btn-container">
+
+    <div class="btn-container">
         <button id="verMas" class="vermas">
             Ver más...
         </button>
@@ -251,9 +245,7 @@ function filtrar(materia, boton) {
             contador++;
 
         } else {
-
             card.style.display = "none";
-
         }
 
     });
@@ -270,15 +262,12 @@ botonVerMas.addEventListener("click", function () {
             filtroActual === "all" ||
             card.dataset.materia === filtroActual
         ) {
-
             card.style.display = "block";
-
         }
 
     });
 
     this.style.display = "none";
-
 });
 
 window.onload = function () {
@@ -286,6 +275,7 @@ window.onload = function () {
 };
 
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

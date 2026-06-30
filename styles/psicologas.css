@@ -1,3 +1,6 @@
+/*=========================
+    RESET
+=========================*/
 *{
     margin:0;
     padding:0;
@@ -6,11 +9,14 @@
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:#f6f8fc;
+    background:#F2F2F2;
     overflow-x:hidden;
+    color:#2C4B66;
 }
 
-/* ================= SIDEBAR ================= */
+/*=========================
+        SIDEBAR
+=========================*/
 
 .sidebar{
     position:fixed;
@@ -18,11 +24,11 @@ body{
     top:0;
     width:250px;
     height:100vh;
-    background:#081847;
+    background:#2C4B66;
     display:flex;
     flex-direction:column;
     padding:20px 0;
-    box-shadow:5px 0 20px rgba(0,0,0,.2);
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
     z-index:999;
 }
 
@@ -36,16 +42,15 @@ body{
 .logo img{
     width:160px;
     height:auto;
-    object-fit:contain;
 }
 
 .menu{
     list-style:none;
-    padding:0;
 }
 
 .menu li{
     margin:8px 15px;
+    transition:.3s;
 }
 
 .menu li a{
@@ -56,42 +61,38 @@ body{
     text-decoration:none;
     padding:14px 18px;
     border-radius:14px;
-    transition:.3s;
 }
 
 .menu li:hover{
-    background:rgba(255,255,255,.15);
+    background:#94CED7;
     transform:translateX(6px);
 }
 
+.menu li:hover a{
+    color:#2C4B66;
+}
+
 .menu li.active{
-    background:#fff;
+    background:#FEFEFE;
 }
 
 .menu li.active a{
-    color:#081847;
+    color:#2C4B66;
     font-weight:bold;
 }
 
 .quote{
     margin-top:auto;
     margin-inline:18px;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.15);
     border-radius:16px;
     padding:18px;
-    color:#fff;
+    color:white;
 }
 
-.quote p{
-    line-height:1.5;
-    margin-bottom:8px;
-}
-
-.quote small{
-    color:#ddd;
-}
-
-/* ================= CONTENIDO ================= */
+/*=========================
+        CONTENIDO
+=========================*/
 
 .content{
     margin-left:250px;
@@ -99,15 +100,16 @@ body{
     min-height:100vh;
     padding:20px 40px 40px;
 }
-/* ================= HERO ================= */
+
+/*=========================
+          HERO
+=========================*/
 
 .hero{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:50px;
-    margin:0;
-    padding:0;
 }
 
 .hero-text{
@@ -116,34 +118,32 @@ body{
 
 .hero h1{
     font-size:58px;
-    color:#111;
-    font-weight:800;
+    color:#2C4B66;
 }
 
 .hero p{
     margin-top:6px;
-    color:#444;
+    color:#555;
 }
 
 .line{
     width:220px;
     height:8px;
-    background:#3f51d7;
+    background:#94CED7;
     border-radius:20px;
     margin:18px 0;
 }
 
 .description{
     width:430px;
-    background:#fff;
-    padding:12px 15px;
+    background:#FEFEFE;
+    padding:15px;
     border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:0 6px 18px rgba(44,75,102,.08);
 }
 
 .hero img{
     width:280px;
-    max-width:100%;
 }
 
 section{
@@ -152,11 +152,13 @@ section{
 
 h2{
     font-size:38px;
+    color:#2C4B66;
     margin-bottom:20px;
-    color:#111;
-} 
+}
 
-/* ================= CARDS ================= */
+/*=========================
+          CARDS
+=========================*/
 
 .cards{
     display:grid;
@@ -166,26 +168,27 @@ h2{
 }
 
 .card{
-    position:relative;
     display:flex;
     align-items:flex-start;
     gap:18px;
-    background:#efefef;
+    background:#FEFEFE;
     border-radius:18px;
     padding:22px;
-    overflow:hidden;
     transition:.3s;
+    box-shadow:0 6px 15px rgba(44,75,102,.08);
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+    transform:translateY(-6px);
+    box-shadow:0 15px 25px rgba(44,75,102,.18);
 }
 
 .icon{
     width:65px;
     height:65px;
     border-radius:50%;
+    background:#E7F6F8;
+    color:#2C4B66;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -193,64 +196,51 @@ h2{
     flex-shrink:0;
 }
 
-.heart{
-    background:#e7d7f7;
-    color:#7c3aed;
-}
-
-.users{
-    background:#eadcf9;
-    color:#7c3aed;
-}
-
-.book{
-    background:#eadcf9;
-    color:#7c3aed;
-}
-
-.star{
-    background:#eadcf9;
-    color:#7c3aed;
-}
-
 .card-text{
     flex:1;
 }
 
 .card-text h3{
-    font-size:28px;
+    font-size:26px;
+    color:#2C4B66;
     margin-bottom:10px;
-    color:#111;
 }
 
 .card-text p{
-    color:#333;
-    line-height:1.5;
-    font-size:17px;
+    color:#555;
+    line-height:1.6;
 }
 
 .underline{
-    width:55px;
+    width:60px;
     height:5px;
     border-radius:10px;
     margin-bottom:12px;
 }
 
-.purple{background:#7c3aed;}
-.pink{background:#db2777;}
-.blue{background:#2563eb;}
-.yellow{background:#f59e0b;}
-
-.decor{
-    display:none;
+.purple{
+    background:#2C4B66;
 }
 
-/* ================= PSICÓLOGAS ================= */
+.pink{
+    background:#94CED7;
+}
+
+.blue{
+    background:#2C4B66;
+}
+
+.yellow{
+    background:#94CED7;
+}
+
+/*=========================
+      PSICÓLOGAS
+=========================*/
 
 .sub{
-    color:#555;
+    color:#666;
     margin-bottom:25px;
-    font-size:18px;
 }
 
 .psychologists{
@@ -260,17 +250,18 @@ h2{
 }
 
 .psych-card{
-    background:#efe5fb;
+    background:#FEFEFE;
+    border:2px solid #94CED7;
     border-radius:18px;
     padding:25px;
     text-align:center;
     transition:.3s;
-    position:relative;
+    box-shadow:0 6px 15px rgba(44,75,102,.08);
 }
 
 .psych-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+    transform:translateY(-8px);
+    box-shadow:0 18px 30px rgba(44,75,102,.15);
 }
 
 .img-container{
@@ -283,56 +274,59 @@ h2{
     height:120px;
     border-radius:50%;
     object-fit:cover;
-    border:5px solid #fff;
+    border:5px solid #94CED7;
 }
 
 .mail-icon{
     position:absolute;
     right:10px;
     bottom:0;
-    width:34px;
-    height:34px;
-    background:#fff;
+    width:36px;
+    height:36px;
+    background:#2C4B66;
+    color:white;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:#222;
-    box-shadow:0 5px 10px rgba(0,0,0,.15);
 }
 
 .psych-card h3{
-    font-size:26px;
+    font-size:22px;
+    color:#2C4B66;
     margin-bottom:8px;
 }
 
 .psych-card span{
-    color:#6b21a8;
+    color:#94CED7;
     font-weight:600;
 }
 
 .psych-card hr{
-    margin:15px 0;
     border:none;
     height:1px;
-    background:#d7d7d7;
+    background:#D9E7EA;
+    margin:18px 0;
 }
 
 .psych-card p{
-    color:#444;
-    line-height:1.5;
+    color:#555;
+    line-height:1.6;
 }
-
-/* ================= AGENDA ================= */
+/*=========================
+        AGENDA
+=========================*/
 
 .appointment{
     margin-top:40px;
-    background:#d9d9d9;
+    background:#2C4B66;
     border-radius:18px;
-    padding:25px 30px;
+    padding:30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:20px;
+    box-shadow:0 8px 20px rgba(44,75,102,.15);
 }
 
 .appointment div{
@@ -341,35 +335,44 @@ h2{
 
 .appointment h4{
     font-size:28px;
+    color:#FEFEFE;
     margin-bottom:10px;
-    color:#111;
 }
 
 .appointment p{
-    color:#444;
+    color:#E7F6F8;
     line-height:1.6;
 }
 
 .btn{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     width:240px;
     height:58px;
     padding:0 25px;
-    background:#35358f;
-    color:#fff;
+    background:#94CED7;
+    color:#2C4B66;
     text-decoration:none;
     border-radius:14px;
     font-size:18px;
     font-weight:600;
+    transition:.3s;
+}
+.btn:hover{
+    background:#FEFEFE;
+    color:#2C4B66;
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
 }
 
 .btn i{
-    font-size:22px;
+    font-size:20px;
 }
 
-/* ================= TITULOS ================= */
+/*=========================
+        TÍTULOS
+=========================*/
 
 h1,
 h2,
@@ -379,19 +382,19 @@ h5,
 h6{
     font-family:Arial, Helvetica, sans-serif;
     font-weight:700;
+    color:#2C4B66;
 }
 
 img{
     max-width:100%;
     display:block;
 }
-.psych-card h3{
-    font-size: 22px;
-}
 
-/* ================= RESPONSIVE ================= */
+/*=========================
+        RESPONSIVE
+=========================*/
 
-@media (max-width:1100px){
+@media(max-width:1100px){
 
     .cards{
         grid-template-columns:1fr;
@@ -415,9 +418,10 @@ img{
     .line{
         margin:18px auto;
     }
+
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .sidebar{
         width:220px;
@@ -438,6 +442,11 @@ img{
         text-align:center;
     }
 
+    .btn{
+        width:100%;
+        max-width:260px;
+    }
+
     .hero h1{
         font-size:42px;
     }
@@ -450,12 +459,9 @@ img{
         font-size:22px;
     }
 
-    .psych-card h3{
-        font-size:22px;
-    }
 }
 
-@media (max-width:600px){
+@media(max-width:600px){
 
     .sidebar{
         position:relative;
@@ -466,9 +472,23 @@ img{
     .content{
         margin-left:0;
         width:100%;
+        padding:20px;
     }
 
     .hero{
         margin-top:20px;
     }
+
+    .hero img{
+        width:220px;
+    }
+
+    .description{
+        width:100%;
+    }
+
+    .appointment{
+        padding:20px;
+    }
+
 }

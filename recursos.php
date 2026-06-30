@@ -24,9 +24,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
+<div class="wave"></div>
 <?php include 'php/navbar.php'; ?>
 
-<div class="container py-5">
+<div class="container py-5 contenido-recursos">
 
     <div class="text-center mb-5">
 
@@ -51,7 +52,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#info">
 
-                    💻 Informática
+                    Informática
 
                 </button>
 
@@ -151,7 +152,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ingles">
 
-                    🇺🇸 Inglés
+                    Us Inglés
 
                 </button>
 
@@ -227,7 +228,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#valores">
 
-                    ❤️ Valores
+                     Valores
 
                 </button>
 

@@ -38,7 +38,7 @@ include("php/navbar.php");
                 </div>
             </div>
 
-            <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Ilustración">
+            <img src="img/sicologasss.png" alt="sicologia">
         </section>
 
         <!-- Áreas -->

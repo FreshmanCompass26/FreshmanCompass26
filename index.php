@@ -20,7 +20,6 @@ $pagina_actual = "inicio";
 
 <body>
 
-<<<<<<< Updated upstream
 <div class="top-navbar">
 
     <div class="top-right">
@@ -100,8 +99,6 @@ $pagina_actual = "inicio";
 
 </div>
 
-=======
->>>>>>> Stashed changes
 <?php include 'php/navbar.php'; ?>
 
 <div class="main-content">

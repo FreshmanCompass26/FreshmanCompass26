@@ -105,10 +105,9 @@ $pagina_actual = "centro";
 
 </div>
 
-<?php include 'navbar.php'; ?>
 
-</div>
 
+<?php include 'php/navbar.php'; ?>
 
 <div class="main-content">
 

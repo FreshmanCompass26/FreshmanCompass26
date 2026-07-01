@@ -1,39 +1,34 @@
 <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
+        <!-- Sección izquierda: Robot con mensaje -->
+        <div class="footer-left">
+            <img src="img/coetesinfondo.png" alt="Robot FreshmanCompass" class="robot-img">
+            <div class="speech-bubble">
+                ¿Necesitas ayuda? ¡Estoy aquí para ayudarte!
+            </div>
+        </div>
 
-    <!-- Robot con burbuja -->
-    <div class="footer-robot">
-      <img src="img/robot.png" alt="Mascota Freshman Compass" class="robot-img">
-      <div class="footer-bubble">
-        <h3>¿Necesitas ayuda?</h3>
-        <p>¡Estoy aquí para ayudarte!</p>
-      </div>
+        <!-- Sección central: Logo y tagline -->
+        <div class="footer-center">
+            <img src="img/logoooooo.png" alt="FreshmanCompass Logo" class="logo-img">
+            <p class="tagline">Tu brújula para comenzar en ¡Supérate!</p>
+        </div>
+
+        <!-- Sección derecha: Contactos -->
+        <div class="footer-right">
+    <p>
+        <i class="fab fa-instagram"></i> 
+        <a href="https://www.instagram.com/freshmancompass" target="_blank">@freshmancompass</a>
+    </p>
+    <p>
+        <i class="fas fa-envelope"></i> 
+        <a href="mailto:info@freshmancompass.com">info@freshmancompass.com</a>
+    </p>
+    <p>
+        <i class="fas fa-map-marker-alt"></i> 
+        <a href="https://maps.google.com?q=Centro+Supérate+ADOC" target="_blank">Centro ¡Supérate! ADOC</a>
+    </p>
+</div>
+
     </div>
-
-    <!-- Logo y lema -->
-    <div class="footer-brand">
-      <img src="img/logo.png" alt="Freshman Compass" class="logo-img">
-      <p>Tu brújula para comenzar en ¡Supérate!</p>
-    </div>
-
-    <!-- Contactos -->
-    <div class="footer-info">
-      <div class="info-item">
-        <i class="fa-brands fa-instagram"></i>
-        <p>@freshmancompass</p>
-      </div>
-      <div class="info-item">
-        <i class="fa-solid fa-envelope"></i>
-        <p>info@freshmancompass.com</p>
-      </div>
-      <div class="info-item">
-        <i class="fa-solid fa-house"></i>
-        <p>Centro ¡Supérate! ADOC</p>
-      </div>
-    </div>
-
-  </div>
 </footer>
-
-
-

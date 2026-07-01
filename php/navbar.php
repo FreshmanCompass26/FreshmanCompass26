@@ -77,54 +77,13 @@ if ($pagina_actual == "nuestro_centro") {
             $inicial = strtoupper(substr($nombre, 0, 1));
         ?>
 
-        <div class="sidebar-user">
-            <div class="dropdown user-dropdown">
-
-                <div class="user-trigger" data-bs-toggle="dropdown">
-                    <div class="avatar"><?= $inicial ?></div>
-                    <span class="username"><?= $nombre ?></span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-
-                <ul class="dropdown-menu custom-dropdown">
-
-                    <li class="dropdown-header-user">
-                        <div class="avatar-lg"><?= $inicial ?></div>
-                        <div>
-                            <div class="name"><?= $nombre ?></div>
-                            <div class="sub">Bienvenido</div>
-                        </div>
-                    </li>
-
-                    <li><hr class="dropdown-divider"></li>
-
-                    <li>
-                        <a class="dropdown-item" href="profile.php">
-                            <i class="fa-regular fa-user"></i> Perfil
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa-solid fa-gear"></i> Configuración
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item logout" href="php/logout.php">
-                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
+    
 
     <?php else: ?>
 
         <div class="sidebar-auth">
-            <a href="login.html" class="btn-login">Iniciar sesión</a>
-            <a href="signup.html" class="btn-signup">Crear Cuenta</a>
+            <a href="login.php" class="btn-login">Iniciar sesión</a>
+            <a href="signup.php" class="btn-signup">Crear Cuenta</a>
         </div>
 
     <?php endif; ?>
@@ -161,4 +120,4 @@ if ($pagina_actual == "nuestro_centro") {
 
 </div>
 
-<script src="../js/navbar.js"></script>
+<script src="../Js/navbar.js"></script>

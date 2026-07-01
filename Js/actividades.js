@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    
+
     // ==========================================
-    // 1. MÚSICA DE FONDO INTERACTIVA 
+    // 1. MÚSICA DE FONDO INTERACTIVA
     // ==========================================
     const musicaFondo = new Audio('audio/fondo.mp3');
     musicaFondo.loop = true;  // Hace que la canción se repita infinitamente
@@ -34,9 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
+                observer.unobserve(entry.target);
             }
         });
-    });
+    }, { threshold: 0.15 });
 
     cards.forEach(card => {
         observer.observe(card);
@@ -52,22 +53,19 @@ document.addEventListener("DOMContentLoaded", function() {
     if (completado === 'true') {
         // Buscamos la tarjeta usando la clase identificadora
         const tarjetaSuperate = document.querySelector('.item-superate');
-        
-        if (tarjetaSuperate) {
-            // Le aplicamos el borde verde para denotar éxito
-            tarjetaSuperate.style.border = "2px solid #2ecc71";
-            tarjetaSuperate.style.transition = "all 0.3s ease"; // Para que se vea suave
-            
+
+        if (tarjetaSuperate && !tarjetaSuperate.querySelector('.score-badge')) {
+            // Le aplicamos el borde verde para denotar éxito (definido en el CSS)
+            tarjetaSuperate.classList.add('completada');
+
             // Creamos la etiqueta con la puntuación guardada
             const scoreBadge = document.createElement('div');
-            scoreBadge.style.color = "#2ecc71";
-            scoreBadge.style.fontWeight = "bold";
-            scoreBadge.style.marginTop = "12px";
-            scoreBadge.style.fontSize = "0.95rem";
+            scoreBadge.className = 'score-badge';
             scoreBadge.innerHTML = `<i class="fa-solid fa-circle-check"></i> ¡Completado! Récord: ${puntajeMaximo}/10`;
-            
-            // La inyectamos dentro de la tarjeta
-            tarjetaSuperate.appendChild(scoreBadge);
+
+            // La inyectamos dentro del cuerpo de la tarjeta, no en el borde exterior
+            const cuerpo = tarjetaSuperate.querySelector('.card-body');
+            (cuerpo || tarjetaSuperate).appendChild(scoreBadge);
         }
     }
 

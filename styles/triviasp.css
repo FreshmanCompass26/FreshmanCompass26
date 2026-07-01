@@ -1,221 +1,437 @@
+/* ============================================
+   TRIVIA — FreshmanCompass
+   Misma paleta y tipografía que actividades.html
+   ============================================ */
 
-/* --- VARIABLES Y CONFIGURACIÓN --- */
-:root {
-    --primary: #0066ff;
-    --success: #2ecc71;
-    --danger: #e74c3c;
-    --dark: #0a2540;
-    --bg: #f0f7ff;
-    --white: #ffffff;
+:root{
+    --blue: #2563eb;
+    --blue-dark: #1b4dc4;
+    --navy: #0b2853;
+    --teal: #0f766e;
+    --purple: #7c3aed;
+    --gold: #f2a90c;
+
+    --bg: #eef5ff;
+    --text-muted: #5b6b85;
+
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --shadow-card: 0 20px 45px rgba(16, 42, 90, .12);
+
+    /* Alias usados directamente por los scripts de las trivias (var(--primary) / var(--success)) — no renombrar */
+    --primary: var(--blue);
+    --success: #22c55e;
+    --danger: #ef4444;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background-color: var(--bg);
-    color: var(--dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+body{
+    font-family:'Inter', 'Segoe UI', sans-serif;
+    color:var(--navy);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+    background:
+    linear-gradient(180deg,#f1f6ff,#e5efff);
 }
 
-.game-box {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 40px;
-    width: 100%;
-    max-width: 650px;
-    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.08);
-    text-align: center;
-    position: relative;
+h1, h2, .btn, .progress-bar, .mission-tag{
+    font-family:'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
-/* Control de pantallas alternadas por JS */
-.screen {
-    display: none;
+/* ============ CONTENEDOR ============ */
+
+.game-box{
+
+    border:1px solid #eef1f6;
+    background:var(--white, #fff);
+    border-radius:var(--radius-lg);
+    padding:46px 44px;
+    width:100%;
+    max-width:540px;
+    min-height:520px;
+    box-shadow:var(--shadow-card);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
 }
 
-.screen.active {
-    display: block;
-    animation: fadeIn 0.6s ease forwards;
+.game-box::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--blue), var(--purple), var(--teal));
 }
 
-/* Animación Chiva de Desvanecimiento */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+/* Control de pantallas alternadas por JS — no tocar */
+.screen{
+    display:none;
+}
+
+.screen.active{
+    display:block;
+    animation:fadeIn .5s ease forwards;
+}
+
+
+.option-btn{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.option-letter{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#a5c4ff;
+    color:white;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.stage{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.stage-icon{
+    position:absolute;
+    color:#b8cbff;
+    font-size:24px;
+    opacity:.6;
+}
+
+.i1{
+    left:12%;
+    top:20%;
+}
+
+.i2{
+    right:15%;
+    top:15%;
+}
+
+.i3{
+    right:8%;
+    top:40%;
+}
+
+.i4{
+    right:15%;
+    bottom:20%;
+}
+
+.i5{
+    left:8%;
+    top:60%;
+}
+
+.i6{
+    left:15%;
+    bottom:25%;
+}
+
+
+
+
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(12px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* Etiqueta eyebrow reutilizable (misma idea que .mini-title de actividades) */
+.mission-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    background:#dcecff;
+    color:var(--blue);
+    border-radius:30px;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+/* ============ 1. PANTALLA DE CARGA ============ */
+
+.loader-content h1{
+    font-size:1.9rem;
+    font-weight:800;
+    letter-spacing:-.3px;
+    margin-bottom:10px;
+    color:var(--navy);
+}
+
+.loader-content p{
+    color:var(--text-muted);
+    font-size:1rem;
+    margin-bottom:6px;
+}
+
+.spinner{
+    width:52px;
+    height:52px;
+    border:5px solid #e4ecf5;
+    border-top:5px solid var(--blue);
+    border-right:5px solid var(--purple);
+    border-radius:50%;
+    margin:26px auto 4px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{ transform:rotate(360deg); }
+}
+
+/* ============ 2. PANTALLA DE INFORMACIÓN ============ */
+
+.info-content h2{
+    font-size:1.7rem;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:22px;
+    letter-spacing:-.3px;
+}
+
+.info-text{
+    text-align:left;
+    line-height:1.7;
+    color:var(--text-muted);
+    margin-bottom:30px;
+    font-size:1.02rem;
+    background:#f6f9ff;
+    border:1px solid #e3edfd;
+    border-radius:var(--radius-md);
+    padding:22px 24px;
+}
+
+.info-text p{
+    margin-bottom:14px;
+}
+
+.info-text p:last-child{
+    margin-bottom:0;
+    color:var(--blue);
+    font-weight:600;
+    font-size:.95rem;
+}
+
+.info-text strong{
+    color:var(--navy);
+    background:rgba(37,99,235,.12);
+    padding:0 4px;
+    border-radius:5px;
+}
+
+/* ============ BOTONES COMUNES ============ */
+
+.btn{
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    padding:15px 34px;
+    font-size:1.02rem;
+    font-weight:700;
+    border-radius:14px;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    box-shadow:0 10px 24px rgba(37,99,235,.28);
+}
+
+.btn:hover{
+    background:var(--blue-dark);
+    transform:translateY(-3px);
+    box-shadow:0 16px 32px rgba(37,99,235,.36);
+}
+
+.btn:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+}
+
+/* ============ 3. PANTALLA DE JUEGO (PREGUNTAS) ============ */
+
+.progress-bar{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--blue);
+    font-weight:700;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    background:#dcecff;
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:18px;
+}
+
+.progress-track{
+    height:8px;
+    background:#e3edfd;
+    border-radius:20px;
+    margin-bottom:26px;
+    overflow:hidden;
+    width:160px;  
+    margin:0 auto 26px;
+
+}
+
+.progress-fill{
+    height:100%;
+    width:10%;
+    border-radius:20px;
+    background:linear-gradient(90deg, var(--blue), var(--purple));
+    transition:width .4s ease;
+}
+
+.question-text{
+    font-size:1.35rem;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:26px;
+    line-height:1.4;
+}
+
+.options-container{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:8px;
+}
+
+.option-btn{
+    background:#f8fafc;
+    border:2px solid #e2e8f0;
+    padding:16px 18px;
+    border-radius:var(--radius-md);
+    text-align:left;
+    font-size:.98rem;
+    font-weight:600;
+    color:var(--navy);
+    cursor:pointer;
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.option-btn:hover:not(:disabled){
+    background:#eef4ff;
+    border-color:var(--blue);
+    transform:translateX(3px);
+}
+
+.option-btn:disabled{
+    cursor:default;
+}
+
+/* Clases que se añaden dinámicamente al responder — no tocar nombres */
+.option-btn.correct{
+    background-color:#dcfce7 !important;
+    border-color:var(--success) !important;
+    color:#166534;
+}
+
+.option-btn.wrong{
+    background-color:#fee2e2 !important;
+    border-color:var(--danger) !important;
+    color:#991b1b;
+}
+
+.feedback-message{
+    font-size:1.05rem;
+    font-weight:700;
+    margin:18px 0 22px;
+    height:26px;
+}
+
+.feedback-message.correct{ color:var(--success); }
+.feedback-message.wrong{ color:var(--danger); }
+
+/* ============ 4. PANTALLA DE RESULTADOS ============ */
+
+.results-content h2{
+    font-size:1.9rem;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+.results-content > p{
+    color:var(--text-muted);
+    margin-bottom:10px;
+}
+
+.score-circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#f6f9ff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:28px auto;
+    border:6px solid var(--blue);
+    box-shadow:0 14px 30px rgba(37,99,235,.18);
+}
+
+.score-num{
+    font-size:2.7rem;
+    font-weight:800;
+    color:var(--blue);
+    line-height:1;
+}
+
+.score-total{
+    font-size:.95rem;
+    color:var(--text-muted);
+    margin-top:4px;
+}
+
+.rank-text{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+/* ============ ACCESIBILIDAD / RESPONSIVE ============ */
+
+@media (prefers-reduced-motion: reduce){
+    .screen.active, .spinner, .btn, .option-btn, .progress-fill{
+        animation:none;
+        transition:none;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+}
+
+@media (max-width: 560px){
+    .game-box{
+        padding:32px 24px;
     }
-}
-
-/* --- 1. PANTALLA DE CARGA --- */
-.loader-content h1 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #e4ecf5;
-    border-top: 5px solid var(--primary);
-    border-radius: 50%;
-    margin: 20px auto;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* --- 2. PANTALLA DE INFORMACIÓN --- */
-.info-content h2 {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.info-text {
-    text-align: left;
-    line-height: 1.6;
-    color: #4b5563;
-    margin-bottom: 30px;
-    font-size: 1.05rem;
-}
-
-.info-text p {
-    margin-bottom: 15px;
-}
-
-/* --- BOTONES COMUNES --- */
-.btn {
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 14px 35px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #0052cc;
-    transform: translateY(-2px);
-}
-
-/* --- 3. PANTALLA DE JUEGO (PREGUNTAS) --- */
-.progress-bar {
-    font-size: 0.9rem;
-    color: var(--primary);
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.question-text {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    line-height: 1.4;
-}
-
-.options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.option-btn {
-    background: #f8fafc;
-    border: 2px solid #e2e8f0;
-    padding: 16px;
-    border-radius: 15px;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.option-btn:hover:not(:disabled) {
-    background: #edf2f7;
-    border-color: #cbd5e1;
-}
-
-/* Clases que se añaden dinámicamente al responder */
-.option-btn.correct {
-    background-color: #d1fae5 !important;
-    border-color: var(--success) !important;
-    color: #065f46;
-}
-
-.option-btn.wrong {
-    background-color: #fee2e2 !important;
-    border-color: var(--danger) !important;
-    color: #991b1b;
-}
-
-.feedback-message {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 20px 0;
-    height: 30px;
-}
-
-.feedback-message.correct { color: var(--success); }
-.feedback-message.wrong { color: var(--danger); }
-
-/* --- 4. PANTALLA DE RESULTADOS --- */
-.results-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.score-circle {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: #f0f7ff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 25px auto;
-    border: 4px solid var(--primary);
-}
-
-.score-num {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--primary);
-}
-
-.score-total {
-    font-size: 1rem;
-    color: #64748b;
-}
-
-
-.rank-text {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 30px;
+    .loader-content h1, .info-content h2, .results-content h2{
+        font-size:1.5rem;
+    }
+    .score-circle{
+        width:130px;
+        height:130px;
+    }
 }

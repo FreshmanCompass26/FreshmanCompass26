@@ -6,7 +6,90 @@
 
 body{
     font-family:'Montserrat', sans-serif;
-    background:#f4f4f4;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(132,206,215,.15) 0 60px, transparent 60px),
+        radial-gradient(circle at 90% 15%, rgba(132,206,215,.10) 0 40px, transparent 40px),
+        radial-gradient(circle at 5% 80%, rgba(132,206,215,.12) 0 30px, transparent 30px),
+        linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+}
+
+
+.dots-top{
+    position:fixed;
+    top:40px;
+    right:80px;
+    width:120px;
+    height:80px;
+    z-index:-1;
+
+    background-image:
+        radial-gradient(#c8dfff 2px, transparent 2px);
+
+    background-size:16px 16px;
+}
+
+.dots-bottom{
+    position:fixed;
+    bottom:60px;
+    left:40px;
+    width:120px;
+    height:80px;
+    z-index:-1;
+
+    background-image:
+        radial-gradient(#c8dfff 2px, transparent 2px);
+
+    background-size:16px 16px;
+}
+
+
+.circle-1,
+.circle-2{
+    position:fixed;
+    border-radius:50%;
+    background:#dcecff;
+    z-index:-1;
+}
+
+.circle-1{
+    width:40px;
+    height:40px;
+    top:120px;
+    right:120px;
+}
+
+.circle-2{
+    width:30px;
+    height:30px;
+    bottom:180px;
+    left:20px;
+}
+
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:220px;
+    height:180px;
+    background:#dcecff;
+    border-bottom-right-radius:100%;
+    opacity:.8;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:40px;
+    right:40px;
+    width:80px;
+    height:80px;
+    background:#dcecff;
+    border-radius:50%;
+    opacity:.5;
+    z-index:-1;
 }
 
 .sidebar{
@@ -54,13 +137,27 @@ body{
     margin-left:220px;
     width:calc(100% - 220px);
     min-height:100vh;
-    background:#f3f3f3;
+    background:transparent;
     overflow-x:hidden;
+    padding-top:70px;
 }
 
 .top-navbar{
-    display:none;
-   
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 220px);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2000;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .icons i{
@@ -99,82 +196,42 @@ body{
 /* =====================================
    CARDS SUPERIORES (Tutores, Eventos...)
 ===================================== */
-
 .info-card{
     border-radius: 16px;
     padding: 30px 20px;
     text-align: center;
     height: 100%;
-    color: white;
-    background: #2C4B66;
+    color: #2C4B66;
+    background: #84CED7;
     transition: transform 0.25s, box-shadow 0.25s;
     position: relative;
     overflow: hidden;
 }
 
-.info-card::before{
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 80px;
-    height: 80px;
-    background: rgba(132, 206, 215, 0.15);
-    border-radius: 50%;
-}
-
-/* Alterna colores: card par → celeste */
-.col-md-3:nth-child(2) .info-card{
-    background: #84CED7;
-    color: #2C4B66;
-}
-
-.col-md-3:nth-child(2) .info-card i{
-    color: #2C4B66;
-}
-
-.col-md-3:nth-child(2) .info-card h5{
-    color: #2C4B66;
-}
-
-.col-md-3:nth-child(2) .info-card p{
-    color: #1d5060;
-}
-
-/* Card 3 superior — azul oscuro como las demás */
-.col-md-3:nth-child(3) .info-card {
-    background: #2C4B66;
-    color: white;
-    border: none;
-}
-.col-md-3:nth-child(3) .info-card i  { color: #84CED7; }
-.col-md-3:nth-child(3) .info-card h5 { color: white; }
-.col-md-3:nth-child(3) .info-card p  { color: rgba(255,255,255,0.8); }
-.info-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(44, 75, 102, 0.22);
-}
-
 .info-card i{
     font-size: 38px;
     margin-bottom: 16px;
-    color: #84CED7;
+    color: #2C4B66;
 }
 
 .info-card h5{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: white;
+    color: #2C4B66;
 }
 
 .info-card p{
     font-size: 13px;
-    color: rgba(255,255,255,0.8);
+    color: #1d5060;
     line-height: 1.55;
     margin: 0;
 }
 
+.info-card:hover{
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(44, 75, 102, 0.25);
+}
 /* =====================================
    SECCIÓN BENEFICIOS
 ===================================== */
@@ -221,42 +278,40 @@ body{
 
 /* Card 1 — azul oscuro */
 /* Card 1 — azul oscuro */
-.blue-card {
+.blue-card,
+.green-card,
+.yellow-card,
+.purple-card{
     background: #2C4B66;
 }
-.blue-card h3 { color: #ffffff; }
-.blue-card p  { color: rgba(255,255,255,0.75); }
-.blue-card .icon-circle { background: rgba(132,206,215,0.2); }
-.blue-card .icon-circle i { color: #84CED7; }
 
-/* Card 2 — celeste */
-.green-card {
-    background: #84CED7;
+.blue-card h3,
+.green-card h3,
+.yellow-card h3,
+.purple-card h3{
+    color: white;
 }
-.green-card h3 { color: #2C4B66; }
-.green-card p  { color: #1d5060; }
-.green-card .icon-circle { background: rgba(44,75,102,0.15); }
-.green-card .icon-circle i { color: #2C4B66; }
 
-/* Card 3 — azul oscuro (igual que card 1) */
-.yellow-card {
-    background: #2C4B66;
-    border: none;
+.blue-card p,
+.green-card p,
+.yellow-card p,
+.purple-card p{
+    color: rgba(255,255,255,0.75);
 }
-.yellow-card h3 { color: #ffffff; }
-.yellow-card p  { color: rgba(255,255,255,0.75); }
-.yellow-card .icon-circle { background: rgba(132,206,215,0.2); }
-.yellow-card .icon-circle i { color: #84CED7; }
 
-/* Card 4 — celeste (igual que card 2) */
-.purple-card {
-    background: #84CED7;
-    border: none;
+.blue-card .icon-circle,
+.green-card .icon-circle,
+.yellow-card .icon-circle,
+.purple-card .icon-circle{
+    background: rgba(132,206,215,0.2);
 }
-.purple-card h3 { color: #2C4B66; }
-.purple-card p  { color: #1d5060; }
-.purple-card .icon-circle { background: rgba(44,75,102,0.15); }
-.purple-card .icon-circle i { color: #2C4B66; }
+
+.blue-card .icon-circle i,
+.green-card .icon-circle i,
+.yellow-card .icon-circle i,
+.purple-card .icon-circle i{
+    color: #84CED7;
+}
 
 .icon-circle{
     width: 80px;
@@ -401,6 +456,51 @@ body{
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(0,0,0,.15);
 }
+
+.about-mini-title{
+    text-align:center;
+    color:#84CED7;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.about-subtitle{
+    text-align:center;
+    color:#7a86a1;
+    font-size:16px;
+    margin-bottom:50px;
+}
+
+.about-note{
+    width:fit-content;
+    margin:40px auto 0;
+    background:#eaf2ff;
+    color:#3b5ccc;
+    padding:12px 24px;
+    border-radius:50px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(59,92,204,.15);
+}
+
+.about-card:nth-child(1){
+    border-bottom:4px solid #3b82f6;
+}
+
+.about-card:nth-child(2){
+    border-bottom:4px solid #34d399;
+}
+
+.about-card:nth-child(3){
+    border-bottom:4px solid #8b5cf6;
+}
+
+.about-card:nth-child(4){
+    border-bottom:4px solid #f59e0b;
+}
+
 
 .card-icon{
     width: 85px;

@@ -92,10 +92,18 @@
     color: #d7d7d7;
 }
 
-.top-navbar {
-    display: none;
-
+.top-navbar{
+     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-right: 5px;
+    margin-bottom: 10px;
 }
+
+
 
 .top-right {
     display: flex;
@@ -164,15 +172,17 @@
     box-shadow: 0 5px 15px rgba(124, 58, 237, .4);
 }
 
-.username {
-    color: white;
+.username{
+    color: #081847;
     font-weight: 600;
 }
 
-.user-trigger i {
-    color: white;
+.user-trigger{
+    background: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
 }
-
 .custom-dropdown {
     width: 250px;
     border: none;
@@ -236,8 +246,8 @@
 
 .main-content {
     margin-left: 250px;
-    margin-top: 90px;
-    padding: 30px;
+    margin-top: 0;
+    padding: 20px;
 }
 .quote p {
     margin-bottom: 10px;

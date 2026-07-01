@@ -8,6 +8,10 @@
 
     <title>Actividades | FreshmanCompass</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/actividades.css">
 
     <link rel="stylesheet"
@@ -23,12 +27,13 @@
 
     <section class="hero">
 
-        <img src="img/banner-games.jpeg" class="hero-bg">
+        <img src="img/banner-games.jpeg" class="hero-bg" alt="">
+        <div class="hero-overlay"></div>
 
         <div class="hero-content">
 
             <span class="hero-tag">
-                <i class="fa-solid fa-rocket"></i>
+                <i class="fa-solid fa-compass"></i>
                 FreshmanCompass
             </span>
 
@@ -38,14 +43,35 @@
             </h1>
 
             <p>
-
                 Tu brújula para aprender, explorar y crecer.
                 Descubre recursos, participa en actividades
                 y completa divertidas misiones.
-
             </p>
 
-            
+            <ul class="hero-features">
+                <li>
+                    <span class="icon icon-blue"><i class="fa-solid fa-book-open"></i></span>
+                    Aprende
+                </li>
+                <li>
+                    <span class="icon icon-teal"><i class="fa-solid fa-user-group"></i></span>
+                    Explora
+                </li>
+                <li>
+                    <span class="icon icon-purple"><i class="fa-solid fa-gamepad"></i></span>
+                    Participa
+                </li>
+                <li>
+                    <span class="icon icon-gold"><i class="fa-solid fa-trophy"></i></span>
+                    Crece
+                </li>
+            </ul>
+
+            <a href="#games" class="btn-main">
+                <i class="fa-solid fa-compass"></i>
+                Comenzar aventura
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
         </div>
 
@@ -56,23 +82,16 @@
     <section class="title" id="games">
 
         <span class="mini-title">
-
             <i class="fa-solid fa-gamepad"></i>
-
             Juegos y Misiones
-
         </span>
 
         <h2>
-
-            Elige tu próxima aventura
-
+            Elige tu próxima <span>aventura</span>
         </h2>
 
         <p>
-
             Aprende sobre ¡Supérate!, ADOC y habilidades digitales.
-
         </p>
 
     </section>
@@ -81,138 +100,113 @@
 
     <section class="cards">
 
-        <div class="card">
+        <div class="card item-superate">
 
-            <img src="img/triviasp.jpeg">
+            <div class="card-media">
+                <img src="img/triviasp.jpeg" alt="Trivia ¡Supérate!">
+                <span class="badge trivia">TRIVIA</span>
+            </div>
 
-            <span class="badge trivia">TRIVIA</span>
+            <div class="card-body">
+                <h3>Trivia ¡Supérate!</h3>
+                <p>Demuestra cuánto sabes sobre el programa.</p>
 
-            <h3>Trivia ¡Supérate!</h3>
+                <div class="card-note note-blue">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Pon a prueba tus conocimientos
+                </div>
 
-            <p>
-
-                Demuestra cuánto sabes sobre el programa.
-
-            </p>
-
-            <a href="triviasuperate.php" class="play">
-
-                Jugar ahora
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="img/trivaadoc.jpeg">
-
-            <span class="badge trivia">TRIVIA</span>
-
-            <h3>Trivia ADOC</h3>
-
-            <p>
-
-                Descubre la historia y valores de ADOC.
-
-            </p>
-
-            <a href="triviaadoc.php" class="play">
-
-                Jugar ahora
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-                <div class="card">
-
-            <img src="img/spadoc.jpeg">
-
-            <span class="badge trivia">
-
-                TRIVIA
-
-            </span>
-
-            <h3>Trivia ¡Supérate! ADOC</h3>
-
-            <p>
-
-                Aprende paso a paso cómo crear tu correo institucional.
-
-            </p>
-
-            <a href="triviasuperateadoc.php" class="play">
-
-                Jugar ahora
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
+                <a href="triviasuperate.php" class="play play-blue">
+                    Jugar ahora
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
         </div>
 
         <div class="card">
 
-            <img src="img/correo.jpeg">
+            <div class="card-media">
+                <img src="img/trivaadoc.jpeg" alt="Trivia ADOC">
+                <span class="badge empresa">TRIVIA</span>
+            </div>
 
-            <span class="badge trivia">
+            <div class="card-body">
+                <h3>Trivia ADOC</h3>
+                <p>Descubre la historia y valores de ADOC.</p>
 
-                MINI JUEGO
+                <div class="card-note note-purple">
+                    <i class="fa-solid fa-book"></i>
+                    Aprende y diviértete
+                </div>
 
-            </span>
+                <a href="triviaadoc.php" class="play play-purple">
+                    Jugar ahora
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-            <h3>Crea tu correo</h3>
+        </div>
 
-            <p>
+        <div class="card">
 
-                Aprende paso a paso cómo crear tu correo institucional.
+            <div class="card-media">
+                <img src="img/spadoc.jpeg" alt="Trivia ¡Supérate! ADOC">
+                <span class="badge combinada">TRIVIA</span>
+            </div>
 
-            </p>
+            <div class="card-body">
+                <h3>Trivia ¡Supérate! ADOC</h3>
+                <p>Aprende paso a paso cómo crear tu correo institucional.</p>
 
-            <a href="#" class="play">
+                <div class="card-note note-teal">
+                    <i class="fa-solid fa-bullseye"></i>
+                    Misión: Tener puntuaje alto.
+                </div>
 
-                Jugar ahora
+                <a href="triviasuperateadoc.php" class="play play-teal">
+                    Jugar ahora
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-                <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-            </a>
+        <div class="card">
+
+            <div class="card-media">
+                <img src="img/correo.jpeg" alt="Crea tu correo">
+                <span class="badge correo">MINI JUEGO</span>
+            </div>
+
+            <div class="card-body">
+                <h3>Crea tu correo</h3>
+                <p>Aprende paso a paso cómo crear tu correo institucional.</p>
+
+                <div class="card-note note-purple">
+                    <i class="fa-solid fa-envelope"></i>
+                    Desbloquea tu cuenta institucional
+                </div>
+
+                <a href="#" class="play play-purple">
+                    Jugar ahora
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
         </div>
 
     </section>
 
+    <!-- FOOTER NOTE -->
+    <div class="footer-note">
+        <i class="fa-solid fa-star"></i>
+        ¡Cada trivia es una misión! Aprende, juega y crece con ADOC.
+    </div>
+
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const completado = localStorage.getItem('triviaSuperateCompletada');
-        const puntajeMaximo = localStorage.getItem('triviaSuperateScore');
-
-        if (completado === 'true') {
-            const tarjetaSuperate = document.querySelector('.item-superate');
-            
-            if (tarjetaSuperate) {
-                tarjetaSuperate.style.border = "2px solid #2ecc71";
-                
-                const scoreBadge = document.createElement('div');
-                scoreBadge.style.color = "#2ecc71";
-                scoreBadge.style.fontWeight = "bold";
-                scoreBadge.style.marginTop = "10px";
-                scoreBadge.innerHTML = `✅ ¡Completado! Record: ${puntajeMaximo}/10`;
-                
-                tarjetaSuperate.appendChild(scoreBadge);
-            }
-        }
-    });
-</script>
-
-<script src="js/actividades.js"></script>
+<script src="Js/actividades.js"></script>
 
 </body>
 

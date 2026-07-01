@@ -20,18 +20,17 @@ $pagina_actual = "inicio";
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
 
-     <style>
-        .banner-section {
-            margin-top: 60px !important;
-        }
-      </style>
-    
-
-    
 </head>
     
 
 <body>
+
+<div class="dots-top"></div>
+<div class="dots-bottom"></div>
+
+<div class="circle-1"></div>
+<div class="circle-2"></div>
+
 
 <div class="top-navbar">
 
@@ -322,9 +321,17 @@ $pagina_actual = "inicio";
 
 <section class="about-cards-section">
 
+    <p class="about-mini-title">
+        CONÓCENOS MEJOR
+    </p>
+
     <h2 class="about-title">
         Conoce Freshman Compass
     </h2>
+
+    <p class="about-subtitle">
+        Tu guía para comenzar esta etapa con confianza y éxito.
+    </p>
 
     <div class="about-cards">
 
@@ -381,6 +388,10 @@ $pagina_actual = "inicio";
             </p>
         </div>
 
+    </div>
+
+    <div class="about-note">
+        🧭 No estás solo. Estamos aquí para ayudarte.
     </div>
 
 </section>

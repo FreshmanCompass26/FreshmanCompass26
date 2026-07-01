@@ -188,7 +188,7 @@
                     Desbloquea tu cuenta institucional
                 </div>
 
-                <a href="#" class="play play-purple">
+                <a href="correo.php" class="play play-purple">
                     Jugar ahora
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>

@@ -32,7 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="text-center mb-5">
 
         <h1 class="titulo">
-            📚 Centro de Recursos
+            Centro de Recursos
         </h1>
 
         <p class="subtitulo">
@@ -152,7 +152,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ingles">
 
-                    Us Inglés
+                    Inglés
 
                 </button>
 
@@ -212,6 +212,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                         </div>
 
+                         <div class="col-md-3">
+
+                            <div class="resource-card">
+
+                                <h4>TOEIC Practice </h4>
+
+                                <a href="https://toeiclistening.net/" target="_blank" class="btn btn-primary">
+
+                                    Visitar
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -244,11 +260,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                             <div class="resource-card">
 
-                                <h4>TED</h4>
+                                <h4>PsicoActiva/h4>
 
-                                <a href="https://www.ted.com/" target="_blank" class="btn btn-primary">
+                                <a href="https://www.psicoactiva.com/test/test-escala-percepcion-estres/" target="_blank" class="btn btn-primary">
 
-                                    Ver Charlas
+                                    Visitar
 
                                 </a>
 
@@ -260,9 +276,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                             <div class="resource-card">
 
-                                <h4>MindTools</h4>
+                                <h4>Goldty</h4>
 
-                                <a href="https://www.mindtools.com/" target="_blank" class="btn btn-primary">
+                                <a href="https://goldty.infinityfreeapp.com/?i=2" target="_blank" class="btn btn-primary">
+
+                                    Explorar
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        
+                        <div class="col-md-3">
+
+                            <div class="resource-card">
+
+                                <h4>¿Como aprendes mejor?</h4>
+
+                                <a href="https://vark-learn.com/the-vark-questionnaire/" target="_blank" class="btn btn-primary">
 
                                     Explorar
 

@@ -25,7 +25,7 @@ if ($pagina_actual == "nuestro_centro") {
     <ul class="menu">
 
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-            <a href="index.php">
+            <a href="../index.php">
                 <i class="fa-solid fa-house"></i>
                 <span>Inicio</span>
             </a>

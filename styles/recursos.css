@@ -1,396 +1,787 @@
-/* ===========================
+/* =======================================================
    ESTILOS GENERALES
-=========================== */
+======================================================= */
 
 body{
+
     margin:0;
-    min-height:100vh;
+    padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#f5f8fc;
     overflow-x:hidden;
 
-    background:
-        linear-gradient(120deg,#4d8fe6 0%,#6385ac 35%,#356ebe 65%,#a085e5 100%);
 }
 
-body::before{
-
-content:"";
-
-position:fixed;
-
-top:-180px;
-
-right:-120px;
-
-width:500px;
-
-height:500px;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#496ebd,#b28dff);
-
-opacity:.25;
-
-filter:blur(100px);
-
-z-index:-1;
-
-}
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-bottom:-220px;
-
-left:-180px;
-
-width:550px;
-
-height:550px;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#5f9ad8,#2b65c9);
-
-opacity:.20;
-
-filter:blur(110px);
-
-z-index:-1;
-
-}
-
-.wave{
-
-position:fixed;
-
-width:900px;
-
-height:900px;
-
-border:2px solid rgba(255,255,255,.35);
-
-border-radius:50%;
-
-right:-420px;
-
-top:120px;
-
-z-index:-1;
-
-opacity:.5;
-
-}
-
-.wave::after{
-
-content:"";
-
-position:absolute;
-
-width:760px;
-
-height:760px;
-
-border:2px solid rgba(255,255,255,.3);
-
-border-radius:50%;
-
-left:70px;
-
-top:70px;
-
-}
-
-.container{
-    max-width: 1250px;
-}
-
-/* ===========================
-   TITULO
-=========================== */
-
- .titulo{
-    font-size:3rem;
-     font-weight:800;
-    color:#0B2A59;
-    letter-spacing:.5px;
-    margin-bottom:10px;
-}
-
-.subtitulo{
-    color:#5c6b85;
-    font-size:1.15rem;
-}
-/* ===========================
-   ACORDEON
-=========================== */
-
-.accordion-item{
-    border:none;
-    border-radius:22px;
-    overflow:hidden;
-    margin-bottom:25px;
-    background:white;
-    box-shadow:0 18px 40px rgba(30,64,175,.08);
-}
-
-.accordion-button{
-    background:white;
-    padding:24px 28px;
-    font-size:1.25rem;
-    font-weight:700;
-    color:#0B2A59;
-    transition:.35s;
-}
-
-.accordion-button:not(.collapsed){
-
-    background:linear-gradient(135deg,#0B2A59,#184da7);
-
-    color:white;
-}
-
-.accordion-button::after{
-
-    filter:brightness(10);
-
-}
-
-
-
-/* ===========================
-   TARJETAS
-=========================== */
-
-.resource-card{
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:28px;
-
-    border:1px solid #e6eeff;
-
-    transition:.35s;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.07);
-
+/* =======================================================
+   CONTENIDO PRINCIPAL
+======================================================= */
+
+.contenido-recursos{
+
+    margin-left:270px;      /* Ajusta este valor al ancho de tu navbar */
+    min-height:100vh;
+    padding:50px;
     position:relative;
 
-    overflow:hidden;
+}
+
+/* =======================================================
+   FONDO DECORATIVO
+======================================================= */
+
+.bg-circle{
+
+    position:fixed;
+    border-radius:50%;
+    z-index:-1;
+    filter:blur(2px);
 
 }
 
-.resource-card::before{
+.bg-circle-1{
 
-content:"";
+    width:300px;
+    height:300px;
 
-position:absolute;
+    top:-120px;
+    right:-100px;
 
-left:0;
-
-top:0;
-
-width:100%;
-
-height:6px;
-
-background:linear-gradient(90deg,#2563eb,#60a5fa,#8b5cf6);
+    background:rgba(69,195,255,.12);
 
 }
 
-.resource-card:hover{
+.bg-circle-2{
 
-transform:translateY(-12px);
+    width:220px;
+    height:220px;
 
-box-shadow:0 20px 40px rgba(37,99,235,.18);
+    bottom:120px;
+    left:210px;
 
-}
-
-.resource-card h4{
-
-color:#0B2A59;
-
-font-weight:700;
-
-margin-bottom:12px;
+    background:rgba(0,180,216,.10);
 
 }
 
-.resource-card p{
+.bg-circle-3{
 
-color:#6b7280;
+    width:160px;
+    height:160px;
 
-font-size:15px;
+    top:45%;
+    right:8%;
 
-}
-
-
-/* ===========================
-   BOTONES
-=========================== */
-.btn-primary{
-
-background:linear-gradient(135deg,#2563eb,#3b82f6);
-
-border:none;
-
-border-radius:12px;
-
-padding:10px 24px;
-
-font-weight:600;
-
-transition:.3s;
+    background:rgba(84,214,255,.08);
 
 }
 
-.btn-primary:hover{
+/* =======================================================
+   HERO
+======================================================= */
 
-transform:scale(1.05);
+.hero-recursos{
 
-background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    margin-bottom:45px;
 
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+.hero-icon{
 
-@media(max-width:768px){
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:40px;
+
+    color:#28c6d8;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+}
 
 .titulo{
-    font-size:2.2rem;
-}
 
-.resource-card{
-    margin-bottom:20px;
-}
+    color:#16355c;
 
-.accordion-button{
-    font-size:1rem;
-}
+    font-size:50px;
 
-}
-
-body{
-    background: #f5f8ff;
-}
-
-/* Contenido */
-.contenido-recursos{
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* Título */
-.titulo{
-    color:#0B2A59;
     font-weight:700;
-    font-size:3rem;
+
+    margin-bottom:10px;
+
 }
 
 .subtitulo{
-    color:#6c757d;
-    font-size:1.1rem;
-}
 
-/* Acordeón */
-.accordion{
-    max-width:900px;
-    margin:40px auto;
+    color:#6c7a89;
+
+    font-size:20px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.7;
+
+}
+/* =======================================================
+   ACORDEÓN
+======================================================= */
+
+.accordion-recursos{
+
+    --bs-accordion-border-width:0;
+    --bs-accordion-bg:transparent;
+
 }
 
 .accordion-item{
+
     border:none;
-    border-radius:18px;
+    border-radius:20px !important;
     overflow:hidden;
-    margin-bottom:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+    background:#ffffff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
 }
 
+.accordion-item:hover{
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+/* =======================================================
+   BOTÓN DEL ACORDEÓN
+======================================================= */
+
 .accordion-button{
-    background:#fff;
-    padding:22px 25px;
-    font-size:1.2rem;
-    font-weight:600;
+
+    background:#173b67;
+
+    color:#fff;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    padding:22px 30px;
+
+    border:none;
+
+    box-shadow:none;
+
+}
+
+.accordion-button i{
+
+    font-size:24px;
+
+    color:#43d8ef;
+
 }
 
 .accordion-button:not(.collapsed){
-    background:#0B2A59;
-    color:white;
+
+    background:#173b67;
+
+    color:#ffffff;
+
+    box-shadow:none;
+
 }
 
 .accordion-button:focus{
+
     box-shadow:none;
+
+    border:none;
+
 }
+
+/* =======================================================
+   FLECHA
+======================================================= */
+
+.accordion-button::after{
+
+    filter:brightness(0) invert(1);
+
+    transform:scale(1.15);
+
+}
+
+.accordion-button:not(.collapsed)::after{
+
+    transform:rotate(-180deg) scale(1.15);
+
+}
+
+/* =======================================================
+   CUERPO
+======================================================= */
 
 .accordion-body{
-    background:#fafcff;
-    padding:30px;
+
+    background:#ffffff;
+
+    padding:35px;
+
 }
 
-/* Tarjetas */
+/* =======================================================
+   ESPACIADO ENTRE TARJETAS
+======================================================= */
+
+.accordion-body .row{
+
+    row-gap:25px;
+
+}
+/* =======================================================
+   TARJETAS DE RECURSOS
+======================================================= */
+
 .resource-card{
-    background:white;
-    border-radius:18px;
-    padding:20px;
+
+    position:relative;
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:35px 25px;
+
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    transition:.3s;
-    margin-bottom:20px;
+
     height:100%;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    overflow:hidden;
+
 }
 
 .resource-card:hover{
-    transform:translateY(-8px);
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
 }
+
+/* =======================================================
+   ETIQUETA "GRATIS"
+======================================================= */
+
+.badge-resource{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:#dffcf3;
+
+    color:#0f9d73;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    letter-spacing:.3px;
+
+}
+
+/* =======================================================
+   ICONO CIRCULAR
+======================================================= */
+
+.resource-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:10px auto 25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#4fd8eb,#5cc8ff);
+
+    color:#ffffff;
+
+    font-size:38px;
+
+    box-shadow:0 12px 25px rgba(79,216,235,.35);
+
+    transition:.3s;
+
+}
+
+.resource-card:hover .resource-icon{
+
+    transform:scale(1.08) rotate(6deg);
+
+}
+
+/* =======================================================
+   TÍTULO
+======================================================= */
 
 .resource-card h4{
-    color:#0B2A59;
+
+    color:#16355c;
+
+    font-size:23px;
+
     font-weight:700;
-    margin-bottom:10px;
+
+    margin-bottom:15px;
+
 }
+
+/* =======================================================
+   DESCRIPCIÓN
+======================================================= */
 
 .resource-card p{
-    color:#6c757d;
-    min-height:50px;
-}
 
-.btn-primary{
-    background:#0B2A59;
+    color:#6d7a8a;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    min-height:78px;
+
+    margin-bottom:28px;
+
+}
+/* =======================================================
+   BOTÓN DE LAS TARJETAS
+======================================================= */
+
+.btn-resource{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    background:#173b67;
+
+    color:#ffffff;
+
     border:none;
-    border-radius:12px;
-}
 
-.btn-primary:hover{
-    background:#15458d;
-}
+    border-radius:50px;
 
-.contenido-recursos{
-    margin-left: 250px;
-}
+    padding:12px 26px;
 
-.titulo::after{
+    font-size:15px;
 
-content:"";
+    font-weight:600;
 
-display:block;
+    text-decoration:none;
 
-width:90px;
+    transition:all .30s ease;
 
-height:5px;
-
-margin:15px auto 0;
-
-border-radius:20px;
-
-background:linear-gradient(90deg,#2563eb,#7c3aed);
+    box-shadow:0 8px 20px rgba(23,59,103,.25);
 
 }
 
+.btn-resource:hover{
+
+    background:#1d4d86;
+
+    color:#ffffff;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(23,59,103,.35);
+
+}
+
+.btn-resource i{
+
+    font-size:14px;
+
+    transition:transform .30s ease;
+
+}
+
+.btn-resource:hover i{
+
+    transform:translateX(4px);
+
+}
+
+/* =======================================================
+   EFECTO SUPERIOR DE LA TARJETA
+======================================================= */
+
+.resource-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(90deg,#3ed6e8,#56c8ff);
+
+}
+
+/* =======================================================
+   EFECTO DE BRILLO AL PASAR EL MOUSE
+======================================================= */
+
+.resource-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:60%;
+
+    height:250%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(25deg);
+
+    transition:.7s;
+
+}
+
+.resource-card:hover::after{
+
+    left:120%;
+
+}
+
+/* =======================================================
+   ANIMACIONES
+======================================================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.resource-card{
+
+    animation:aparecer .6s ease;
+
+}
+
+/* =======================================================
+   SEPARACIÓN ENTRE SECCIONES
+======================================================= */
+
+.accordion-item + .accordion-item{
+
+    margin-top:30px;
+
+}
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+/* Pantallas grandes */
+
+@media (max-width:1400px){
+
+    .titulo{
+
+        font-size:46px;
+
+    }
+
+    .resource-card{
+
+        padding:30px 22px;
+
+    }
+
+}
+
+/* Tablets */
+
+@media (max-width:992px){
+
+    .contenido-recursos{
+
+        margin-left:0;
+        padding:30px 20px;
+
+    }
+
+    .hero-icon{
+
+        width:75px;
+        height:75px;
+        font-size:32px;
+
+    }
+
+    .titulo{
+
+        font-size:38px;
+
+    }
+
+    .subtitulo{
+
+        font-size:18px;
+
+    }
+
+    .accordion-button{
+
+        font-size:20px;
+        padding:18px 22px;
+
+    }
+
+    .accordion-button i{
+
+        font-size:20px;
+
+    }
+
+    .resource-card{
+
+        padding:28px 20px;
+
+    }
+
+    .resource-icon{
+
+        width:80px;
+        height:80px;
+        font-size:32px;
+
+    }
+
+}
+
+/* Celulares */
+
+@media (max-width:768px){
+
+    .contenido-recursos{
+
+        margin-left:0;
+        padding:20px 15px;
+
+    }
+
+    .titulo{
+
+        font-size:32px;
+
+    }
+
+    .subtitulo{
+
+        font-size:16px;
+
+    }
+
+    .accordion-button{
+
+        font-size:18px;
+        padding:16px 18px;
+
+    }
+
+    .accordion-body{
+
+        padding:20px;
+
+    }
+
+    .resource-card{
+
+        padding:25px 18px;
+
+    }
+
+    .resource-card h4{
+
+        font-size:20px;
+
+    }
+
+    .resource-card p{
+
+        font-size:15px;
+        min-height:auto;
+
+    }
+
+    .btn-resource{
+
+        width:100%;
+
+    }
+
+}
+
+/* Celulares pequeños */
+
+@media (max-width:480px){
+
+    .hero-icon{
+
+        width:65px;
+        height:65px;
+        font-size:28px;
+
+    }
+
+    .titulo{
+
+        font-size:28px;
+
+    }
+
+    .subtitulo{
+
+        font-size:15px;
+
+    }
+
+    .accordion-button{
+
+        font-size:17px;
+
+    }
+
+    .resource-icon{
+
+        width:70px;
+        height:70px;
+        font-size:28px;
+
+    }
+
+    .badge-resource{
+
+        font-size:12px;
+        padding:5px 10px;
+
+    }
+
+}
+
+/* =======================================================
+   SCROLL SUAVE
+======================================================= */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* =======================================================
+   SELECCIÓN DE TEXTO
+======================================================= */
+
+::selection{
+
+    background:#44d5ef;
+    color:#ffffff;
+
+}
+
+/* =======================================================
+   BARRA DE SCROLL
+======================================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef3f9;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#49cde5;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2fb7d3;
+
+}

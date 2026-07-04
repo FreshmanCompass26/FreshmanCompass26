@@ -168,3 +168,68 @@ body{
     50%{transform:translateY(-8px);}
     100%{transform:translateY(0);}
 }
+/*==========================
+    BOTÓN NUEVO CHAT
+==========================*/
+
+.acciones-chat{
+
+    display:flex;
+    justify-content:flex-end;
+    margin:15px 0 20px;
+
+}
+
+.nuevo-chat-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 22px;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 6px 18px rgba(37,99,235,.25);
+
+}
+
+.nuevo-chat-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+
+}
+
+.nuevo-chat-btn:active{
+
+    transform:scale(.96);
+
+}
+
+.nuevo-chat-btn i{
+
+    transition:.4s;
+
+}
+
+.nuevo-chat-btn:hover i{
+
+    transform:rotate(-180deg);
+
+}

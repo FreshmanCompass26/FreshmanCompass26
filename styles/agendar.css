@@ -341,16 +341,63 @@ body{
 }
 
 /*==========================
- BOTON
+ BOTONES DEL FORMULARIO
 ==========================*/
 
-.confirm-btn{
+.botones-form{
 
-    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:15px;
+    margin-top:25px;
+
+}
+
+.btn-cancelar{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:16px 28px;
+
+    background:#fff;
+    color:var(--azul);
+
+    border:2px solid var(--azul);
+    border-radius:15px;
+
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:700;
+
+    transition:.30s;
+
+}
+
+.btn-cancelar:hover{
+
+    background:#eef7f8;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-confirmar{
+
+    flex:1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
     padding:16px;
 
     border:none;
-
     border-radius:15px;
 
     background:var(--azul);
@@ -358,7 +405,6 @@ body{
     color:white;
 
     font-size:16px;
-
     font-weight:700;
 
     cursor:pointer;
@@ -367,24 +413,21 @@ body{
 
 }
 
-.confirm-btn:hover{
+.btn-confirmar:hover{
 
     background:var(--celeste);
 
     color:var(--azul);
 
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 25px rgba(44,75,102,.15);
+    transform:translateY(-3px);
 
 }
 
-.confirm-btn:active{
+.btn-confirmar:active{
 
-    transform:scale(.97);
+    transform:scale(.98);
 
 }
-
 /*==========================
  MENSAJES
 ==========================*/

@@ -45,13 +45,6 @@ if ($pagina_actual == "nuestro_centro") {
                 </a>
             </li>
 
-            <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/psicologas.php">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Psicólogas</span>
-                </a>
-            </li>
-
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>

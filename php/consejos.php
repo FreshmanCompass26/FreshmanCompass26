@@ -22,24 +22,27 @@ $resultado = $conn->query($sqlCards);
 <head>
     <meta charset="UTF-8">
     <title>Consejos</title>
+
     <link rel="stylesheet" href="../styles/consejos.css">
     <link rel="stylesheet" href="../styles/navbar.css">
+
     <link rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
 <div class="contenido">
 
     <div class="titulo">
-        <div class="bombilla">💡</div>
+        <div class="bombilla"><i class="fa-solid fa-lightbulb"></i></div>
         <h1>Consejos</h1>
     </div>
 
     <div class="banner-consejo">
 
         <h3>
-            🟢 Estos son nuestros consejos, despliega para poder verlos todos.
+            <i class="fa-solid fa-circle-info"></i> Estos son nuestros consejos, despliega para poder verlos todos.
         </h3>
 
         <?php while($top = $topConsejos->fetch_assoc()){ ?>
@@ -64,6 +67,41 @@ $resultado = $conn->query($sqlCards);
 
         <?php while($fila = $resultado->fetch_assoc()){ ?>
 
+            <?php
+            // Mostrar la tarjeta antes del consejo #3
+            if($fila['id'] == 3){
+            ?>
+
+            <div class="psicologas-card">
+
+                <div class="psicologas-info">
+
+                    <h2>
+                        <i class="fa-solid fa-comments"></i>
+                        ¿Necesitas hablar con alguien?
+                    </h2>
+
+                    <p>
+                        Si necesitas orientación o apoyo emocional, nuestro equipo de psicología está disponible para escucharte y acompañarte.
+                    </p>
+
+                    <a href="../psicologas.php" class="btn-psicologas">
+                        Conocer al equipo de psicología
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <div class="psicologas-img">
+
+                    <img src="../img/psicologas.png" alt="Psicóloga hablando con estudiante">
+
+                </div>
+
+            </div>
+
+            <?php } ?>
+
             <div class="card">
 
                 <div class="numero">
@@ -83,7 +121,9 @@ $resultado = $conn->query($sqlCards);
                 </div>
 
                 <div class="imagen">
+
                     <img src="../img/<?php echo $fila['imagen']; ?>" alt="">
+
                 </div>
 
             </div>

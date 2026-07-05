@@ -260,7 +260,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                             <div class="resource-card">
 
-                                <h4>PsicoActiva/h4>
+                                <h4>PsicoActiva  </h4>
 
                                 <a href="https://www.psicoactiva.com/test/test-escala-percepcion-estres/" target="_blank" class="btn btn-primary">
 

@@ -79,7 +79,7 @@ $pagina_actual = "centro";
                             <label>Tu testimonio</label>
                             <div class="wrapper-textarea">
                                 <span class="comilla-decorativa">“</span>
-                                <textarea name="testimonio" maxlength="2000
+                                <textarea name="testimonio" maxlength="5000
                                 " placeholder="Comparte tu experiencia en los salones..." required></textarea>
                             </div>
                         </div>

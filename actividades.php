@@ -21,6 +21,10 @@
 
 <body>
 
+<a href="javascript:history.back()" class="btn-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
+
 <div class="container">
 
     <!-- HERO -->

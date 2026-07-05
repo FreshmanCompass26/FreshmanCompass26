@@ -23,6 +23,11 @@
 
 <body>
 
+    <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
+
     <div class="background-shape shape1"></div>
     <div class="background-shape shape2"></div>
 

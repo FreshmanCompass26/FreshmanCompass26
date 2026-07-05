@@ -1,281 +1,317 @@
 <?php
-$pagina_actual = "teachers";
-
 include("conexion.php");
 
-$query = "SELECT * FROM teachers";
-$resultado = $conn->query($query);
 
-if (!$resultado) {
-    die("Error en la consulta: " . $conn->error);
+// Obtener todos los maestros
+$sql = "SELECT * FROM teachers ORDER BY
+CASE
+    WHEN materia = 'English' THEN 1
+    WHEN materia = 'Computing' THEN 2
+    WHEN materia = 'Values' THEN 3
+    ELSE 4
+END,
+nombre ASC";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Error al obtener los profesores: " . $conn->error);
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Teachers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font (MEJOR TIPOGRAFÍA) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Teachers | Freshman Compass</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Tus estilos -->
-    <link rel="stylesheet" href="../styles/general.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/teachers.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
-
 <?php include("navbar.php"); ?>
+<section class="teachers-section">
 
-<div class="top-navbar">
-    <div class="top-right">
+    <!-- Hero -->
 
-        <?php if (isset($_SESSION['nombre'])): ?>
+    <div class="teachers-header">
 
-            <?php
-                $nombre = $_SESSION['nombre'];
-                $inicial = strtoupper(substr($nombre, 0, 1));
-            ?>
+        
+    
 
-            <div class="dropdown user-dropdown">
+        <h1>
+            Conoce nuestros maestros
+        </h1>
 
-                <div class="user-trigger" data-bs-toggle="dropdown">
-                    <div class="avatar"><?php echo $inicial; ?></div>
-
-                    <span class="username">
-                        <?php echo $nombre; ?>
-                    </span>
-
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-
-                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
-                    <li class="dropdown-header-user">
-                        <div class="avatar-lg"><?php echo $inicial; ?></div>
-
-                        <div>
-                            <div class="name"><?php echo $nombre; ?></div>
-                            <div class="sub">Bienvenido</div>
-                        </div>
-                    </li>
-
-                    <li><hr class="dropdown-divider"></li>
-
-                    <li>
-                        <a class="dropdown-item" href="profile.php">
-                            <i class="fa-regular fa-user"></i> Perfil
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item logout" href="logout.php">
-                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        <?php else: ?>
-
-            <a href="../login.html" class="btn-login">Iniciar sesión</a>
-            <a href="../signup.html" class="btn-signup">Crear Cuenta</a>
-
-        <?php endif; ?>
+        <p>
+           Nuestros profesores están aquí para guiarte, inspirarte y ayudarte a alcanzar tus metas
+        </p>
 
     </div>
-</div>
 
-<div class="main">
+    <!-- Buscador -->
 
-    <h1>Conoce nuestros maestros:</h1>
+    <div class="teachers-tools">
 
-    <p>
-        Nuestros profesores están aquí para guiarte,
-        inspirarte y ayudarte a alcanzar tus metas.
-    </p>
+        <div class="search-box">
 
-    <div class="filtros">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-        <button class="active" onclick="filtrar('all', this)">
-            Todos los maestros
+            <input
+                type="text"
+                id="searchTeacher"
+                placeholder="Search teacher...">
+
+        </div>
+
+    </div>
+
+    <!-- Filtros -->
+
+    <div class="filters">
+
+        <button class="filter-btn active" data-filter="all">
+            All
         </button>
 
-        <button onclick="filtrar('English', this)">
+        <button class="filter-btn" data-filter="English">
             English
         </button>
 
-        <button onclick="filtrar('Computing', this)">
+        <button class="filter-btn" data-filter="Computing">
             Computing
         </button>
 
-        <button onclick="filtrar('Values', this)">
+        <button class="filter-btn" data-filter="Values">
             Values
         </button>
 
-        <button onclick="filtrar('Administración', this)">
-            Administración
+        <button class="filter-btn" data-filter="Administration">
+            Administration
         </button>
 
     </div>
 
-    <div class="cards">
+    <!-- Tarjetas -->
+
+    <div class="teachers-grid">
+<?php while($teacher = $result->fetch_assoc()) : ?>
 
 <?php
 
-$contador = 0;
+$materia = $teacher['materia'];
 
-if ($resultado->num_rows > 0) {
+if(
+    $materia != "English" &&
+    $materia != "Computing" &&
+    $materia != "Values"
+){
+    $categoria = "Administration";
+}else{
+    $categoria = $materia;
+}
 
-    while ($row = $resultado->fetch_assoc()) {
-
-        $original = trim($row['materia']);
-
-        if (
-            $original == "English" ||
-            $original == "Computing" ||
-            $original == "Values"
-        ) {
-            $materia = $original;
-        } else {
-            $materia = "Administración";
-        }
-
-        $ocultar = ($contador >= 4) ? 'style="display:none;"' : '';
-        $contador++;
 ?>
 
-        <div class="card"
-            data-materia="<?php echo $materia; ?>"
-            <?php echo $ocultar; ?>>
+<article
+class="teacher-card"
+data-category="<?= $categoria ?>"
+data-name="<?= strtolower($teacher['nombre']) ?>">
 
-            <div class="img-container">
-                <img
-                    src="../img/<?php echo $row['imagen']; ?>"
-                    class="foto"
-                    alt="Teacher">
-            </div>
+    <div class="teacher-top">
 
-            <h3><?php echo $row['nombre']; ?></h3>
+        <div class="teacher-image">
 
-            <span class="materia"><?php echo $materia; ?></span>
+            <img
+    src="../img/teachers/<?= htmlspecialchars($teacher['imagen']); ?>"
+    alt="<?= htmlspecialchars($teacher['nombre']); ?>">
 
-            <div class="correo">
-                <p><?php echo $row['correo']; ?></p>
-            </div>
+        </div>
 
-            <div class="horario">
-                <p><strong>Schedule</strong></p>
-                <p><?php echo $row['dias']; ?></p>
-                <p><?php echo $row['horario']; ?></p>
-            </div>
+        <div class="teacher-info">
 
-            <div class="fecha">
-                <p><strong>Birthday</strong></p>
-                <p><?php echo $row['cumple']; ?></p>
-            </div>
+            <span class="badge">
+                <?= htmlspecialchars($teacher['materia']); ?>
+            </span>
 
-            <div class="frase">
-                "<?php echo $row['frase']; ?>"
+            <h2>
+                <?= htmlspecialchars($teacher['nombre']); ?>
+            </h2>
+
+            <div class="teacher-email">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                    <?= htmlspecialchars($teacher['correo']); ?>
+                </span>
+
             </div>
 
         </div>
 
-<?php
-    }
+    </div>
 
-} else {
-    echo "<p>No hay registros en la tabla teachers.</p>";
-}
-?>
+    <div class="teacher-data">
+
+        <div class="data-box">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            <div class="data-title">
+                Schedule
+            </div>
+
+            <div class="data-value">
+
+                <?= htmlspecialchars($teacher['dias']); ?><br>
+
+                <?= htmlspecialchars($teacher['horario']); ?>
+
+            </div>
+
+        </div>
+
+        <div class="data-box">
+
+            <i class="fa-solid fa-cake-candles"></i>
+
+            <div class="data-title">
+                Birthday
+            </div>
+
+            <div class="data-value">
+
+                <?= htmlspecialchars($teacher['cumple']); ?>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="btn-container">
-        <button id="verMas" class="vermas">
-            Ver más...
-        </button>
+    <div class="teacher-quote">
+
+        "<?= htmlspecialchars($teacher['frase']); ?>"
+
+    </div>
+
+    <div class="teacher-footer">
+
+        <span class="teacher-subject">
+
+            <?= htmlspecialchars($teacher['materia']); ?>
+
+        </span>
+
+        <button
+    class="profile-btn"
+
+    data-name="<?= htmlspecialchars($teacher['nombre']); ?>"
+
+    data-subject="<?= htmlspecialchars($teacher['materia']); ?>"
+
+    data-email="<?= htmlspecialchars($teacher['correo']); ?>"
+
+    data-schedule="<?= htmlspecialchars($teacher['dias'] . ' | ' . $teacher['horario']); ?>"
+
+    data-birthday="<?= htmlspecialchars($teacher['cumple']); ?>"
+
+    data-quote="<?= htmlspecialchars($teacher['frase']); ?>"
+
+    data-image="../img/teachers/<?= htmlspecialchars($teacher['imagen']); ?>">
+
+    View Profile
+
+</button>
+
+    </div>
+
+</article>
+
+<?php endwhile; ?>
+
+    </div>
+
+</section>
+<!-- Modal del profesor -->
+
+<div id="teacherModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-modal">&times;</span>
+
+        <img id="modalImage" alt="Teacher">
+
+        <h2 id="modalName"></h2>
+
+        <span id="modalSubject"></span>
+
+        <p id="modalEmail"></p>
+
+        <p id="modalSchedule"></p>
+
+        <p id="modalBirthday"></p>
+
+        <blockquote id="modalQuote"></blockquote>
+
+        <div class="modal-actions">
+
+            <a id="emailButton" class="modal-btn">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Send Email
+
+            </a>
+
+            <button id="copyEmail" class="modal-btn" type="button">
+
+                <i class="fa-regular fa-copy"></i>
+
+                Copy Email
+
+            </button>
+
+            <button id="closeButton" class="modal-btn" type="button">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Close
+
+            </button>
+
+        </div>
+
     </div>
 
 </div>
+<!-- Toast -->
 
-<script>
+<div id="toast" class="toast">
 
-const cards = document.querySelectorAll(".card");
-const botonVerMas = document.getElementById("verMas");
+    <i class="fa-solid fa-circle-check"></i>
 
-let filtroActual = "all";
+    <span id="toastMessage">
 
-function filtrar(materia, boton) {
+        Email copied successfully!
 
-    filtroActual = materia;
+    </span>
 
-    document.querySelectorAll(".filtros button")
-        .forEach(btn => btn.classList.remove("active"));
+</div>
+<script src="../Js/teachers.js"></script>
 
-    boton.classList.add("active");
-
-    let contador = 0;
-
-    cards.forEach(card => {
-
-        const coincide =
-            materia === "all" ||
-            card.dataset.materia === materia;
-
-        if (coincide) {
-
-            if (contador < 4) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-
-            contador++;
-
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-    botonVerMas.style.display =
-        contador > 4 ? "inline-block" : "none";
-}
-
-botonVerMas.addEventListener("click", function () {
-
-    cards.forEach(card => {
-
-        if (
-            filtroActual === "all" ||
-            card.dataset.materia === filtroActual
-        ) {
-            card.style.display = "block";
-        }
-
-    });
-
-    this.style.display = "none";
-});
-
-window.onload = function () {
-    filtrar("all", document.querySelector(".filtros button.active"));
-};
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             que forman parte de la vida estudiantil en nuestro centro.
         </p>
     </div>
-
+    
     <div class="events-grid">
 
         <?php while($evento = $result->fetch_assoc()) { ?>

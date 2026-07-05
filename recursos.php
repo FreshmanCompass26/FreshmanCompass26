@@ -7,130 +7,606 @@ session_start();
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Centro de Recursos</title>
+    <title>Centro de Recursos</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="stylesheet" href="styles/navbar.css">
-<link rel="stylesheet" href="styles/recursos.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/recursos.css">
 
 </head>
 
 <body>
 
-<div class="wave"></div>
-<?php include 'php/navbar.php'; ?>
+    <!-- Barra lateral -->
+    <?php include 'php/navbar.php'; ?>
 
-<div class="container py-5 contenido-recursos">
+    <!-- Fondo decorativo -->
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
 
-    <div class="text-center mb-5">
+    <!-- Contenido -->
+    <main class="contenido-recursos">
 
-        <h1 class="titulo">
-            Centro de Recursos
-        </h1>
+        <!-- Encabezado -->
 
-        <p class="subtitulo">
-            Aprende y fortalece tus conocimientos con recursos recomendados.
-        </p>
+        <section class="hero-recursos text-center">
 
-    </div>
+            <div class="hero-icon">
 
+                <i class="fa-solid fa-book-open"></i>
 
-    <div class="accordion" id="accordionRecursos">
+            </div>
 
-        <!-- INFORMÁTICA -->
+            <h1 class="titulo">
 
-        <div class="accordion-item">
+                Centro de Recursos
 
-            <h2 class="accordion-header">
+            </h1>
 
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#info">
+            <p class="subtitulo">
 
-                    Informática
+                Aprende y fortalece tus conocimientos con recursos recomendados.
 
-                </button>
+            </p>
 
-            </h2>
+        </section>
 
-            <div id="info" class="accordion-collapse collapse show">
+        <!-- Acordeón principal -->
 
-                <div class="accordion-body">
+        <div class="accordion accordion-recursos" id="accordionRecursos">
 
-                    <div class="row">
+            <!-- ================================================= -->
+            <!--                INFORMÁTICA                        -->
+            <!-- ================================================= -->
 
-                        <div class="col-md-3">
+            <div class="accordion-item">
 
-                            <div class="resource-card">
+                <h2 class="accordion-header">
 
-                                <h4>W3Schools</h4>
+                    <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#informatica"
+                        aria-expanded="true">
 
-                                <p>HTML, CSS, JavaScript, PHP y SQL.</p>
+                        <i class="fa-solid fa-laptop-code me-3"></i>
 
-                                <a href="https://www.w3schools.com/" target="_blank" class="btn btn-primary">
+                        Informática
 
-                                    Visitar
+                    </button>
 
-                                </a>
+                </h2>
+
+                <div id="informatica"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionRecursos">
+
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+                                                <!-- W3Schools -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-globe"></i>
+
+                                    </div>
+
+                                    <h4>W3Schools</h4>
+
+                                    <p>
+
+                                        HTML, CSS, JavaScript, PHP y SQL.
+
+                                    </p>
+
+                                    <a href="https://www.w3schools.com/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- freeCodeCamp -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-code"></i>
+
+                                    </div>
+
+                                    <h4>freeCodeCamp</h4>
+
+                                    <p>
+
+                                        Cursos gratuitos de programación.
+
+                                    </p>
+
+                                    <a href="https://www.freecodecamp.org/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- MDN -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-book"></i>
+
+                                    </div>
+
+                                    <h4>MDN Web Docs</h4>
+
+                                    <p>
+
+                                        Documentación para desarrolladores.
+
+                                    </p>
+
+                                    <a href="https://developer.mozilla.org/es/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- GitHub -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-brands fa-github"></i>
+
+                                    </div>
+
+                                    <h4>GitHub</h4>
+
+                                    <p>
+
+                                        Control de versiones y proyectos.
+
+                                    </p>
+
+                                    <a href="https://github.com/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
 
                             </div>
 
                         </div>
 
-                        <div class="col-md-3">
+                    </div>
 
-                            <div class="resource-card">
+                </div>
 
-                                <h4>freeCodeCamp</h4>
+            </div>
 
-                                <p>Cursos gratuitos de programación.</p>
+            <!-- ================================================= -->
+            <!--                    INGLÉS                         -->
+            <!-- ================================================= -->
 
-                                <a href="https://www.freecodecamp.org/" target="_blank" class="btn btn-primary">
+            <div class="accordion-item">
 
-                                    Visitar
+                <h2 class="accordion-header">
 
-                                </a>
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ingles">
+
+                        <i class="fa-solid fa-comments me-3"></i>
+
+                        Inglés
+
+                    </button>
+
+                </h2>
+
+                <div id="ingles"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRecursos">
+
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+                                                <!-- Duolingo -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-language"></i>
+
+                                    </div>
+
+                                    <h4>Duolingo</h4>
+
+                                    <p>
+
+                                        Aprende inglés de forma divertida con ejercicios interactivos.
+
+                                    </p>
+
+                                    <a href="https://www.duolingo.com/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- BBC Learning English -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-headphones"></i>
+
+                                    </div>
+
+                                    <h4>BBC Learning English</h4>
+
+                                    <p>
+
+                                        Lecciones gratuitas de gramática, vocabulario y pronunciación.
+
+                                    </p>
+
+                                    <a href="https://www.bbc.co.uk/learningenglish/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Cambridge Dictionary -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-book-open"></i>
+
+                                    </div>
+
+                                    <h4>Cambridge Dictionary</h4>
+
+                                    <p>
+
+                                        Diccionario en línea con pronunciación y ejemplos.
+
+                                    </p>
+
+                                    <a href="https://dictionary.cambridge.org/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- TOEIC Practice -->
+
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-graduation-cap"></i>
+
+                                    </div>
+
+                                    <h4>TOEIC Practice</h4>
+
+                                    <p>
+
+                                        Practica comprensión auditiva y prepárate para el examen TOEIC.
+
+                                    </p>
+
+                                    <a href="https://toeiclistening.net/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
 
                             </div>
 
                         </div>
 
-                        <div class="col-md-3">
+                    </div>
 
-                            <div class="resource-card">
+                </div>
 
-                                <h4>MDN Web Docs</h4>
+            </div>
 
-                                <p>Documentación para desarrolladores.</p>
+            <!-- ================================================= -->
+            <!--                    VALORES                        -->
+            <!-- ================================================= -->
 
-                                <a href="https://developer.mozilla.org/es/" target="_blank" class="btn btn-primary">
+            <div class="accordion-item">
 
-                                    Visitar
+                <h2 class="accordion-header">
 
-                                </a>
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#valores">
+
+                        <i class="fa-solid fa-heart me-3"></i>
+
+                        Valores
+
+                    </button>
+
+                </h2>
+
+                <div id="valores"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRecursos">
+
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+                                                <!-- PsicoActiva -->
+
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-brain"></i>
+
+                                    </div>
+
+                                    <h4>PsicoActiva</h4>
+
+                                    <p>
+
+                                        Test y recursos para conocer tu nivel de estrés y bienestar emocional.
+
+                                    </p>
+
+                                    <a href="https://www.psicoactiva.com/test/test-escala-percepcion-estres/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Visitar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
 
                             </div>
 
-                        </div>
+                            <!-- Goldty -->
 
-                        <div class="col-md-3">
+                            <div class="col-xl-4 col-lg-6 col-md-6">
 
-                            <div class="resource-card">
+                                <div class="resource-card">
 
-                                <h4>GitHub</h4>
+                                    <span class="badge-resource">
 
-                                <p>Control de versiones y proyectos.</p>
+                                        Gratis
 
-                                <a href="https://github.com/" target="_blank" class="btn btn-primary">
+                                    </span>
 
-                                    Visitar
+                                    <div class="resource-icon">
 
-                                </a>
+                                        <i class="fa-solid fa-seedling"></i>
+
+                                    </div>
+
+                                    <h4>Goldty</h4>
+
+                                    <p>
+
+                                        Plataforma enfocada en el crecimiento personal, hábitos y desarrollo de valores.
+
+                                    </p>
+
+                                    <a href="https://goldty.infinityfreeapp.com/?i=2"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Explorar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <!-- VARK -->
+
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+
+                                <div class="resource-card">
+
+                                    <span class="badge-resource">
+
+                                        Gratis
+
+                                    </span>
+
+                                    <div class="resource-icon">
+
+                                        <i class="fa-solid fa-lightbulb"></i>
+
+                                    </div>
+
+                                    <h4>¿Cómo aprendes mejor?</h4>
+
+                                    <p>
+
+                                        Descubre tu estilo de aprendizaje mediante el cuestionario VARK.
+
+                                    </p>
+
+                                    <a href="https://vark-learn.com/the-vark-questionnaire/"
+                                        target="_blank"
+                                        class="btn btn-resource">
+
+                                        Explorar
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+
+                                    </a>
+
+                                </div>
 
                             </div>
 
@@ -144,10 +620,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         </div>
 
-        <!-- INGLÉS -->
+    </main>
 
-        <div class="accordion-item">
+    <!-- Bootstrap -->
 
+<<<<<<< HEAD
             <h2 class="accordion-header">
 
                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ingles">
@@ -318,6 +795,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 2b5ef493ac300347ca651762c5d776abe8cde14b
 
 </body>
 

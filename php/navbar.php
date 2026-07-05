@@ -23,7 +23,7 @@ if ($pagina_actual == "nuestro_centro") {
     <ul class="menu">
 
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-            <a href="index.php">
+            <a href="/freshmancompass26/index.php">
                 <i class="fa-solid fa-house"></i>
                 <span>Inicio</span>
             </a>
@@ -44,14 +44,12 @@ if ($pagina_actual == "nuestro_centro") {
                     <span>Consejos</span>
                 </a>
             </li>
-
-            <li class="<?= ($pagina_actual == 'psicologas') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/psicologas.php">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Psicólogas</span>
+            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+                <a href="/freshmancompass26/actividades.php">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <span>Actividades</span>
                 </a>
             </li>
-
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>

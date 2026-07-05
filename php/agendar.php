@@ -23,6 +23,11 @@
 
 <body>
 
+    <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
+
     <div class="background-shape shape1"></div>
     <div class="background-shape shape2"></div>
 
@@ -62,7 +67,7 @@
                 <div class="card" onclick="seleccionar('Ana Nieto', this)">
 
                     <div class="card-top">
-                        <img src="../img/analu.jpeg" alt="Ana Nieto">
+                        <img src="../img/teachers/analu.jpeg" alt="Ana Nieto">
                     </div>
 
                     <div class="card-body">
@@ -104,7 +109,7 @@
                 <div class="card" onclick="seleccionar('Jessica Angel', this)">
 
                     <div class="card-top">
-                        <img src="../img/marielos.jpeg" alt="Jessica Angel">
+                        <img src="../img/teachers/marielos.jpeg" alt="Jessica Angel">
                     </div>
 
                     <div class="card-body">
@@ -275,17 +280,26 @@
 
                     </div>
 
-                    <button class="confirm-btn" type="submit">
+    
 
-                        <i class="fa-solid fa-paper-plane"></i>
+<!-- BOTONES -->
+<div class="botones-form">
 
-                        Confirmar cita
+    <a href="../psicologas.php" class="btn-cancelar">
+        <i class="fa-solid fa-xmark"></i>
+        Cancelar
+    </a>
 
-                    </button>
+    <button type="submit" class="btn-confirmar">
+        <i class="fa-solid fa-paper-plane"></i>
+        Confirmar cita
+    </button>
 
-                </form>
+</div>
 
-                <div id="mensaje"></div>
+</form>
+
+<div id="mensaje"></div>
 
             </div>
 

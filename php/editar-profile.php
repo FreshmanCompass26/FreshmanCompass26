@@ -22,10 +22,14 @@ $perfil = $consulta->fetch_assoc();
     <link rel="stylesheet" href="../styles/editar-profile.css">
 <meta charset="UTF-8">
 <title>Editar Perfil</title>
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   
 </head>
 <body>
+
+<a href="javascript:history.back()" class="btn-back">
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
 
 <div class="contenedor">
 

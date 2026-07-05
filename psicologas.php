@@ -118,7 +118,7 @@ include("php/navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-               <img src="img/analu.jpeg" alt="Ana Lucía Nieto">
+               <img src="img/teachers/analu.jpeg" alt="Ana Lucía Nieto">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -132,7 +132,7 @@ include("php/navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="img/marielos.jpeg" alt="Blanca Marielos">
+                <img src="img/teachers/marielos.jpeg" alt="Blanca Marielos">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 
@@ -146,7 +146,7 @@ include("php/navbar.php");
 
         <div class="psych-card">
             <div class="img-container">
-                <img src="img/blancamelen.png" alt="Blanca Meléndez">
+                <img src="img/teachers/blancamelen.png" alt="Blanca Meléndez">
                 <div class="mail-icon"><i class="fas fa-envelope"></i></div>
             </div>
 

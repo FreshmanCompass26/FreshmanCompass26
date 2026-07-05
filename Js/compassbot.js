@@ -4,25 +4,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector(".entrada-chat input");
     const chat = document.querySelector(".chat-container");
     const sugerencias = document.querySelectorAll(".sugerencia-btn");
+    const nuevoChatBtn = document.getElementById("nuevoChatBtn");
 
     const avatarIA = `<img src="../img/ia.png" alt="IA">`;
 
-    // Botón enviar
+    // -------------------------
+    // Enviar con botón
+    // -------------------------
+
     boton.addEventListener("click", enviarPregunta);
 
-    // Enter para enviar
-    input.addEventListener("keypress", function(e){
+    // -------------------------
+    // Enviar con Enter
+    // -------------------------
+
+    input.addEventListener("keydown", function(e){
+
         if(e.key === "Enter"){
+
+            e.preventDefault();
+
             enviarPregunta();
+
         }
+
     });
 
-    // Botones de sugerencias
-    sugerencias.forEach(btn => {
+    // -------------------------
+    // Botones sugerencias
+    // -------------------------
 
-        btn.addEventListener("click", () => {
+    sugerencias.forEach(btn=>{
 
-            input.value = btn.textContent.trim();
+        btn.addEventListener("click",()=>{
+
+            input.value=btn.textContent.trim();
 
             enviarPregunta();
 
@@ -30,107 +46,197 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    function enviarPregunta(){
+    // -------------------------
+    // Nuevo Chat
+    // -------------------------
 
-        let pregunta = input.value.trim();
+    nuevoChatBtn.addEventListener("click",()=>{
 
-        if(pregunta === "") return;
+        fetch("nuevo_chat.php")
 
-        // Mensaje usuario
-        chat.innerHTML += `
-            <div class="mensaje usuario">
+        .then(r=>r.text())
 
-                <div class="avatar">
-                    👤
+        .then(()=>{
+
+            chat.innerHTML=`
+
+            <div class="mensaje bot">
+
+                <div class="avatar1">
+
+                    <img src="../img/ia.png" alt="IA">
+
                 </div>
 
-                <div class="burbuja usuario-burbuja">
-                    ${pregunta}
+                <div class="burbuja">
+
+                    <strong>¡Hola! 👋</strong><br><br>
+
+                    Soy <strong>CompassBot</strong>, el asistente virtual de Freshman Compass.
+
+                    Estoy aquí para ayudarte durante tu primer año en el Programa ¡Supérate! ADOC.
+
+                    ¿En qué puedo ayudarte hoy?
+
                 </div>
 
             </div>
-        `;
 
-        chat.scrollTop = chat.scrollHeight;
-
-        fetch("buscar_respuesta.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: "pregunta=" + encodeURIComponent(pregunta)
-        })
-
-        .then(response => response.text())
-
-        .then(data => {
-
-            // Indicador de escritura
-            const escribiendo = document.createElement("div");
-
-            escribiendo.classList.add("mensaje", "bot");
-
-            escribiendo.innerHTML = `
-                <div class="avatar">
-                    ${avatarIA}
-                </div>
-
-                <div class="burbuja escribiendo">
-                    🧠 CompassBot está pensando...
-                </div>
             `;
 
-            chat.appendChild(escribiendo);
+            input.focus();
 
-            chat.scrollTop = chat.scrollHeight;
-
-            setTimeout(() => {
-
-                escribiendo.remove();
-
-                // Respuesta del bot
-                const respuesta = document.createElement("div");
-
-                respuesta.classList.add("mensaje", "bot");
-
-                respuesta.innerHTML = `
-                    <div class="avatar">
-                        ${avatarIA}
-                    </div>
-
-                    <div class="burbuja">
-                        ${data}
-                    </div>
-                `;
-
-                chat.appendChild(respuesta);
-
-                chat.scrollTop = chat.scrollHeight;
-
-            }, 1000);
-
-        })
-
-        .catch(error => {
-
-            console.error(error);
-
-            chat.innerHTML += `
-                <div class="mensaje bot">
-
-                    <div class="avatar">
-                        ${avatarIA}
-                    </div>
-
-                    <div class="burbuja">
-                        ❌ Ocurrió un error al procesar la solicitud.
-                    </div>
-
-                </div>
-            `;
         });
 
-        input.value = "";
+    });
+
+    // -------------------------
+    // Función principal
+    // -------------------------
+
+    function enviarPregunta(){
+
+        const pregunta=input.value.trim();
+
+        if(pregunta==="") return;
+
+        // Desactivar mientras responde
+
+        boton.disabled=true;
+
+        input.disabled=true;
+
+        // Usuario
+
+        chat.innerHTML+=`
+
+        <div class="mensaje usuario">
+
+            <div class="avatar">
+
+                👤
+
+            </div>
+
+            <div class="burbuja usuario-burbuja">
+
+                ${pregunta}
+
+            </div>
+
+        </div>
+
+        `;
+
+        input.value="";
+
+        chat.scrollTop=chat.scrollHeight;
+
+        // Indicador escribiendo
+
+        const escribiendo=document.createElement("div");
+
+        escribiendo.classList.add("mensaje","bot");
+
+        escribiendo.innerHTML=`
+
+        <div class="avatar1">
+
+            <img src="../img/ia.png" alt="IA">
+
+        </div>
+
+        <div class="burbuja">
+
+            🧠 CompassBot está pensando...
+
+        </div>
+
+        `;
+
+        chat.appendChild(escribiendo);
+
+        chat.scrollTop=chat.scrollHeight;
+
+        fetch("buscar_respuesta.php",{
+
+            method:"POST",
+
+            headers:{
+
+                "Content-Type":"application/x-www-form-urlencoded"
+
+            },
+
+            body:"pregunta="+encodeURIComponent(pregunta)
+
+        })
+
+        .then(response=>response.text())
+
+        .then(data=>{
+
+            escribiendo.remove();
+
+            chat.innerHTML+=`
+
+            <div class="mensaje bot">
+
+                <div class="avatar1">
+
+                    <img src="../img/ia.png" alt="IA">
+
+                </div>
+
+                <div class="burbuja">
+
+                    ${data}
+
+                </div>
+
+            </div>
+
+            `;
+
+            chat.scrollTop=chat.scrollHeight;
+
+        })
+
+        .catch(()=>{
+
+            escribiendo.remove();
+
+            chat.innerHTML+=`
+
+            <div class="mensaje bot">
+
+                <div class="avatar1">
+
+                    <img src="../img/ia.png" alt="IA">
+
+                </div>
+
+                <div class="burbuja">
+
+                    ❌ Ocurrió un error al comunicarme.
+
+                </div>
+
+            </div>
+
+            `;
+
+        })
+
+        .finally(()=>{
+
+            boton.disabled=false;
+
+            input.disabled=false;
+
+            input.focus();
+
+        });
 
     }
 

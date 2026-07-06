@@ -32,8 +32,9 @@
 }
 
 .footer-right a {
-    color: #00aced; /* azul claro */
+    color: white;
     text-decoration: none;
+    pointer-events: auto; /* permite clics */
 }
 
 .footer-right a:hover {
@@ -94,6 +95,9 @@
     color: #00aced; /* Azul claro para íconos */
 }
 
+.final-quote {
+    margin-bottom: 30px; /* o el valor que prefieras */
+}
 
 
 

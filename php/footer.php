@@ -18,7 +18,7 @@
         <div class="footer-right">
     <p>
         <i class="fab fa-instagram"></i> 
-        <a href="https://www.instagram.com/freshmancompass" target="_blank">@freshmancompass</a>
+        <a href="https://www.instagram.com/freshman_compasss?igsh=ZjllNWNrZTR0bzdn" target="_blank">@freshmancompass</a>
     </p>
     <p>
         <i class="fas fa-envelope"></i> 

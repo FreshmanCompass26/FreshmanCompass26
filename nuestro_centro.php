@@ -18,6 +18,7 @@ $pagina_actual = "centro";
 
     <link rel="stylesheet" href="styles/centro.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
 
   
     
@@ -310,7 +311,14 @@ $pagina_actual = "centro";
     “Transformando vidas vía educación”
   </div>
 
+    <div>
+  <?php include 'php/footer.php'; ?>
 </div>
+
+</div>
+
+
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>

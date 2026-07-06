@@ -13,6 +13,7 @@ include("php/navbar.php");
 <title>Freshman Compass | Consejos</title>
 
 <link rel="stylesheet" href="styles/consejos.css">
+<link rel="stylesheet" href="styles/footer.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -213,7 +214,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 </button>
 
             </div>
-
+            
         </section>
 
     </main>
@@ -221,6 +222,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 <script src="Js/consejosscript.js"></script>
-
+<?php include 'php/footer.php'; ?>
 </body>
 </html>

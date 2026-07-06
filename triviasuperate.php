@@ -22,11 +22,15 @@
         <div id="screen-info" class="screen">
             <div class="info-content">
                 <h2>¿Qué es ¡Súpérate!?</h2>
-                <div class="info-text">
-                    <p>El Programa Empresarial ¡Súpérate! nació en el año 2004 gracias a la iniciativa de la Fundación Sagrera Palomo y empresas aliadas como una oportunidad de transformación social.</p>
-                    <p>Su objetivo clave es capacitar a jóvenes de alto rendimiento a través de una beca de tres años en áreas críticas: <strong>Inglés avanzado, Informática y Formación en Valores</strong>. Al finalizar, estarás completamente listo para destacar en el mundo universitario y profesional.</p>
-                    <p>¡Presta mucha atención! Toda esta cultura, sus pilares y su trayectoria son la base para desbloquear el éxito en las siguientes dinámicas.</p>
-                </div>
+               <div class="info-text">
+    <p>El <strong>Programa Empresarial ¡Supérate!</strong> nació en el año <strong>2004</strong> con el propósito de brindar oportunidades de formación a jóvenes destacados de centros escolares públicos en El Salvador.</p>
+
+    <p>El programa ofrece una beca de aproximadamente <strong>tres años</strong>, durante la cual los estudiantes reciben una educación complementaria en <strong>Inglés, Informática y Formación en Valores</strong>, asistiendo a clases fuera de su horario escolar mientras cursan el noveno grado y bachillerato.</p>
+
+    <p>Además de fortalecer los conocimientos académicos, ¡Supérate! desarrolla habilidades como el <strong>liderazgo</strong>, la <strong>responsabilidad</strong>, el <strong>trabajo en equipo</strong> y la <strong>comunicación efectiva</strong>. Al finalizar, los estudiantes pueden obtener certificaciones internacionales como <strong>TOEIC</strong> en inglés y <strong>Microsoft</strong> en informática, abriendo las puertas a becas universitarias y mejores oportunidades académicas y laborales.</p>
+
+    <p><strong>¡Lee con atención!</strong> La información presentada será clave para responder correctamente las preguntas de la siguiente trivia. ¡Demuestra cuánto aprendiste sobre el Programa Empresarial ¡Supérate!!</p>
+</div>
                 <button class="btn" onclick="startQuiz()">¡Listo, entendido!</button>
             </div>
         </div>

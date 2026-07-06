@@ -79,10 +79,6 @@ if ($pagina_actual == "nuestro_centro") {
 
     <?php else: ?>
 
-        <div class="sidebar-auth">
-            <a href="login.php" class="btn-login">Iniciar sesión</a>
-            <a href="signup.php" class="btn-signup">Crear Cuenta</a>
-        </div>
 
     <?php endif; ?>
 

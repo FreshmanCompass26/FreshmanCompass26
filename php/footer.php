@@ -10,7 +10,7 @@
 
         <!-- Sección central: Logo y tagline -->
         <div class="footer-center">
-            <img src="img/logoooooo.png" alt="FreshmanCompass Logo" class="logo-img">
+            <img src="img/logo.negro.png" alt="FreshmanCompass Logo" class="logo-img">
             <p class="tagline">Tu brújula para comenzar en ¡Supérate!</p>
         </div>
 

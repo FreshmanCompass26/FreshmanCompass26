@@ -14,6 +14,8 @@ include("php/navbar.php");
 
 <link rel="stylesheet" href="styles/consejos.css">
 <link rel="stylesheet" href="styles/footer.css">
+ <link rel="stylesheet" href="styles/navbar.css">
+
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -126,6 +128,47 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 </p>
 
             </div>
+
+ <div class="page-topbar">
+        <?php if (isset($_SESSION['nombre'])): ?>
+            <?php
+                $nombre  = $_SESSION['nombre'];
+                $inicial = strtoupper(substr($nombre, 0, 1));
+            ?>
+            <div class="dropdown user-dropdown">
+                <div class="user-trigger" data-bs-toggle="dropdown">
+                    <div class="avatar"><?php echo $inicial; ?></div>
+                    <span class="username"><?php echo htmlspecialchars($nombre); ?></span>
+                    <i class="fa-solid fa-chevron-down" style="font-size:11px;color:#8a9bb0;"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+                    <li class="dropdown-header-user">
+                        <div class="avatar-lg"><?php echo $inicial; ?></div>
+                        <div>
+                            <div class="name"><?php echo htmlspecialchars($nombre); ?></div>
+                            <div class="sub">Estudiante</div>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="perfil.html">
+                            <i class="fa-regular fa-user"></i> Perfil
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="dropdown-item logout" href="php/logout.php">
+                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <?php else: ?>
+            <a href="login.html"  class="btn-login">Iniciar sesión</a>
+            <a href="signup.html" class="btn-signup">Crear cuenta</a>
+        <?php endif; ?>
+    </div>
+
 
             <div class="tips-grid" id="tipsGrid">
 

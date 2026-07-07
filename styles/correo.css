@@ -1,244 +1,432 @@
-
 :root {
+
     --bg-dark: #121212;
-    --game-box-bg: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --card-bg-2: #252526;
+
     --text-main: #ffffff;
-    --text-muted: #aaaaaa;
-    --outlook-blue: #0078d4;
-    --outlook-blue-hover: #106ebe;
-    --superate-green: #107c41;
-    --superate-green-hover: #0b5930;
-    --border-color: #333333;
-    --outlook-input-bg: #2d2d2d;
+    --text-muted: #bdbdbd;
+
+    --primary: #0078d4;
+    --primary-hover: #106ebe;
+
+    --success: #107c41;
+    --success-hover: #0b5e30;
+
+    --danger: #d13438;
+
+    --border: #333;
+
 }
 
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.game-box {
-    background-color: var(--game-box-bg);
-    width: 100%;
-    max-width: 700px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    border: 1px solid var(--border-color);
+body{
+
+    background:var(--bg-dark);
+
+    font-family:
+    'Segoe UI',
+    sans-serif;
+
+    color:var(--text-main);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
 }
 
-.screen {
-    display: none;
-    animation: fadeIn 0.3s ease-in-out;
+.game-box{
+
+    width:100%;
+    max-width:900px;
+
+    background:var(--card-bg);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.4);
+
 }
 
-.screen.active {
-    display: block;
+.screen{
+    display:none;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+.screen.active{
+    display:block;
+    animation:fade .4s ease;
 }
 
-.outlook-sim {
-    background-color: #252526; /* Fondo tipo editor moderno */
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
-.outlook-field {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #3c3c3c;
-    padding: 10px 0;
-    gap: 15px;
+
+h1,h2,h3{
+
+    text-align:center;
+
+    margin-bottom:15px;
 }
 
-.outlook-field:last-child {
-    border-bottom: none;
+p{
+
+    line-height:1.6;
 }
 
-.outlook-field label {
-    width: 90px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--outlook-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-align: left;
+#screen-loading{
+
+    text-align:center;
 }
 
-.outlook-field select, 
-.outlook-field input, 
-.outlook-field textarea {
-    background-color: var(--outlook-input-bg);
-    color: var(--text-main);
-    border: 1px solid #444444;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    width: 100%;
-    font-family: inherit;
-    box-sizing: border-box;
+.spinner{
+
+    width:60px;
+    height:60px;
+
+    border:5px solid #333;
+    border-top:5px solid var(--primary);
+
+    border-radius:50%;
+
+    margin:30px auto;
+
+    animation:spin 1s linear infinite;
 }
 
-.outlook-field select:focus, 
-.outlook-field input:focus, 
-.outlook-field textarea:focus {
-    border-color: var(--outlook-blue);
-    box-shadow: 0 0 5px rgba(0, 120, 212, 0.4);
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
-.outlook-field textarea {
-    height: 150px;
-    resize: none;
-    line-height: 1.5;
+.info-image{
+
+    margin:25px 0;
+    text-align:center;
 }
 
-#contenedor-bloques-mezclados {
-    background-color: #1a1a1a;
-    border: 1px dashed #444;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    max-height: 180px;
-    overflow-y: auto;
+.info-image img{
+
+    width:100%;
+    max-width:550px;
+
+    border-radius:14px;
+
+    border:2px solid var(--border);
 }
 
-#contenedor-bloques-mezclados strong {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--text-muted);
-    font-size: 13px;
-    text-align: left;
+.info-text{
+
+    text-align:left;
+
+    background:var(--card-bg-2);
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-top:20px;
 }
 
-.bloque-guia {
-    background: #2d2d2d;
-    border-left: 4px solid var(--outlook-blue);
-    padding: 10px;
-    margin: 6px 0;
-    border-radius: 4px;
-    font-size: 14px;
-    text-align: left;
-    color: #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.info-text ul{
+
+    margin-top:15px;
+    margin-left:20px;
 }
 
-.color-dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-.dot-asunto    { background-color: #107c41; }
-.dot-saludo    { background-color: #0078d4; }
-.dot-intro     { background-color: #5c2d91; }
-.dot-cuerpo    { background-color: #d83b01; }
-.dot-despedida { background-color: #f7a220; }
-.dot-firma     { background-color: #323130; }
+.info-text li{
 
-.status-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    font-size: 11px;
-    font-weight: bold;
-    color: white;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-.status-success { background-color: var(--superate-green); }
-.status-error   { background-color: #a80000; }
-
-.btn {
-    background-color: var(--outlook-blue);
-    color: #ffffff;
-    border: none;
-    padding: 12px 28px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    display: inline-block;
-    text-decoration: none;
-    margin: 5px;
+    margin-bottom:12px;
 }
 
-.btn:hover {
-    background-color: var(--outlook-blue-hover);
+.video-container{
+
+    margin-top:25px;
 }
 
-.btn:active {
-    transform: scale(0.98);
+.video-container video{
+
+    width:100%;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
 }
 
-.btn-success {
-    background-color: var(--superate-green);
+.btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-weight:600;
+
+    background:var(--primary);
+
+    transition:.25s;
+
+    margin-top:20px;
 }
 
-.btn-success:hover {
-    background-color: var(--superate-green-hover);
+.btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
 }
 
-.info-text {
-    color: #e0e0e0;
-    line-height: 1.6;
-    font-size: 15px;
+.btn-success{
+
+    background:var(--success);
 }
 
-.info-text hr {
-    border: 0;
-    border-top: 1px solid var(--border-color);
+.btn-success:hover{
+
+    background:var(--success-hover);
 }
 
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    border-top-color: var(--outlook-blue);
-    border-radius: 50%;
-    margin: 20px auto 0 auto;
-    animation: spin 1s linear infinite;
+.casos-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:15px;
+
+    margin-top:25px;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.caso-card{
+
+    display:block;
+
+    background:var(--card-bg-2);
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border:2px solid transparent;
+
+    cursor:pointer;
+
+    transition:.25s;
 }
 
-.info-text::-webkit-scrollbar,
-#contenedor-bloques-mezclados::-webkit-scrollbar,
-#result-feedback-list::-webkit-scrollbar {
-    width: 6px;
+.caso-card:hover{
+
+    border-color:var(--primary);
 }
-.info-text::-webkit-scrollbar-track,
-#contenedor-bloques-mezclados::-webkit-scrollbar-track,
-#result-feedback-list::-webkit-scrollbar-track {
-    background: #1e1e1e;
+
+.caso-card input{
+
+    margin-bottom:10px;
 }
-.info-text::-webkit-scrollbar-thumb,
-#contenedor-bloques-mezclados::-webkit-scrollbar-thumb,
-#result-feedback-list::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 3px;
+
+.caso-card h3{
+
+    text-align:left;
+}
+
+.caso-card p{
+
+    color:var(--text-muted);
+}
+
+.difficulty-container{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+}
+
+.difficulty-container .btn{
+
+    width:220px;
+}
+
+
+.outlook-sim{
+
+    background:#252526;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:20px;
+
+    margin-top:20px;
+}
+
+.outlook-field{
+
+    margin-bottom:15px;
+}
+
+.outlook-field label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+.outlook-field input,
+.outlook-field textarea{
+
+    width:100%;
+
+    background:#2d2d2d;
+
+    color:white;
+
+    border:1px solid #444;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    font-size:14px;
+}
+
+.outlook-field textarea{
+
+    min-height:220px;
+
+    resize:none;
+}
+
+
+.sortable-correo{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.drag-item{
+
+    background:#2d2d2d;
+
+    border-left:5px solid var(--primary);
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:grab;
+
+    transition:.25s;
+
+    text-align:left;
+}
+
+.drag-item:hover{
+
+    transform:translateX(5px);
+}
+
+.dragging{
+
+    opacity:.5;
+}
+
+.correct{
+
+    border-left-color:var(--success) !important;
+
+    background:
+    rgba(16,124,65,.15);
+}
+
+.incorrect{
+
+    border-left-color:var(--danger) !important;
+
+    background:
+    rgba(209,52,56,.15);
+}
+
+#result-score{
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+}
+
+#result-feedback-list{
+
+    background:var(--card-bg-2);
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+
+    .game-box{
+
+        padding:20px;
+    }
+
+    .difficulty-container{
+
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .difficulty-container .btn{
+
+        width:100%;
+    }
+
 }

@@ -51,11 +51,7 @@ $pagina_actual = "centro";
                             <i class="fa-regular fa-user"></i> Perfil
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa-solid fa-gear"></i> Configuración
-                        </a>
-                    </li>
+                
                     <li>
                         <a class="dropdown-item logout" href="php/logout.php">
                             <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión

@@ -391,7 +391,7 @@ $pagina_actual = "inicio";
     </div>
 
     <div class="about-note">
-        🧭 No estás solo. Estamos aquí para ayudarte.
+         No estás solo. Estamos aquí para ayudarte.
     </div>
 
 </section>

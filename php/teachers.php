@@ -151,14 +151,17 @@ data-name="<?= strtolower($teacher['nombre']) ?>">
 
             <div class="teacher-email">
 
-                <i class="fa-solid fa-envelope"></i>
+    <i class="fa-solid fa-envelope"></i>
 
-                <span>
-                    <?= htmlspecialchars($teacher['correo']); ?>
-                </span>
+    <a
+        href="mailto:<?= htmlspecialchars($teacher['correo']); ?>?subject=Freshman%20Compass%20Inquiry"
+        class="teacher-mail">
 
-            </div>
+        <?= htmlspecialchars($teacher['correo']); ?>
 
+    </a>
+
+</div>
         </div>
 
     </div>
@@ -209,30 +212,19 @@ data-name="<?= strtolower($teacher['nombre']) ?>">
 
     <div class="teacher-footer">
 
-        <span class="teacher-subject">
+    <span class="teacher-subject">
 
-            <?= htmlspecialchars($teacher['materia']); ?>
+        <?= htmlspecialchars($teacher['materia']); ?>
 
-        </span>
+    </span>
 
-        <button
-    class="profile-btn"
+   <a
+        href="mailto:<?= htmlspecialchars($teacher['correo']); ?>"
+        class="profile-btn">
+    <i class="fa-solid fa-envelope"></i>
+</a>
 
-    data-name="<?= htmlspecialchars($teacher['nombre']); ?>"
-
-    data-subject="<?= htmlspecialchars($teacher['materia']); ?>"
-
-    data-email="<?= htmlspecialchars($teacher['correo']); ?>"
-
-    data-schedule="<?= htmlspecialchars($teacher['dias'] . ' | ' . $teacher['horario']); ?>"
-
-    data-birthday="<?= htmlspecialchars($teacher['cumple']); ?>"
-
-    data-quote="<?= htmlspecialchars($teacher['frase']); ?>"
-
-    data-image="../img/teachers/<?= htmlspecialchars($teacher['imagen']); ?>">
-
-    View Profile
+    </div>
 
 </button>
 

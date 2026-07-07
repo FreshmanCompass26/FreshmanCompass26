@@ -104,15 +104,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 src="img/foco.png"
                 class="bulb">
 
-                <h1>Consejos</h1>
+
+                <h1>Consejos para tu primer año</h1>
+
+            <p class="hero-text">
+                Pequeñas acciones pueden marcar una gran diferencia. Descubre recomendaciones que te ayudarán a organizarte, aprender mejor y disfrutar tu experiencia en Centro ¡Supérate! ADOC.
+            </p>
 
             </div>
 
             <div class="featured">
 
-                <h3>
-                    🟢 Estos son nuestros consejos, despliega para poder verlos todos.
-                </h3>
+                <h3>Recomendaciones destacadas</h3>
+
+        <p>
+            Explora consejos prácticos que te ayudarán durante tu primer año.
+        </p>
 
                 <p>
                     <span class="badge">1</span>

@@ -1,14 +1,99 @@
 const quizData = [
-    { q: "¿En qué año nació el Programa Empresarial ¡Súpérate!?", a: ["2004", "2010", "1998", "2015"], correct: 0 },
-    { q: "¿Cuáles son las tres áreas principales de estudio en ¡Súpérate!?", a: ["Matemáticas, Ciencias y Lenguaje", "Inglés, Informática y Valores", "Programación, Diseño y Oratoria", "Contabilidad, Inglés y Administración"], correct: 1 },
-    { q: "¿Cuántos años dura la beca del programa para un estudiante?", a: ["1 año", "2 años", "3 años", "5 años"], correct: 2 },
-    { q: "¿Qué fundación inició el primer centro ¡Súpérate!?", a: ["Fundación ADOC", "Fundación Sagrera Palomo", "Fundación Poma", "Fundación Slim"], correct: 1 },
-    { q: "¿Cuál es uno de los propósitos fundamentales del programa?", a: ["Regalar computadoras", "Transformar vidas a través de la educación", "Dar empleo directo", "Hacer torneos deportivos"], correct: 1 },
-    { q: "Además de lo académico, ¿qué aspecto busca fortalecer el programa?", a: ["La velocidad al escribir", "La formación en Valores y liderazgo", "El uso de redes sociales", "Aprender a programar videojuegos"], correct: 1 },
-    { q: "¿A quiénes está dirigido principalmente el programa de becas?", a: ["Jóvenes de centros escolares públicos con alto rendimiento", "Estudiantes universitarios de último año", "Profesionales graduados", "Niños de kínder"], correct: 0 },
-    { q: "Al completar el programa, los estudiantes obtienen certificaciones internacionales en:", a: ["Solo asistencia", "Inglés e Informática (Microsoft/TOEIC)", "Diseño Gráfico", "Mantenimiento de Redes"], correct: 1 },
-    { q: "What does the program name suggest?", a: ["Una invitación a superar retos y crecer constantemente", "Una marca de útiles escolares", "Un término exclusivo de programación", "Ganar una competencia deportiva"], correct: 0 },
-    { q: "¿Cómo se le conoce al evento donde los estudiantes exponen sus proyectos tecnológicos?", a: ["InterCentros", "Expo Tech", "Grammar Fair", "Valores Fest"], correct: 1 }
+    {
+        q: "¿En qué año nació el Programa Empresarial ¡Supérate!?",
+        a: ["2004", "2010", "1998", "2015"],
+        correct: 0
+    },
+    {
+        q: "¿Cuáles son las tres áreas principales de estudio en ¡Supérate!?",
+        a: [
+            "Matemáticas, Ciencias y Lenguaje",
+            "Inglés, Informática y Valores",
+            "Programación, Diseño y Oratoria",
+            "Contabilidad, Inglés y Administración"
+        ],
+        correct: 1
+    },
+    {
+        q: "¿Cuánto dura aproximadamente el Programa ¡Supérate!?",
+        a: [
+            "1 año",
+            "2 años",
+            "3 años",
+            "5 años"
+        ],
+        correct: 2
+    },
+    {
+        q: "¿Qué examen internacional certifica el nivel de inglés de los estudiantes de ¡Supérate!?",
+        a: [
+            "TOEFL",
+            "IELTS",
+            "TOEIC",
+            "Cambridge PET"
+        ],
+        correct: 2
+    },
+    {
+        q: "¿Qué empresa certifica las habilidades de informática de los estudiantes?",
+        a: [
+            "Google",
+            "Apple",
+            "Microsoft",
+            "Oracle"
+        ],
+        correct: 2
+    },
+    {
+        q: "¿Durante qué etapa educativa cursan normalmente los estudiantes el programa?",
+        a: [
+            "Educación Básica",
+            "Universidad",
+            "Noveno y Bachillerato",
+            "Posgrado"
+        ],
+        correct: 2
+    },
+    {
+        q: "¿Qué significa que el Programa ¡Supérate! sea una formación complementaria?",
+        a: [
+            "Que sustituye las clases del colegio.",
+            "Que solo funciona en vacaciones.",
+            "Que se desarrolla fuera del horario escolar para reforzar la formación del estudiante.",
+            "Que solo ofrece clases en línea."
+        ],
+        correct: 2
+    },
+    {
+        q: "¿Cuál de las siguientes habilidades también promueve el Programa ¡Supérate!?",
+        a: [
+            "Programación avanzada",
+            "Liderazgo",
+            "Diseño gráfico",
+            "Marketing digital"
+        ],
+        correct: 1
+    },
+    {
+        q: "¿Además del liderazgo, qué otra habilidad menciona el programa como parte de la formación integral?",
+        a: [
+            "Comunicación efectiva",
+            "Edición de video",
+            "Diseño web",
+            "Fotografía"
+        ],
+        correct: 0
+    },
+    {
+        q: "¿Qué oportunidades obtienen muchos graduados gracias a su formación en ¡Supérate!?",
+        a: [
+            "Participar únicamente en competencias deportivas",
+            "Crear empresas automáticamente",
+            "Becas universitarias y mejores oportunidades académicas y laborales",
+            "Trabajar únicamente en el extranjero"
+        ],
+        correct: 2
+    }
 ];
 
 let currentQuestionIndex = 0;

@@ -10,7 +10,7 @@
 
         <!-- Sección central: Logo y tagline -->
         <div class="footer-center">
-            <img src="img/logoooooo.png" alt="FreshmanCompass Logo" class="logo-img">
+            <img src="img/logo.negro.png" alt="FreshmanCompass Logo" class="logo-img">
             <p class="tagline">Tu brújula para comenzar en ¡Supérate!</p>
         </div>
 
@@ -18,7 +18,7 @@
         <div class="footer-right">
     <p>
         <i class="fab fa-instagram"></i> 
-        <a href="https://www.instagram.com/freshmancompass" target="_blank">@freshmancompass</a>
+        <a href="https://www.instagram.com/freshman_compasss?igsh=ZjllNWNrZTR0bzdn" target="_blank">@freshmancompass</a>
     </p>
     <p>
         <i class="fas fa-envelope"></i> 

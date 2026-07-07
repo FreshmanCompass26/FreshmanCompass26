@@ -1,146 +1,90 @@
 <?php
 
-include("config.php");
-include("contexto_compass.php");
-include("memoria.php");
+include("conexion.php");
 
-function consultarIA($pregunta)
-{
-    global $CONTEXTO_COMPASS;
+if (isset($_POST["pregunta"])) {
 
-    // Detectar si necesita el contexto de ¡Supérate!
-    $usarContexto = false;
+    $pregunta = trim($_POST["pregunta"]);
 
-    $palabrasClave = [
-        "supérate","superate","adoc","freshman","compass",
-        "programa","inglés","ingles","informática","informatica",
-        "teacher","teachers","primer año","primer anio","valores"
-    ];
+    if ($pregunta == "") {
+        exit("Escribe una pregunta.");
+    }
 
-    foreach($palabrasClave as $palabra){
-        if(stripos($pregunta,$palabra)!==false){
-            $usarContexto=true;
-            break;
+    // Convertir a minúsculas
+    $pregunta = mb_strtolower($pregunta, "UTF-8");
+
+    // Quitar tildes
+    $buscar = str_replace(
+        ['á','é','í','ó','ú','ü','ñ'],
+        ['a','e','i','o','u','u','n'],
+        $pregunta
+    );
+
+    // Quitar signos
+    $buscar = preg_replace('/[¿?¡!.,;:()"]/u', '', $buscar);
+
+    $sql = "SELECT * FROM chatbot_respuestas";
+    $resultado = $conn->query($sql);
+
+    $mejorRespuesta = "";
+    $mejorPuntaje = 0;
+
+    while ($fila = $resultado->fetch_assoc()) {
+
+        $puntaje = 0;
+
+        $palabras = explode(",", $fila["palabra_clave"]);
+
+        foreach ($palabras as $palabra) {
+
+            $palabra = trim(mb_strtolower($palabra, "UTF-8"));
+
+            $palabra = str_replace(
+                ['á','é','í','ó','ú','ü','ñ'],
+                ['a','e','i','o','u','u','n'],
+                $palabra
+            );
+
+            if ($palabra != "" && strpos($buscar, $palabra) !== false) {
+                $puntaje++;
+            }
+        }
+
+        if ($puntaje > $mejorPuntaje) {
+            $mejorPuntaje = $puntaje;
+            $mejorRespuesta = $fila["respuesta"];
         }
     }
 
-    $promptSistema = "
-Eres CompassBot, el asistente oficial de Freshman Compass.
+    if ($mejorPuntaje > 0) {
 
-Siempre responde en español.
+        $variaciones = [
+            $mejorRespuesta,
+            "💬 " . $mejorRespuesta,
+            "🌟 " . $mejorRespuesta,
+            "📚 " . $mejorRespuesta,
+            $mejorRespuesta . " 😊"
+        ];
 
-Sé amable, cercano y motivador.
-
-Nunca digas que eres ChatGPT, OpenAI o un modelo de IA.
-
-Responde de forma natural y breve.
-
-Usa muchos emojis.
-";
-
-    if($usarContexto){
-        $promptSistema .= "\n\n".$CONTEXTO_COMPASS;
+        echo $variaciones[array_rand($variaciones)];
+        exit;
     }
 
-    // ======= HISTORIAL ========
+    // Si no encuentra nada
+    $respuestasNoEncontradas = [
 
-    $messages = [];
+        "😕 Lo siento, aún no tengo información sobre ese tema. Intenta escribir la pregunta de otra forma.",
 
-    $messages[] = [
-        "role"=>"system",
-        "content"=>$promptSistema
-    ];
+        "🤔 No encontré una respuesta para eso. Prueba usando otras palabras.",
 
-    foreach(obtenerHistorial() as $mensaje){
-        $messages[] = $mensaje;
-    }
+        "📚 Aún sigo aprendiendo. Puedes intentar hacer la pregunta de otra manera.",
 
-    $messages[] = [
-        "role"=>"user",
-        "content"=>$pregunta
-    ];
-
-    // ==========================
-
-    $datos = [
-
-        "model"=>"cohere/north-mini-code:free",
-
-        "temperature"=>0.4,
-
-        "max_tokens"=>180,
-
-        "messages"=>$messages
+        "💙 Todavía no conozco esa respuesta, pero puedes consultar a un docente o reformular tu pregunta."
 
     ];
 
-    $ch = curl_init("https://openrouter.ai/api/v1/chat/completions");
+    echo $respuestasNoEncontradas[array_rand($respuestasNoEncontradas)];
 
-    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-
-    curl_setopt($ch,CURLOPT_POST,true);
-
-    curl_setopt($ch,CURLOPT_HTTPHEADER,[
-
-        "Authorization: Bearer ".OPENROUTER_API_KEY,
-
-        "Content-Type: application/json",
-
-        "HTTP-Referer: http://localhost",
-
-        "X-Title: Freshman Compass"
-
-    ]);
-
-    curl_setopt($ch,CURLOPT_POSTFIELDS,json_encode($datos));
-
-    $respuesta=curl_exec($ch);
-
-    if(curl_errno($ch)){
-
-        curl_close($ch);
-
-        return "⚠️ Error de conexión.";
-
-    }
-
-    curl_close($ch);
-
-    $json=json_decode($respuesta,true);
-
-    if(isset($json["choices"][0]["message"]["content"])){
-
-        $texto=trim($json["choices"][0]["message"]["content"]);
-
-        // Guardar conversación
-
-        guardarMensaje("user",$pregunta);
-
-        guardarMensaje("assistant",$texto);
-
-        return $texto;
-
-    }
-
-    if(isset($json["error"]["message"])){
-
-        return "⚠️ ".$json["error"]["message"];
-
-    }
-
-    return "Lo siento, no pude responder.";
 }
 
-if(isset($_POST["pregunta"])){
-
-    $pregunta=trim($_POST["pregunta"]);
-
-    if($pregunta==""){
-
-        exit("Escribe una pregunta.");
-
-    }
-
-    echo consultarIA($pregunta);
-
-}
+?>

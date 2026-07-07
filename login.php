@@ -35,7 +35,6 @@
             <input type="password" id="l-pass" name="password" placeholder="••••••••" required/>
             <span class="field-icon">🔒</span>
           </div>
-          <a href="auth/forgot.php" class="forgot-link">Forgot password?</a>
           <button type="submit" class="btn-primary">Sign In</button>
         </form>
         <p class="switch-text">

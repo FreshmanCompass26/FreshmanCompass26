@@ -68,7 +68,6 @@ $resultado = $conn->query($sqlCards);
         <?php while($fila = $resultado->fetch_assoc()){ ?>
 
             <?php
-            // Mostrar la tarjeta antes del consejo #3
             if($fila['id'] == 3){
             ?>
 

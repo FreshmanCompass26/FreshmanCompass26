@@ -2,7 +2,6 @@
 session_start();
 
 $pagina_actual = "eventos";
-
 include "php/conexion.php";
 
 // Mostrar todos los eventos a partir del quinto

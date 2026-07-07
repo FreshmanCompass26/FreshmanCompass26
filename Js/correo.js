@@ -1,167 +1,517 @@
-
 let casoActualId = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+
     setTimeout(() => {
-        showScreen('screen-info');
-    }, 2000);
+
+        showScreen("screen-info");
+
+    }, 2500);
+
 });
 
 function showScreen(screenId) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    const targetScreen = document.getElementById(screenId);
-    if (targetScreen) {
-        targetScreen.classList.add('active');
-    }
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+    document
+        .getElementById(screenId)
+        .classList.add("active");
 }
+
 
 function iniciarJuego(nivel) {
-    const radios = document.getElementsByName('selected_caso');
-    for (let r of radios) { 
-        if (r.checked) {
-            casoActualId = r.value; 
-        }
+
+    const radioSeleccionado =
+        document.querySelector(
+            'input[name="selected_caso"]:checked'
+        );
+
+    if (!radioSeleccionado) {
+
+        alert(
+            "Selecciona un caso antes de continuar."
+        );
+
+        return;
     }
 
-    if (nivel === 'facil') {
+    casoActualId =
+        radioSeleccionado.value;
+
+    if (nivel === "facil") {
+
         generarInterfazFacil();
-        showScreen('screen-facil');
+
+        showScreen("screen-facil");
+
     } else {
-        // Limpiar campos para el modo difícil
-        document.getElementById('d_asunto').value = '';
-        document.getElementById('d_cuerpo').value = '';
-        showScreen('screen-dificil');
+
+        document
+            .getElementById("d_asunto")
+            .value = "";
+
+        document
+            .getElementById("d_cuerpo")
+            .value = "";
+
+        showScreen("screen-dificil");
     }
 }
+
 
 function generarInterfazFacil() {
-    const caso = datosCasos[casoActualId];
-    const contenedor = document.getElementById('contenedor-bloques-mezclados');
-    
-    if (!caso || !contenedor) return;
-    
-    contenedor.innerHTML = "<strong>Fragmentos disponibles (Desordenados):</strong>";
 
-    let llaves = Object.keys(caso.bloques_facil);
-    llaves.sort(() => Math.random() - 0.5);
+    const caso =
+        datosCasos[casoActualId];
 
-    const idsSelects = ['f_asunto', 'f_saludo', 'f_introduccion', 'f_cuerpo', 'f_despedida', 'f_firma'];
-    
-    idsSelects.forEach(id => {
-        const sel = document.getElementById(id);
-        if (sel) sel.innerHTML = '<option value="">-- Selecciona --</option>';
-    });
+    const contenedor =
+        document.getElementById(
+            "sortable-correo"
+        );
 
-    llaves.forEach(llave => {
-        let texto = caso.bloques_facil[llave];
-        
-        let div = document.createElement('div');
-        div.className = "bloque-guia";
-        div.innerText = "📋 " + texto;
-        contenedor.appendChild(div);
+    if (!caso || !contenedor)
+        return;
 
-        idsSelects.forEach(id => {
-            const sel = document.getElementById(id);
-            if (sel) {
-                let opt = document.createElement('option');
-                opt.value = llave;
-                opt.innerText = texto.substring(0, 60) + "...";
-                sel.appendChild(opt);
-            }
-        });
-    });
+    contenedor.innerHTML = "";
+
+    let bloques =
+        Object.entries(
+            caso.bloques_facil
+        );
+
+    bloques.sort(
+        () => Math.random() - 0.5
+    );
+
+    bloques.forEach(
+        ([tipo, texto]) => {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.className =
+                "drag-item";
+
+            div.draggable = true;
+
+            div.dataset.tipo =
+                tipo;
+
+            div.innerHTML =
+                `☰ ${texto}`;
+
+            contenedor.appendChild(div);
+        }
+    );
+
+    activarDragDrop();
 }
 
-function evaluarFacil() {
-    const partes = ['asunto', 'saludo', 'introduccion', 'cuerpo', 'despedida', 'firma'];
+
+function activarDragDrop() {
+
+    const lista =
+        document.getElementById(
+            "sortable-correo"
+        );
+
+    if (!lista) return;
+
+    lista
+        .querySelectorAll(".drag-item")
+        .forEach(item => {
+
+            item.addEventListener(
+                "dragstart",
+                () => {
+
+                    item.classList.add(
+                        "dragging"
+                    );
+                }
+            );
+
+            item.addEventListener(
+                "dragend",
+                () => {
+
+                    item.classList.remove(
+                        "dragging"
+                    );
+                }
+            );
+
+        });
+
+    lista.addEventListener(
+        "dragover",
+        e => {
+
+            e.preventDefault();
+
+            const afterElement =
+                obtenerElementoDespues(
+                    lista,
+                    e.clientY
+                );
+
+            const dragging =
+                document.querySelector(
+                    ".dragging"
+                );
+
+            if (!dragging)
+                return;
+
+            if (!afterElement) {
+
+                lista.appendChild(
+                    dragging
+                );
+
+            } else {
+
+                lista.insertBefore(
+                    dragging,
+                    afterElement
+                );
+            }
+        }
+    );
+}
+
+function obtenerElementoDespues(
+    container,
+    y
+) {
+
+    const elementos = [
+
+        ...container.querySelectorAll(
+            ".drag-item:not(.dragging)"
+        )
+
+    ];
+
+    return elementos.reduce(
+
+        (closest, child) => {
+
+            const box =
+                child.getBoundingClientRect();
+
+            const offset =
+                y -
+                box.top -
+                box.height / 2;
+
+            if (
+                offset < 0 &&
+                offset > closest.offset
+            ) {
+
+                return {
+
+                    offset,
+
+                    element: child
+                };
+            }
+
+            return closest;
+        },
+
+        {
+            offset:
+                Number.NEGATIVE_INFINITY
+        }
+
+    ).element;
+}
+function evaluarCorreo() {
+
+    const ordenCorrecto = [
+
+        "asunto",
+        "saludo",
+        "introduccion",
+        "cuerpo",
+        "despedida",
+        "firma"
+
+    ];
+
+    const elementos =
+        document.querySelectorAll(
+            "#sortable-correo .drag-item"
+        );
+
     let aciertos = 0;
+
     let feedback = [];
 
-    partes.forEach(p => {
-        const elementoSelect = document.getElementById('f_' + p);
-        let elegido = elementoSelect ? elementoSelect.value : "";
-        
-        if (elegido === p) {
-            aciertos++;
-            feedback.push(`✅ **${p.toUpperCase()}** ordenado correctamente.`);
-        } else {
-            feedback.push(`❌ **${p.toUpperCase()}** está mal posicionado o vacío.`);
-        }
-    });
+    elementos.forEach(
+        (item, index) => {
 
-    let score = Math.round((aciertos / partes.length) * 100);
-    mostrarResultados(score, feedback);
+            item.classList.remove(
+                "correct",
+                "incorrect"
+            );
+
+            if (
+                item.dataset.tipo ===
+                ordenCorrecto[index]
+            ) {
+
+                aciertos++;
+
+                item.classList.add(
+                    "correct"
+                );
+
+            } else {
+
+                item.classList.add(
+                    "incorrect"
+                );
+            }
+        }
+    );
+
+    let score =
+        Math.round(
+            (
+                aciertos /
+                ordenCorrecto.length
+            ) * 100
+        );
+
+    feedback.push(
+        `Has ordenado correctamente ${aciertos} de ${ordenCorrecto.length} secciones.`
+    );
+
+    mostrarResultados(
+        score,
+        feedback
+    );
 }
 
 function evaluarDificil() {
-    const caso = datosCasos[casoActualId];
-    const asunto = document.getElementById('d_asunto').value.trim();
-    const cuerpo = document.getElementById('d_cuerpo').value.trim();
-    const fullTexto = (asunto + " " + cuerpo).toLowerCase();
+
+    const caso =
+        datosCasos[casoActualId];
+
+    const asunto =
+        document
+            .getElementById(
+                "d_asunto"
+            )
+            .value
+            .trim();
+
+    const cuerpo =
+        document
+            .getElementById(
+                "d_cuerpo"
+            )
+            .value
+            .toLowerCase();
 
     let score = 0;
+
     let feedback = [];
 
-    if (asunto.length > 10) { 
-        score += 15; 
-        feedback.push("✅ **Asunto:** Título bien estructurado."); 
-    } else { 
-        feedback.push("❌ **Asunto:** Muy corto o ausente."); 
+    /* Asunto */
+
+    if (asunto.length >= 15) {
+
+        score += 15;
+
+        feedback.push(
+            "Asunto claro y profesional."
+        );
+
+    } else {
+
+        feedback.push(
+            "El asunto es demasiado corto."
+        );
     }
 
-    let tieneSaludo = caso.saludos_validos.some(s => fullTexto.includes(s));
-    if (tieneSaludo) { 
-        score += 15; 
-        feedback.push("✅ **Saludo:** Dirigido formalmente."); 
-    } else { 
-        feedback.push("❌ **Saludo:** No se detecta un inicio formal institucional."); 
+    
+
+    let saludoValido =
+        caso.saludos_validos.some(
+            saludo =>
+                cuerpo.includes(
+                    saludo
+                )
+        );
+
+    if (saludoValido) {
+
+        score += 15;
+
+        feedback.push(
+            "Saludo formal detectado."
+        );
+
+    } else {
+
+        feedback.push(
+            "Falta un saludo profesional."
+        );
     }
 
-    if (fullTexto.includes("espero") || fullTexto.includes("saludo")) { 
-        score += 15; 
-        feedback.push("✅ **Introducción:** Cortesía inicial agregada."); 
-    } else { 
-        feedback.push("❌ **Introducción:** Falta frase de cortesía."); 
+    /* Introducción */
+
+    if (
+        cuerpo.includes("espero") ||
+        cuerpo.includes("cordial")
+    ) {
+
+        score += 15;
+
+        feedback.push(
+            "Introducción adecuada."
+        );
+
+    } else {
+
+        feedback.push(
+            "Falta una introducción cordial."
+        );
     }
 
-    let coincidencias = caso.palabras_clave.filter(p => fullTexto.includes(p)).length;
-    if (coincidencias >= 2) { 
-        score += 30; 
-        feedback.push("✅ **Cuerpo:** Explicación clara con palabras del caso."); 
-    } else { 
-        feedback.push("❌ **Cuerpo:** Falta detallar el problema con el vocabulario clave."); 
+    let coincidencias =
+        caso.palabras_clave.filter(
+            palabra =>
+                cuerpo.includes(
+                    palabra
+                )
+        ).length;
+
+    if (coincidencias >= 3) {
+
+        score += 30;
+
+        feedback.push(
+            "Situación explicada correctamente."
+        );
+
+    } else {
+
+        feedback.push(
+            "La explicación es insuficiente."
+        );
     }
 
-    if (fullTexto.includes("atento") || fullTexto.includes("atentamente") || fullTexto.includes("gracias") || fullTexto.includes("cordialmente")) { 
-        score += 15; 
-        feedback.push("✅ **Despedida:** Cierre educado."); 
-    } else { 
-        feedback.push("❌ **Despedida:** Olvidaste el cierre profesional."); 
+    /* Despedida */
+
+    if (
+
+        cuerpo.includes("gracias") ||
+
+        cuerpo.includes("atentamente") ||
+
+        cuerpo.includes("cordialmente") ||
+
+        cuerpo.includes("quedo atento")
+
+    ) {
+
+        score += 15;
+
+        feedback.push(
+            "Despedida profesional."
+        );
+
+    } else {
+
+        feedback.push(
+            "Falta una despedida adecuada."
+        );
     }
 
-    if (fullTexto.includes("año") || fullTexto.includes("sección") || fullTexto.includes("promo")) { 
-        score += 10; 
-        feedback.push("✅ **Firma:** Identificación de estudiante agregada."); 
-    } else { 
-        feedback.push("❌ **Firma:** Falta tu Año/Sección institucional."); 
+    if (
+
+        cuerpo.includes("año") ||
+
+        cuerpo.includes("sección") ||
+
+        cuerpo.includes("freshman")
+
+    ) {
+
+        score += 10;
+
+        feedback.push(
+            "Firma detectada."
+        );
+
+    } else {
+
+        feedback.push(
+            " No se detecta firma."
+        );
     }
 
-    mostrarResultados(score, feedback);
+    mostrarResultados(
+        score,
+        feedback
+    );
 }
 
-function mostrarResultados(score, feedbackArray) {
-    document.getElementById('result-score').innerText = `Calificación: ${score}% Profesional`;
-    
-    const lista = document.getElementById('result-feedback-list');
-    if (lista) {
-        lista.innerHTML = "";
-        feedbackArray.forEach(f => {
-            let div = document.createElement('div');
-            div.style.marginBottom = "8px";
-            div.innerHTML = f;
-            lista.appendChild(div);
-        });
-    }
+function mostrarResultados(
+    score,
+    feedbackArray
+) {
 
-    showScreen('screen-results');
+    document
+        .getElementById(
+            "result-score"
+        )
+        .innerHTML =
+
+        `Calificación: ${score}%`;
+
+    const lista =
+        document.getElementById(
+            "result-feedback-list"
+        );
+
+    lista.innerHTML = "";
+
+    feedbackArray.forEach(
+        item => {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.style.marginBottom =
+                "12px";
+
+            div.innerHTML =
+                item;
+
+            lista.appendChild(
+                div
+            );
+        }
+    );
+
+    showScreen(
+        "screen-results"
+    );
 }

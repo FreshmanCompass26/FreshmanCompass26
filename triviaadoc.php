@@ -42,12 +42,17 @@
             <div class="info-content">
                 <span class="mission-tag"><i class="fa-solid fa-book"></i> Antes de empezar</span>
                 <h2>¿Qué es Empresas ADOC?</h2>
-                <div class="info-text">
-                    <p>Empresas ADOC fue fundada en el año <strong>1953</strong> en El Salvador por <strong>Don Roberto Palomo</strong>. Nació con el sueño de calzar a las familias centroamericanas con productos de excelente calidad y alta durabilidad.</p>
-                    <p>Con el paso del tiempo, se convirtió en la empresa de calzado más grande de toda <strong>Centroamérica</strong>, operando fábricas propias y una enorme cadena de tiendas. Además de fabricar zapatos casuales, creó la legendaria marca de botas industriales <strong>Rhino</strong>, famosa por su resistencia extrema.</p>
-                    <p>La cultura de ADOC se sostiene sobre tres pilares fundamentales: la <strong>Integridad</strong>, el <strong>Trabajo en Equipo</strong> y una enorme <strong>Pasión</strong> por servir al cliente. Su compromiso va más allá del negocio, apoyando activamente el desarrollo social y educativo de las comunidades.</p>
-                    <p>¡Presta mucha atención! Toda esta historia, sus marcas clave y sus valores son las respuestas para superar con éxito la trivia a continuación.</p>
-                </div>
+              <div class="info-text">
+    <p>Empresas ADOC es una empresa salvadoreña fundada en <strong>1953</strong> por <strong>Don Roberto Palomo</strong>. Desde sus inicios se ha dedicado a fabricar y comercializar calzado de alta calidad, convirtiéndose en una de las compañías más importantes de <strong>Centroamérica</strong>.</p>
+
+    <p>Actualmente tiene presencia en <strong>El Salvador, Guatemala, Honduras, Nicaragua, Costa Rica y Panamá</strong>, ofreciendo diferentes marcas de calzado como <strong>ADOC, Hush Puppies, CAT y Rhino</strong>.</p>
+
+    <p>Además de su crecimiento empresarial, ADOC mantiene un fuerte compromiso con la educación y el desarrollo de las comunidades. A través de la <strong>Fundación ADOC</strong> y el <strong>Programa Empresarial ¡Supérate!</strong>, brinda oportunidades de formación a jóvenes del sistema público mediante clases de <strong>inglés, informática y valores</strong>.</p>
+
+    <p>Su cultura se basa en tres principios fundamentales: <strong>Integridad</strong>, <strong>Trabajo en Equipo</strong> y <strong>Pasión por Servir</strong>, valores que han guiado a la empresa durante más de <strong>70 años</strong>.</p>
+
+    <p><strong>¡Presta mucha atención!</strong> Toda esta información será clave para responder correctamente la trivia y obtener el mejor puntaje.</p>
+</div>
                 <button class="btn" onclick="startQuiz()">
                     <i class="fa-solid fa-flag-checkered"></i>
                     ¡Listo, entendido!

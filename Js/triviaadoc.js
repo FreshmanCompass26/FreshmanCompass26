@@ -1,14 +1,14 @@
 const quizData = [
-    { q: "¿En qué año fue fundada la empresa ADOC?", a: ["1945", "1953", "1968", "1980"], correct: 1 },
-    { q: "¿Quién fue el fundador de Empresas ADOC?", a: ["Don Roberto Palomo", "Don Alfredo Sagrera", "Don Ricardo Poma", "Don Luis Poma"], correct: 0 },
-    { q: "¿En qué país centroamericano nació y se fundó ADOC?", a: ["Guatemala", "Honduras", "El Salvador", "Costa Rica"], correct: 2 },
-    { q: "Según el texto, ¿cuál fue el sueño inicial al fundar ADOC?", a: ["Exportar calzado a Europa", "Calzar a las familias centroamericanas con calidad y durabilidad", "Vender calzado de marcas internacionales", "Fabricar maquinaria pesada"], correct: 1 },
-    { q: "ADOC es considerada actualmente como la empresa de calzado más grande de:", a: ["El Salvador solamente", "Latinoamérica", "Centroamérica", "El Caribe"], correct: 2 },
-    { q: "¿Cómo se llama la famosa marca de botas industriales de alta resistencia creada por ADOC?", a: ["Caterpillar", "Rhino", "Timber", "Trooper"], correct: 1 },
-    { q: "¿Cuáles son los tres pilares fundamentales que sostienen la cultura de ADOC?", a: ["Eficiencia, Rapidez y Economía", "Innovación, Puntualidad y Respeto", "Integridad, Trabajo en Equipo y Pasión", "Calidad, Garantía y Liderazgo"], correct: 2 },
-    { q: "Además del calzado, ¿en qué áreas enfoca ADOC su apoyo social activo?", a: ["Deportes extremos", "Desarrollo social y educativo de las comunidades", "Construcción de carreteras", "Financiamiento de startups"], correct: 1 },
-    { q: "La marca de botas Rhino destaca en el mercado por su:", a: ["Bajo precio", "Resistencia extrema", "Variedad de modas de tela", "Diseño ultra liviano"], correct: 1 },
-    { q: "Según los pilares de la empresa, ¿hacia qué está dirigida su enorme Pasión?", a: ["Hacia el marketing digital", "Hacia el servicio al cliente", "Hacia la automatización", "Hacia la competencia internacional"], correct: 1 }
+    { q: "¿En qué año fue fundada Empresas ADOC?", a: ["1948", "1953", "1965", "1972"], correct: 1 },
+    { q: "¿Quién fundó Empresas ADOC?", a: ["Ricardo Poma", "Francisco Calleja", "Don Roberto Palomo", "Carlos Slim"], correct: 2 },
+    { q: "¿En qué país fue fundada Empresas ADOC?", a: ["Guatemala", "Honduras", "Costa Rica", "El Salvador"], correct: 3 },
+    { q: "¿En qué región se ha convertido ADOC en una de las empresas de calzado más importantes?", a: ["Norteamérica", "Sudamérica", "Europa", "Centroamérica"], correct: 3 },
+    { q: "¿En cuántos países tiene presencia actualmente Empresas ADOC?", a: ["4 países", "5 países", "6 países", "8 países"], correct: 2 },
+    { q: "¿Cuál de las siguientes marcas forma parte del portafolio de Empresas ADOC?", a: ["Nike", "Adidas", "Puma", "Hush Puppies"], correct: 3 },
+    { q: "¿Qué fundación impulsa los proyectos sociales y educativos de la empresa?", a: ["Fundación Empresarial", "Fundación Centroamérica", "Fundación ADOC", "Fundación Calzado"], correct: 2 },
+    { q: "¿Cómo se llama el programa educativo apoyado por Empresas ADOC?", a: ["Aprende Más", "Jóvenes al Futuro", "Educación para Todos", "Programa Empresarial ¡Supérate!"], correct: 3 },
+    { q: "¿Qué materias forman parte de la formación del Programa ¡Supérate!?", a: ["Matemáticas, Física y Química", "Historia, Arte y Música", "Inglés, Informática y Valores", "Biología, Geografía y Literatura"], correct: 2 },
+    { q: "¿Cuáles son los tres pilares de la cultura de Empresas ADOC?", a: ["Honestidad, Innovación y Calidad", "Disciplina, Respeto y Responsabilidad", "Liderazgo, Innovación y Excelencia", "Integridad, Trabajo en Equipo y Pasión por Servir"], correct: 3 }
 ];
 
 let currentQuestionIndex = 0;

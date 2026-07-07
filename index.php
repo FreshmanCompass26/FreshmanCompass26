@@ -101,7 +101,7 @@ $pagina_actual = "inicio";
                 Iniciar sesión
             </a>
 
-            <a href="signup.html" class="btn-signup">
+            <a href="login.php" class="btn-signup">
                 Crear Cuenta
             </a>
 
@@ -391,7 +391,7 @@ $pagina_actual = "inicio";
     </div>
 
     <div class="about-note">
-        🧭 No estás solo. Estamos aquí para ayudarte.
+         No estás solo. Estamos aquí para ayudarte.
     </div>
 
 </section>

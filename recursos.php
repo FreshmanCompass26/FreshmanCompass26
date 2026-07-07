@@ -21,7 +21,7 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/recursos.css">
+    <link rel="stylesheet" href="styles/recursos.css?v=<?php echo time(); ?>">
 
 </head>
 
@@ -624,7 +624,6 @@ session_start();
 
     <!-- Bootstrap -->
 
-<<<<<<< HEAD
             <h2 class="accordion-header">
 
                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ingles">
@@ -795,9 +794,6 @@ session_start();
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-=======
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
->>>>>>> 2b5ef493ac300347ca651762c5d776abe8cde14b
 
 </body>
 

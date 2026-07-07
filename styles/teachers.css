@@ -181,28 +181,21 @@ body{
 ==========================*/
 
 .teachers-tools{
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
 }
+
 
 .search-box{
-    width: 700px;      /* ancho fijo */
-    max-width: 100%;   /* para que en móvil no se salga */
-    display: flex;
-    align-items: center;
-    padding: 16px 24px;
-    background: var(--white);
-    border-radius: 50px;
-    box-shadow: var(--shadow);
-}
+    width:70%;
+    max-width:700px;
+    min-width:420px;
 
-.search-box input{
-    flex: 1;
-    margin-left: 12px;
-    border: none;
-    outline: none;
-    background: transparent;
 }
 
 
@@ -224,7 +217,23 @@ body{
 }
 
 
+.search-box input{
 
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    width:100%;
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    color:var(--text);
+
+}
 
 
 .search-box input::placeholder{
@@ -1541,14 +1550,7 @@ body{
     font-size:.95rem;
 
 }
-@media (max-width:768px){
 
-    .search-box{
-        width:100%;
-        min-width:0;
-    }
-
-}
 /*==========================
         FIN
 ==========================*/

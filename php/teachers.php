@@ -31,7 +31,7 @@ if (!$result) {
 
     <link rel="stylesheet" href="../styles/teachers.css">
     <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="../styles/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 

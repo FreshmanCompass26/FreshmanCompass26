@@ -312,7 +312,7 @@ data-name="<?= strtolower($teacher['nombre']) ?>">
     </span>
 
 </div>
-<?php include 'php/footer.php'; ?>
+<?php include 'footer.php'; ?>
 
 <script src="../Js/teachers.js"></script>
 

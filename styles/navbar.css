@@ -283,3 +283,41 @@
         margin-left: 80px;
     }
 }
+/*=========================
+    CELULARES
+=========================*/
+@media (max-width: 600px){
+
+    .sidebar{
+        width:70px;
+        padding:15px 0;
+    }
+
+    .logo{
+        padding:0;
+        margin-bottom:25px;
+    }
+
+    .logo img{
+        max-width:42px !important;
+    }
+
+    .menu li{
+        margin:8px;
+    }
+
+    .menu li a{
+        justify-content:center;
+        padding:15px 0;
+        gap:0;
+    }
+
+    .menu li span,
+    .quote{
+        display:none;
+    }
+
+    .main-content{
+        margin-left:70px;
+    }
+}

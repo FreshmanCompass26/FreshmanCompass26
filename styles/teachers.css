@@ -695,10 +695,10 @@ body{
 
     .teachers-section{
 
-        margin-left:0;
+        margin-left:80px;
+        padding:20px;
 
-        padding:25px;
-
+    }
     }
 
     .teachers-header{
@@ -721,7 +721,7 @@ body{
 
     }
 
-}
+
 
 
 @media (max-width:768px){
@@ -803,6 +803,8 @@ body{
         min-width:0;
     }
 
+    
+
 }
 
 
@@ -869,6 +871,16 @@ body{
 
 @media (max-width:400px){
 
+       .sidebar{
+        width:70px;
+    }
+
+    .teachers-section{
+        margin-left:70px !important;
+        width:calc(100% - 70px);
+        padding:10px;
+    }
+
     .teachers-header h1{
 
         font-size:1.5rem;
@@ -889,7 +901,34 @@ body{
 
     }
 
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
 }
+
 
 
 /*======================================================

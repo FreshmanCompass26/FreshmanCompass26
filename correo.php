@@ -84,7 +84,7 @@ $casos = [
 
             En ¡Supérate! ADOC, el correo electrónico
             es una herramienta importante para
-            comunicarse con teachers, learning coaches
+            comunicarse con teachers,
             y personal administrativo.
 
         </p>

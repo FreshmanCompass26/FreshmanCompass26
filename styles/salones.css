@@ -345,3 +345,29 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #4b5563;
 }
+
+/* Media query para pantallas pequeñas (modo teléfono) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px; /* altura de la barra inferior */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000; /* que quede encima del contenido */
+  }
+
+  .sidebar .nav-item {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  /* Para que el contenido no quede tapado por la barra */
+  .main-content {
+    padding-bottom: 70px;
+  }
+}

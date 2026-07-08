@@ -103,7 +103,10 @@ if (!$result) {
                             Schedule
                         </div>
                         <div class="detail-value">
-                            <?= nl2br(htmlspecialchars($teacher['schedule'] ?? '')) ?>
+                            <?= nl2br(htmlspecialchars($teacher['dias'] ?? '')) ?>
+                        </div>
+                        <div class="detail-value">
+                            <?= nl2br(htmlspecialchars($teacher['horario'] ?? '')) ?>
                         </div>
                     </div>
 

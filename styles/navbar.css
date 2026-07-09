@@ -314,7 +314,7 @@
 
     .menu li span,
     .quote{
-        display:none;
+        display:none; 
     }
 
     .main-content{

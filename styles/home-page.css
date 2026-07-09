@@ -567,22 +567,162 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
-@media(max-width:768px){
+@media (max-width: 768px){
 
+    /* SIDEBAR */
     .sidebar{
-        width: 200px;
+        width:70px;
     }
 
+    /* CONTENIDO */
     .main-content{
-        margin-left: 200px;
-        width: calc(100% - 200px);
+        margin-left:70px;
+        width:calc(100% - 70px);
+        padding-top:80px;
+    }
+
+    /* NAVBAR */
+    .top-navbar{
+        width:calc(100% - 70px);
+        padding:15px;
+    }
+
+    /* Banner */
+    .banner-section{
+        margin:15px;
+        padding:25px 20px;
+    }
+
+    .banner-section .row{
+        flex-direction:column-reverse;
+        text-align:center;
     }
 
     .banner-section h1{
-        font-size: 32px;
+        font-size:40px;
+        line-height:1.2;
+        margin-top:20px;
+    }
+
+    .banner-section p{
+        font-size:16px;
+    }
+
+    .banner-img{
+        width:100%;
+        max-width:320px;
+        margin:auto;
+    }
+
+    /* Beneficios */
+    .modern-benefits{
+        padding:40px 20px;
+    }
+
+    .benefits-modern-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modern-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    /* Testimonios */
+    .testimonials-section{
+        padding:40px 20px;
+    }
+
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* Acerca de */
+    .about-cards-section{
+        padding:40px 20px;
     }
 
     .about-cards{
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
+
+    /* Títulos */
+    .section-title,
+    .about-title{
+        font-size:30px;
+    }
+
+    /* Tarjetas */
+    .cards-section .col-md-3{
+        width:100%;
+    }
+
+}
+/*====================================
+        HOME RESPONSIVE
+=====================================*/
+
+@media (max-width: 768px){
+
+    .banner-section{
+        margin:15px;
+        padding:25px 20px;
+    }
+
+    .banner-section .row{
+        display:flex;
+        flex-direction:column-reverse;
+        align-items:center;
+        text-align:center;
+    }
+
+    .banner-section .col-md-6{
+        width:100%;
+        max-width:100%;
+        flex:0 0 100%;
+    }
+
+    .banner-section h1{
+        font-size:38px;
+        line-height:1.2;
+        margin-top:20px;
+    }
+
+    .banner-section p{
+        font-size:16px;
+        max-width:100%;
+    }
+
+    .banner-img{
+        width:100%;
+        max-width:320px;
+        margin:auto;
+    }
+
+    .cards-section .col-md-3{
+        width:100%;
+    }
+
+    .modern-benefits,
+    .testimonials-section,
+    .about-cards-section{
+        padding:40px 20px;
+    }
+
+    .benefits-modern-grid,
+    .testimonials-grid,
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+
+    .modern-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .section-title,
+    .about-title{
+        font-size:30px;
+    }
+
 }

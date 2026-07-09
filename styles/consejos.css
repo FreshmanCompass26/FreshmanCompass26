@@ -399,24 +399,22 @@ body{
 
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
 
     .contenido{
-
-        margin-left:0;
-
+        margin-left:80px;
     }
 
     .consejos-container{
-
         grid-template-columns:1fr;
-
     }
 
 }
 
 @media(max-width:600px){
-
+    .contenido{
+    margin-left:70px;
+    }
     .titulo h1{
 
         font-size:38px;
@@ -452,6 +450,21 @@ body{
         width:100%;
         justify-content:center;
 
+    }
+
+}
+@media(max-width:768px){
+
+    .sidebar{
+        width:80px;
+    }
+
+    .menu li span{
+        display:none;
+    }
+
+    .menu li a{
+        justify-content:center;
     }
 
 }

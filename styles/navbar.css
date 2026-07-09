@@ -335,9 +335,9 @@
 
 }
 
-/*=========================
-     NAVBAR CELULAR
-==========================*/
+/*==================================
+        NAVBAR APP PREMIUM
+===================================*/
 
 .mobile-navbar{
     display:none;
@@ -345,36 +345,58 @@
 
 @media (max-width:768px){
 
+.sidebar{
+    display:none;
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:15px;
+
+    padding-bottom:110px;
+
+}
+
+/* Barra */
+
 .mobile-navbar{
 
     position:fixed;
 
-    bottom:0;
-    left:0;
+    bottom:15px;
 
-    width:100%;
+    left:12px;
+
+    right:12px;
+
     height:78px;
 
-    background:#ffffff;
+    background:#081847;
 
-    border-top:1px solid #E5E7EB;
+    border-radius:28px;
 
     display:flex;
 
-    justify-content:space-around;
+    justify-content:space-evenly;
+
     align-items:center;
 
-    z-index:99999;
+    box-shadow:
+        0 20px 45px rgba(8,24,71,.35);
 
-    box-shadow:0 -5px 15px rgba(0,0,0,.08);
+    z-index:999999;
 
 }
+
+/* Botones */
 
 .mobile-navbar a{
 
     flex:1;
-
-    height:100%;
 
     display:flex;
 
@@ -386,37 +408,125 @@
 
     text-decoration:none;
 
-    color:#2D6CDF;
+    color:white;
 
-    transition:.3s;
+    transition:.35s;
+
+    position:relative;
 
 }
+
+/* Icono */
+
+.mobile-navbar .icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+}
+
+/* Icono */
 
 .mobile-navbar i{
 
-    font-size:28px;
+    font-size:22px;
 
-    margin-bottom:6px;
+    transition:.35s;
 
 }
+
+/* Texto */
 
 .mobile-navbar span{
 
-    font-size:14px;
+    margin-top:6px;
+
+    font-size:11px;
 
     font-weight:600;
 
-}
+    opacity:.85;
 
-.mobile-navbar a.active{
-
-    color:#1E5DD8;
+    transition:.35s;
 
 }
+
+/* Activo */
+
+.mobile-navbar a.active .icon{
+
+    background:linear-gradient(135deg,#4FC3F7,#6FD3FF);
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(79,195,247,.45);
+
+}
+
+/* Texto activo */
+
+.mobile-navbar a.active span{
+
+    color:#7DDCFF;
+
+}
+
+/* Hover */
+
+.mobile-navbar a:hover .icon{
+
+    transform:translateY(-10px);
+
+}
+
+/* Animación */
 
 .mobile-navbar a:active{
 
-    transform:scale(.95);
+    transform:scale(.92);
+
+}
+
+/* Brillo */
+
+.mobile-navbar::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:15%;
+
+    width:70%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+/* iPhone */
+
+@supports(padding:max(0px)){
+
+.mobile-navbar{
+
+padding-bottom:max(0px, env(safe-area-inset-bottom));
+
+}
 
 }
 

@@ -321,3 +321,16 @@
         margin-left:70px;
     }
 }
+
+@media (max-width:768px){
+
+.sidebar{
+    display:none;
+}
+
+.main-content{
+    margin-left:0;
+    padding-bottom:90px;
+}
+
+}

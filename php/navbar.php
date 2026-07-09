@@ -114,4 +114,26 @@ if ($pagina_actual == "nuestro_centro") {
 
 </div>
 
+<nav class="mobile-navbar">
+
+    <a href="/freshmancompass26/index.php"
+       class="<?= ($pagina_actual=='inicio')?'active':'' ?>">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </a>
+
+    <a href="/freshmancompass26/actividades.php"
+       class="<?= ($pagina_actual=='actividades')?'active':'' ?>">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Progreso</span>
+    </a>
+
+    <a href="/freshmancompass26/php/consejos.php"
+       class="<?= ($pagina_actual=='consejos')?'active':'' ?>">
+        <i class="fa-solid fa-lightbulb"></i>
+        <span>Insights</span>
+    </a>
+
+</nav>
+
 <script src="../Js/navbar.js"></script>

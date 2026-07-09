@@ -315,3 +315,98 @@ body {
         flex-direction: column;
     }
 }
+
+/* ==============================================
+   OPTIMIZACIÓN PARA MÓVILES Y TABLETS
+   ============================================== */
+
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0; /* Elimina el margen del navbar lateral si es colapsable */
+        padding-top: 90px; 
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+    }
+
+    .grid-testimonios, .cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .header-testimonio {
+        flex-direction: column-reverse; /* La imagen pasa arriba del texto para guiar la vista */
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .titulo h1 {
+        font-size: 32px;
+    }
+
+    .titulo h2.texto-hueco {
+        font-size: 34px;
+    }
+
+    .linea {
+        margin: 15px auto; /* Centra la línea decorativa */
+    }
+
+    .imagen img {
+        width: 100%;
+        max-width: 300px; /* Evita que la imagen sea gigante en tablets */
+        height: auto;
+    }
+
+    .decoracion-globos-vista {
+        display: none; 
+    }
+
+    /* Ajuste del banner inferior */
+    .banner-compartir {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .banner-izquierdo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-dejar-testimonio {
+        width: 100%; /* Botón estirado para que sea más fácil de presionar con el pulgar */
+        justify-content: center;
+    }
+}
+
+/* Ajustes específicos para celulares pequeños (Modo vertical) */
+@media (max-width: 576px) {
+    .main-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .titulo h2.texto-hueco {
+        font-size: 30px;
+    }
+
+    .tarjeta-testimonio, .card {
+        padding: 20px; /* Menos padding interno para dar más espacio al texto */
+    }
+
+    .avatar-usuario {
+        width: 60px;  /* Ajuste sutil de los avatares para que no ocupen toda la pantalla */
+        height: 60px;
+    }
+
+    .info-usuario h3, .card h3 {
+        font-size: 17px;
+    }
+}

@@ -1,10 +1,8 @@
 <?php
-
-$pagina_actual="psicologas";
-
+$pagina_actual = "consejos";
 include("php/navbar.php");
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -137,11 +135,11 @@ include("php/navbar.php");
             </div>
 
             <h3>Psic.Jessica Angel</h3>
-            <span>Psicóloga Clínica</span>
+            <span>Psicóloga Educativa</span>
 
             <hr>
 
-            <p>Especialista en bienestar emocional y terapia cognitivo-conductual.</p>
+             <p>Especialista en apoyo emocional y orientación estudiantil.</p>
         </div>
 
         <div class="psych-card">
@@ -151,11 +149,11 @@ include("php/navbar.php");
             </div>
 
             <h3>Psic. Blanca Meléndez</h3>
-            <span>Psicóloga Familiar</span>
+            <span>Psicóloga Educativa</span>
 
             <hr>
 
-            <p>Especialista en terapia familiar y resolución de conflictos.</p>
+             <p>Especialista en apoyo emocional y orientación estudiantil.</p>
         </div>
 
     </div>

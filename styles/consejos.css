@@ -5,466 +5,494 @@
     font-family:'Segoe UI',sans-serif;
 }
 
+:root{
+    --azul:#2C4B66;
+    --celeste:#94CED7;
+    --fondo:#F2F2F2;
+    --blanco:#fff;
+    --texto:#555;
+}
+
 body{
-    background:#F2F2F2;
+    background:var(--fondo);
 }
 
 .contenido{
     margin-left:260px;
-    padding:20px;
+    padding:30px;
+    min-height:100vh;
+    transition:.3s;
+}
+
+.page-topbar{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin-bottom:25px;
 }
 
 .bombilla{
-    font-size:60px;
+    margin-bottom:10px;
+}
+
+.bombilla i{
+    font-size:58px;
+    color:#FFC83D;
+    text-shadow:0 2px 6px rgba(0,0,0,.15);
 }
 
 .titulo h1{
-    color:#2C4B66;
-    font-size:50px;
-    margin-top:10px;
+    font-size:48px;
+    color:var(--azul);
+    margin-bottom:25px;
 }
 
-/*=========================
-        BANNER
-=========================*/
-
 .banner-consejo{
-    background:#94CED7;
-    border-radius:15px;
-    padding:18px;
-    margin-bottom:22px;
-    color:#2C4B66;
+    background:var(--celeste);
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:25px;
 }
 
 .banner-consejo h3{
-    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--azul);
+    margin-bottom:18px;
     font-size:22px;
-    color:#2C4B66;
+}
+
+.banner-consejo h3 i{
+    color:green;
 }
 
 .tip-superior{
     display:flex;
     align-items:center;
     gap:12px;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
 .numero-verde{
-    background:#2C4B66;
-    color:#fff;
-    width:26px;
-    height:26px;
+    width:30px;
+    height:30px;
     border-radius:50%;
+    background:var(--azul);
+    color:#fff;
     display:flex;
     justify-content:center;
     align-items:center;
     font-weight:bold;
+    flex-shrink:0;
 }
 
-/*=========================
-    GRID CONSEJOS
-=========================*/
+.tip-superior p{
+    color:var(--azul);
+    line-height:1.5;
+}
 
 .consejos-container{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:18px;
+    gap:22px;
 }
 
-/*=========================
- TARJETA PSICÓLOGAS
-=========================*/
-
 .psicologas-card{
-
     grid-column:1/-1;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    gap:20px;
-
     background:#fff;
-    border:2px solid #94CED7;
+    border:2px solid var(--celeste);
     border-radius:18px;
-
-    padding:18px 28px;
-
+    padding:25px;
+    gap:25px;
     transition:.3s;
-
 }
 
 .psicologas-card:hover{
-
-    transform:translateY(-3px);
-    box-shadow:0 4px 12px rgba(44,75,102,.12);
-
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .psicologas-info{
-
     flex:1;
-    max-width:65%;
-
-}
-
-.psicologas-info h2{
-
-    color:#2C4B66;
-    font-size:22px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:12px;
-
 }
 
 .psicologas-info h2{
     display:flex;
     align-items:center;
     gap:12px;
-    color:#2C4B66;
-    font-size:22px;
-    margin-bottom:12px;
+    color:var(--azul);
+    margin-bottom:15px;
+    font-size:24px;
 }
 
 .psicologas-info h2 i{
-
-    width:42px;
-    height:42px;
-
+    width:45px;
+    height:45px;
     display:flex;
-    align-items:center;
     justify-content:center;
-
-    border-radius:50%;
-
+    align-items:center;
     background:#EAF7FA;
-    color:#2C4B66;
-
-    font-size:20px;
-
+    border-radius:50%;
 }
 
 .psicologas-info p{
-
-    color:#555;
-    font-size:15px;
-    line-height:1.6;
-    margin-bottom:18px;
-
+    color:var(--texto);
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
 .btn-psicologas{
-
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    background:#2C4B66;
+    gap:10px;
+    background:var(--azul);
     color:#fff;
     text-decoration:none;
-    padding:10px 20px;
-    border-radius:25px;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-    font-size:15px;
+    padding:12px 24px;
+    border-radius:30px;
     font-weight:700;
+    transition:.3s;
 }
 
 .btn-psicologas:hover{
-
-    background:#94CED7;
-    color:#2C4B66;
-
-}
-
-.btn-psicologas i{
-
-    transition:.3s;
-
+    background:var(--celeste);
+    color:var(--azul);
 }
 
 .btn-psicologas:hover i{
-
     transform:translateX(5px);
-
 }
 
 .psicologas-img{
-
-    width:180px;
+    width:220px;
     display:flex;
     justify-content:center;
-    align-items:center;
-
 }
 
 .psicologas-img img{
-
-    width:170px;
+    width:190px;
+    max-width:100%;
     object-fit:contain;
-
 }
 
-/*=========================
-      TARJETAS
-=========================*/
-
 .card{
-
     position:relative;
-
-    border-radius:18px;
-
-    min-height:180px;
-
     display:flex;
-    align-items:center;
     justify-content:space-between;
-
-    padding:20px;
-
+    align-items:center;
     background:#fff;
-
-    border:2px solid #94CED7;
-
+    border:2px solid var(--celeste);
+    border-radius:18px;
+    padding:22px;
+    min-height:190px;
     transition:.3s;
-
 }
 
 .card:hover{
-
-    transform:translateY(-3px);
-    box-shadow:0 4px 12px rgba(44,75,102,.15);
-
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .numero{
-
     position:absolute;
-
-    top:10px;
-    left:10px;
-
-    width:28px;
-    height:28px;
-
-    border-radius:5px;
-
-    background:#2C4B66;
+    top:12px;
+    left:12px;
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    background:var(--azul);
     color:#fff;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-weight:bold;
-
 }
 
 .info{
-
     width:58%;
-
 }
 
 .info h3{
-
-    color:#2C4B66;
-    margin-bottom:8px;
-    font-size:20px;
-
+    color:var(--azul);
+    margin-bottom:10px;
+    font-size:22px;
 }
 
 .info p{
-
-    color:#555;
-    font-size:14px;
-    line-height:1.5;
-
+    color:var(--texto);
+    line-height:1.6;
 }
 
 .imagen{
-
     width:40%;
     display:flex;
     justify-content:center;
-
+    align-items:center;
 }
 
 .imagen img{
-
     width:140px;
     height:140px;
     object-fit:contain;
-
 }
 
-/*=========================
-      BOTONES
-=========================*/
-
 .botones{
-
     display:flex;
     justify-content:center;
-    margin-top:25px;
-
+    margin-top:35px;
 }
 
 .btn{
-
-    background:#2C4B66;
+    background:var(--azul);
     color:#fff;
-
     text-decoration:none;
-
-    padding:12px 70px;
-
-    border-radius:25px;
-
-    font-weight:bold;
-
+    padding:14px 70px;
+    border-radius:35px;
+    font-weight:700;
     transition:.3s;
-
 }
 
 .btn:hover{
-
-    background:#94CED7;
-    color:#2C4B66;
-
+    background:var(--celeste);
+    color:var(--azul);
 }
-.bombilla{
-    margin-bottom:8px;
-}
+@media (max-width:1000px){
 
-.bombilla i{
-    font-size:58px;
-    color:#FFC83D;
-    text-shadow:
-        0 2px 4px rgba(0,0,0,.15),
-        0 0 10px rgba(255,200,61,.35);
-}
-.banner-consejo h3{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:15px;
-    font-size:22px;
-    color:#2C4B66;
-}
-
-.banner-consejo h3 i{
-    font-size:20px;
-    color:green;
-}
-
-/*=========================
-      RESPONSIVE
-=========================*/
-
-@media(max-width:1000px){
-
-    .psicologas-card{
-
-        flex-direction:column;
-        text-align:center;
-
-    }
-
-    .psicologas-info{
-
-        max-width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-
-    }
-
-    .psicologas-img{
-    width:200px;
-    display:flex;
-    justify-content:center;
-    margin-right:20px;
-}
-
-    .psicologas-img img{
-
-        width:160px;
-
-    }
-
+  .contenido{
+    margin-left:250px;
+    padding:30px;
+    transition:.3s;
 }
 
 @media(max-width:768px){
 
+.tips-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+
+}
+
+.tip-card{
+
+    min-height:170px;
+    padding:12px;
+
+}
+
+.tip-info{
+
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+}
+
+.tip-info img{
+
+    width:65px;
+
+}
+
+.tip-info h4{
+
+    font-size:15px;
+
+}
+
+.tip-info p{
+
+    font-size:12px;
+
+}
+
+}
+
+@media (max-width:768px){
+
     .contenido{
-        margin-left:80px;
+        margin-left:0 !important;
+        width:100%;
+        padding:15px;
+        padding-bottom:110px;
     }
+
+}
 
     .consejos-container{
         grid-template-columns:1fr;
     }
 
+    .psicologas-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .psicologas-info{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .psicologas-img{
+        width:180px;
+    }
+
+    .psicologas-img img{
+        width:170px;
+    }
+
 }
 
-@media(max-width:600px){
+@media (max-width:768px){
+
     .contenido{
-    margin-left:70px;
+        margin-left:0;
+        padding:20px;
+        padding-bottom:120px;
     }
+
+    .page-topbar{
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
     .titulo h1{
-
         font-size:38px;
+        text-align:center;
+    }
 
+    .bombilla{
+        text-align:center;
+    }
+
+    .bombilla i{
+        font-size:48px;
+    }
+
+    .banner-consejo{
+        padding:18px;
     }
 
     .banner-consejo h3{
+        font-size:19px;
+        line-height:1.4;
+    }
 
-        font-size:18px;
-
+    .tip-superior{
+        align-items:flex-start;
     }
 
     .psicologas-card{
-
-        padding:18px;
-
+        padding:20px;
     }
 
     .psicologas-info h2{
-
-        font-size:20px;
-
+        font-size:22px;
+        justify-content:center;
+        text-align:center;
     }
 
     .psicologas-info p{
-
-        font-size:14px;
-
+        text-align:center;
     }
 
     .btn-psicologas{
-
         width:100%;
         justify-content:center;
+    }
 
+    .card{
+        flex-direction:column-reverse;
+        text-align:center;
+        gap:18px;
+        padding-top:45px;
+    }
+
+    .info{
+        width:100%;
+    }
+
+    .imagen{
+        width:100%;
+    }
+
+    .imagen img{
+        width:130px;
+        height:130px;
+    }
+
+    .botones .btn{
+        width:100%;
+        text-align:center;
     }
 
 }
-@media(max-width:768px){
 
-    .sidebar{
-        width:80px;
+@media (max-width:480px){
+
+    .contenido{
+        padding:15px;
+        padding-bottom:120px;
     }
 
-    .menu li span{
-        display:none;
+    .titulo h1{
+        font-size:32px;
     }
 
-    .menu li a{
-        justify-content:center;
+    .banner-consejo h3{
+        font-size:17px;
     }
 
+    .tip-superior p{
+        font-size:14px;
+    }
+
+    .psicologas-info h2{
+        font-size:20px;
+    }
+
+    .psicologas-info p{
+        font-size:14px;
+    }
+
+    .card{
+        min-height:auto;
+        padding:45px 18px 20px;
+    }
+
+    .info h3{
+        font-size:20px;
+    }
+
+    .info p{
+        font-size:14px;
+    }
+
+    .imagen img{
+        width:110px;
+        height:110px;
+    }
+
+    .btn{
+        padding:14px 20px;
+        width:100%;
+    }
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+a,
+input{
+    -webkit-tap-highlight-color:transparent;
 }

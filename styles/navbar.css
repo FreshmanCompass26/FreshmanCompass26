@@ -518,7 +518,22 @@
 
 }
 
-/* iPhone */
+.contenido{
+    margin-left:250px;
+    transition:.3s;
+}
+
+@media(max-width:768px){
+
+    .contenido{
+        margin-left:0;
+        width:100%;
+        padding-bottom:110px;
+    }
+
+}
+
+
 
 @supports(padding:max(0px)){
 

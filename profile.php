@@ -4,7 +4,7 @@ include("php/profile_conexion.php");
 
 // 🔥 PROTECCIÓN
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 
@@ -25,6 +25,7 @@ $perfil = $consulta->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Estudiante</title>
 
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/profile.css">
 
     <link rel="stylesheet"
@@ -33,72 +34,8 @@ $perfil = $consulta->fetch_assoc();
 
 <body>
 
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-<div class="sidebar">
-
-    <div class="logo">
-        <img src="img/fc.logo.png" alt="Logo">
-    </div>
-
-    <ul class="menu">
-
-        <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-            <a href="index.php">
-                <i class="fa-solid fa-house"></i>
-                <span>Inicio</span>
-            </a>
-        </li>
-
-        <?php if (isset($_SESSION['nombre'])) { ?>
-
-        <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-            <a href="teachers.php">
-                <i class="fa-solid fa-user-group"></i>
-                <span>Teachers</span>
-            </a>
-        </li>
-
-        <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-            <a href="nuestro_centro.php">
-                <i class="fa-solid fa-school"></i>
-                <span>Nuestro centro</span>
-            </a>
-        </li>
-
-        <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-            <a href="#">
-                <i class="fa-solid fa-heart"></i>
-                <span>Consejos</span>
-            </a>
-        </li>
-
-        <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-            <a href="eventos.php">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Eventos</span>
-            </a>
-        </li>
-
-        <?php } ?>
-
-    </ul>
-
-    <div class="quote">
-        <p>
-            Don’t count the days,<br>
-            make the days count.
-        </p>
-        <small>
-            — Muhammad Ali
-        </small>
-    </div>
-
-</div>
+<?php $pagina_actual = 'profile'; ?>
+<?php include 'php/navbar.php'; ?>
 
 
 <main class="contenido">
@@ -110,10 +47,18 @@ if (session_status() == PHP_SESSION_NONE) {
         <!-- TARJETA -->
         <div class="tarjeta-perfil">
 
-            <img src="img/<?php echo $perfil['foto_perfil'] ?? 'default.png'; ?>" alt="Foto Perfil">
+            <?php
+                $nombrePerfil = $perfil['nombre'] ?? 'Usuario';
+                $inicialPerfil = strtoupper(substr($nombrePerfil, 0, 1));
+                $fotoPerfil = 'img/' . ($perfil['foto_perfil'] ?? 'default.png');
+            ?>
+            <div class="avatar-placeholder" data-inicial="<?php echo $inicialPerfil; ?>">
+                <img src="<?php echo $fotoPerfil; ?>" alt="Foto de perfil"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('sin-foto');">
+            </div>
 
             <h2>
-                <?php echo $perfil['nombre'] ?? 'Usuario'; ?>
+                <?php echo $nombrePerfil; ?>
             </h2>
 
             <p>
@@ -126,31 +71,30 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="datos">
 
             <div class="campo">
-                <label>Nombre</label>
+                <label><i class="fa-solid fa-user"></i> Nombre</label>
                 <p><?php echo $perfil['nombre'] ?? ''; ?></p>
             </div>
 
             <div class="campo">
-                <label>Fecha de nacimiento</label>
+                <label><i class="fa-solid fa-cake-candles"></i> Fecha de nacimiento</label>
                 <p><?php echo $perfil['fecha_nacimiento'] ?? ''; ?></p>
             </div>
 
             <div class="campo">
-                <label>Email</label>
+                <label><i class="fa-solid fa-envelope"></i> Email</label>
                 <p><?php echo $perfil['email'] ?? ''; ?></p>
             </div>
 
             <div class="campo">
-                <label>Centro Escolar</label>
+                <label><i class="fa-solid fa-school"></i> Centro Escolar</label>
                 <p><?php echo $perfil['centro_escolar'] ?? ''; ?></p>
             </div>
 
             <div class="campo">
-                <label>Usuario</label>
+                <label><i class="fa-solid fa-at"></i> Usuario</label>
                 <p><?php echo $perfil['username'] ?? ''; ?></p>
             </div>
 
-        
             <a href="php/editar-profile.php" class="btn-editar">
                 Edita tu profile
             </a>

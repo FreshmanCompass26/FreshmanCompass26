@@ -1,13 +1,16 @@
 .footer {
-    background: linear-gradient(to bottom, #0a1a3d, #001133); /* azul oscuro degradado */
+    background: linear-gradient(to bottom, #0a1a3d, #001133);
     color: white;
     padding: 20px 40px;
     font-family: Arial, sans-serif;
-    position: relative; /* necesario para colocar decoraciones */
-    overflow: hidden;
-    margin-left: 250px; /* respeta el ancho del sidebar fijo, igual que .teachers-section */
-}
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
 
+    /* Cancela el padding de .main-content (20px) para llegar a los bordes */
+    margin: 0 -20px -20px -20px;
+    width: calc(100% + 40px);
+}
 
 .footer::after {
     content: '';
@@ -18,13 +21,18 @@
     height: 320px;
     background: url('../img/sinfondo.png') repeat-x;
     background-size: cover;
+    z-index: 0;
 }
-
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-left {
@@ -35,13 +43,12 @@
 .footer-right a {
     color: white;
     text-decoration: none;
-    pointer-events: auto; /* permite clics */
+    pointer-events: auto;
 }
 
 .footer-right a:hover {
     text-decoration: underline;
 }
-
 
 .robot-img {
     width: 150px;
@@ -49,27 +56,26 @@
 }
 
 .speech-bubble {
-    background: #93ced7; /* azul claro como en la segunda imagen */
-    color: #000000;      /* texto blanco */
+    background: #93ced7;
+    color: #000000;
     padding: 12px 18px;
-    border-radius: 25px; /* más redondeado */
+    border-radius: 25px;
     font-weight: bold;
     position: relative;
-    max-width: 250px;    /* evita que se haga largo */
+    max-width: 250px;
     word-wrap: break-word;
     text-align: center;
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.2); /* efecto flotante */
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
 }
 
 .speech-bubble::after {
     content: '';
     position: absolute;
-    left: -20px; /* más cerca del cohete */
-    top: 30%;    /* ajusta la altura para que apunte a la boca/mano */
+    left: -20px;
+    top: 30%;
     border: 12px solid transparent;
-    border-right-color: #94ced7; /* mismo azul claro */
+    border-right-color: #94ced7;
 }
-
 
 .footer-center {
     text-align: center;
@@ -93,36 +99,13 @@
 
 .footer-right i {
     margin-right: 8px;
-    color: #00aced; /* Azul claro para íconos */
+    color: #00aced;
 }
 
 .final-quote {
-    margin-bottom: 30px; /* o el valor que prefieras */
+    margin-bottom: 30px;
 }
 
-
-
-
-/*==========================
-      RESPONSIVE MARGIN
-   (mismo comportamiento que .teachers-section)
-==========================*/
-
-@media (max-width:1100px){
-
-    .footer{
-        margin-left:220px;
-    }
-
-}
-
-@media (max-width:992px){
-
-    .footer{
-        margin-left:0;
-    }
-
-}
 
 
 @media(max-width:900px){

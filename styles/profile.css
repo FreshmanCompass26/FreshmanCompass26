@@ -1,253 +1,330 @@
+/* ==========================================================================
+   Freshman Compass — Perfil de Estudiante
+   Concepto: "Bitácora de brújula" — el avatar vive dentro de un anillo tipo
+   rosa de los vientos, y los datos se leen como coordenadas de un cuaderno
+   de bitácora. Tipografía consistente con el resto del sitio (Playfair
+   Display para títulos, Inter para todo lo demás).
+   ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap');
 
-/* FONDO */
-body{
-    font-family:'Montserrat', sans-serif;
-    background-image:url("../img/WhatsApp Image 2026-05-03 at 5.58.08 PM.jpeg");
-    background-size:cover;
-    background-position:center;
+:root {
+  --navy: #204B6B;
+  --navy-dark: #163A54;
+  --navy-soft: #EAF1F5;
+  --turquoise: #82D0DA;
+  --turquoise-dark: #4FAFBB;
+  --bg: #F2F2F2;
+  --surface: #FEFEFE;
+  --ink: #1B2B36;
+  --ink-muted: #64798A;
+  --border: #E4E9EC;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow-card: 0 24px 48px -28px rgba(32, 75, 107, 0.35);
+  --shadow-soft: 0 10px 24px -16px rgba(32, 75, 107, 0.25);
 }
 
-
-
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: linear-gradient(to bottom, #081847, #102b75);
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 5px 0 20px rgba(0, 0, 0, .25);
-    transition: all .3s ease;
+* {
+  box-sizing: border-box;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 35px;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
 }
 
-.logo img {
-    width: 100% !important;
-    max-width: 160px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    mix-blend-mode: multiply !important;
-    display: block !important;
+/* El sidebar de navbar.css normalmente es position:fixed, así que reservamos
+   el espacio a la izquierda con margin en vez de depender de flexbox.
+   AJUSTA este valor si el ancho real de tu .sidebar es distinto a 260px. */
+main.contenido {
+  margin-left: 260px;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* ── Fondo decorativo (consistente con los .dots/.circle del home) ── */
+main.contenido {
+  position: relative;
+  isolation: isolate;
 }
 
-.menu li {
-    margin: 8px 15px;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: .3s ease;
+main.contenido::before,
+main.contenido::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.menu li a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-    color: white;
-    padding: 14px 20px;
-    font-size: 15px;
-    font-weight: 500;
+main.contenido::before {
+  width: 420px;
+  height: 420px;
+  right: -140px;
+  top: -120px;
+  background: radial-gradient(circle, rgba(130, 208, 218, 0.22), transparent 70%);
 }
 
-.menu li:hover {
-    background: rgba(255, 255, 255, .15);
-    transform: translateX(8px);
+main.contenido::after {
+  width: 320px;
+  height: 320px;
+  left: 30%;
+  bottom: -160px;
+  background: radial-gradient(circle, rgba(32, 75, 107, 0.10), transparent 70%);
 }
 
-.menu li.active {
-    background: white;
+/* ==========================================================================
+   Nota: el sidebar/navbar viene de php/navbar.php + styles/navbar.css,
+   profile.css ya no lo toca para evitar choques de clases. Si más adelante
+   quieres que el navbar también use esta paleta, se ajusta navbar.css aparte.
+   ========================================================================== */
+
+/* ==========================================================================
+   Contenido principal
+   ========================================================================== */
+
+main.contenido {
+  flex: 1;
+  padding: 48px 56px 64px;
+  min-width: 0;
 }
 
-.menu li.active a {
-    color: #0b1d59;
-    font-weight: 700;
+main.contenido > h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--navy-dark);
+  margin: 0 0 4px;
 }
 
-.quote {
-    margin-top: auto;
-    margin-inline: 18px;
-    background: rgba(255, 255, 255, .08);
-    padding: 18px;
-    border-radius: 18px;
-    color: white;
+main.contenido > h1::before {
+  content: 'TU BRÚJULA PERSONAL';
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--turquoise-dark);
+  margin-bottom: 8px;
 }
 
-.quote p {
-    margin-bottom: 10px;
-    line-height: 1.6;
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 32px;
 }
 
-.quote small {
-    color: #d7d7d7;
+/* ── Tarjeta de perfil ── */
+
+.tarjeta-perfil {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 96px 28px 32px;
+  text-align: center;
+  overflow: hidden;
 }
 
-.top-navbar {
-    position: fixed;
-    top: 0;
-    left: 250px;
-    width: calc(100% - 250px);
-    height: 80px;
-    z-index: 2000;
-    background: #0B205A;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+.tarjeta-perfil::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 128px;
+  background:
+    radial-gradient(circle at 20% 120%, rgba(130, 208, 218, 0.35), transparent 55%),
+    linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
 }
 
-.top-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.tarjeta-perfil::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 34px;
+  height: 34px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
 }
 
+.avatar-placeholder {
+  position: relative;
+  z-index: 1;
+  width: 116px;
+  height: 116px;
+  margin: -76px auto 0;
+  border-radius: 50%;
+  border: 5px solid var(--surface);
+  outline: 2px solid var(--turquoise);
+  outline-offset: 4px;
+  box-shadow: var(--shadow-soft);
+  background: var(--navy-soft);
+  overflow: hidden;
+}
 
+.avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
+.avatar-placeholder.sin-foto::before {
+  content: attr(data-inicial);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--navy);
+}
 
-/* CONTENIDO */
+.tarjeta-perfil h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--navy-dark);
+  margin: 18px 0 6px;
+}
+
+.tarjeta-perfil p {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 4px;
+}
+
+/* ── Panel de datos ── */
+
+.datos {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 32px 36px;
+}
+
+.datos::before {
+  content: 'BITÁCORA DEL ESTUDIANTE';
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--turquoise-dark);
+  margin-bottom: 20px;
+}
+
+.datos {
+  display: block;
+}
+
+.datos > .campo {
+  display: inline-block;
+  width: calc(50% - 10px);
+  vertical-align: top;
+  margin: 0 20px 24px 0;
+}
+
+.datos > .campo:nth-child(2n+1) {
+  margin-right: 20px;
+}
+
+.campo label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
 
 .campo p {
-    width: 60%;
-    background: #e5e5e5;   /* gris clarito */
-    padding: 14px;
-    border-radius: 10px;
-    font-size: 14px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 10px 14px;
+  background: var(--navy-soft);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  min-height: 20px;
 }
 
-
-
-
-
-.contenido{
-    flex:1;
-    padding:40px;
-    margin-left: 250px;   /* ✅ para el sidebar */
-    margin-top: 20px;
-
+.btn-editar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 12px 24px;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
-/* TITULO */
-.contenido h1{
-    font-style:italic;
-    margin-bottom:20px;
+.btn-editar::before {
+  content: '\f044';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 12px;
 }
 
-/* CONTENEDOR */
-.contenedor-principal{
-    display:flex;
-    gap:50px;
+.btn-editar:hover {
+  background: var(--turquoise-dark);
 }
 
-/* TARJETA PERFIL */
-.tarjeta-perfil{
-    width:400px;
-    background:rgba(255,255,255,0.7);
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
+.btn-editar:active {
+  transform: scale(0.97);
 }
 
-.tarjeta-perfil img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit: cover;   /* ✅ ESTO LO ARREGLA TODO */
+.btn-editar:focus-visible,
+.sidebar .menu li a:focus-visible {
+  outline: 2px solid var(--turquoise);
+  outline-offset: 3px;
 }
 
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 
-.tarjeta-perfil h2{
-    font-size:22px;
-    margin-bottom:12px;
+@media (max-width: 960px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+  }
 }
 
-.tarjeta-perfil p{
-    font-size:14px;
-    line-height:1.6;
-    
-word-break: break-word;
-    overflow-wrap: break-word;
+@media (max-width: 760px) {
+  main.contenido {
+    margin-left: 0;
+    padding: 32px 20px 48px;
+  }
 
+  .datos {
+    padding: 24px 20px;
+  }
+
+  .datos > .campo {
+    width: 100%;
+    margin-right: 0 !important;
+  }
 }
 
-/* FORMULARIO */
-.datos{
-    flex:1;
-    background:rgba(255,255,255,0.7);
-    border-radius:20px;
-    padding:35px;
-}
-
-/* CAMPOS */
-.campo{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
-    gap:25px;
-}
-
-.campo label{
-    width:40%;
-    background:#cde3df;
-    padding:14px;
-    border-radius:10px;
-    font-size:14px;
-    font-weight:bold;
-}
-
-.campo input{
-    width:60%;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    outline:none;
-    font-size:14px;
-}
-
-
-/* BOTÓN */
-.btn-editar{
-    background:#ff6a00;
-    color:white;
-    padding:14px 35px;   /* más grande */
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    float:right;
-    font-size:14px;
-    font-weight:bold;
-    transition:0.3s;
-    text-decoration:none;
-}
-
-
-
-.btn-editar:hover{
-    transform:scale(1.05);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

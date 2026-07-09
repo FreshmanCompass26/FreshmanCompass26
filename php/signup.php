@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // ✅ 🔥 INICIO DE SESIÓN AUTOMÁTICO
         session_start();
 
+        $_SESSION['usuario_id'] = $stmt->insert_id; // 👈 la línea que faltaba
         $_SESSION['nombre'] = $nombre;
         $_SESSION['email'] = $email;
         $_SESSION['phone'] = $phone;

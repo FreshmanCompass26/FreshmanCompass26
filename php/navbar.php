@@ -23,7 +23,7 @@ if ($pagina_actual == "nuestro_centro") {
     <ul class="menu">
 
         <li class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
-            <a href="/freshmancompass26/index.php">
+            <a href="index.php">
                 <i class="fa-solid fa-house"></i>
                 <span>Inicio</span>
             </a>
@@ -32,33 +32,33 @@ if ($pagina_actual == "nuestro_centro") {
         <?php if (isset($_SESSION['nombre'])) { ?>
 
             <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/php/teachers.php">
+                <a href="teachers.php">
                     <i class="fa-solid fa-user-group"></i>
                     <span>Teachers</span>
                 </a>
             </li>
 
             <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/php/consejos.php">
+                <a href="consejos.php">
                     <i class="fa-solid fa-lightbulb"></i>
                     <span>Consejos</span>
                 </a>
             </li>
             <li class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/actividades.php">
+                <a href="actividades.php">
                     <i class="fa-solid fa-puzzle-piece"></i>
                     <span>Actividades</span>
                 </a>
             </li>
             <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/nuestro_centro.php">
+                <a href="nuestro_centro.php">
                     <i class="fa-solid fa-school"></i>
                     <span>Nuestro centro</span>
                 </a>
             </li>
 
             <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/eventos.php">
+                <a href="eventos.php">
                     <i class="fa-solid fa-calendar-days"></i>
                     <span>Eventos</span>
                 </a>

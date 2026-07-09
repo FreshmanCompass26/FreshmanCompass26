@@ -396,10 +396,12 @@ $pagina_actual = "inicio";
 
 </section>
 
-<?php include 'php/footer.php'; ?>
 
 
 </div>
+
+
+<?php include("php/footer.php"); ?>
 <script src="js/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <a href="php/compassbot.php" class="compass-float">

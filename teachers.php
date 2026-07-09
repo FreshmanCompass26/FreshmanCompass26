@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("php/conexion.php");
 
 // Obtener todos los maestros
 $sql = "SELECT * FROM teachers ORDER BY
@@ -26,16 +26,16 @@ if (!$result) {
 
     <title>Teachers | Freshman Compass</title>
 
-    <link rel="stylesheet" href="../styles/teachers.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="styles/teachers.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 <body>
 
-<?php include("navbar.php"); ?>
+<?php include("php/navbar.php"); ?>
 
 <section class="teachers-section">
 
@@ -74,7 +74,7 @@ if (!$result) {
                 <div class="teacher-top">
 
                     <div class="teacher-image">
-                        <img src="../img/teachers/<?= htmlspecialchars($teacher['imagen']) ?>" alt="<?= htmlspecialchars($teacher['nombre']) ?>">
+                        <img src="img/teachers/<?= htmlspecialchars($teacher['imagen']) ?>" alt="<?= htmlspecialchars($teacher['nombre']) ?>">
                     </div>
 
                     <div class="teacher-info">
@@ -190,14 +190,11 @@ if (!$result) {
     <i class="fa-solid fa-circle-check"></i>
     <span id="toastMessage">Email copied successfully!</span>
 </div>
-<<<<<<< HEAD
-<?php include 'footer.php'; ?>
-=======
 
-<?php include("footer.php"); ?>
->>>>>>> 1df183ec5001c19b5945ee48aa917b6cae5af865
 
-<script src="../Js/teachers.js"></script>
+<?php include("php/footer.php"); ?>
+
+<script src="js/teachers.js"></script>
 
 </body>
 </html>

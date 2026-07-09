@@ -44,7 +44,7 @@ if ($pagina_actual == "nuestro_centro") {
                     <span>Consejos</span>
                 </a>
             </li>
-            <li class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
+            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
                 <a href="/freshmancompass26/actividades.php">
                     <i class="fa-solid fa-puzzle-piece"></i>
                     <span>Actividades</span>
@@ -113,64 +113,5 @@ if ($pagina_actual == "nuestro_centro") {
     </div>
 
 </div>
-
-<nav class="mobile-navbar">
-
-    <a href="/freshmancompass26/index.php"
-       class="<?=($pagina_actual=="inicio")?"active":"";?>">
-
-        <div class="icon">
-            <i class="fa-solid fa-house"></i>
-        </div>
-
-        <span>Inicio</span>
-
-    </a>
-
-    <a href="/freshmancompass26/php/teachers.php"
-       class="<?=($pagina_actual=="teachers")?"active":"";?>">
-
-        <div class="icon">
-            <i class="fa-solid fa-users"></i>
-        </div>
-
-        <span>Teachers</span>
-
-    </a>
-
-    <a href="/freshmancompass26/php/consejos.php"
-       class="<?=($pagina_actual=="consejos")?"active":"";?>">
-
-        <div class="icon">
-            <i class="fa-solid fa-lightbulb"></i>
-        </div>
-
-        <span>Consejos</span>
-
-    </a>
-
-    <a href="/freshmancompass26/actividades.php"
-       class="<?=($pagina_actual=="actividades")?"active":"";?>">
-
-        <div class="icon">
-            <i class="fa-solid fa-puzzle-piece"></i>
-        </div>
-
-        <span>Actividades</span>
-
-    </a>
-
-    <a href="/freshmancompass26/eventos.php"
-       class="<?=($pagina_actual=="eventos")?"active":"";?>">
-
-        <div class="icon">
-            <i class="fa-solid fa-calendar-days"></i>
-        </div>
-
-        <span>Eventos</span>
-
-    </a>
-
-</nav>
 
 <script src="../Js/navbar.js"></script>

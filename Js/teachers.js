@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (matchCategory && matchName) {
 
-                card.style.display = "flex";
+                card.style.removeProperty("display");
 
                 setTimeout(() => {
 

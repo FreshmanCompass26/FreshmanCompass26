@@ -224,6 +224,9 @@ body{
 }
 
 
+
+
+
 .search-box input::placeholder{
 
     color:#9BA8B3;
@@ -296,6 +299,21 @@ body{
 
 
 /*==========================
+      GRID
+==========================*/
+
+.teachers-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+
+    gap:28px;
+
+}
+
+
+/*==========================
       TITULOS GENERALES
 ==========================*/
 
@@ -351,233 +369,438 @@ body{
     animation:fadeUp .7s ease;
 
 }
-
-
 /*======================================================
-        TARJETAS DE PROFESORES (diseño final)
+                PARTE 2 - TARJETAS
 ======================================================*/
 
-.teachers-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:22px;
-    margin-top:30px;
-}
+
+/*==========================
+        TARJETA
+==========================*/
 
 .teacher-card{
-    background:#fff;
-    border:1px solid #E6ECF2;
-    border-radius:20px;
-    padding:22px;
-    box-shadow:0 10px 25px rgba(44,75,102,.08);
-    transition:.3s;
-    animation:fadeCard .6s ease;
+
+    background:var(--white);
+
+    border-radius:26px;
+
+    padding:28px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    animation:fadeUp .7s ease;
+
 }
 
 .teacher-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 18px 40px rgba(44,75,102,.12);
-    border-color:var(--secondary);
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
 }
+
+
+/*==========================
+      CABECERA CARD
+==========================*/
 
 .teacher-top{
+
     display:flex;
-    align-items:flex-start;
-    gap:16px;
+
+    align-items:center;
+
+    gap:22px;
+
 }
+
+
+/*==========================
+          FOTO
+==========================*/
 
 .teacher-image{
-    width:64px;
-    height:64px;
-    border-radius:50%;
-    overflow:hidden;
-    flex-shrink:0;
-    border:3px solid var(--background);
-}
 
-.teacher-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.35s;
+    width:115px;
+
+    height:115px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:5px solid var(--background);
+
+    flex-shrink:0;
+
+    transition:var(--transition);
+
 }
 
 .teacher-card:hover .teacher-image{
-    box-shadow:0 10px 30px rgba(44,75,102,.15);
+
+    transform:scale(1.05);
+
 }
 
-.teacher-card:hover .teacher-image img{
-    transform:scale(1.05);
+.teacher-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
 }
+
+
+/*==========================
+      INFORMACIÓN
+==========================*/
 
 .teacher-info{
-    flex:1;
-    min-width:0;
-}
 
-/* Fila superior: nombre a la izquierda, materia (badge) a la derecha */
-.info-header{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom:8px;
+    flex:1;
+
 }
 
 .teacher-info h2{
-    font-size:1.05rem;
-    font-weight:700;
+
+    font-size:1.7rem;
+
     color:var(--primary);
-    transition:.3s;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
 }
 
-.teacher-card:hover h2{
-    color:var(--secondary);
+.teacher-info p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
 }
+
+
+/*==========================
+          BADGE
+==========================*/
 
 .badge{
-    flex-shrink:0;
-    background:#EEF6FF;
-    color:#2463B3;
-    padding:6px 14px;
-    border-radius:30px;
-    font-size:.72rem;
-    font-weight:600;
-    letter-spacing:.3px;
-    white-space:nowrap;
-    transition:.3s;
+
+    display:inline-block;
+
+    margin-bottom:14px;
+
+    padding:8px 18px;
+
+    background:rgba(148,206,215,.20);
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    border-radius:40px;
+
 }
 
-.teacher-card:hover .badge{
-    letter-spacing:.8px;
-}
+
+/*==========================
+          EMAIL
+==========================*/
 
 .teacher-email{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
+    margin-top:10px;
+
     color:var(--text-light);
-    font-size:.9rem;
+
+    font-size:.93rem;
+
+    word-break:break-word;
+
 }
 
 .teacher-email i{
-    width:16px;
+
     color:var(--secondary);
-    flex-shrink:0;
+
 }
 
-.teacher-mail{
-    color:var(--primary);
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-    overflow-wrap:anywhere;
-}
 
-.teacher-mail:hover{
-    color:var(--secondary);
-}
+/*==========================
+       INFORMACIÓN
+==========================*/
 
-/* Cajas de Schedule / Birthday */
-.teacher-details{
+.teacher-data{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:16px;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
 }
 
-.detail-box{
+
+.data-box{
+
     background:var(--background);
-    border-radius:14px;
-    padding:12px 14px;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    transition:var(--transition);
+
 }
 
-.detail-label{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    font-size:.78rem;
-    font-weight:700;
-    color:var(--primary);
-    margin-bottom:6px;
+.data-box:hover{
+
+    background:#EAF4F6;
+
 }
 
-.detail-label i{
+
+.data-box i{
+
     color:var(--secondary);
+
+    font-size:1.25rem;
+
+    margin-bottom:12px;
+
 }
 
-.detail-value{
-    font-size:.85rem;
-    color:var(--text-light);
-    line-height:1.4;
-}
+.data-title{
 
-/* Frase del profesor */
-.teacher-quote{
-    display:block;
-    margin-top:14px;
-    padding:14px 16px;
-    background:#EEF8FA;
-    border-left:4px solid var(--secondary);
-    border-radius:12px;
-    font-style:italic;
-    font-size:.85rem;
-    color:var(--text);
-    line-height:1.5;
-    transition:.3s;
-}
+    font-size:.82rem;
 
-.teacher-card:hover .teacher-quote{
-    background:#E4F3F6;
-}
-
-/* Pie: rol a la izquierda, botón a la derecha */
-.teacher-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-top:16px;
-}
-
-.teacher-role{
     font-weight:700;
-    font-size:.9rem;
+
     color:var(--primary);
+
+    margin-bottom:8px;
+
 }
+
+.data-value{
+
+    font-size:.95rem;
+
+    color:var(--text);
+
+    line-height:1.6;
+
+}
+
+
+/*==========================
+          FRASE
+==========================*/
+
+.teacher-quote{
+
+    background:var(--background);
+
+    border-left:5px solid var(--secondary);
+
+    border-radius:16px;
+
+    padding:18px 20px;
+
+    font-style:italic;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    min-height:95px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/*==========================
+      FOOTER CARD
+==========================*/
+
+.teacher-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:auto;
+
+}
+
+
+/*==========================
+      MATERIA
+==========================*/
+
+.teacher-subject{
+
+    font-size:.9rem;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+/*==========================
+          BOTÓN
+==========================*/
 
 .profile-btn{
+
     border:none;
+
     background:var(--primary);
-    color:#fff;
+
+    color:var(--white);
+
+    padding:12px 24px;
+
+    border-radius:40px;
+
     font-family:inherit;
-    font-size:.85rem;
+
     font-weight:600;
-    padding:11px 20px;
-    border-radius:12px;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:var(--transition);
+
 }
 
 .profile-btn:hover{
+
     background:var(--secondary);
+
     color:var(--primary);
+
 }
 
-.profile-btn:active{
-    transform:scale(.97);
+
+/*==========================
+      EFECTOS
+==========================*/
+
+.teacher-card:hover h2{
+
+    color:var(--secondary);
+
 }
 
-@keyframes fadeCard{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.teacher-card:hover .badge{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
 }
+
+.teacher-card:hover .teacher-quote{
+
+    border-left-color:var(--primary);
+
+}
+
+
+/*==========================
+      ESTADO
+==========================*/
+
+.teacher-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:.85rem;
+
+    color:#58A55C;
+
+    font-weight:600;
+
+}
+
+.teacher-status::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#58A55C;
+
+}
+
+
+/*==========================
+        ICONOS
+==========================*/
+
+.teacher-email i,
+.data-box i{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+
+/*==========================
+      ESPACIADO
+==========================*/
+
+.teacher-info h2,
+.teacher-info p,
+.teacher-email{
+
+    margin-left:2px;
+
+}
+/*======================================================
+                PARTE 3 - RESPONSIVE
+======================================================*/
 
 
 /*==========================
@@ -633,6 +856,7 @@ body{
 .profile-btn,
 .search-box,
 .teacher-image,
+.data-box,
 .badge{
 
     transition:all .35s ease;
@@ -659,7 +883,7 @@ body{
 
     .teachers-grid{
 
-        grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+        grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
     }
 
@@ -695,10 +919,10 @@ body{
 
     .teachers-section{
 
-        margin-left:80px;
-        padding:20px;
+        margin-left:0;
 
-    }
+        padding:25px;
+
     }
 
     .teachers-header{
@@ -721,7 +945,7 @@ body{
 
     }
 
-
+}
 
 
 @media (max-width:768px){
@@ -758,23 +982,7 @@ body{
 
     }
 
-    .info-header{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:6px;
-
-    }
-
-    .teacher-email{
-
-        justify-content:center;
-
-    }
-
-    .teacher-details{
+    .teacher-data{
 
         grid-template-columns:1fr;
 
@@ -782,13 +990,11 @@ body{
 
     .teacher-footer{
 
-        margin-top:14px;
-
         flex-direction:column;
 
-        gap:12px;
+        gap:15px;
 
-        justify-content:center;
+        align-items:stretch;
 
     }
 
@@ -797,13 +1003,6 @@ body{
         width:100%;
 
     }
-
-    .search-box{
-        width:100%;
-        min-width:0;
-    }
-
-    
 
 }
 
@@ -854,15 +1053,15 @@ body{
 
     .teacher-image{
 
-        width:80px;
+        width:95px;
 
-        height:80px;
+        height:95px;
 
     }
 
     .teacher-info h2{
 
-        font-size:1.1rem;
+        font-size:1.35rem;
 
     }
 
@@ -870,16 +1069,6 @@ body{
 
 
 @media (max-width:400px){
-
-       .sidebar{
-        width:70px;
-    }
-
-    .teachers-section{
-        margin-left:70px !important;
-        width:calc(100% - 70px);
-        padding:10px;
-    }
 
     .teachers-header h1{
 
@@ -895,42 +1084,162 @@ body{
 
     .teacher-image{
 
-        width:72px;
+        width:85px;
 
-        height:72px;
+        height:85px;
 
     }
 
-    body {
-        padding: 10px;
-    }
+    .profile-btn{
 
-    .contenedor {
-        width: 100%;
-        padding: 10px;
-    }
+        font-size:.9rem;
 
-    h1 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    .btn {
-        width: 100%;
     }
 
 }
 
 
+/*==========================
+      ANIMACIÓN ENTRADA
+==========================*/
 
+.teacher-card{
+
+    animation:fadeCard .6s ease;
+
+}
+
+@keyframes fadeCard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==========================
+      HOVER SUAVE
+==========================*/
+
+.teacher-card:hover{
+
+    border-color:var(--secondary);
+
+}
+
+.teacher-card:hover .teacher-image{
+
+    box-shadow:0 10px 30px rgba(44,75,102,.15);
+
+}
+
+.teacher-card:hover .data-box{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==========================
+      TITULOS
+==========================*/
+
+.teacher-info h2{
+
+    transition:.3s;
+
+}
+
+.teacher-card:hover h2{
+
+    color:var(--secondary);
+
+}
+
+
+/*==========================
+      BADGE
+==========================*/
+
+.badge{
+
+    letter-spacing:.3px;
+
+}
+
+.teacher-card:hover .badge{
+
+    letter-spacing:.8px;
+
+}
+
+
+/*==========================
+      QUOTE
+==========================*/
+
+.teacher-quote{
+
+    transition:.3s;
+
+}
+
+.teacher-card:hover .teacher-quote{
+
+    background:#EEF8FA;
+
+}
+
+
+/*==========================
+      BOTÓN
+==========================*/
+
+.profile-btn:active{
+
+    transform:scale(.97);
+
+}
+.profile-btn{
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/*==========================
+      IMÁGENES
+==========================*/
+
+.teacher-image img{
+
+    transition:.35s;
+
+}
+
+.teacher-card:hover .teacher-image img{
+
+    transform:scale(1.05);
+
+}
 /*======================================================
                     MODAL
 ======================================================*/
@@ -1102,7 +1411,6 @@ body{
     font-style:italic;
 
 }
-
 /*======================================================
                 MODAL ACTIONS
 ======================================================*/
@@ -1172,7 +1480,6 @@ body{
     font-size:1rem;
 
 }
-
 /*======================================================
                     TOAST
 ======================================================*/
@@ -1234,8 +1541,14 @@ body{
     font-size:.95rem;
 
 }
+@media (max-width:768px){
 
+    .search-box{
+        width:100%;
+        min-width:0;
+    }
 
+}
 /*==========================
         FIN
 ==========================*/

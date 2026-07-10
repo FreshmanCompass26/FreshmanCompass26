@@ -16,6 +16,7 @@ $pagina_actual = "centro";
     <link rel="stylesheet" href="styles/centro.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 </head>
 
 <body>

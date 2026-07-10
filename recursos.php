@@ -22,6 +22,7 @@ session_start();
     <!-- Estilos -->
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/recursos.css?v=<?php echo time(); ?>">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 
 </head>
 

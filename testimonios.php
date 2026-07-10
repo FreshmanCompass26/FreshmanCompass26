@@ -36,6 +36,7 @@ if (!$resultado) {
     <link rel="stylesheet" href="styles/testimonios.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="favicon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 </head>
 

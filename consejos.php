@@ -13,7 +13,7 @@ $sqlCards = "SELECT * FROM consejos
              WHERE id > 2
              ORDER BY id ASC
              LIMIT $limite";
-
+git 
 $resultado = $conn->query($sqlCards);
 ?>
 
@@ -25,9 +25,8 @@ $resultado = $conn->query($sqlCards);
 
     <link rel="stylesheet" href="styles/consejos.css">
     <link rel="stylesheet" href="styles/navbar.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="favicon" href="/img/favicon.png">
 </head>
 
 <body>

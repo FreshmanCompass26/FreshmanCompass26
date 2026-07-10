@@ -11,6 +11,7 @@ $pagina_actual = "centro";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/agregar-testimonio.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 </head>
 <body>
 

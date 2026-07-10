@@ -15,7 +15,7 @@ include("navbar.php");
     <title>CompassBot</title>
 
     <link rel="stylesheet" href="../styles/compassbot.css">
-
+    <link rel="icon" type="favicon" href="img/favicon.png">
     <link rel="stylesheet" href="../styles/navbar.css">
 
     <link rel="stylesheet"

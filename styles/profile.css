@@ -6,7 +6,7 @@
    Display para títulos, Inter para todo lo demás).
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
 
 :root {
   --navy: #204B6B;
@@ -14,6 +14,7 @@
   --navy-soft: #EAF1F5;
   --turquoise: #82D0DA;
   --turquoise-dark: #4FAFBB;
+  --turquoise-soft: #E3F5F7;
   --bg: #F2F2F2;
   --surface: #FEFEFE;
   --ink: #1B2B36;
@@ -38,9 +39,6 @@ body {
   color: var(--ink);
 }
 
-/* El sidebar de navbar.css normalmente es position:fixed, así que reservamos
-   el espacio a la izquierda con margin en vez de depender de flexbox.
-   AJUSTA este valor si el ancho real de tu .sidebar es distinto a 260px. */
 main.contenido {
   margin-left: 260px;
 }
@@ -75,16 +73,6 @@ main.contenido::after {
   bottom: -160px;
   background: radial-gradient(circle, rgba(32, 75, 107, 0.10), transparent 70%);
 }
-
-/* ==========================================================================
-   Nota: el sidebar/navbar viene de php/navbar.php + styles/navbar.css,
-   profile.css ya no lo toca para evitar choques de clases. Si más adelante
-   quieres que el navbar también use esta paleta, se ajusta navbar.css aparte.
-   ========================================================================== */
-
-/* ==========================================================================
-   Contenido principal
-   ========================================================================== */
 
 main.contenido {
   flex: 1;
@@ -144,7 +132,17 @@ main.contenido > h1::before {
 }
 
 .tarjeta-perfil::after {
-  content: '';
+  content: '\f005';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 22px;
+  left: 26px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tarjeta-perfil .icono-flotante {
   position: absolute;
   top: 18px;
   right: 22px;
@@ -152,6 +150,15 @@ main.contenido > h1::before {
   height: 34px;
   border: 1.5px dashed rgba(255, 255, 255, 0.5);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.tarjeta-perfil .icono-flotante i {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
 }
 
 .avatar-placeholder {
@@ -194,49 +201,124 @@ main.contenido > h1::before {
   font-weight: 600;
   font-size: 22px;
   color: var(--navy-dark);
-  margin: 18px 0 6px;
+  margin: 18px 0 2px;
 }
 
-.tarjeta-perfil p {
-  font-size: 13.5px;
+.tarjeta-perfil .rol {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--turquoise-dark);
+  margin: 0 0 12px;
+}
+
+.tarjeta-perfil .separador {
+  width: 22px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto 12px;
+  position: relative;
+}
+
+.tarjeta-perfil .separador::before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  color: var(--turquoise-dark);
+  background: var(--surface);
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.tarjeta-perfil .cita {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14.5px;
   color: var(--ink-muted);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 20px;
   padding: 0 4px;
+}
+
+.tarjeta-perfil .sello {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  background: var(--navy-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: var(--navy-dark);
+  line-height: 1.4;
+}
+
+.tarjeta-perfil .sello i {
+  flex-shrink: 0;
+  color: var(--turquoise-dark);
+  font-size: 20px;
 }
 
 /* ── Panel de datos ── */
 
 .datos {
+  position: relative;
   background: var(--surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   padding: 32px 36px;
 }
 
-.datos::before {
-  content: 'BITÁCORA DEL ESTUDIANTE';
-  display: block;
+.datos-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.datos-titulo span {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   color: var(--turquoise-dark);
-  margin-bottom: 20px;
 }
 
-.datos {
-  display: block;
+.datos-titulo i {
+  color: var(--border);
+  font-size: 18px;
 }
 
-.datos > .campo {
-  display: inline-block;
-  width: calc(50% - 10px);
-  vertical-align: top;
-  margin: 0 20px 24px 0;
+.campo {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
-.datos > .campo:nth-child(2n+1) {
-  margin-right: 20px;
+.campo .icono-campo {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--navy-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.campo .icono-campo i {
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.campo .campo-contenido {
+  flex: 1;
+  min-width: 0;
 }
 
 .campo label {
@@ -261,11 +343,16 @@ main.contenido > h1::before {
   min-height: 20px;
 }
 
+.datos-acciones {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
 .btn-editar {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 4px;
   padding: 12px 24px;
   background: var(--navy);
   color: #fff;
@@ -297,6 +384,54 @@ main.contenido > h1::before {
   outline-offset: 3px;
 }
 
+/* ── Mensaje motivador ── */
+
+.mensaje-motivador {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 20px 28px;
+  background: linear-gradient(120deg, var(--turquoise-soft) 0%, #F6FBFA 65%);
+  border-radius: var(--radius-lg);
+  color: var(--navy-dark);
+  font-size: 14.5px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.mensaje-motivador i.fa-star {
+  color: var(--turquoise-dark);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.mensaje-motivador .decoracion {
+  position: absolute;
+  right: 28px;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.mensaje-motivador .decoracion i {
+  color: var(--navy);
+}
+
+.mensaje-motivador .decoracion i.fa-mountain-sun {
+  font-size: 34px;
+}
+
+.mensaje-motivador .decoracion i.fa-flag {
+  font-size: 14px;
+  color: var(--turquoise-dark);
+  margin-bottom: 18px;
+}
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
@@ -317,9 +452,8 @@ main.contenido > h1::before {
     padding: 24px 20px;
   }
 
-  .datos > .campo {
-    width: 100%;
-    margin-right: 0 !important;
+  .mensaje-motivador .decoracion {
+    display: none;
   }
 }
 

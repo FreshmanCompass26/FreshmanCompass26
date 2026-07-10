@@ -346,28 +346,122 @@ html {
     background: #4b5563;
 }
 
-/* Media query para pantallas pequeñas (modo teléfono) */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
+  /* Ocultar sidebar en móvil */
   .sidebar {
+    display: none;
+  }
+
+  /* Ajustar contenido principal */
+  .contenido {
+    margin: 0;
+    padding: 15px;
+  }
+
+  /* Hero section más compacto */
+  .hero-salones {
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  .hero-overlay {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-info p {
+    font-size: 0.9rem;
+  }
+
+  .hero-mascota img {
+    width: 100px;
+    margin-top: 15px;
+  }
+
+  /* Info salones en columna */
+  .info-salones {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .icono-info {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .texto-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .texto-info p {
+    font-size: 0.85rem;
+  }
+
+  /* Beneficios en grid */
+  .beneficios {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Cards en una sola columna */
+  .cards-salones {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  /* Frase final centrada */
+  .frase-final {
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  /* Navbar inferior estilo app */
+  .navbar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 65px; /* altura de la barra inferior */
-    flex-direction: row;
+    background: #0d3b66;
+    display: flex;
     justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .navbar a {
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    z-index: 1000; /* que quede encima del contenido */
-  }
-
-  .sidebar .nav-item {
-    flex: 1;
-    text-align: center;
-    font-size: 0.8rem;
-  }
-
-  /* Para que el contenido no quede tapado por la barra */
-  .main-content {
-    padding-bottom: 70px;
   }
 }
+
+

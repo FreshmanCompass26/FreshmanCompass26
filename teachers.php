@@ -36,6 +36,7 @@ if (!$result) {
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="styles/footer.css">
 
 </head>
 
@@ -312,6 +313,8 @@ data-name="<?= strtolower($teacher['nombre']) ?>">
 
 </div>
 <script src="Js/teachers.js"></script>
+
+<?php include 'php/footer.php'; ?>
 
 </body>
 </html>

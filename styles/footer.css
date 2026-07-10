@@ -10,6 +10,9 @@
     /* Cancela el padding de .main-content (20px) para llegar a los bordes */
     margin: 0 -20px -20px -20px;
     width: calc(100% + 40px);
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    
 }
 
 .footer::after {

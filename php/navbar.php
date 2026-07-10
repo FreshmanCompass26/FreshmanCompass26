@@ -45,7 +45,7 @@ if ($pagina_actual == "nuestro_centro") {
                 </a>
             </li>
             <li class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
-                <a href="/freshmancompass26/actividades.php">
+                <a href="actividades.php">
                     <i class="fa-solid fa-puzzle-piece"></i>
                     <span>Actividades</span>
                 </a>

@@ -1,197 +1,285 @@
 /*======================================================
-        FRESHMAN COMPASS | TEACHERS
-                PARTE 1
+        FRESHMAN COMPASS | TEACHERS (CSS PARTE 1)
 ======================================================*/
 
-/*==========================
-        GOOGLE FONT
-==========================*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-
-/*==========================
-        VARIABLES
-==========================*/
-
 :root{
-
     --primary:#2C4B66;
     --secondary:#94CED7;
     --background:#F2F2F2;
     --white:#FEFEFE;
-
     --text:#2C4B66;
     --text-light:#6F8090;
-
     --border:#E3E8EC;
-
-    --shadow:0 8px 25px rgba(44,75,102,.08);
-    --shadow-hover:0 18px 45px rgba(44,75,102,.15);
-
-    --radius:22px;
-
-    --transition:.35s ease;
-
+    --shadow:0 6px 20px rgba(44,75,102,.06);
+    --shadow-hover:0 12px 35px rgba(44,75,102,.12);
+    --radius:18px;
+    --transition:.3s ease;
 }
 
-
-/*==========================
-        RESET
-==========================*/
-
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
-
     font-family:'Montserrat',sans-serif;
-
     background:var(--background);
-
     color:var(--text);
-
     overflow-x:hidden;
-
 }
-
-
-/*==========================
-      CONTENIDO PRINCIPAL
-==========================*/
-
-/* Cambia 250px si tu navbar mide otro ancho */
 
 .teachers-section{
     margin-left:250px;
-    padding:35px;
+    padding:30px;
 }
 
-.teachers-container{
-    max-width:1200px;
-    margin:0 auto;
+/*======================================================
+     HERO ESTILO CLASSROOMS: ABAJO AL MÁXIMO
+======================================================*/
+.teachers-header {
+    position: relative;
+    background-image: url('../img/teachers/tea-todos.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    margin-bottom: 35px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    
+    min-height: 420px; 
+    
+    display: flex;
+    align-items: flex-end; /* Empuja todo hacia el piso */
+    justify-content: center; 
+    
+    /* Reducimos el padding de abajo a solo 15px para pegarlo al borde */
+    padding: 40px 20px 15px 20px; 
 }
 
-
-/*==========================
-        HERO
-==========================*/
-
-.teachers-header{
-
-    background:var(--primary);
-
-    border-radius:30px;
-
-    padding:45px 50px;
-
-    color:var(--white);
-
-    margin-bottom:35px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow);
-
+/* Gradiente que se oscurece más en la base para proteger el texto */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(27, 38, 59, 0.85) 0%, rgba(27, 38, 59, 0.4) 30%, rgba(27, 38, 59, 0) 100%);
+    z-index: 1;
 }
 
-
-/* círculo decorativo */
-
-.teachers-header::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    right:-70px;
-
-    top:-40px;
-
+/* El texto ahora no tiene márgenes extras que lo empujen hacia arriba */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    margin: 0; 
 }
 
-
-/* círculo */
-
-.teachers-header::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.05);
-
-    right:120px;
-
-    bottom:-40px;
-
+.teachers-header h1 {
+    font-size: 2.8rem; 
+    font-weight: 800;
+    margin-bottom: 5px; /* Reducido para compactar */
+    color: var(--white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); 
 }
 
+.teachers-header p {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0; /* Evita separaciones del borde */
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .teachers-header {
+        min-height: 320px;
+        padding: 30px 15px 10px 15px;
+    }
+    .teachers-header h1 {
+        font-size: 2rem;
+    }
+    .teachers-header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Filtro oscuro uniforme para que el texto blanco resalte en cualquier zona */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 38, 59, 0.65); 
+    z-index: 1;
+}
+
+/* Contenedor del texto centrado y sin cajas oscuras que tapen caras */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center; /* Centra el texto por completo */
+    background: transparent; /* Eliminamos cualquier fondo gris/azul intermedio */
+    padding: 0;
+}
+
+.teachers-header h1 {
+    font-size: 2.8rem; 
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* Sombra para despegar el texto del fondo */
+}
+
+.teachers-header p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .teachers-header {
+        min-height: 320px;
+        padding: 30px 15px;
+    }
+    .teachers-header h1 {
+        font-size: 2rem;
+    }
+    .teachers-header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Filtro oscuro uniforme sobre toda la imagen para garantizar la lectura */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 38, 59, 0.65); /* Tono oscuro profundo con opacidad perfecta */
+    z-index: 1;
+}
+
+/* Contenedor del texto libre de fondos raros o cintillos */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    text-align: left;
+}
+
+.teachers-header h1 {
+    font-size: 3rem; /* Letras grandes e impactantes como "Classroom 2" */
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.teachers-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+/* Ajuste rápido para pantallas pequeñas */
+@media (max-width: 768px) {
+    .teachers-header {
+        min-height: 300px;
+        padding: 40px 25px;
+    }
+    .teachers-header h1 {
+        font-size: 2.2rem;
+    }
+    .teachers-header p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Reemplazamos el overlay oscuro completo por un difuminado sutil abajo */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(44, 75, 102, 0.95) 0%, rgba(44, 75, 102, 0.4) 40%, rgba(44, 75, 102, 0) 100%);
+    z-index: 1;
+}
+
+/* El contenedor del texto ahora es una franja elegante abajo */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 25px 40px;
+    background: rgba(44, 75, 102, 0.75); /* Fondo oscuro semitransparente para máxima legibilidad */
+    backdrop-filter: blur(5px); /* Efecto esmerilado moderno */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teachers-header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.teachers-header p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #E3E8EC; /* Color claro para el subtítulo */
+    opacity: 0.9;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(44,75,102,0.92) 30%, rgba(44,75,102,0.5) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
 
 .teachers-header h1{
-
-    font-size:3rem;
-
-    font-weight:800;
-
-    margin-bottom:12px;
-
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-
 
 .teachers-header p{
-
-    font-size:1.05rem;
-
-    max-width:650px;
-
-    line-height:1.7;
-
-    opacity:.95;
-
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: .95;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-
 /*==========================
-      SEARCH
+        SEARCH & FILTERS
 ==========================*/
-
 .teachers-tools{
     display: flex;
     justify-content: center;
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 .search-box{
-    width: 700px;      /* ancho fijo */
-    max-width: 100%;   /* para que en móvil no se salga */
+    width: 600px;
+    max-width: 100%;
     display: flex;
     align-items: center;
-    padding: 16px 24px;
+    padding: 12px 20px;
     background: var(--white);
     border-radius: 50px;
     box-shadow: var(--shadow);
@@ -203,1352 +291,310 @@ body{
     border: none;
     outline: none;
     background: transparent;
+    font-family: inherit;
+    color: var(--text);
 }
-
 
 .search-box:hover{
-
     box-shadow:var(--shadow-hover);
-
 }
-
 
 .search-box i{
-
     color:var(--secondary);
-
-    font-size:1.1rem;
-
-    margin-right:15px;
-
+    font-size:1rem;
 }
-
-
-
-
 
 .search-box input::placeholder{
-
     color:#9BA8B3;
-
 }
-
-
-/*==========================
-        FILTROS
-==========================*/
 
 .filters{
-
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-bottom:40px;
-
+    gap:12px;
+    margin-bottom:30px;
 }
-
 
 .filter-btn{
-
     border:none;
-
     background:var(--white);
-
     color:var(--primary);
-
     font-family:inherit;
-
-    font-size:.95rem;
-
+    font-size:.9rem;
     font-weight:600;
-
-    padding:14px 28px;
-
+    padding:10px 22px;
     border-radius:40px;
-
     cursor:pointer;
-
     transition:var(--transition);
-
     box-shadow:var(--shadow);
-
 }
-
 
 .filter-btn:hover{
-
     background:var(--secondary);
-
     color:var(--primary);
-
 }
-
 
 .filter-btn.active{
-
     background:var(--primary);
-
     color:var(--white);
-
 }
-
-
-/*==========================
-      GRID
-==========================*/
-
-.teachers-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-
-    gap:28px;
-
-}
-
-
-/*==========================
-      TITULOS GENERALES
-==========================*/
-
-.section-title{
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    color:var(--primary);
-
-    margin-bottom:10px;
-
-}
-
-.section-subtitle{
-
-    color:var(--text-light);
-
-    margin-bottom:30px;
-
-}
-
-
-/*==========================
-      ANIMACIÓN
-==========================*/
 
 @keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
+    from{ opacity:0; transform:translateY(25px); }
+    to{ opacity:1; transform:translateY(0); }
 }
 
-.teachers-header,
-.search-box,
-.filters{
-
-    animation:fadeUp .7s ease;
-
+.teachers-header, .search-box, .filters{
+    animation:fadeUp .6s ease;
 }
-/*======================================================
-                PARTE 2 - TARJETAS
-======================================================*/
-
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
 /*==========================
-        TARJETA
+    TARJETA MAS COMPACTA
 ==========================*/
-
 .teacher-card{
-
     background:var(--white);
-
-    border-radius:26px;
-
-    padding:28px;
-
+    border-radius:18px;
+    padding:20px;
     border:1px solid var(--border);
-
     box-shadow:var(--shadow);
-
     transition:var(--transition);
-
     display:flex;
-
     flex-direction:column;
-
-    gap:22px;
-
-    animation:fadeUp .7s ease;
-
+    gap:15px;
+    animation:fadeCard .5s ease;
 }
 
 .teacher-card:hover{
-
-    transform:translateY(-8px);
-
+    transform:translateY(-5px);
     box-shadow:var(--shadow-hover);
-
+    border-color:var(--secondary);
 }
-
-
-/*==========================
-      CABECERA CARD
-==========================*/
 
 .teacher-top{
-
     display:flex;
-
     align-items:center;
-
-    gap:22px;
-
+    gap:15px;
 }
-
-
-/*==========================
-          FOTO
-==========================*/
 
 .teacher-image{
-
-    width:115px;
-
-    height:115px;
-
+    width:85px;
+    height:85px;
     border-radius:50%;
-
     overflow:hidden;
-
-    border:5px solid var(--background);
-
+    border:4px solid var(--background);
     flex-shrink:0;
-
-    transition:var(--transition);
-
-}
-
-.teacher-card:hover .teacher-image{
-
-    transform:scale(1.05);
-
 }
 
 .teacher-image img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
-}
-
-
-/*==========================
-      INFORMACIÓN
-==========================*/
-
-.teacher-info{
-
-    flex:1;
-
-}
-
-.teacher-info h2{
-
-    font-size:1.7rem;
-
-    color:var(--primary);
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-}
-
-.teacher-info p{
-
-    color:var(--text-light);
-
-    line-height:1.7;
-
-}
-
-
-/*==========================
-          BADGE
-==========================*/
-
-.badge{
-
-    display:inline-block;
-
-    margin-bottom:14px;
-
-    padding:8px 18px;
-
-    background:rgba(148,206,215,.20);
-
-    color:var(--primary);
-
-    font-size:.85rem;
-
-    font-weight:700;
-
-    border-radius:40px;
-
-}
-
-
-/*==========================
-          EMAIL
-==========================*/
-
-.teacher-email{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-top:10px;
-
-    color:var(--text-light);
-
-    font-size:.93rem;
-
-    word-break:break-word;
-
-}
-
-.teacher-email i{
-
-    color:var(--secondary);
-
-}
-
-
-/*==========================
-       INFORMACIÓN
-==========================*/
-
-.teacher-data{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-
-}
-
-
-.data-box{
-
-    background:var(--background);
-
-    border-radius:18px;
-
-    padding:18px;
-
-    transition:var(--transition);
-
-}
-
-.data-box:hover{
-
-    background:#EAF4F6;
-
-}
-
-
-.data-box i{
-
-    color:var(--secondary);
-
-    font-size:1.25rem;
-
-    margin-bottom:12px;
-
-}
-
-.data-title{
-
-    font-size:.82rem;
-
-    font-weight:700;
-
-    color:var(--primary);
-
-    margin-bottom:8px;
-
-}
-
-.data-value{
-
-    font-size:.95rem;
-
-    color:var(--text);
-
-    line-height:1.6;
-
-}
-
-
-/*==========================
-          FRASE
-==========================*/
-
-.teacher-quote{
-
-    background:var(--background);
-
-    border-left:5px solid var(--secondary);
-
-    border-radius:16px;
-
-    padding:18px 20px;
-
-    font-style:italic;
-
-    color:var(--text-light);
-
-    line-height:1.8;
-
-    min-height:95px;
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-
-/*==========================
-      FOOTER CARD
-==========================*/
-
-.teacher-footer{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:auto;
-
-}
-
-
-/*==========================
-      MATERIA
-==========================*/
-
-.teacher-subject{
-
-    font-size:.9rem;
-
-    color:var(--primary);
-
-    font-weight:700;
-
-}
-
-
-/*==========================
-          BOTÓN
-==========================*/
-
-.profile-btn{
-
-    border:none;
-
-    background:var(--primary);
-
-    color:var(--white);
-
-    padding:12px 24px;
-
-    border-radius:40px;
-
-    font-family:inherit;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
-}
-
-.profile-btn:hover{
-
-    background:var(--secondary);
-
-    color:var(--primary);
-
-}
-
-
-/*==========================
-      EFECTOS
-==========================*/
-
-.teacher-card:hover h2{
-
-    color:var(--secondary);
-
-}
-
-.teacher-card:hover .badge{
-
-    background:var(--secondary);
-
-    color:var(--white);
-
-}
-
-.teacher-card:hover .teacher-quote{
-
-    border-left-color:var(--primary);
-
-}
-
-
-/*==========================
-      ESTADO
-==========================*/
-
-.teacher-status{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    font-size:.85rem;
-
-    color:#58A55C;
-
-    font-weight:600;
-
-}
-
-.teacher-status::before{
-
-    content:"";
-
-    width:10px;
-
-    height:10px;
-
-    border-radius:50%;
-
-    background:#58A55C;
-
-}
-
-
-/*==========================
-        ICONOS
-==========================*/
-
-.teacher-email i,
-.data-box i{
-
-    width:22px;
-
-    text-align:center;
-
-}
-
-
-/*==========================
-      ESPACIADO
-==========================*/
-
-.teacher-info h2,
-.teacher-info p,
-.teacher-email{
-
-    margin-left:2px;
-
-}
-/*======================================================
-                PARTE 3 - RESPONSIVE
-======================================================*/
-
-
-/*==========================
-        SCROLLBAR
-==========================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:var(--background);
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:var(--secondary);
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:var(--primary);
-
-}
-
-
-/*==========================
-      SELECCIÓN
-==========================*/
-
-::selection{
-
-    background:var(--secondary);
-
-    color:var(--primary);
-
-}
-
-
-/*==========================
-        TRANSICIONES
-==========================*/
-
-.teacher-card,
-.filter-btn,
-.profile-btn,
-.search-box,
-.teacher-image,
-.data-box,
-.badge{
-
-    transition:all .35s ease;
-
-}
-
-
-/*==========================
-      FOCUS INPUT
-==========================*/
-
-.search-box:focus-within{
-
-    box-shadow:0 0 0 4px rgba(148,206,215,.25);
-
-}
-
-
-/*==========================
-      GRID RESPONSIVE
-==========================*/
-
-@media (max-width:1300px){
-
-    .teachers-grid{
-
-        grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-
-    }
-
-}
-
-
-@media (max-width:1100px){
-
-    .teachers-section{
-
-        margin-left:220px;
-
-        padding:30px;
-
-    }
-
-    .teachers-header{
-
-        padding:35px;
-
-    }
-
-    .teachers-header h1{
-
-        font-size:2.5rem;
-
-    }
-
-}
-
-
-@media (max-width:992px){
-
-    .teachers-section{
-
-        margin-left:0;
-
-        padding:25px;
-
-    }
-
-    .teachers-header{
-
-        border-radius:22px;
-
-        text-align:center;
-
-    }
-
-    .teachers-header p{
-
-        margin:auto;
-
-    }
-
-    .teachers-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-
-@media (max-width:768px){
-
-    .teachers-header{
-
-        padding:30px 25px;
-
-    }
-
-    .teachers-header h1{
-
-        font-size:2rem;
-
-    }
-
-    .teachers-header p{
-
-        font-size:.95rem;
-
-    }
-
-    .teacher-top{
-
-        flex-direction:column;
-
-        text-align:center;
-
-    }
-
-    .teacher-info{
-
-        width:100%;
-
-    }
-
-    .teacher-data{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .teacher-footer{
-
-        flex-direction:column;
-
-        gap:15px;
-
-        align-items:stretch;
-
-    }
-
-    .profile-btn{
-
-        width:100%;
-
-    }
-
-}
-
-
-@media (max-width:576px){
-
-    .teachers-section{
-
-        padding:18px;
-
-    }
-
-    .teachers-header{
-
-        padding:25px 20px;
-
-    }
-
-    .teachers-header h1{
-
-        font-size:1.7rem;
-
-    }
-
-    .search-box{
-
-        border-radius:18px;
-
-    }
-
-    .filters{
-
-        gap:10px;
-
-    }
-
-    .filter-btn{
-
-        width:100%;
-
-    }
-
-    .teacher-card{
-
-        padding:22px;
-
-    }
-
-    .teacher-image{
-
-        width:95px;
-
-        height:95px;
-
-    }
-
-    .teacher-info h2{
-
-        font-size:1.35rem;
-
-    }
-
-}
-
-
-@media (max-width:400px){
-
-    .teachers-header h1{
-
-        font-size:1.5rem;
-
-    }
-
-    .teacher-card{
-
-        padding:18px;
-
-    }
-
-    .teacher-image{
-
-        width:85px;
-
-        height:85px;
-
-    }
-
-    .profile-btn{
-
-        font-size:.9rem;
-
-    }
-
-}
-
-
-/*==========================
-      ANIMACIÓN ENTRADA
-==========================*/
-
-.teacher-card{
-
-    animation:fadeCard .6s ease;
-
-}
-
-@keyframes fadeCard{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(25px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-/*==========================
-      HOVER SUAVE
-==========================*/
-
-.teacher-card:hover{
-
-    border-color:var(--secondary);
-
-}
-
-.teacher-card:hover .teacher-image{
-
-    box-shadow:0 10px 30px rgba(44,75,102,.15);
-
-}
-
-.teacher-card:hover .data-box{
-
-    transform:translateY(-2px);
-
-}
-
-
-/*==========================
-      TITULOS
-==========================*/
-
-.teacher-info h2{
-
-    transition:.3s;
-
-}
-
-.teacher-card:hover h2{
-
-    color:var(--secondary);
-
-}
-
-
-/*==========================
-      BADGE
-==========================*/
-
-.badge{
-
-    letter-spacing:.3px;
-
-}
-
-.teacher-card:hover .badge{
-
-    letter-spacing:.8px;
-
-}
-
-
-/*==========================
-      QUOTE
-==========================*/
-
-.teacher-quote{
-
-    transition:.3s;
-
-}
-
-.teacher-card:hover .teacher-quote{
-
-    background:#EEF8FA;
-
-}
-
-
-/*==========================
-      BOTÓN
-==========================*/
-
-.profile-btn:active{
-
-    transform:scale(.97);
-
-}
-.profile-btn{
-
-    text-decoration:none;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-/*==========================
-      IMÁGENES
-==========================*/
-
-.teacher-image img{
-
-    transition:.35s;
-
+    transition: var(--transition);
 }
 
 .teacher-card:hover .teacher-image img{
-
     transform:scale(1.05);
-
-}
-/*======================================================
-                    MODAL
-======================================================*/
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.3s;
-
-    z-index:9999;
-
 }
 
-.modal.show{
-
-    opacity:1;
-
-    visibility:visible;
-
+.teacher-info{
+    flex:1;
 }
 
-.modal-content{
-
-    width:90%;
-
-    max-width:520px;
-
-    background:var(--white);
-
-    border-radius:25px;
-
-    padding:35px;
-
-    text-align:center;
-
-    position:relative;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-
-    animation:modalShow .35s ease;
-
-}
-
-@keyframes modalShow{
-
-    from{
-
-        transform:scale(.9);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:scale(1);
-
-        opacity:1;
-
-    }
-
-}
-
-.close-modal{
-
-    position:absolute;
-
-    top:18px;
-
-    right:22px;
-
-    font-size:2rem;
-
-    cursor:pointer;
-
+.teacher-info h2{
+    font-size:1.3rem;
     color:var(--primary);
-
-    transition:.3s;
-
-}
-
-.close-modal:hover{
-
-    color:#d9534f;
-
-    transform:rotate(90deg);
-
-}
-
-#modalImage{
-
-    width:150px;
-
-    height:150px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:5px solid var(--background);
-
-    margin-bottom:20px;
-
-}
-
-#modalName{
-
-    color:var(--primary);
-
-    margin-bottom:8px;
-
-}
-
-#modalSubject{
-
-    display:inline-block;
-
-    background:var(--secondary);
-
-    color:var(--primary);
-
-    padding:8px 18px;
-
-    border-radius:25px;
-
     font-weight:700;
-
-    margin-bottom:20px;
-
+    margin-bottom:4px;
+    transition: .3s;
 }
 
-.modal-content p{
-
-    margin:12px 0;
-
-    color:var(--text);
-
-    line-height:1.6;
-
+.teacher-card:hover h2{
+    color:var(--secondary);
 }
 
-#modalQuote{
-
-    margin-top:20px;
-
-    padding:18px;
-
-    background:var(--background);
-
-    border-left:5px solid var(--secondary);
-
-    border-radius:15px;
-
-    font-style:italic;
-
+.badge{
+    display:inline-block;
+    margin-bottom:6px;
+    padding:4px 12px;
+    background:rgba(148,206,215,.20);
+    color:var(--primary);
+    font-size:.75rem;
+    font-weight:700;
+    border-radius:40px;
 }
-/*======================================================
-                MODAL ACTIONS
-======================================================*/
 
-.modal-actions{
-
-    margin-top:30px;
-
+/* Link de email interactivo */
+.teacher-email{
     display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-}
-
-.modal-btn{
-
-    background:#2C4B66;
-
-    color:#FEFEFE;
-
-    border:none;
-
-    border-radius:14px;
-
-    padding:12px 20px;
-
-    font-family:'Montserrat',sans-serif;
-
-    font-size:.95rem;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    display:flex;
-
     align-items:center;
-
-    justify-content:center;
-
     gap:8px;
-
-    text-decoration:none;
-
-    transition:.3s;
-
-    min-width:155px;
-
+    margin-top:4px;
+    color:var(--text-light);
+    font-size:.82rem;
+    text-decoration: none;
+    word-break:break-all;
+    transition: var(--transition);
 }
 
-.modal-btn:hover{
-
-    background:#94CED7;
-
-    color:#2C4B66;
-
-    transform:translateY(-2px);
-
+.teacher-email:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
-.modal-btn i{
-
-    font-size:1rem;
-
+.teacher-email i{
+    color:var(--secondary);
+    width: 15px;
+    text-align: center;
 }
-/*======================================================
-                    TOAST
-======================================================*/
 
-.toast{
-
-    position:fixed;
-
-    top:30px;
-
-    right:30px;
-
-    background:#2C4B66;
-
-    color:#FEFEFE;
-
-    padding:16px 22px;
-
-    border-radius:16px;
-
-    display:flex;
-
-    align-items:center;
-
+.teacher-data{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
     gap:12px;
-
-    box-shadow:0 15px 40px rgba(44,75,102,.25);
-
-    transform:translateX(420px);
-
-    opacity:0;
-
-    transition:.4s ease;
-
-    z-index:10000;
-
 }
 
-.toast.show{
-
-    transform:translateX(0);
-
-    opacity:1;
-
+.data-box{
+    background:var(--background);
+    border-radius:12px;
+    padding:12px;
+    transition:var(--transition);
 }
 
-.toast i{
-
-    color:#94CED7;
-
-    font-size:1.2rem;
-
+.data-box:hover{
+    background:#EAF4F6;
+    transform: translateY(-2px);
 }
 
-.toast span{
+.data-box i{
+    color:var(--secondary);
+    font-size:1.05rem;
+    margin-bottom:6px;
+    width: 15px;
+    text-align: center;
+}
 
+.data-title{
+    font-size:.75rem;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:4px;
+}
+
+.data-value{
+    font-size:.82rem;
+    color:var(--text);
+    line-height:1.4;
+}
+
+.teacher-quote{
+    background:var(--background);
+    border-left:4px solid var(--secondary);
+    border-radius:10px;
+    padding:12px 15px;
+    font-style:italic;
+    color:var(--text-light);
+    font-size: .85rem;
+    line-height:1.6;
+    min-height:65px;
+    display:flex;
+    align-items:center;
+    transition: .3s;
+}
+
+.teacher-card:hover .teacher-quote{
+    background:#EEF8FA;
+    border-left-color:var(--primary);
+}
+
+.teacher-footer{
+    display:flex;
+    justify-content:between;
+    align-items:center;
+    margin-top:auto;
+}
+
+.teacher-subject{
+    font-size:.8rem;
+    color:var(--primary);
+    font-weight:700;
+}
+
+.profile-btn{
+    border:none;
+    background:var(--primary);
+    color:var(--white);
+    padding:8px 18px;
+    border-radius:40px;
+    font-family:inherit;
+    font-size: .85rem;
     font-weight:600;
-
-    font-size:.95rem;
-
+    cursor:pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:var(--transition);
 }
-@media (max-width:768px){
 
-    .search-box{
-        width:100%;
-        min-width:0;
-    }
-
+.profile-btn:hover{
+    background:var(--secondary);
+    color:var(--primary);
 }
-/*==========================
-        FIN
-==========================*/
+
+.profile-btn:active{ transform:scale(.97); }
+
+@keyframes fadeCard{
+    from{ opacity:0; transform:translateY(15px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/*======================================================
+        MODAL, TOAST & MEDIA QUERIES
+======================================================*/
+.modal{ position:fixed; inset:0; background:rgba(0,0,0,.45); display:flex; justify-content:center; align-items:center; opacity:0; visibility:hidden; transition:.3s; z-index:9999; }
+.modal.show{ opacity:1; visibility:visible; }
+.modal-content{ width:90%; max-width:460px; background:var(--white); border-radius:20px; padding:25px; text-align:center; position:relative; box-shadow:0 15px 45px rgba(0,0,0,.2); animation:modalShow .3s ease; }
+@keyframes modalShow{ from{ transform:scale(.95); opacity:0; } to{ transform:scale(1); opacity:1; } }
+.close-modal{ position:absolute; top:12px; right:18px; font-size:1.8rem; cursor:pointer; color:var(--primary); transition:.3s; }
+.close-modal:hover{ color:#d9534f; transform:rotate(90deg); }
+#modalImage{ width:110px; height:110px; border-radius:50%; object-fit:cover; border:4px solid var(--background); margin-bottom:15px; }
+#modalName{ color:var(--primary); margin-bottom:6px; font-size: 1.5rem; }
+#modalSubject{ display:inline-block; background:var(--secondary); color:var(--primary); padding:6px 14px; border-radius:25px; font-weight:700; font-size: .8rem; margin-bottom:15px; }
+.modal-content p{ margin:8px 0; color:var(--text); font-size: .9rem; line-height:1.5; }
+#modalQuote{ margin-top:15px; padding:12px; background:var(--background); border-left:4px solid var(--secondary); border-radius:10px; font-style:italic; font-size: .85rem; }
+.modal-actions{ margin-top:20px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+.modal-btn{ background:#2C4B66; color:#FEFEFE; border:none; border-radius:10px; padding:10px 16px; font-family:'Montserrat',sans-serif; font-size:.88rem; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; transition:.3s; min-width:130px; }
+.modal-btn:hover{ background:#94CED7; color:#2C4B66; transform:translateY(-2px); }
+
+.toast{ position:fixed; top:20px; right:20px; background:#2C4B66; color:#FEFEFE; padding:12px 20px; border-radius:12px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 30px rgba(44,75,102,.2); transform:translateX(420px); opacity:0; transition:.4s ease; z-index:10000; }
+.toast.show{ transform:translateX(0); opacity:1; }
+.toast i{ color:#94CED7; font-size:1.1rem; }
+.toast span{ font-weight:600; font-size:.9rem; }
+
+/* Responsive adjustments */
+@media (max-width:1100px){
+    .teachers-section{ margin-left:220px; padding:20px; }
+    .teachers-header{ padding:40px 30px; }
+    .teachers-header h1{ font-size:2rem; }
+}
+@media (max-width:992px){
+    .teachers-section{ margin-left:0; padding:20px; }
+    .teachers-header{ text-align:center; justify-content: center; }
+    .hero-overlay { background: rgba(44,75,102,0.85); }
+    .teachers-grid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+@media (max-width:768px) {
+    .search-box{ width:100%; }
+    .teacher-top{ flex-direction:column; text-align:center; }
+    .teacher-footer{ flex-direction:column; gap:10px; }
+    .profile-btn { width: 100%; }
+}
+@media (max-width:576px){
+    .filter-btn{ width:100%; }
+}

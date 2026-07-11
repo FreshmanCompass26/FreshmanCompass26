@@ -14,52 +14,47 @@
 <div class="auth-wrapper">
   <div class="auth-box" id="authBox">
 
-    <!-- ── PANEL IZQUIERDO ── -->
     <div class="panel panel-left" id="panelLeft">
 
-      <!-- Estado A: Login form -->
       <div class="form-section" id="loginForm">
         <div class="logo-area">
           <img src="img/logoooooo.png" alt="Freshman Compass" class="logo-img">
         </div>
-        <h2 class="form-title">Welcome back</h2>
-        <p class="form-subtitle">Sign in to your account</p>
+        <h2 class="form-title">Bienvenido de nuevo</h2>
+        <p class="form-subtitle">Inicia sesión en tu cuenta</p>
         <form action="php/login.php" method="POST" class="form" novalidate>
           <div class="field">
-            <label for="l-email">Email</label>
-            <input type="email" id="l-email" name="email" placeholder="you@example.com" required/>
+            <label for="l-email">Correo electrónico</label>
+            <input type="email" id="l-email" name="email" placeholder="daniel.rivas2027@adoc.superate.org" required/>
             <span class="field-icon">✉</span>
           </div>
           <div class="field">
-            <label for="l-pass">Password</label>
+            <label for="l-pass">Contraseña</label>
             <input type="password" id="l-pass" name="password" placeholder="••••••••" required/>
-            <span class="field-icon">🔒</span>
+            <span class="field-icon"></span>
           </div>
           <button type="submit" class="btn-primary">Sign In</button>
         </form>
         <p class="switch-text">
-          Don't have an account?
-          <button class="switch-btn" id="goSignup">Create account</button>
+         ¿No tienes una cuenta?
+          <button class="switch-btn" id="goSignup">Crear cuenta</button>
         </p>
       </div>
 
-      <!-- Estado B: Mensaje de bienvenida (modo signup) -->
       <div class="welcome-section hidden" id="signupWelcome">
-        <h1>Welcome to,<br/>Freshman Compass!</h1>
+        <h1>¡Bienvenido a,<br/>Freshman Compass!</h1>
         <p>Tu camino ya comenzó. Inicia sesión y sigue creciendo con nosotros.</p>
-        <button class="btn-outline" id="goLoginFromWelcome">Sign In</button>
+        <button class="btn-outline" id="goLoginFromWelcome">Iniciar sesión</button>
       </div>
 
     </div>
 
-    <!-- ── PANEL DERECHO ── -->
     <div class="panel panel-right" id="panelRight">
 
-      <!-- Estado A: Mensaje de bienvenida (modo login) -->
       <div class="welcome-section" id="loginWelcome">
-        <h1>Hello,<br/>Freshman!</h1>
+        <h1>Hola,<br/>Freshman!</h1>
         <p>Bienvenido a <strong>Freshman Compass,</strong> crece, aprende y alcanza el éxito en el Centro ¡Supérate! ADOC.</p>
-        <button class="btn-outline" id="goSignupFromWelcome">Create Account</button>
+        <button class="btn-outline" id="goSignupFromWelcome">Crear cuenta</button>
       </div>
 
       <!-- Estado B: Signup form (modo signup) -->
@@ -67,39 +62,38 @@
         <div class="logo-area">
           <img src="img/logoooooo.png" alt="Freshman Compass" class="logo-img">
         </div>
-        <h2 class="form-title">Create account</h2>
-        <p class="form-subtitle">Join Freshman Compass today</p>
+        <h2 class="form-title">Crear cuenta</h2>
+        <p class="form-subtitle">Únete a Freshman Compass hoy mismo.</p>
         <form action="php/signup.php" method="POST" class="form" novalidate>
           <div class="fields-row">
             <div class="field">
-              <label for="s-fname">First Name</label>
-              <input type="text" id="s-fname" name="first_name" placeholder="John" required/>
+              <label for="s-fname">nombre</label>
+              <input type="text" id="s-fname" name="first_name" placeholder="Isaac" required/>
             </div>
             <div class="field">
-              <label for="s-lname">Last Name</label>
-              <input type="text" id="s-lname" name="last_name" placeholder="Doe" required/>
+              <label for="s-lname">Apellido</label>
+              <input type="text" id="s-lname" name="last_name" placeholder="Reyes" required/>
             </div>
           </div>
           <div class="field">
-            <label for="s-email">Email</label>
-            <input type="email" id="s-email" name="email" placeholder="you@example.com" required/>
+            <label for="s-email">Correo electrónico</label>
+            <input type="email" id="s-email" name="email" placeholder="daniel.rivas2027@adoc.superate.org" required/>
             <span class="field-icon">✉</span>
           </div>
           <div class="field">
-            <label for="s-phone">Phone</label>
+            <label for="s-phone">Teléfono</label>
             <input type="tel" id="s-phone" name="phone" placeholder="+503 0000-0000" required/>
-            <span class="field-icon">📱</span>
+            <span class="field-icon"></span>
           </div>
           <div class="field">
-            <label for="s-pass">Password</label>
+            <label for="s-pass">Contraseña</label>
             <input type="password" id="s-pass" name="password" placeholder="Min. 8 characters" required/>
-            <span class="field-icon">🔒</span>
           </div>
-          <button type="submit" class="btn-primary teal-btn">Create Account</button>
+          <button type="submit" class="btn-primary teal-btn">Crear cuenta</button>
         </form>
         <p class="switch-text teal-switch">
-          Already have an account?
-          <button class="switch-btn teal-switch-btn" id="goLoginFromForm">Sign in</button>
+          ¿Ya tienes una cuenta?
+          <button class="switch-btn teal-switch-btn" id="goLoginFromForm">iniciar sesión</button>
         </p>
       </div>
 

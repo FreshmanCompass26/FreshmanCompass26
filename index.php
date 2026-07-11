@@ -80,11 +80,6 @@ $pagina_actual = "inicio";
                         </a>
                     </li>
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa-solid fa-gear"></i> Configuración
-                        </a>
-                    </li>
 
                     <li>
                         <a class="dropdown-item logout" href="php/logout.php">
@@ -138,43 +133,43 @@ $pagina_actual = "inicio";
         </div>
     </section>
 
-    <section class="cards-section container mt-4">
-        <div class="row g-4 justify-content-center">
+  <section class="cards-section container mt-4">
+    <div class="row g-4 justify-content-center">
 
-            <div class="col-md-3">
-                <div class="info-card">
-                    <i class="fa-solid fa-users"></i>
-                    <h5>Tutores</h5>
-                    <p>Apoyo educativo y acompañamiento constante.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="info-card">
-                    <i class="fa-solid fa-calendar"></i>
-                    <h5>Eventos</h5>
-                    <p>Conoce talleres y actividades educativas.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="info-card">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <h5>Proyectos</h5>
-                    <p>Participa en experiencias innovadoras.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="info-card">
-                    <i class="fa-solid fa-book"></i>
-                    <h5>Recursos</h5>
-                    <p>Materiales y contenido para aprender.</p>
-                </div>
-            </div>
-
+        <div class="col-md-3">
+            <a href="teachers.php" class="info-card" style="text-decoration: none; display: block;">
+                <i class="fa-solid fa-users"></i>
+                <h5>Teachers</h5>
+                <p>Apoyo educativo y acompañamiento constante.</p>
+            </a>
         </div>
-    </section>
+
+        <div class="col-md-3">
+            <a href="eventos.php" class="info-card" style="text-decoration: none; display: block;">
+                <i class="fa-solid fa-calendar"></i>
+                <h5>Eventos</h5>
+                <p>Conoce talleres y actividades educativas.</p>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="actividades.php" class="info-card" style="text-decoration: none; display: block;">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h5>Actividades</h5>
+                <p>Fomentando el aprendizaje de una manera totalmente interactiva.</p>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="recursos.php" class="info-card" style="text-decoration: none; display: block;">
+                <i class="fa-solid fa-book"></i>
+                <h5>Recursos</h5>
+                <p>Materiales y contenido para aprender.</p>
+            </a>
+        </div>
+
+    </div>
+</section>
 
 <section class="modern-benefits">
 

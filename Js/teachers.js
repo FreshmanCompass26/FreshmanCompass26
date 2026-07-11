@@ -1,262 +1,88 @@
-/*==========================================
-        TEACHERS | FRESHMAN COMPASS
-==========================================*/
-
 document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchTeacher");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const teacherCards = document.querySelectorAll(".teacher-card");
 
-    const cards = document.querySelectorAll(".teacher-card");
-    const buttons = document.querySelectorAll(".filter-btn");
-    const search = document.getElementById("searchTeacher");
+    const modal = document.getElementById("teacherModal");
+    const closeModal = document.querySelector(".close-modal");
+    const closeButton = document.getElementById("closeButton");
+    const profileButtons = document.querySelectorAll(".profile-btn");
 
-    let currentFilter = "all";
+    const modalImage = document.getElementById("modalImage");
+    const modalName = document.getElementById("modalName");
+    const modalSubject = document.getElementById("modalSubject");
+    const modalEmail = document.getElementById("modalEmail");
+    const modalSchedule = document.getElementById("modalSchedule");
+    const modalBirthday = document.getElementById("modalBirthday");
+    const modalQuote = document.getElementById("modalQuote");
+    const emailButton = document.getElementById("emailButton");
+    const copyEmailBtn = document.getElementById("copyEmail");
+    const toast = document.getElementById("toast");
 
-    /*==============================
-            FILTRAR TARJETAS
-    ==============================*/
+    let currentEmail = "";
 
-    function filterTeachers() {
+    // Buscador y filtros de categoría combinados
+    const filterTeachers = () => {
+        const searchValue = searchInput.value.toLowerCase().trim();
+        const activeFilter = document.querySelector(".filter-btn.active").getAttribute("data-filter");
 
-        const text = search.value.toLowerCase().trim();
+        teacherCards.forEach(card => {
+            const name = card.getAttribute("data-name");
+            const category = card.getAttribute("data-category");
 
-        cards.forEach(card => {
+            const matchesSearch = name.includes(searchValue);
+            const matchesFilter = activeFilter === "all" || category === activeFilter;
 
-            const category = card.dataset.category;
-            const name = card.dataset.name;
-
-            const matchCategory =
-                currentFilter === "all" ||
-                category === currentFilter;
-
-            const matchName =
-                name.includes(text);
-
-            if (matchCategory && matchName) {
-
-                card.style.removeProperty("display");
-
-                setTimeout(() => {
-
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-
-                }, 60);
-
+            if (matchesSearch && matchesFilter) {
+                card.style.display = "flex";
             } else {
-
                 card.style.display = "none";
-
             }
-
         });
+    };
 
-    }
+    searchInput.addEventListener("input", filterTeachers);
 
-    /*==============================
-            BOTONES
-    ==============================*/
-
-    buttons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            buttons.forEach(btn =>
-                btn.classList.remove("active")
-            );
-
-            button.classList.add("active");
-
-            currentFilter = button.dataset.filter;
-
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
             filterTeachers();
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
         });
-
     });
 
-    /*==============================
-            BUSCADOR
-    ==============================*/
+    // Abrir Modal con datos interactivos
+    profileButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            currentEmail = btn.getAttribute("data-email");
+            
+            modalImage.src = btn.getAttribute("data-image");
+            modalName.textContent = btn.getAttribute("data-name");
+            modalSubject.textContent = btn.getAttribute("data-subject");
+            modalEmail.innerHTML = `<i class="fa-solid fa-envelope"></i> ${currentEmail}`;
+            modalSchedule.innerHTML = `<i class="fa-regular fa-calendar"></i> ${btn.getAttribute("data-schedule")}`;
+            modalBirthday.innerHTML = `<i class="fa-solid fa-cake-candles"></i> ${btn.getAttribute("data-birthday")}`;
+            modalQuote.textContent = btn.getAttribute("data-quote");
 
-    search.addEventListener("keyup", filterTeachers);
+            // Acción dinámica para abrir Outlook/gestor nativo con el correo del maestro activo
+            emailButton.setAttribute("href", `mailto:${currentEmail}`);
 
-    search.addEventListener("input", filterTeachers);
-
-    /*==============================
-        HOVER TARJETAS
-    ==============================*/
-
-    cards.forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-
-            card.style.transition = ".35s";
-
+            modal.classList.add("show");
         });
-
     });
 
-    /*==============================
-         APARECER AL HACER SCROLL
-    ==============================*/
+    // Cerrar Modal
+    const hideModal = () => modal.classList.remove("show");
+    closeModal.addEventListener("click", hideModal);
+    closeButton.addEventListener("click", hideModal);
+    window.addEventListener("click", (e) => { if (e.target === modal) hideModal(); });
 
-    const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    }, {
-
-        threshold: .12
-
+    // Copiar Email en portapapeles
+    copyEmailBtn.addEventListener("click", () => {
+        if (!currentEmail) return;
+        navigator.clipboard.writeText(currentEmail).then(() => {
+            toast.classList.add("show");
+            setTimeout(() => { toast.classList.remove("show"); }, 2500);
+        }).catch(err => console.error("Error al copiar: ", err));
     });
-
-    cards.forEach(card => {
-
-        observer.observe(card);
-
-    });
-
-});
-/*==========================================
-            MODAL TEACHER
-==========================================*/
-
-const modal = document.getElementById("teacherModal");
-
-const modalImage = document.getElementById("modalImage");
-const modalName = document.getElementById("modalName");
-const modalSubject = document.getElementById("modalSubject");
-const modalEmail = document.getElementById("modalEmail");
-const modalSchedule = document.getElementById("modalSchedule");
-const modalBirthday = document.getElementById("modalBirthday");
-const modalQuote = document.getElementById("modalQuote");
-
-const closeModal = document.querySelector(".close-modal");
-
-document.querySelectorAll(".profile-btn").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        modalImage.src = button.dataset.image;
-
-        modalName.textContent = button.dataset.name;
-
-        modalSubject.textContent = button.dataset.subject;
-
-        modalEmail.innerHTML =
-            `<strong>Email:</strong> ${button.dataset.email}`;
-            // Configurar botón de enviar correo
-document.getElementById("emailButton").href =
-    `mailto:${button.dataset.email}`;
-        modalSchedule.innerHTML =
-            `<strong>Schedule:</strong> ${button.dataset.schedule}`;
-
-        modalBirthday.innerHTML =
-            `<strong>Birthday:</strong> ${button.dataset.birthday}`;
-
-        modalQuote.textContent =
-            `"${button.dataset.quote}"`;
-
-        modal.classList.add("show");
-
-    });
-
-});
-
-/* Cerrar con la X */
-
-closeModal.addEventListener("click", () => {
-
-    modal.classList.remove("show");
-
-});
-
-/* Cerrar haciendo clic fuera */
-
-window.addEventListener("click", (e) => {
-
-    if(e.target === modal){
-
-        modal.classList.remove("show");
-
-    }
-
-});
-
-/* Cerrar con ESC */
-
-document.addEventListener("keydown", (e) => {
-
-    if(e.key === "Escape"){
-
-        modal.classList.remove("show");
-
-    }
-
-});
-/*==========================================
-        BOTONES DEL MODAL
-==========================================*/
-
-const copyButton = document.getElementById("copyEmail");
-const closeButton = document.getElementById("closeButton");
-const toast = document.getElementById("toast");
-const toastMessage = document.getElementById("toastMessage");
-/* Copiar correo */
-
-copyButton.addEventListener("click", async () => {
-
-    const email = modalEmail.textContent.replace("Email:", "").trim();
-
-    try{
-
-        await navigator.clipboard.writeText(email);
-
-        toastMessage.textContent = "Email copied successfully!";
-
-        toast.classList.add("show");
-
-        setTimeout(() => {
-
-            toast.classList.remove("show");
-
-        }, 2200);
-
-    }catch(error){
-
-        toastMessage.textContent = "Couldn't copy the email.";
-
-        toast.classList.add("show");
-
-        setTimeout(() => {
-
-            toast.classList.remove("show");
-
-        }, 2200);
-
-    }
-
-});
-
-/* Cerrar */
-
-closeButton.addEventListener("click", () => {
-
-    modal.classList.remove("show");
-
 });

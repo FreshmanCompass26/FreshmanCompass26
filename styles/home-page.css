@@ -1,11 +1,13 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Montserrat', sans-serif;
+body {
+    font-family: 'Montserrat', sans-serif;
     background:
         radial-gradient(circle at 10% 20%, rgba(132,206,215,.15) 0 60px, transparent 60px),
         radial-gradient(circle at 90% 15%, rgba(132,206,215,.10) 0 40px, transparent 40px),
@@ -13,136 +15,128 @@ body{
         linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
 }
 
-
-.dots-top{
-    position:fixed;
-    top:40px;
-    right:80px;
-    width:120px;
-    height:80px;
-    z-index:-1;
-
-    background-image:
-        radial-gradient(#c8dfff 2px, transparent 2px);
-
-    background-size:16px 16px;
+.dots-top {
+    position: fixed;
+    top: 40px;
+    right: 80px;
+    width: 120px;
+    height: 80px;
+    z-index: -1;
+    background-image: radial-gradient(#c8dfff 2px, transparent 2px);
+    background-size: 16px 16px;
 }
 
-.dots-bottom{
-    position:fixed;
-    bottom:60px;
-    left:40px;
-    width:120px;
-    height:80px;
-    z-index:-1;
-
-    background-image:
-        radial-gradient(#c8dfff 2px, transparent 2px);
-
-    background-size:16px 16px;
+.dots-bottom {
+    position: fixed;
+    bottom: 60px;
+    left: 40px;
+    width: 120px;
+    height: 80px;
+    z-index: -1;
+    background-image: radial-gradient(#c8dfff 2px, transparent 2px);
+    background-size: 16px 16px;
 }
-
 
 .circle-1,
-.circle-2{
-    position:fixed;
-    border-radius:50%;
-    background:#dcecff;
-    z-index:-1;
+.circle-2 {
+    position: fixed;
+    border-radius: 50%;
+    background: #dcecff;
+    z-index: -1;
 }
 
-.circle-1{
-    width:40px;
-    height:40px;
-    top:120px;
-    right:120px;
+.circle-1 {
+    width: 40px;
+    height: 40px;
+    top: 120px;
+    right: 120px;
 }
 
-.circle-2{
-    width:30px;
-    height:30px;
-    bottom:180px;
-    left:20px;
+.circle-2 {
+    width: 30px;
+    height: 30px;
+    bottom: 180px;
+    left: 20px;
 }
 
-
-body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:220px;
-    height:180px;
-    background:#dcecff;
-    border-bottom-right-radius:100%;
-    opacity:.8;
-    z-index:-1;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 180px;
+    background: #dcecff;
+    border-bottom-right-radius: 100%;
+    opacity: .8;
+    z-index: -1;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    bottom:40px;
-    right:40px;
-    width:80px;
-    height:80px;
-    background:#dcecff;
-    border-radius:50%;
-    opacity:.5;
-    z-index:-1;
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    background: #dcecff;
+    border-radius: 50%;
+    opacity: .5;
+    z-index: -1;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 220px;
     height: 100vh;
-    background:#008080;
-    color:white;
-    z-index:1000;
-    overflow-y:auto;
+    background: #008080;
+    color: white;
+    z-index: 1000;
+    overflow-y: auto;
 }
 
-.sidebar-content{
-    padding:20px;
+.sidebar-content {
+    padding: 20px;
 }
 
-.logo img{
-    width:120px;
-    margin-bottom:30px;
+.logo img {
+    width: 120px;
+    margin-bottom: 30px;
 }
 
-.menu{
-    list-style:none;
-    padding:0;
+.menu {
+    list-style: none;
+    padding: 0;
+    font-family: inherit;
 }
 
-.menu li{
-    margin:25px 0;
-    font-size:15px;
-    cursor:pointer;
-    transition:0.3s;
+.menu li {
+    margin: 25px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.menu li:hover{
-    color:#ffd54f;
+.menu li:hover {
+    color: #ffd54f;
 }
 
-.menu i{
-    margin-right:10px;
+.menu i {
+    margin-right: 10px;
 }
 
-.main-content{
-    margin-left:220px;
-    width:calc(100% - 220px);
-    min-height:100vh;
-    background:transparent;
-    overflow-x:hidden;
-    padding-top:70px;
+.main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    min-height: 100vh;
+    background: transparent;
+    overflow-x: hidden;
+    padding-top: 70px;
 }
 
-.top-navbar{
+.top-navbar {
     position: fixed;
     top: 0;
     right: 0;
@@ -154,90 +148,101 @@ body::after{
     z-index: 2000;
 }
 
-.top-right{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.icons i{
-    font-size:22px;
-    margin-left:15px;
-    cursor:pointer;
+.icons i {
+    font-size: 22px;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
-.banner-section{
-    background:white;
-    margin:30px;
-    border-radius:20px;
-    padding:40px;
+.banner-section {
+    background: white;
+    margin: 30px;
+    border-radius: 20px;
+    padding: 40px;
 }
 
-.banner-section h1{
-    font-size:48px;
-    font-weight:bold;
-    color:#1d1d1d;
+.banner-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1d1d1d;
 }
 
-.banner-section h1 span{
-    color:#2C4B66;
+.banner-section h1 span {
+    color: #2C4B66;
 }
 
-.banner-section p{
-    margin:20px 0;
-    color:#555;
+.banner-section p {
+    margin: 20px 0;
+    color: #555;
 }
 
-.banner-img{
-    width:700px;
-    max-width:100%;
+.banner-img {
+    width: 700px;
+    max-width: 100%;
 }
 
-.info-card{
-    border-radius: 16px;
-    padding: 30px 20px;
+.info-card {
+    border-radius: 20px; 
+    padding: 35px 24px;
     text-align: center;
     height: 100%;
-    color: #2C4B66;
     background: #84CED7;
-    transition: transform 0.25s, box-shadow 0.25s;
-    position: relative;
-    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    
+    box-shadow: 0 8px 24px rgba(132, 206, 213, 0.2); 
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                background-color 0.3s ease;
 }
 
-.info-card i{
-    font-size: 38px;
-    margin-bottom: 16px;
+.info-card i {
+    font-size: 42px;
     color: #2C4B66;
+    transition: transform 0.3s ease;
 }
 
-.info-card h5{
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
+.info-card h5 {
+    font-size: 20px;
+    font-weight: 700;
     color: #2C4B66;
-}
-
-.info-card p{
-    font-size: 13px;
-    color: #1d5060;
-    line-height: 1.55;
     margin: 0;
 }
 
-.info-card:hover{
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(44, 75, 102, 0.25);
+.info-card p {
+    font-size: 14px;
+    color: #1a3b47;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
 }
-/* =====================================
-   SECCIÓN BENEFICIOS
-===================================== */
 
-.modern-benefits{
+.info-card:hover {
+    transform: translateY(-8px); 
+    background-color: #6ec2cd; 
+    box-shadow: 0 16px 32px rgba(44, 75, 102, 0.25);
+}
+
+.info-card:hover i {
+    transform: scale(1.12); 
+}
+
+.modern-benefits {
     padding: 60px 40px;
 }
 
-.section-mini-title{
+.section-mini-title {
     color: #84CED7;
     font-size: 13px;
     font-weight: 700;
@@ -246,20 +251,20 @@ body::after{
     margin-bottom: 10px;
 }
 
-.section-title{
+.section-title {
     font-size: 42px;
     font-weight: 800;
     margin-bottom: 40px;
     color: #2C4B66;
 }
 
-.benefits-modern-grid{
+.benefits-modern-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.modern-card{
+.modern-card {
     border-radius: 20px;
     padding: 30px;
     display: flex;
@@ -268,49 +273,47 @@ body::after{
     transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.modern-card:hover{
+.modern-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 32px rgba(44,75,102,0.18);
 }
 
-/* Card 1 — azul oscuro */
-/* Card 1 — azul oscuro */
 .blue-card,
 .green-card,
 .yellow-card,
-.purple-card{
+.purple-card {
     background: #2C4B66;
 }
 
 .blue-card h3,
 .green-card h3,
 .yellow-card h3,
-.purple-card h3{
+.purple-card h3 {
     color: white;
 }
 
 .blue-card p,
 .green-card p,
 .yellow-card p,
-.purple-card p{
+.purple-card p {
     color: rgba(255,255,255,0.75);
 }
 
 .blue-card .icon-circle,
 .green-card .icon-circle,
 .yellow-card .icon-circle,
-.purple-card .icon-circle{
+.purple-card .icon-circle {
     background: rgba(132,206,215,0.2);
 }
 
 .blue-card .icon-circle i,
 .green-card .icon-circle i,
 .yellow-card .icon-circle i,
-.purple-card .icon-circle i{
+.purple-card .icon-circle i {
     color: #84CED7;
 }
 
-.icon-circle{
+.icon-circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -320,37 +323,33 @@ body::after{
     flex-shrink: 0;
 }
 
-.icon-circle i{
+.icon-circle i {
     font-size: 36px;
 }
 
-.modern-card h3{
+.modern-card h3 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.modern-card p{
+.modern-card p {
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
 }
 
-/* =====================================
-   TESTIMONIOS
-===================================== */
-
-.testimonials-section{
+.testimonials-section {
     padding: 40px;
 }
 
-.testimonials-grid{
+.testimonials-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
 }
 
-.testimonial-card{
+.testimonial-card {
     background: white;
     border-radius: 25px;
     padding: 30px;
@@ -358,11 +357,11 @@ body::after{
     transition: 0.3s;
 }
 
-.testimonial-card:hover{
+.testimonial-card:hover {
     transform: translateY(-8px);
 }
 
-.testimonial-card img{
+.testimonial-card img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -370,29 +369,25 @@ body::after{
     margin-bottom: 20px;
 }
 
-.testimonial-card p{
+.testimonial-card p {
     font-size: 18px;
     color: #333;
     margin-bottom: 20px;
     line-height: 1.7;
 }
 
-.testimonial-card h4{
+.testimonial-card h4 {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.testimonial-card span{
+.testimonial-card span {
     color: #666;
     font-size: 15px;
 }
 
-/* =====================================
-   FLOAT BOT
-===================================== */
-
-.compass-float{
+.compass-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -411,20 +406,16 @@ body::after{
     transition: .3s;
 }
 
-.compass-float:hover{
+.compass-float:hover {
     transform: scale(1.1);
     background: #84CED7;
 }
 
-/* =====================================
-   TARJETAS FRESHMAN COMPASS
-===================================== */
-
-.about-cards-section{
+.about-cards-section {
     padding: 70px 40px;
 }
 
-.about-title{
+.about-title {
     text-align: center;
     color: #2C4B66;
     font-size: 42px;
@@ -432,7 +423,7 @@ body::after{
     margin-bottom: 40px;
 }
 
-.about-cards{
+.about-cards {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 25px;
@@ -440,7 +431,7 @@ body::after{
     margin: auto;
 }
 
-.about-card{
+.about-card {
     background: #fff;
     border-radius: 25px;
     padding: 30px;
@@ -449,57 +440,56 @@ body::after{
     transition: .3s;
 }
 
-.about-card:hover{
+.about-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(0,0,0,.15);
 }
 
-.about-mini-title{
-    text-align:center;
-    color:#84CED7;
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:2px;
-    margin-bottom:10px;
-    text-transform:uppercase;
+.about-mini-title {
+    text-align: center;
+    color: #84CED7;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.about-subtitle{
-    text-align:center;
-    color:#7a86a1;
-    font-size:16px;
-    margin-bottom:50px;
+.about-subtitle {
+    text-align: center;
+    color: #7a86a1;
+    font-size: 16px;
+    margin-bottom: 50px;
 }
 
-.about-note{
-    width:fit-content;
-    margin:40px auto 0;
-    background:#eaf2ff;
-    color:#3b5ccc;
-    padding:12px 24px;
-    border-radius:50px;
-    font-weight:600;
-    box-shadow:0 5px 15px rgba(59,92,204,.15);
+.about-note {
+    width: fit-content;
+    margin: 40px auto 0;
+    background: #eaf2ff;
+    color: #3b5ccc;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(59,92,204,.15);
 }
 
-.about-card:nth-child(1){
-    border-bottom:4px solid #3b82f6;
+.about-card:nth-child(1) {
+    border-bottom: 4px solid #3b82f6;
 }
 
-.about-card:nth-child(2){
-    border-bottom:4px solid #34d399;
+.about-card:nth-child(2) {
+    border-bottom: 4px solid #34d399;
 }
 
-.about-card:nth-child(3){
-    border-bottom:4px solid #8b5cf6;
+.about-card:nth-child(3) {
+    border-bottom: 4px solid #8b5cf6;
 }
 
-.about-card:nth-child(4){
-    border-bottom:4px solid #f59e0b;
+.about-card:nth-child(4) {
+    border-bottom: 4px solid #f59e0b;
 }
 
-
-.card-icon{
+.card-icon {
     width: 85px;
     height: 85px;
     margin: auto auto 20px;
@@ -510,219 +500,172 @@ body::after{
     align-items: center;
 }
 
-.card-icon i{
+.card-icon i {
     font-size: 35px;
     color: #2C4B66;
 }
 
-.about-card h3{
+.about-card h3 {
     color: #2C4B66;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
-.about-card p{
+.about-card p {
     color: #555;
     line-height: 1.8;
     margin: 0;
 }
 
-.benefits-section{ padding: 40px; }
+.benefits-section {
+    padding: 40px;
+}
 
-.btn-logout{
+.btn-logout {
     background: none;
     border: 2px solid #ff4d4d;
     color: #ff4d4d;
     border-radius: 20px;
     padding: 8px 16px;
     font-weight: bold;
+    font-family: inherit;
     transition: 0.3s;
 }
 
-.btn-logout:hover{
+.btn-logout:hover {
     background: #ff4d4d;
     color: white;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-@media(max-width:992px){
-
-    .benefits-modern-grid{
+@media(max-width:992px) {
+    .benefits-modern-grid {
         grid-template-columns: 1fr;
     }
-
-    .testimonials-grid{
+    .testimonials-grid {
         grid-template-columns: 1fr;
     }
-
-    .section-title{
+    .section-title {
         font-size: 32px;
     }
-
-    .about-cards{
+    .about-cards {
         grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width: 768px){
-
-    /* SIDEBAR */
-    .sidebar{
-        width:70px;
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
     }
-
-    /* CONTENIDO */
-    .main-content{
-        margin-left:70px;
-        width:calc(100% - 70px);
-        padding-top:80px;
+    .main-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+        padding-top: 80px;
     }
-
-    /* NAVBAR */
-    .top-navbar{
-        width:calc(100% - 70px);
-        padding:15px;
+    .top-navbar {
+        width: calc(100% - 70px);
+        padding: 15px;
     }
-
-    /* Banner */
-    .banner-section{
-        margin:15px;
-        padding:25px 20px;
+    .banner-section {
+        margin: 15px;
+        padding: 25px 20px;
     }
-
-    .banner-section .row{
-        flex-direction:column-reverse;
-        text-align:center;
+    .banner-section .row {
+        flex-direction: column-reverse;
+        text-align: center;
     }
-
-    .banner-section h1{
-        font-size:40px;
-        line-height:1.2;
-        margin-top:20px;
+    .banner-section h1 {
+        font-size: 40px;
+        line-height: 1.2;
+        margin-top: 20px;
     }
-
-    .banner-section p{
-        font-size:16px;
+    .banner-section p {
+        font-size: 16px;
     }
-
-    .banner-img{
-        width:100%;
-        max-width:320px;
-        margin:auto;
+    .banner-img {
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
     }
-
-    /* Beneficios */
-    .modern-benefits{
-        padding:40px 20px;
+    .modern-benefits {
+        padding: 40px 20px;
     }
-
-    .benefits-modern-grid{
-        grid-template-columns:1fr;
+    .benefits-modern-grid {
+        grid-template-columns: 1fr;
     }
-
-    .modern-card{
-        flex-direction:column;
-        text-align:center;
+    .modern-card {
+        flex-direction: column;
+        text-align: center;
     }
-
-    /* Testimonios */
-    .testimonials-section{
-        padding:40px 20px;
+    .testimonials-section {
+        padding: 40px 20px;
     }
-
-    .testimonials-grid{
-        grid-template-columns:1fr;
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
-
-    /* Acerca de */
-    .about-cards-section{
-        padding:40px 20px;
+    .about-cards-section {
+        padding: 40px 20px;
     }
-
-    .about-cards{
-        grid-template-columns:1fr;
+    .about-cards {
+        grid-template-columns: 1fr;
     }
-
-    /* Títulos */
     .section-title,
-    .about-title{
-        font-size:30px;
+    .about-title {
+        font-size: 30px;
     }
-
-    /* Tarjetas */
-    .cards-section .col-md-3{
-        width:100%;
+    .cards-section .col-md-3 {
+        width: 100%;
     }
-
 }
-/*====================================
-        HOME RESPONSIVE
-=====================================*/
 
-@media (max-width: 768px){
-
-    .banner-section{
-        margin:15px;
-        padding:25px 20px;
+@media (max-width: 768px) {
+    .banner-section {
+        margin: 15px;
+        padding: 25px 20px;
     }
-
-    .banner-section .row{
-        display:flex;
-        flex-direction:column-reverse;
-        align-items:center;
-        text-align:center;
+    .banner-section .row {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
     }
-
-    .banner-section .col-md-6{
-        width:100%;
-        max-width:100%;
-        flex:0 0 100%;
+    .banner-section .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
     }
-
-    .banner-section h1{
-        font-size:38px;
-        line-height:1.2;
-        margin-top:20px;
+    .banner-section h1 {
+        font-size: 38px;
+        line-height: 1.2;
+        margin-top: 20px;
     }
-
-    .banner-section p{
-        font-size:16px;
-        max-width:100%;
+    .banner-section p {
+        font-size: 16px;
+        max-width: 100%;
     }
-
-    .banner-img{
-        width:100%;
-        max-width:320px;
-        margin:auto;
+    .banner-img {
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
     }
-
-    .cards-section .col-md-3{
-        width:100%;
+    .cards-section .col-md-3 {
+        width: 100%;
     }
-
     .modern-benefits,
     .testimonials-section,
-    .about-cards-section{
-        padding:40px 20px;
+    .about-cards-section {
+        padding: 40px 20px;
     }
-
     .benefits-modern-grid,
     .testimonials-grid,
-    .about-cards{
-        grid-template-columns:1fr;
+    .about-cards {
+        grid-template-columns: 1fr;
     }
-
-    .modern-card{
-        flex-direction:column;
-        text-align:center;
+    .modern-card {
+        flex-direction: column;
+        text-align: center;
     }
-
     .section-title,
-    .about-title{
-        font-size:30px;
+    .about-title {
+        font-size: 30px;
     }
-
 }

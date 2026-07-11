@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -24,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 20px;
 }
 
@@ -88,7 +90,6 @@ body {
   width: 100%;
 }
 .welcome-section h1 {
-  font-family: 'Playfair Display', serif;
   font-size: 2.8rem; line-height: 1.15;
   margin-bottom: 14px;
   color: var(--black);
@@ -142,7 +143,7 @@ body {
   border-radius: 9px;
   padding: 0 34px 0 13px;
   font-size: 0.87rem;
-  font-family: 'Inter', sans-serif;
+  font-family: inherit;
   color: var(--text-dark);
   background: var(--off-white);
   outline: none;
@@ -176,6 +177,7 @@ body {
   height: 43px; border: none; border-radius: 9px;
   background: var(--teal); color: var(--white);
   font-size: 0.91rem; font-weight: 600;
+  font-family: inherit;
   cursor: pointer; margin-top: 3px; letter-spacing: 0.3px;
   transition: background 0.22s, transform 0.15s, box-shadow 0.22s;
   box-shadow: 0 4px 14px rgba(148,206,215,0.42);
@@ -193,6 +195,7 @@ body {
   border: 2px solid rgba(255,255,255,0.85);
   border-radius: 9px; background: transparent;
   color: var(--white); font-size: 0.9rem; font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
   transition: background 0.22s, transform 0.15s;
 }
@@ -206,6 +209,7 @@ body {
 .switch-btn {
   background: none; border: none;
   font-size: 0.81rem; font-weight: 700;
+  font-family: inherit;
   color: var(--teal-deep); cursor: pointer; padding: 0;
   transition: color 0.2s;
 }

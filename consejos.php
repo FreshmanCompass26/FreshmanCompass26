@@ -35,8 +35,7 @@ $resultado = $conn->query($sqlCards);
 <div class="contenido">
 
     <div class="titulo">
-        <div class="bombilla"><i class="fa-solid fa-lightbulb"></i></div>
-        <h1>Consejos</h1>
+   <h1>Consejos</h1>
     </div>
 
     <div class="banner-consejo">

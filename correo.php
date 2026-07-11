@@ -147,7 +147,7 @@ $casos = [
         <video controls>
 
             <source
-                src="videos/tutorial-correo.mp4"
+                src="uploads/videos/crear-correo.mp4"
                 type="video/mp4">
 
         </video>

@@ -113,5 +113,48 @@ if ($pagina_actual == "nuestro_centro") {
     </div>
 
 </div>
+<!-- NAVBAR MÓVIL -->
+<div class="mobile-navbar">
 
+    <a href="index.php" class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </a>
+
+
+    <?php if (isset($_SESSION['nombre'])) { ?>
+
+        <a href="teachers.php" class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Teachers</span>
+        </a>
+
+
+        <a href="consejos.php" class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Consejos</span>
+        </a>
+
+
+        <a href="actividades.php" class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Actividades</span>
+        </a>
+
+
+        <a href="nuestro_centro.php" class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+            <i class="fa-solid fa-school"></i>
+            <span>Centro</span>
+        </a>
+
+
+        <a href="eventos.php" class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Eventos</span>
+        </a>
+
+
+    <?php } ?>
+
+</div>
 <script src="../Js/navbar.js"></script>

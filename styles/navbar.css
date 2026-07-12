@@ -322,18 +322,7 @@
     }
 }
 
-@media (max-width:768px){
 
-.sidebar{
-    display:none;
-}
-
-.main-content{
-    margin-left:0;
-    padding-bottom:90px;
-}
-
-}
 
 /*==================================
         NAVBAR APP PREMIUM
@@ -366,30 +355,21 @@
 .mobile-navbar{
 
     position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
 
-    bottom:15px;
+    height:85px;
 
-    left:12px;
-
-    right:12px;
-
-    height:78px;
-
-    background:#081847;
-
-    border-radius:28px;
+    background:white;
 
     display:flex;
-
-    justify-content:space-evenly;
-
+    justify-content:space-around;
     align-items:center;
 
-    box-shadow:
-        0 20px 45px rgba(8,24,71,.35);
+    box-shadow:0 -5px 20px rgba(0,0,0,.12);
 
     z-index:999999;
-
 }
 
 /* Botones */
@@ -408,7 +388,7 @@
 
     text-decoration:none;
 
-    color:white;
+    color: #3567c7;
 
     transition:.35s;
 
@@ -478,7 +458,7 @@
 
 .mobile-navbar a.active span{
 
-    color:#7DDCFF;
+    color:#3567c7;
 
 }
 

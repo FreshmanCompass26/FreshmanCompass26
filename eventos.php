@@ -101,7 +101,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </div>
 
     <div class="more-container">
-        <a href="mas-eventos.php" class="more-btn">
+        <a href="./mas-eventos.php" class="more-btn">
             Ver más eventos
             <i class="fa-solid fa-arrow-right"></i>
         </a>

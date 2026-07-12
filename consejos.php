@@ -1,6 +1,6 @@
 <?php
 include("php/conexion.php");
-include("php/navbar.php");
+
 
 $mostrarTodos = isset($_GET['todos']);
 
@@ -26,11 +26,12 @@ $resultado = $conn->query($sqlCards);
     <link rel="stylesheet" href="styles/consejos.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="favicon" href="/img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png?v=1">
     <link rel="stylesheet" href="styles/footer.css">
 </head>
 
 <body>
+<?php include("php/navbar.php"); ?>
 
 <div class="contenido">
 

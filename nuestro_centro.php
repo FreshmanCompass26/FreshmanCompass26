@@ -48,7 +48,7 @@ $pagina_actual = "centro";
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a class="dropdown-item" href="perfil.html">
+                        <a class="dropdown-item" href="profile.php">
                             <i class="fa-regular fa-user"></i> Perfil
                         </a>
                     </li>
@@ -110,7 +110,7 @@ $pagina_actual = "centro";
 
             <div class="card">
                 <div class="card-photo-placeholder">
-                    <img src="img/recursos.jpeg" alt="Centro de Recursos">
+                    <img src="img/recursos.png" alt="Centro de Recursos">
                 </div>
                 <div class="card-body">
                     <div class="card-icon-wrap teal">

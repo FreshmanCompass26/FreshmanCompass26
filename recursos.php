@@ -56,9 +56,7 @@ session_start();
             </h1>
 
             <p class="subtitulo">
-
-                Aprende y fortalece tus conocimientos con recursos recomendados.
-
+                Encuentra herramientas y recursos gratuitos para fortalecer tus habilidades en Informática, Inglés y Valores.
             </p>
 
         </section>

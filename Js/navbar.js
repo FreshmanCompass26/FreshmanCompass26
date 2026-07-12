@@ -7,7 +7,12 @@ const frases = [
   { texto: "Tu futuro se construye con lo que haces hoy, no mañana.", autor: "— Inspirada en Robert Kiyosaki" },
   { texto: "El éxito no llega por suerte, llega por esfuerzo.", autor: "— Autor desconocido." },
   { texto: "La constancia siempre termina dando resultados.", autor: "— TheGrefg" },
-  { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" }
+  { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" },
+  { texto: "Los grandes logros comienzan con la decisión de intentarlo.", autor: "— Autor desconocido" },
+  { texto: "Aprender es el primer paso para transformar tus sueños en metas.", autor: "— Autor desconocido" },
+  { texto: "Cada pequeño esfuerzo de hoy será una gran recompensa mañana.", autor: "— Autor desconocido" },
+  { texto: "Confía en ti mismo; eres capaz de mucho más de lo que imaginas.", autor: "— Autor desconocido" },
+  { texto: "El conocimiento es la brújula que guía el camino hacia el éxito.", autor: "— Inspirada en Francis Bacon" }
 ];
 
 function mostrarFraseAleatoria() {

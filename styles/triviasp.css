@@ -1,8 +1,38 @@
-/* ============================================
-   TRIVIA — FreshmanCompass
-   Misma paleta y tipografía que actividades.html
-   ============================================ */
+.btn-regresar{
+    position: fixed;
+    top: 25px;
+    left: 25px;
 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #2F4F6F;
+    color: #fff;
+    text-decoration: none;
+
+    padding: 12px 20px;
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 8px 20px rgba(47,79,111,.20);
+
+    transition: all .3s ease;
+    z-index: 1000;
+}
+
+.btn-regresar:hover{
+    background: #9DD8E5;
+    color: #2F4F6F;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(47,79,111,.25);
+}
+
+.btn-regresar i{
+    font-size: 16px;
+}
 :root{
     --blue: #2563eb;
     --blue-dark: #1b4dc4;

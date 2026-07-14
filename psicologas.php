@@ -18,7 +18,14 @@ $pagina_actual = "consejos";
 </head>
 <body>
 
+
+
 <?php include 'php/navbar.php'; ?>
+
+    <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
 
     <!-- Contenido -->
     <main class="content">

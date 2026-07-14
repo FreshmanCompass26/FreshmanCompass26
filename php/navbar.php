@@ -90,9 +90,9 @@ if ($pagina_actual == "nuestro_centro") {
 <!-- NAVBAR MÓVIL -->
 <div class="mobile-navbar">
 
-<<<<<<< HEAD
+
 <script src="js/navbar.js"></script>
-=======
+
     <a href="index.php" class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
         <i class="fa-solid fa-house"></i>
         <span>Inicio</span>
@@ -135,4 +135,3 @@ if ($pagina_actual == "nuestro_centro") {
 
 </div>
 <script src="../Js/navbar.js"></script>
->>>>>>> e3af0550987c04e13515bb504e8df2b369a4c6d0

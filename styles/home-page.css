@@ -535,136 +535,178 @@ body::after {
     background: #ff4d4d;
     color: white;
 }
+@media (max-width: 992px) {
 
-@media(max-width:992px) {
-    .benefits-modern-grid {
-        grid-template-columns: 1fr;
-    }
+    .benefits-modern-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+
+    .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .section-title {
         font-size: 32px;
-    }
-    .about-cards {
-        grid-template-columns: repeat(2,1fr);
     }
 }
 
 @media (max-width: 768px) {
+
+    /* Sidebar */
     .sidebar {
         width: 70px;
     }
+
     .main-content {
         margin-left: 70px;
         width: calc(100% - 70px);
         padding-top: 80px;
     }
+
     .top-navbar {
         width: calc(100% - 70px);
         padding: 15px;
     }
-    .banner-section {
-        margin: 15px;
-        padding: 25px 20px;
-    }
-    .banner-section .row {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    .banner-section h1 {
-        font-size: 40px;
-        line-height: 1.2;
-        margin-top: 20px;
-    }
-    .banner-section p {
-        font-size: 16px;
-    }
-    .banner-img {
-        width: 100%;
-        max-width: 320px;
-        margin: auto;
-    }
-    .modern-benefits {
-        padding: 40px 20px;
-    }
-    .benefits-modern-grid {
-        grid-template-columns: 1fr;
-    }
-    .modern-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    .testimonials-section {
-        padding: 40px 20px;
-    }
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-cards-section {
-        padding: 40px 20px;
-    }
-    .about-cards {
-        grid-template-columns: 1fr;
-    }
-    .section-title,
-    .about-title {
-        font-size: 30px;
-    }
-    .cards-section .col-md-3 {
-        width: 100%;
-    }
-}
 
-@media (max-width: 768px) {
+    /* Banner */
     .banner-section {
         margin: 15px;
         padding: 25px 20px;
     }
+
     .banner-section .row {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
     }
+
     .banner-section .col-md-6 {
         width: 100%;
         max-width: 100%;
         flex: 0 0 100%;
     }
+
     .banner-section h1 {
         font-size: 38px;
         line-height: 1.2;
         margin-top: 20px;
     }
+
     .banner-section p {
         font-size: 16px;
         max-width: 100%;
     }
+
     .banner-img {
         width: 100%;
         max-width: 320px;
         margin: auto;
     }
-    .cards-section .col-md-3 {
-        width: 100%;
-    }
+
+    /* Secciones */
     .modern-benefits,
     .testimonials-section,
     .about-cards-section {
         padding: 40px 20px;
     }
+
     .benefits-modern-grid,
     .testimonials-grid,
     .about-cards {
         grid-template-columns: 1fr;
     }
+
     .modern-card {
         flex-direction: column;
         text-align: center;
     }
+
     .section-title,
     .about-title {
         font-size: 30px;
     }
+
+    .cards-section .col-md-3 {
+        width: 100%;
+    }
+
+    /* TESTIMONIOS */
+    .testimonial-card {
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .testimonial-card img {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .testimonial-card h3 {
+        font-size: 28px;
+    }
+
+    .testimonial-card p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.reveal-zoom {
+    opacity: 0;
+    transform: scale(.85);
+    transition: all 0.8s ease;
+}
+
+.reveal-zoom.active {
+    opacity: 1;
+    transform: scale(1);
 }

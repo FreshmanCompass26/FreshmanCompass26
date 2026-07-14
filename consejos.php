@@ -154,5 +154,8 @@ $resultado = $conn->query($sqlCards);
 
 <?php include 'php/footer.php'; ?>
 
+
+
+<script src="js/navbar.js"></script>
 </body>
 </html>

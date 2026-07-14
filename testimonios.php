@@ -46,6 +46,11 @@ if (!$resultado) {
 
 <?php include("php/navbar.php"); ?>
 
+    <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
+
 <!-- TOP NAVBAR -->
 <div class="top-navbar">
     <div class="top-right">

@@ -30,6 +30,11 @@ $resultado = mysqli_query($conn, $sql);
 
 <body>
 
+  <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
+
     <div class="top-navbar">
 
     <div class="top-right">

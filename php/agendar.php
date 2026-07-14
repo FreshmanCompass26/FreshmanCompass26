@@ -118,7 +118,8 @@
                         <h3>Jessica Angel</h3>
 
                         <span class="especialidad">
-                            Psicóloga Clínica
+                            
+                            Psicóloga Educativa
                         </span>
 
                         <div class="rating">
@@ -128,9 +129,9 @@
 
                         <div class="info">
 
-                            <p>
-                                <i class="fa-solid fa-brain"></i>
-                                Salud emocional
+                             <p>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Atención académica
                             </p>
 
                             <p>
@@ -160,7 +161,7 @@
                         <h3>Blanca Meléndez</h3>
 
                         <span class="especialidad">
-                            Psicóloga Familiar
+                            Psicóloga Educativa
                         </span>
 
                         <div class="rating">
@@ -170,9 +171,9 @@
 
                         <div class="info">
 
-                            <p>
-                                <i class="fa-solid fa-users"></i>
-                                Terapia familiar
+                             <p>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Atención académica
                             </p>
 
                             <p>

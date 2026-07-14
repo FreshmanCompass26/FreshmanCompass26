@@ -1,40 +1,37 @@
-.btn-back{
-    position: absolute;
-    top: 30px;
-    left: 30px;
-
-    width: 52px;
-    height: 52px;
+.btn-regresar{
+    position: fixed;
+    top: 25px;
+    left: 25px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 8px;
 
-    background: rgba(255,255,255,.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    color: #1B3B6F;
+    background: #2F4F6F;
+    color: #fff;
     text-decoration: none;
 
-    border: 1px solid rgba(255,255,255,.8);
-    border-radius: 50%;
+    padding: 12px 20px;
+    border-radius: 50px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    font-size: 16px;
+    font-weight: 600;
 
-    transition: .3s ease;
+    box-shadow: 0 8px 20px rgba(47,79,111,.20);
+
+    transition: all .3s ease;
     z-index: 1000;
 }
 
-.btn-back i{
-    font-size: 20px;
+.btn-regresar:hover{
+    background: #9DD8E5;
+    color: #2F4F6F;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(47,79,111,.25);
 }
 
-.btn-back:hover{
-    background: #2F66F3;
-    color: #fff;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 24px rgba(47,102,243,.35);
+.btn-regresar i{
+    font-size: 16px;
 }
 
 :root{
@@ -65,6 +62,8 @@ body{
     font-family:'Inter', 'Segoe UI', sans-serif;
     color:var(--navy);
 }
+
+
 
 h1, h2, h3, .btn-main, .play, .hero-tag, .mini-title{
     font-family:'Plus Jakarta Sans', 'Segoe UI', sans-serif;

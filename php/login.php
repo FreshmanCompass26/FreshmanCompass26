@@ -33,13 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         } else {
 
-            echo "Contraseña incorrecta";
+            $_SESSION['login_error'] = "Contraseña incorrecta";
+            header("Location: ../login.php");
+            exit();
 
         }
 
     } else {
 
-        echo "Usuario no encontrado";
+        $_SESSION['login_error'] = "Usuario no encontrado";
+        header("Location: ../login.php");
+        exit();
 
     }
 

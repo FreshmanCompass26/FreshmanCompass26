@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+$loginError = $_SESSION['login_error'] ?? null;
+unset($_SESSION['login_error']);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Freshman Compass – Login</title>
   <link rel="stylesheet" href="styles/auth.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
 </head>
 <body>
@@ -22,6 +28,14 @@
         </div>
         <h2 class="form-title">Bienvenido de nuevo</h2>
         <p class="form-subtitle">Inicia sesión en tu cuenta</p>
+
+        <?php if ($loginError): ?>
+          <div class="form-error">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <?= htmlspecialchars($loginError) ?>
+          </div>
+        <?php endif; ?>
+
         <form action="php/login.php" method="POST" class="form" novalidate>
           <div class="field">
             <label for="l-email">Correo electrónico</label>

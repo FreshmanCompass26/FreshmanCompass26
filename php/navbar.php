@@ -75,43 +75,17 @@ if ($pagina_actual == "nuestro_centro") {
             $inicial = strtoupper(substr($nombre, 0, 1));
         ?>
 
-    
-
     <?php else: ?>
 
 
     <?php endif; ?>
 
+    <!-- Contenedor dinámico -->
     <div class="quote">
-
-        <?php if ($pagina_actual == "inicio") { ?>
-            <p>Cada nuevo comienzo trae nuevas oportunidades.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "teachers") { ?>
-            <p>Un buen maestro puede cambiar una vida.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "consejos") { ?>
-            <p>Los pequeños hábitos crean grandes resultados.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "psicologas") { ?>
-            <p>Pedir ayuda también es una muestra de fortaleza.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "eventos") { ?>
-            <p>Cada experiencia es una oportunidad para crecer.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "centro") { ?>
-            <p>Tu escuela también es parte de tu historia.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "salones") { ?>
-            <p>Tu lugar de estudio te da buenas vibras.</p>
-            <small>Freshman Compass</small>
-        <?php } elseif ($pagina_actual == "compassbot") { ?>
-            <p>Una ayuda hace más que millones de dolares.</p>
-            <small>Freshman Compass</small>
-        <?php } ?>
-
+        <p id="texto-frase">Cargando frase...</p>
+        <small id="autor-frase"></small>
     </div>
 
 </div>
 
-<script src="../Js/navbar.js"></script>
+<script src="js/navbar.js"></script>

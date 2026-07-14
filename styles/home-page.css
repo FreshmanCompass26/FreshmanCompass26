@@ -172,9 +172,8 @@ body::after {
     font-weight: bold;
     color: #1d1d1d;
 }
-
 .banner-section h1 span {
-    color: #2C4B66;
+    color: #081847;
 }
 
 .banner-section p {
@@ -478,15 +477,15 @@ body::after {
 }
 
 .about-card:nth-child(2) {
-    border-bottom: 4px solid #34d399;
+    border-bottom: 4px solid #3b82f6;
 }
 
 .about-card:nth-child(3) {
-    border-bottom: 4px solid #8b5cf6;
+    border-bottom: 4px solid #3b82f6;
 }
 
 .about-card:nth-child(4) {
-    border-bottom: 4px solid #f59e0b;
+    border-bottom: 4px solid #3b82f6;
 }
 
 .card-icon {

@@ -64,8 +64,10 @@ $pagina_actual = "centro";
                             <label>Año de graduación</label>
                             <div class="wrapper-input">
                                 <span class="icono-placeholder"><i class="fa-solid fa-graduation-cap"></i></span>
-                                <select name="anio_graduacion" required>
+                                <select name="anio_graduacion" required>´
+
                                     <option value="">Selecciona tu año de graduación</option>
+                                    <option value="">No aplica</option>
                                     <?php
                                     $anioActual = date("Y");
                                     for($i = $anioActual; $i >= 2010; $i--){

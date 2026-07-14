@@ -260,99 +260,23 @@ body{
     background:var(--celeste);
     color:var(--azul);
 }
+
+/* ===== TABLET / 1000px ===== */
 @media (max-width:1000px){
 
-  .contenido{
-    margin-left:250px;
-    padding:30px;
-    transition:.3s;
-}
-
-@media(max-width:768px){
-
-.tips-grid{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-
-}
-
-.tip-card{
-
-    min-height:170px;
-    padding:12px;
-
-}
-
-.tip-info{
-
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-
-}
-
-.tip-info img{
-
-    width:65px;
-
-}
-
-.tip-info h4{
-
-    font-size:15px;
-
-}
-
-.tip-info p{
-
-    font-size:12px;
-
-}
-
-}
-
-@media (max-width:768px){
-
     .contenido{
-        margin-left:0 !important;
-        width:100%;
-        padding:15px;
-        padding-bottom:110px;
+        margin-left:250px;
+        padding:30px;
     }
 
 }
 
-    .consejos-container{
-        grid-template-columns:1fr;
-    }
-
-    .psicologas-card{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .psicologas-info{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .psicologas-img{
-        width:180px;
-    }
-
-    .psicologas-img img{
-        width:170px;
-    }
-
-}
-
+/* ===== MÓVIL / 768px ===== */
 @media (max-width:768px){
 
     .contenido{
         margin-left:0;
+        width:100%;
         padding:20px;
         padding-bottom:120px;
     }
@@ -388,8 +312,20 @@ body{
         align-items:flex-start;
     }
 
+    .consejos-container{
+        grid-template-columns:1fr;
+    }
+
     .psicologas-card{
+        flex-direction:column;
+        text-align:center;
         padding:20px;
+    }
+
+    .psicologas-info{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
     }
 
     .psicologas-info h2{
@@ -407,24 +343,59 @@ body{
         justify-content:center;
     }
 
-    .card{
-        flex-direction:column-reverse;
-        text-align:center;
-        gap:18px;
-        padding-top:45px;
+    .psicologas-img{
+        width:180px;
     }
 
-    .info{
-        width:100%;
+    .psicologas-img img{
+        width:170px;
+    }
+
+    .card{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        text-align:left;
+        padding:0;
+        gap:0;
+        overflow:hidden;
+        border-radius:18px;
     }
 
     .imagen{
+        order:-2;
         width:100%;
+        height:160px;
+        margin:0;
+        background:#EAF7FA;
     }
 
     .imagen img{
-        width:130px;
-        height:130px;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .numero{
+        position:static;
+        order:-1;
+        align-self:flex-start;
+        margin:16px 0 0 16px;
+        border-radius:10px;
+    }
+
+    .info{
+        order:0;
+        width:100%;
+        padding:14px 18px 20px;
+    }
+
+    .info h3{
+        text-align:left;
+    }
+
+    .info p{
+        text-align:left;
     }
 
     .botones .btn{
@@ -434,6 +405,7 @@ body{
 
 }
 
+/* ===== MÓVIL PEQUEÑO / 480px ===== */
 @media (max-width:480px){
 
     .contenido{
@@ -463,7 +435,10 @@ body{
 
     .card{
         min-height:auto;
-        padding:45px 18px 20px;
+    }
+
+    .imagen{
+        height:140px;
     }
 
     .info h3{

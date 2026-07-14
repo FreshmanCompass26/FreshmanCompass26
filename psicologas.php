@@ -2,7 +2,6 @@
 
 session_start();
 $pagina_actual = "consejos";
-include("php/navbar.php");
 ?>
 
 

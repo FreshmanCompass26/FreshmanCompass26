@@ -31,6 +31,7 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 </head>
 
 <body>
@@ -56,11 +57,11 @@ if (!$result) {
 
     <!-- Filtros -->
     <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="English">English</button>
-        <button class="filter-btn" data-filter="Computing">Computing</button>
-        <button class="filter-btn" data-filter="Values">Values</button>
-        <button class="filter-btn" data-filter="Administration">Administration</button>
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="English">Inglés</button>
+        <button class="filter-btn" data-filter="Computing">Informática</button>
+        <button class="filter-btn" data-filter="Values">Valores</button>
+        <button class="filter-btn" data-filter="Administration">Administración</button>
     </div>
 
     <!-- Tarjetas -->

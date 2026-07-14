@@ -152,6 +152,16 @@ body{
     background:#94CED7;
     color:#2C4B66;
 }
+.more-container{
+    position: relative;
+    z-index: 9999;
+}
+
+.more-btn{
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
 
 /* RESPONSIVE */
 

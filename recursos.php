@@ -27,9 +27,7 @@ session_start();
 </head>
 
 <body>
-
-    <!-- Barra lateral -->
-    <?php include 'php/navbar.php'; ?>
+<?php include 'php/navbar.php'; ?>
 
     <!-- Fondo decorativo -->
     <div class="bg-circle bg-circle-1"></div>
@@ -56,9 +54,7 @@ session_start();
             </h1>
 
             <p class="subtitulo">
-
-                Aprende y fortalece tus conocimientos con recursos recomendados.
-
+                Encuentra herramientas y recursos gratuitos para fortalecer tus habilidades en Informática, Inglés y Valores.
             </p>
 
         </section>
@@ -626,7 +622,7 @@ session_start();
     
 
 </div>
-
+<script src="Js/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

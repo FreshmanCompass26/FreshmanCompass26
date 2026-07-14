@@ -41,11 +41,12 @@ body{
 }
 
 /*======================================================
-     HERO ESTILO CLASSROOMS: ABAJO AL MÁXIMO
+     HERO — imagen con degradado abajo, texto a la
+     izquierda, sin cuadros sólidos que tapen las caras
 ======================================================*/
 .teachers-header {
     position: relative;
-    background-image: url('../img/teachers/tea-todos.jpeg'); 
+    background-image: url('../img/teachers/tea-todos.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,216 +54,67 @@ body{
     margin-bottom: 35px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    
-    min-height: 420px; 
-    
+
+    min-height: 420px;
+
     display: flex;
-    align-items: flex-end; /* Empuja todo hacia el piso */
-    justify-content: center; 
-    
-    /* Reducimos el padding de abajo a solo 15px para pegarlo al borde */
-    padding: 40px 20px 15px 20px; 
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    padding: 45px 45px 40px 45px;
+    animation: fadeUp .6s ease;
 }
 
-/* Gradiente que se oscurece más en la base para proteger el texto */
+/* Degradado suave: oscuro abajo (para el texto), transparente arriba (para ver las caras) */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(27, 38, 59, 0.85) 0%, rgba(27, 38, 59, 0.4) 30%, rgba(27, 38, 59, 0) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(27, 38, 59, 0.88) 0%,
+        rgba(27, 38, 59, 0.55) 35%,
+        rgba(27, 38, 59, 0) 75%
+    );
     z-index: 1;
 }
 
-/* El texto ahora no tiene márgenes extras que lo empujen hacia arriba */
+/* Contenedor del texto — sin fondo, sin blur, sin cajas */
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    text-align: center;
-    background: transparent;
-    padding: 0;
-    margin: 0; 
-}
-
-.teachers-header h1 {
-    font-size: 2.8rem; 
-    font-weight: 800;
-    margin-bottom: 5px; /* Reducido para compactar */
-    color: var(--white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); 
-}
-
-.teachers-header p {
-    font-size: 1.05rem;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
-    margin-bottom: 0; /* Evita separaciones del borde */
-}
-
-/* Ajuste Responsivo */
-@media (max-width: 768px) {
-    .teachers-header {
-        min-height: 320px;
-        padding: 30px 15px 10px 15px;
-    }
-    .teachers-header h1 {
-        font-size: 2rem;
-    }
-    .teachers-header p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Filtro oscuro uniforme para que el texto blanco resalte en cualquier zona */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(27, 38, 59, 0.65); 
-    z-index: 1;
-}
-
-/* Contenedor del texto centrado y sin cajas oscuras que tapen caras */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    text-align: center; /* Centra el texto por completo */
-    background: transparent; /* Eliminamos cualquier fondo gris/azul intermedio */
-    padding: 0;
-}
-
-.teachers-header h1 {
-    font-size: 2.8rem; 
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--white);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* Sombra para despegar el texto del fondo */
-}
-
-.teachers-header p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Ajuste Responsivo */
-@media (max-width: 768px) {
-    .teachers-header {
-        min-height: 320px;
-        padding: 30px 15px;
-    }
-    .teachers-header h1 {
-        font-size: 2rem;
-    }
-    .teachers-header p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Filtro oscuro uniforme sobre toda la imagen para garantizar la lectura */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(27, 38, 59, 0.65); /* Tono oscuro profundo con opacidad perfecta */
-    z-index: 1;
-}
-
-/* Contenedor del texto libre de fondos raros o cintillos */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
+    max-width: 620px;
     text-align: left;
 }
 
 .teachers-header h1 {
-    font-size: 3rem; /* Letras grandes e impactantes como "Classroom 2" */
+    font-size: 2.6rem;
     font-weight: 800;
     margin-bottom: 12px;
     color: var(--white);
     letter-spacing: -0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    position: relative;
+    padding-bottom: 14px;
+}
+
+/* Rayita decorativa bajo el título, como en el diseño de referencia */
+.teachers-header h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 46px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--secondary);
 }
 
 .teachers-header p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
-}
-
-/* Ajuste rápido para pantallas pequeñas */
-@media (max-width: 768px) {
-    .teachers-header {
-        min-height: 300px;
-        padding: 40px 25px;
-    }
-    .teachers-header h1 {
-        font-size: 2.2rem;
-    }
-    .teachers-header p {
-        font-size: 0.95rem;
-    }
-}
-
-/* Reemplazamos el overlay oscuro completo por un difuminado sutil abajo */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(44, 75, 102, 0.95) 0%, rgba(44, 75, 102, 0.4) 40%, rgba(44, 75, 102, 0) 100%);
-    z-index: 1;
-}
-
-/* El contenedor del texto ahora es una franja elegante abajo */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 25px 40px;
-    background: rgba(44, 75, 102, 0.75); /* Fondo oscuro semitransparente para máxima legibilidad */
-    backdrop-filter: blur(5px); /* Efecto esmerilado moderno */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.teachers-header h1 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-    color: var(--white);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.teachers-header p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #E3E8EC; /* Color claro para el subtítulo */
-    opacity: 0.9;
-}
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(44,75,102,0.92) 30%, rgba(44,75,102,0.5) 100%);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 650px;
-}
-
-.teachers-header h1{
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.teachers-header p{
     font-size: 1rem;
-    line-height: 1.6;
-    opacity: .95;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    max-width: 480px;
 }
 
 /*==========================
@@ -345,7 +197,7 @@ body{
     to{ opacity:1; transform:translateY(0); }
 }
 
-.teachers-header, .search-box, .filters{
+.search-box, .filters{
     animation:fadeUp .6s ease;
 }
 .teachers-grid {
@@ -580,16 +432,22 @@ body{
 /* Responsive adjustments */
 @media (max-width:1100px){
     .teachers-section{ margin-left:220px; padding:20px; }
-    .teachers-header{ padding:40px 30px; }
-    .teachers-header h1{ font-size:2rem; }
+    .teachers-header{ padding:35px 30px 30px 30px; }
+    .teachers-header h1{ font-size:2.2rem; }
 }
 @media (max-width:992px){
     .teachers-section{ margin-left:0; padding:20px; }
-    .teachers-header{ text-align:center; justify-content: center; }
-    .hero-overlay { background: rgba(44,75,102,0.85); }
     .teachers-grid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 }
 @media (max-width:768px) {
+    .teachers-header{
+        min-height: 320px;
+        padding: 30px 22px 25px 22px;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    .teachers-header h1{ font-size: 1.9rem; }
+    .teachers-header p{ font-size: 0.9rem; }
     .search-box{ width:100%; }
     .teacher-top{ flex-direction:column; text-align:center; }
     .teacher-footer{ flex-direction:column; gap:10px; }

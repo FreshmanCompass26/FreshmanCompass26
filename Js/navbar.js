@@ -1,4 +1,32 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
+=======
+const frases = [
+  { texto: "El futuro pertenece a quienes creen en la belleza de sus sueños.", autor: "— Eleanor Roosevelt" },
+  { texto: "Cada día es una nueva oportunidad para aprender algo que cambie tu vida.", autor: "— Autor desconocido" },
+  { texto: "La mente que se abre a una nueva idea jamás vuelve a su tamaño original.", autor: "— Albert Einstein" },
+  { texto: "No importa lo lento que avances, siempre que no te detengas.", autor: "— Confucio" },
+  { texto: "Nunca dejes de aprender, porque la vida nunca deja de enseñar.", autor: "— Autor desconocido" },
+  { texto: "Tu futuro se construye con lo que haces hoy, no mañana.", autor: "— Inspirada en Robert Kiyosaki" },
+  { texto: "El éxito no llega por suerte, llega por esfuerzo.", autor: "— Autor desconocido." },
+  { texto: "La constancia siempre termina dando resultados.", autor: "— TheGrefg" },
+  { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" },
+  { texto: "Los grandes logros comienzan con la decisión de intentarlo.", autor: "— Autor desconocido" },
+  { texto: "Aprender es el primer paso para transformar tus sueños en metas.", autor: "— Autor desconocido" },
+  { texto: "Cada pequeño esfuerzo de hoy será una gran recompensa mañana.", autor: "— Autor desconocido" },
+  { texto: "Confía en ti mismo; eres capaz de mucho más de lo que imaginas.", autor: "— Autor desconocido" },
+  { texto: "El conocimiento es la brújula que guía el camino hacia el éxito.", autor: "— Inspirada en Francis Bacon" }
+];
+
+function mostrarFraseAleatoria() {
+  const elTexto = document.getElementById("texto-frase");
+  const elAutor = document.getElementById("autor-frase");
+
+  // 📌 Seguridad: Solo ejecuta si los elementos existen en la página actual
+  if (elTexto && elAutor) {
+    const indiceAleatorio = Math.floor(Math.random() * frases.length);
+    const fraseSeleccionada = frases[indiceAleatorio];
+>>>>>>> e3af0550987c04e13515bb504e8df2b369a4c6d0
     
     const bancoFrases = {
         "index.php": [

@@ -382,6 +382,67 @@ body {
     }
 }
 
+/* ===========================
+   TESTIMONIO CON LEER MÁS
+=========================== */
+
+.contenedor-texto{
+    position: relative;
+    max-height: 180px;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+.contenedor-texto.expandido{
+    max-height: 1000px;
+}
+
+/* Degradado al final */
+.contenedor-texto::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:70px;
+    background:linear-gradient(to bottom,
+        rgba(242,245,250,0),
+        #F2F5FA 85%);
+    transition:.3s;
+}
+
+/* Al expandir desaparece */
+.contenedor-texto.expandido::after{
+    opacity:0;
+    pointer-events:none;
+}
+
+.texto-testimonio{
+    margin:0;
+    line-height:1.8;
+}
+
+.leer-mas{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:18px;
+    color:#2C4B66;
+    font-weight:700;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.leer-mas:hover{
+    color:#4B74A7;
+}
+
+.leer-mas i{
+    font-size:13px;
+    transition:.3s;
+}
+
 /* Ajustes específicos para celulares pequeños (Modo vertical) */
 @media (max-width: 576px) {
     .main-content {

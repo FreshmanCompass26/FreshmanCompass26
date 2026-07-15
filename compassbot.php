@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("php/conexion.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,26 +13,24 @@ include("conexion.php");
 
     <title>CompassBot</title>
 
-    <link rel="stylesheet" href="../styles/compassbot.css">
+    <link rel="stylesheet" href="styles/compassbot.css">
     <link rel="icon" type="favicon" href="img/favicon.png">
-    <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="icon" type="favicon" href="../img/favicon.png">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
-<?php include("navbar.php");?>
+<?php include("php/navbar.php");?>
 <div class="contenido">
-
-    <!-- ENCABEZADO -->
 
     <div class="header-bot">
 
         <div class="icono-bot">
 
-            <img src="../img/ia.png" alt="IA">
+            <img src="img/ghg.png" alt="IA">
 
         </div>
 
@@ -46,8 +44,6 @@ include("conexion.php");
 
     </div>
 
-    <!-- BOTÓN NUEVO CHAT -->
-
     <div class="acciones-chat">
 
         <button id="nuevoChatBtn" class="nuevo-chat-btn">
@@ -60,21 +56,19 @@ include("conexion.php");
 
     </div>
 
-    <!-- CHAT -->
-
     <div class="chat-container">
 
         <div class="mensaje bot">
 
             <div class="avatar1">
 
-                <img src="../img/ia.png" alt="IA">
+                <img src="img/gg.png" alt="IA">
 
             </div>
 
             <div class="burbuja">
 
-                <strong>¡Hola! 👋</strong><br><br>
+                <strong>¡Hola! </strong><br><br>
 
                 Soy <strong>CompassBot</strong>, el asistente virtual de <strong>Freshman Compass</strong>.
 
@@ -84,31 +78,29 @@ include("conexion.php");
 
                 <br><br>
 
-                📚 Estudios
+                 Estudios
 
                 <br>
 
-                💙 Adaptación
+                Adaptación
 
                 <br>
 
-                ⏰ Organización
+                 Organización
 
                 <br>
 
-                💡 Consejos
+                 Consejos
 
                 <br>
 
-                🌎 Cultura general
+                 Cultura general
 
             </div>
 
         </div>
 
     </div>
-
-    <!-- SUGERENCIAS -->
 
     <div class="sugerencias">
 
@@ -130,8 +122,6 @@ include("conexion.php");
 
     </div>
 
-    <!-- ENTRADA -->
-
     <div class="entrada-chat">
 
         <input
@@ -149,7 +139,7 @@ include("conexion.php");
 
 </div>
 
-<script src="../Js/compassbot.js"></script>
+<script src="/Js/compassbot.js"></script>
 
 </body>
 

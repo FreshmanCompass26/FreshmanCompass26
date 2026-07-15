@@ -5,24 +5,26 @@ $pagina_actual = "inicio";
 ?>
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freshman Compass</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/home-page.css">
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="icon" type="favicon" href="img/favicon.png">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="styles/home-page.css">
+<link rel="stylesheet" href="styles/navbar.css">
+<link rel="stylesheet" href="styles/footer.css">
+<link rel="icon" type="favicon" href="img/favicon.png">
+
 
 </head>
-    
 
 <body>
 
@@ -32,78 +34,78 @@ $pagina_actual = "inicio";
 <div class="circle-1"></div>
 <div class="circle-2"></div>
 
-
 <div class="top-navbar">
 
-    <div class="top-right">
+<div class="top-right">
 
-        <?php if (isset($_SESSION['nombre'])): ?>
+    <?php if (isset($_SESSION['nombre'])): ?>
 
-            <?php 
-                $nombre = $_SESSION['nombre'];
-                $inicial = strtoupper(substr($nombre, 0, 1));
-            ?>
+        <?php
+            $nombre = $_SESSION['nombre'];
+            $inicial = strtoupper(substr($nombre, 0, 1));
+        ?>
 
-            <div class="dropdown user-dropdown">
+        <div class="dropdown user-dropdown">
 
-                <div class="user-trigger" data-bs-toggle="dropdown">
+            <div class="user-trigger" data-bs-toggle="dropdown">
 
-                    <div class="avatar">
-                        <?php echo $inicial; ?>
-                    </div>
-
-                    <span class="username">
-                        <?php echo $nombre; ?>
-                    </span>
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
+                <div class="avatar">
+                    <?php echo $inicial; ?>
                 </div>
-                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
 
-                    <li class="dropdown-header-user">
-                        <div class="avatar-lg">
-                            <?php echo $inicial; ?>
-                        </div>
+                <span class="username">
+                    <?php echo $nombre; ?>
+                </span>
 
-                        <div>
-                            <div class="name"><?php echo $nombre; ?></div>
-                            <div class="sub">Bienvenido</div>
-                        </div>
-                    </li>
-
-                    <li><hr class="dropdown-divider"></li>
-
-                    <li>
-                        <a class="dropdown-item" href="profile.php">
-                            <i class="fa-regular fa-user"></i> Perfil
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a class="dropdown-item logout" href="php/logout.php">
-                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-                        </a>
-                    </li>
-
-                </ul>
+                <i class="fa-solid fa-chevron-down"></i>
 
             </div>
 
-        <?php else: ?>
+            <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
 
-            <a href="login.php" class="btn-login">
-                Iniciar sesión
-            </a>
+                <li class="dropdown-header-user">
+                    <div class="avatar-lg">
+                        <?php echo $inicial; ?>
+                    </div>
 
-            <a href="login.php" class="btn-signup">
-                Crear Cuenta
-            </a>
+                    <div>
+                        <div class="name"><?php echo $nombre; ?></div>
+                        <div class="sub">Bienvenido</div>
+                    </div>
+                </li>
 
-        <?php endif; ?>
+                <li><hr class="dropdown-divider"></li>
 
-    </div>
+                <li>
+                    <a class="dropdown-item" href="profile.php">
+                        <i class="fa-regular fa-user"></i> Perfil
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item logout" href="php/logout.php">
+                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    <?php else: ?>
+
+        <a href="login.php" class="btn-login">
+            Iniciar sesión
+        </a>
+
+        <a href="login.php" class="btn-signup">
+            Crear Cuenta
+        </a>
+
+    <?php endif; ?>
+
+</div>
+
 
 </div>
 
@@ -111,33 +113,37 @@ $pagina_actual = "inicio";
 
 <div class="main-content">
 
-    <section class="banner-section">
-        <div class="row align-items-center">
+<section class="banner-section reveal">
 
-            <div class="col-md-6">
-                <h1>
-                    Tu viaje <br>
-                    comienza <span>aquí</span>
-                </h1>
+    <div class="row align-items-center">
 
-                <p>
-                    Fortalece competencias digitales mientras exploras tu futuro académico y profesional.
-                </p>
+        <div class="col-md-6">
 
-            </div>
+            <h1>
+                Tu viaje <br>
+                comienza <span>aquí</span>
+            </h1>
 
-            <div class="col-md-6 text-center">
-                <img src="img/freshmancompassfondix.jpeg" class="img-fluid banner-img">
-            </div>
+            <p>
+                Fortalece competencias digitales mientras exploras tu futuro académico y profesional.
+            </p>
 
         </div>
-    </section>
 
-  <section class="cards-section container mt-4">
+        <div class="col-md-6 text-center">
+            <img src="img/freshmancompassfondix.jpeg" class="img-fluid banner-img">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cards-section container mt-4">
+
     <div class="row g-4 justify-content-center">
 
         <div class="col-md-3">
-            <a href="teachers.php" class="info-card" style="text-decoration: none; display: block;">
+            <a href="teachers.php" class="info-card reveal-left" style="text-decoration: none; display: block;">
                 <i class="fa-solid fa-users"></i>
                 <h5>Teachers</h5>
                 <p>Apoyo educativo y acompañamiento constante.</p>
@@ -145,7 +151,7 @@ $pagina_actual = "inicio";
         </div>
 
         <div class="col-md-3">
-            <a href="eventos.php" class="info-card" style="text-decoration: none; display: block;">
+            <a href="eventos.php" class="info-card reveal" style="text-decoration: none; display: block;">
                 <i class="fa-solid fa-calendar"></i>
                 <h5>Eventos</h5>
                 <p>Conoce talleres y actividades educativas.</p>
@@ -153,7 +159,7 @@ $pagina_actual = "inicio";
         </div>
 
         <div class="col-md-3">
-            <a href="actividades.php" class="info-card" style="text-decoration: none; display: block;">
+            <a href="actividades.php" class="info-card reveal" style="text-decoration: none; display: block;">
                 <i class="fa-solid fa-lightbulb"></i>
                 <h5>Actividades</h5>
                 <p>Fomentando el aprendizaje de una manera totalmente interactiva.</p>
@@ -161,7 +167,7 @@ $pagina_actual = "inicio";
         </div>
 
         <div class="col-md-3">
-            <a href="recursos.php" class="info-card" style="text-decoration: none; display: block;">
+            <a href="recursos.php" class="info-card reveal-right" style="text-decoration: none; display: block;">
                 <i class="fa-solid fa-book"></i>
                 <h5>Recursos</h5>
                 <p>Materiales y contenido para aprender.</p>
@@ -169,6 +175,7 @@ $pagina_actual = "inicio";
         </div>
 
     </div>
+
 </section>
 
 <section class="modern-benefits">
@@ -183,8 +190,7 @@ $pagina_actual = "inicio";
 
     <div class="benefits-modern-grid">
 
-      
-        <div class="modern-card blue-card">
+        <div class="modern-card blue-card reveal-left">
 
             <div class="icon-circle">
                 <i class="fa-solid fa-comments"></i>
@@ -200,7 +206,7 @@ $pagina_actual = "inicio";
 
         </div>
 
-        <div class="modern-card green-card">
+        <div class="modern-card green-card reveal-right">
 
             <div class="icon-circle">
                 <i class="fa-solid fa-laptop"></i>
@@ -215,9 +221,8 @@ $pagina_actual = "inicio";
             </div>
 
         </div>
-
-
-        <div class="modern-card yellow-card">
+    
+        <div class="modern-card yellow-card reveal-left">
 
             <div class="icon-circle">
                 <i class="fa-solid fa-users"></i>
@@ -233,7 +238,7 @@ $pagina_actual = "inicio";
 
         </div>
 
-        <div class="modern-card purple-card">
+        <div class="modern-card purple-card reveal-right">
 
             <div class="icon-circle">
                 <i class="fa-solid fa-briefcase"></i>
@@ -253,7 +258,6 @@ $pagina_actual = "inicio";
 
 </section>
 
-
 <section class="testimonials-section">
 
     <p class="section-mini-title">
@@ -266,7 +270,7 @@ $pagina_actual = "inicio";
 
     <div class="testimonials-grid">
 
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal-zoom">
 
             <img src="img/stud1.jpeg">
 
@@ -279,12 +283,13 @@ $pagina_actual = "inicio";
             <span>Graduado del Centro ¡Supérate! ADOC <br> PROM 2025</span>
 
         </div>
-        <div class="testimonial-card">
+
+        <div class="testimonial-card reveal-zoom">
 
             <img src="img/willito.jpeg">
 
             <p>
-                “¡Supérate! fue más que una familia, un lugar que transforma vidas.” 
+                “¡Supérate! fue más que una familia, un lugar que transforma vidas.”
             </p>
 
             <h4>Wilfredo M.</h4>
@@ -293,7 +298,7 @@ $pagina_actual = "inicio";
 
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal-zoom">
 
             <img src="img/xander.jpeg">
 
@@ -311,10 +316,6 @@ $pagina_actual = "inicio";
 
 </section>
 
-
-</section>
-
-
 <section class="about-cards-section">
 
     <p class="about-mini-title">
@@ -331,7 +332,7 @@ $pagina_actual = "inicio";
 
     <div class="about-cards">
 
-        <div class="about-card">
+        <div class="about-card reveal">
             <div class="card-icon">
                 <i class="fas fa-bullseye"></i>
             </div>
@@ -345,7 +346,7 @@ $pagina_actual = "inicio";
             </p>
         </div>
 
-        <div class="about-card">
+        <div class="about-card reveal">
             <div class="card-icon">
                 <i class="fas fa-users"></i>
             </div>
@@ -358,7 +359,7 @@ $pagina_actual = "inicio";
             </p>
         </div>
 
-        <div class="about-card">
+        <div class="about-card reveal">
             <div class="card-icon">
                 <i class="fas fa-book-open"></i>
             </div>
@@ -371,7 +372,7 @@ $pagina_actual = "inicio";
             </p>
         </div>
 
-        <div class="about-card">
+        <div class="about-card reveal">
             <div class="card-icon">
                 <i class="fas fa-eye"></i>
             </div>
@@ -381,28 +382,28 @@ $pagina_actual = "inicio";
             <p>
                 Convertirse en la plataforma líder de orientación estudiantil para
                 estudiantes de nuevo ingreso de ¡Supérate! ADOC.
-            </p> 
+            </p>
         </div>
 
     </div>
 
     <div class="about-note">
-         No estás solo. Estamos aquí para ayudarte.
+        No estás solo. Estamos aquí para ayudarte.
     </div>
 
 </section>
-
-
-
 </div>
 
-
 <?php include("php/footer.php"); ?>
+
 <script src="js/home-animations.js"></script>
+
 <script src="js/navbar.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<a href="php/compassbot.php" class="compass-float">
-    🤖
+
+<a href="compassbot.php" class="compass-float">
+    <img src="img/orrbit.png" alt="CompassBot">
 </a>
 
 </body>

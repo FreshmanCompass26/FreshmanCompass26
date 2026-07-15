@@ -42,11 +42,14 @@ unset($_SESSION['login_error']);
             <input type="email" id="l-email" name="email" placeholder="daniel.rivas2027@adoc.superate.org" required/>
             <span class="field-icon">✉</span>
           </div>
-          <div class="field">
-            <label for="l-pass">Contraseña</label>
-            <input type="password" id="l-pass" name="password" placeholder="••••••••" required/>
-            <span class="field-icon"></span>
-          </div>
+          
+          <div class="field password-field">
+    <label for="l-pass">Contraseña</label>
+    <input type="password" id="l-pass" name="password" placeholder="••••••••" required/>
+    <span class="toggle-password" data-target="l-pass">
+        <i class="fa-solid fa-eye"></i>
+    </span>
+</div>
           <button type="submit" class="btn-primary">Sign In</button>
         </form>
         <p class="switch-text">
@@ -99,10 +102,13 @@ unset($_SESSION['login_error']);
             <input type="tel" id="s-phone" name="phone" placeholder="+503 0000-0000" required/>
             <span class="field-icon"></span>
           </div>
-          <div class="field">
-            <label for="s-pass">Contraseña</label>
-            <input type="password" id="s-pass" name="password" placeholder="Min. 8 characters" required/>
-          </div>
+          <div class="field password-field">
+    <label for="s-pass">Contraseña</label>
+    <input type="password" id="s-pass" name="password" placeholder="Min. 8 characters" required/>
+    <span class="toggle-password" data-target="s-pass">
+        <i class="fa-solid fa-eye"></i>
+    </span>
+</div>
           <button type="submit" class="btn-primary teal-btn">Crear cuenta</button>
         </form>
         <p class="switch-text teal-switch">

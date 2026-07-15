@@ -267,6 +267,7 @@ body{
     padding:30px;
     transition:.3s;
 }
+}
 
 @media(max-width:768px){
 
@@ -347,7 +348,6 @@ body{
         width:170px;
     }
 
-}
 
 @media (max-width:768px){
 

@@ -23,9 +23,9 @@ $resultado = $conn->query($sqlCards);
     <meta charset="UTF-8">
     <title>Consejos</title>
 
-    <link rel="stylesheet" href="styles/consejos.css">
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/consejos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png?v=1">
     <link rel="stylesheet" href="styles/footer.css">
 </head>

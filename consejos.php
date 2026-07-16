@@ -21,6 +21,7 @@ $resultado = $conn->query($sqlCards);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consejos</title>
 
     <link rel="stylesheet" href="styles/navbar.css">
@@ -153,5 +154,8 @@ $resultado = $conn->query($sqlCards);
 
 <?php include 'php/footer.php'; ?>
 
+
+
+<script src="js/navbar.js"></script>
 </body>
 </html>

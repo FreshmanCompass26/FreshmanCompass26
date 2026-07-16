@@ -47,6 +47,12 @@ $casos = [
 
 <body>
 
+    <a href="javascript:history.back()" class="btn-regresar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Regresar</span>
+</a>
+
+
 <div class="game-box">
 
 <div id="screen-loading"

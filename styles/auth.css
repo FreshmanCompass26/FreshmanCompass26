@@ -126,6 +126,27 @@ body {
   margin-bottom: 20px;
 }
 
+/* ── Mensaje de error de login ── */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(229,115,115,0.12);
+  border: 1px solid rgba(229,115,115,0.35);
+  color: #c62828;
+  font-size: 0.81rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 9px;
+  margin-bottom: 16px;
+  animation: fadeUp 0.3s ease forwards;
+}
+
+.form-error i {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
 /* ── Fields ── */
 .form { display: flex; flex-direction: column; gap: 12px; }
 .fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -230,6 +251,14 @@ body {
 @media (max-width: 640px) {
   .auth-box { flex-direction: column; height: auto; }
   .panel { width: 100%; padding: 36px 28px; }
-  .panel-right { display: none; }
   .fields-row { grid-template-columns: 1fr; }
+
+  /* El orbit-character (decoración) se hace más chico y se
+     reposiciona para que no quede montado sobre el formulario
+     al apilarse los paneles en columna */
+  .orbit-character {
+    width: 140px;
+    right: -30px;
+    bottom: -8px;
+  }
 }

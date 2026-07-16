@@ -339,7 +339,7 @@ $pagina_actual = "inicio";
             <h3>Misión</h3>
 
             <p>
-                Ayudamos a los estudiantes de nuevo ingreso del Centro ¡Supérate! ADOC
+                Ayudar a estudiantes de nuevo ingreso del Centro ¡Supérate! ADOC
                 a adaptarse de forma más fácil, segura y confiada mediante orientación,
                 acompañamiento y recursos útiles.
             </p>
@@ -366,7 +366,7 @@ $pagina_actual = "inicio";
             <h3>Historia</h3>
 
             <p>
-                Freshman Compass nació para apoyar a los estudiantes de primer año
+                <strong>Freshman Compass</strong> nació para apoyar a los estudiantes de primer año
                 mediante consejos, experiencias y orientación práctica.
             </p>
         </div>
@@ -381,7 +381,7 @@ $pagina_actual = "inicio";
             <p>
                 Convertirse en la plataforma líder de orientación estudiantil para
                 estudiantes de nuevo ingreso de ¡Supérate! ADOC.
-            </p>
+            </p> 
         </div>
 
     </div>
@@ -398,6 +398,7 @@ $pagina_actual = "inicio";
 
 
 <?php include("php/footer.php"); ?>
+<script src="js/home-animations.js"></script>
 <script src="js/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <a href="php/compassbot.php" class="compass-float">

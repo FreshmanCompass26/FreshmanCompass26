@@ -1,4 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 const frases = [
+    
+  { texto: "Lento pero seguro..", autor: "— German Garmendia" },
   { texto: "El futuro pertenece a quienes creen en la belleza de sus sueños.", autor: "— Eleanor Roosevelt" },
   { texto: "Cada día es una nueva oportunidad para aprender algo que cambie tu vida.", autor: "— Autor desconocido" },
   { texto: "La mente que se abre a una nueva idea jamás vuelve a su tamaño original.", autor: "— Albert Einstein" },
@@ -16,18 +20,83 @@ const frases = [
 ];
 
 function mostrarFraseAleatoria() {
-  const elTexto = document.getElementById("texto-frase");
-  const elAutor = document.getElementById("autor-frase");
 
-  // 📌 Seguridad: Solo ejecuta si los elementos existen en la página actual
-  if (elTexto && elAutor) {
-    const indiceAleatorio = Math.floor(Math.random() * frases.length);
-    const fraseSeleccionada = frases[indiceAleatorio];
-    
-    elTexto.textContent = fraseSeleccionada.texto; // Usamos textContent por seguridad
-    elAutor.textContent = fraseSeleccionada.autor;
-  }
+    const bancoFrases = {
+        "index.php": [
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "Cada nuevo comienzo trae nuevas oportunidades.", autor: "— Freshman Compass" },
+            { texto: "No tengas miedo de empezar desde cero.", autor: "— Ibai Llanos" },
+            { texto: "El futuro pertenece a quienes creen en la belleza de sus sueños.", autor: "— Eleanor Roosevelt" },
+            { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" }
+        ],
+
+        "teachers.php": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "Dime y lo olvido, enséñame y lo recuerdo, involúcrame y lo aprendo.", autor: "— Benjamin Franklin" },
+            { texto: "La mente que se abre a una nueva idea jamás vuelve a su tamaño original.", autor: "— Albert Einstein" },
+            { texto: "Nunca dejes de aprender, porque la vida nunca deja de enseñar.", autor: "— Autor desconocido" }
+        ],
+
+        "consejos.php": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "La vida es lo que pasa mientras estás ocupado haciendo otros planes.", autor: "— John Lennon" },
+            { texto: "Tu futuro se construye con lo que haces hoy, no mañana.", autor: "— Robert Kiyosaki" },
+            { texto: "No dejes que nadie te diga que no puedes hacer algo.", autor: "— Will Smith" },
+            { texto: "No importa lo lento que avances, siempre que no te detengas.", autor: "— Confucio" }
+        ],
+
+        "actividades.php": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "La constancia siempre termina dando resultados.", autor: "— TheGrefg" },
+            { texto: "La clave es ser tú mismo y disfrutar el proceso.", autor: "— Ibai Llanos" },
+            { texto: "El éxito no llega por suerte, llega por esfuerzo.", autor: "— Autor desconocido" },
+            { texto: "El talento ayuda, pero la constancia marca la diferencia.", autor: "— TheGrefg" }
+        ],
+
+        "nuestro_centro.php": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "Todo parece imposible hasta que se hace.", autor: "— Nelson Mandela" },
+            { texto: "El optimismo es la fe que conduce al logro.", autor: "— Helen Keller" },
+            { texto: "Grandes historias comienzan en lugares inesperados.", autor: "— Autor desconocido" }
+        ],
+
+        "eventos.php": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "Cada día es una nueva oportunidad para mejorar.", autor: "— German Garmendia" },
+            { texto: "Algunos quieren que ocurra, otros hacen que ocurra.", autor: "— Michael Jordan" },
+            { texto: "Disfruta el momento y colecciona recuerdos.", autor: "— Autor desconocido" }
+        ],
+
+        "default": [
+            
+            { texto: "Lento pero seguro..", autor: "— German Garmendia"},
+            { texto: "Nunca dejes de aprender, porque la vida nunca deja de enseñar.", autor: "— Autor desconocido" },
+            { texto: "Si puedes imaginarlo, puedes hacerlo realidad.", autor: "— Fernanfloo" }
+        ]
+    };
+
+    const rutaAbsoluta = window.location.pathname;
+    const paginaActual = rutaAbsoluta.substring(rutaAbsoluta.lastIndexOf('/') + 1);
+
+    let listaDeFrases = bancoFrases[paginaActual] || bancoFrases["default"];
+
+    const elTexto = document.getElementById("texto-frase");
+    const elAutor = document.getElementById("autor-frase");
+
+    if (elTexto && elAutor) {
+        const indiceAleatorio = Math.floor(Math.random() * listaDeFrases.length);
+        const fraseSeleccionada = listaDeFrases[indiceAleatorio];
+
+        elTexto.textContent = fraseSeleccionada.texto;
+        elAutor.textContent = fraseSeleccionada.autor;
+    }
 }
 
-// Ejecuta cuando el HTML esté completamente cargado
-window.addEventListener('DOMContentLoaded', mostrarFraseAleatoria);
+mostrarFraseAleatoria();
+
+});

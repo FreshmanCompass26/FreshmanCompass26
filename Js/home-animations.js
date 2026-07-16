@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const elementos = document.querySelectorAll(".scroll-reveal");
+    const elementos = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+    );
 
     const observer = new IntersectionObserver((entries) => {
 
@@ -13,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }, {
-        threshold: 0.1
+        threshold: 0.15
     });
 
     elementos.forEach(elemento => {

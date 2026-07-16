@@ -96,7 +96,7 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
     <div class="teacher-data">
         <div class="data-box">
             <i class="fa-regular fa-calendar"></i>
-            <div class="data-title">Schedule</div>
+            <div class="data-title">Horario</div>
             <div class="data-value">
                 <?= htmlspecialchars($teacher['dias']); ?><br>
                 <?= htmlspecialchars($teacher['horario']); ?>
@@ -105,7 +105,7 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
 
         <div class="data-box">
             <i class="fa-solid fa-cake-candles"></i>
-            <div class="data-title">Birthday</div>
+            <div class="data-title">Cumpleaños</div>
             <div class="data-value"><?= htmlspecialchars($teacher['cumple']); ?></div>
         </div>
     </div>
@@ -124,7 +124,7 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
             data-birthday="<?= htmlspecialchars($teacher['cumple']); ?>"
             data-quote="<?= htmlspecialchars($teacher['frase']); ?>"
             data-image="img/teachers/<?= htmlspecialchars($teacher['imagen']); ?>">
-            View Profile
+            Ver perfil
         </button>
     </div>
 </article>
@@ -146,13 +146,13 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
 
         <div class="modal-actions">
             <a id="emailButton" class="modal-btn" href="#">
-                <i class="fa-solid fa-envelope"></i> Send Email
+                <i class="fa-solid fa-envelope"></i> Enviar Email
             </a>
             <button id="copyEmail" class="modal-btn" type="button">
-                <i class="fa-regular fa-copy"></i> Copy Email
+                <i class="fa-regular fa-copy"></i> Copiar Email
             </button>
             <button id="closeButton" class="modal-btn" type="button">
-                <i class="fa-solid fa-xmark"></i> Close
+                <i class="fa-solid fa-xmark"></i> Cerrar
             </button>
         </div>
     </div>
@@ -161,7 +161,7 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
 <!-- Toast -->
 <div id="toast" class="toast">
     <i class="fa-solid fa-circle-check"></i>
-    <span id="toastMessage">Email copied successfully!</span>
+    <span id="toastMessage">Correo copiado con éxito!</span>
 </div>
 
 <script src="Js/teachers.js"></script>

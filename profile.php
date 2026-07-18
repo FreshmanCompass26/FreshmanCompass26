@@ -2,7 +2,6 @@
 session_start();
 include("php/profile_conexion.php");
 
-// 🔥 PROTECCIÓN
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit();
@@ -79,10 +78,7 @@ $perfil = $consulta->fetch_assoc();
         <!-- DATOS SOLO LECTURA -->
         <div class="datos">
 
-            <div class="datos-titulo">
-                <span>BITÁCORA DEL ESTUDIANTE</span>
-                <i class="fa-solid fa-clipboard-list"></i>
-            </div>
+          
 
             <div class="campo">
                 <div class="icono-campo"><i class="fa-solid fa-user"></i></div>
@@ -145,7 +141,7 @@ $perfil = $consulta->fetch_assoc();
 
 </main>
 
-<script src="Js/perfil.js"></script>
+<script src="js/perfil.js"></script>
 
 </body>
 </html>

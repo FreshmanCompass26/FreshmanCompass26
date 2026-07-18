@@ -16,14 +16,15 @@ if (!isset($_SESSION['nombre'])) {
 }
 
 $usuario   = $_SESSION['nombre'];
-$psicologa = trim($_POST['psicologa'] ?? '');
+// Convertimos a entero para asegurar que sea el ID numérico
+$psicologa = intval($_POST['psicologa'] ?? 0); 
 $fecha     = trim($_POST['fecha'] ?? '');
 $hora      = trim($_POST['hora'] ?? '');
 $motivo    = trim($_POST['motivo'] ?? '');
 
-// Validar campos
+// Validar campos (como $psicologa ahora es número, validamos que sea mayor a 0)
 if (
-    empty($psicologa) ||
+    $psicologa <= 0 ||
     empty($fecha) ||
     empty($hora) ||
     empty($motivo)
@@ -58,7 +59,8 @@ if (!$stmt) {
     exit("Error SQL: " . $conn->error);
 }
 
-$stmt->bind_param("sss", $psicologa, $fecha, $hora);
+// CORRECCIÓN: Cambiamos el primer parámetro a "i" porque $psicologa es un ID (entero)
+$stmt->bind_param("iss", $psicologa, $fecha, $hora);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
@@ -79,8 +81,9 @@ if (!$stmt) {
     exit("Error SQL: " . $conn->error);
 }
 
+// CORRECCIÓN: El segundo parámetro pasa de "s" a "i" ("siss_s" -> usuario, psicologa, fecha, hora, motivo)
 $stmt->bind_param(
-    "sssss",
+    "sisss",
     $usuario,
     $psicologa,
     $fecha,

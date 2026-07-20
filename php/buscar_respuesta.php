@@ -4,7 +4,39 @@ include("conexion.php");
 
 if (isset($_POST["pregunta"])) {
 
+
     $pregunta = trim($_POST["pregunta"]);
+    // ==============================
+// OPERACIONES MATEMÁTICAS
+// ==============================
+
+$operacion = str_replace(" ", "", $pregunta);
+
+// Solo permite números, paréntesis y operadores
+if (preg_match('/^[0-9+\-*\/().% ]+$/', $operacion)) {
+
+    try {
+
+        // Evita caracteres peligrosos
+        if (preg_match('/[^0-9+\-*\/().%]/', $operacion)) {
+            throw new Exception("Operación inválida.");
+        }
+
+        $resultado = 0;
+
+        eval("\$resultado = $operacion;");
+
+        echo "🧮 El resultado es: <strong>$resultado</strong>";
+        exit;
+
+    } catch (Throwable $e) {
+
+        echo "❌ No pude resolver esa operación.";
+        exit;
+
+    }
+
+}
 
     if ($pregunta == "") {
         exit("Escribe una pregunta.");

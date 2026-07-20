@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sugerencias = document.querySelectorAll(".sugerencia-btn");
     const nuevoChatBtn = document.getElementById("nuevoChatBtn");
 
-    const avatarIA = `<img src="../img/ia.png" alt="IA">`;
+    const avatarIA = `<img src="img/gg.png?v=1" alt="IA">`;
 
     // -------------------------
     // Enviar con botón
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="avatar1">
 
-                    <img src="../img/ia.png" alt="IA">
+                    <img src="img/gg.png?v=1" alt="IA">
 
                 </div>
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="avatar1">
 
-            <img src="../img/ia.png" alt="IA">
+            <img src="img/gg.png?v=1" alt="IA">
 
         </div>
 
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         chat.scrollTop=chat.scrollHeight;
 
-        fetch("buscar_respuesta.php",{
+        fetch("php/buscar_respuesta.php",{
 
             method:"POST",
 
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="avatar1">
 
-                    <img src="../img/ia.png" alt="IA">
+                    <img src="img/gg.png?v=1" alt="IA">
 
                 </div>
 
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="avatar1">
 
-                    <img src="../img/ia.png" alt="IA">
+                    <img src="img/gg.png?v=1" alt="IA">
 
                 </div>
 

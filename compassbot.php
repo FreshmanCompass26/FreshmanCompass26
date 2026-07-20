@@ -30,7 +30,7 @@ include("php/conexion.php");
 
         <div class="icono-bot">
 
-            <img src="img/ghg.png" alt="IA">
+            <img src="img/gg.png?v=<?php echo time(); ?>" alt="IA">
 
         </div>
 
@@ -139,7 +139,7 @@ include("php/conexion.php");
 
 </div>
 
-<script src="/Js/compassbot.js"></script>
+<script src="Js/compassbot.js"></script>
 
 </body>
 

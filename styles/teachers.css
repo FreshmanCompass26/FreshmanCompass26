@@ -266,10 +266,6 @@ body{
     transition: .3s;
 }
 
-.teacher-card:hover h2{
-    color:var(--secondary);
-}
-
 .badge{
     display:inline-block;
     margin-bottom:6px;
@@ -357,11 +353,6 @@ body{
     display:flex;
     align-items:center;
     transition: .3s;
-}
-
-.teacher-card:hover .teacher-quote{
-    background:#EEF8FA;
-    border-left-color:var(--primary);
 }
 
 .teacher-footer{

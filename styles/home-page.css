@@ -162,7 +162,7 @@ body::after {
 
 .banner-section {
     background: white;
-    margin: 30px;
+    margin: 15px 30px 30px 30px; /* antes: margin: 30px; */
     border-radius: 20px;
     padding: 40px;
 }
@@ -208,20 +208,20 @@ body::after {
 
 .info-card i {
     font-size: 42px;
-    color: #2C4B66;
+    color: #ffffff; /* antes: #2C4B66 */
     transition: transform 0.3s ease;
 }
 
 .info-card h5 {
     font-size: 20px;
     font-weight: 700;
-    color: #2C4B66;
+    color: white;
     margin: 0;
 }
 
 .info-card p {
     font-size: 14px;
-    color: #1a3b47;
+    color: white;
     line-height: 1.5;
     margin: 0;
     opacity: 0.9;
@@ -302,14 +302,14 @@ body::after {
 .green-card .icon-circle,
 .yellow-card .icon-circle,
 .purple-card .icon-circle {
-    background: rgba(132,206,215,0.2);
+    background: #ffffff; /* blanco sólido, sin transparencia */
 }
 
 .blue-card .icon-circle i,
 .green-card .icon-circle i,
 .yellow-card .icon-circle i,
 .purple-card .icon-circle i {
-    color: #84CED7;
+    color: #2C4B66; /* el ícono queda del azul oscuro de la tarjeta */
 }
 
 .icon-circle {

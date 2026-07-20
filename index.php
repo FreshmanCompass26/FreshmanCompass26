@@ -143,35 +143,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="row g-4 justify-content-center">
 
         <div class="col-md-3">
-            <a href="teachers.php" class="info-card reveal-left" style="text-decoration: none; display: block;">
+            <div class="info-card reveal-left">
                 <i class="fa-solid fa-users"></i>
                 <h5>Teachers</h5>
                 <p>Apoyo educativo y acompañamiento constante.</p>
-            </a>
+            </div>
         </div>
 
         <div class="col-md-3">
-            <a href="eventos.php" class="info-card reveal" style="text-decoration: none; display: block;">
+            <div class="info-card reveal">
                 <i class="fa-solid fa-calendar"></i>
                 <h5>Eventos</h5>
                 <p>Conoce talleres y actividades educativas.</p>
-            </a>
+            </div>
         </div>
 
         <div class="col-md-3">
-            <a href="actividades.php" class="info-card reveal" style="text-decoration: none; display: block;">
+            <div class="info-card reveal">
                 <i class="fa-solid fa-lightbulb"></i>
                 <h5>Actividades</h5>
                 <p>Fomentando el aprendizaje de una manera totalmente interactiva.</p>
-            </a>
+            </div>
         </div>
 
         <div class="col-md-3">
-            <a href="recursos.php" class="info-card reveal-right" style="text-decoration: none; display: block;">
+            <div class="info-card reveal-right">
                 <i class="fa-solid fa-book"></i>
                 <h5>Recursos</h5>
                 <p>Materiales y contenido para aprender.</p>
-            </a>
+            </div>
         </div>
 
     </div>

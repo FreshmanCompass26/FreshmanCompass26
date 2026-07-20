@@ -68,6 +68,10 @@ $perfil = $consulta->fetch_assoc();
 
             <p class="cita">"<?php echo $citaPerfil; ?>"</p>
 
+            <?php if (!empty($perfil['descripcion'])): ?>
+                <p class="descripcion-tarjeta"><?php echo nl2br(htmlspecialchars($perfil['descripcion'])); ?></p>
+            <?php endif; ?>
+
             <div class="sello">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span>Sé parte de tu futuro, cada paso cuenta.</span>
@@ -77,8 +81,6 @@ $perfil = $consulta->fetch_assoc();
 
         <!-- DATOS SOLO LECTURA -->
         <div class="datos">
-
-          
 
             <div class="campo">
                 <div class="icono-campo"><i class="fa-solid fa-user"></i></div>
@@ -109,6 +111,14 @@ $perfil = $consulta->fetch_assoc();
                 <div class="campo-contenido">
                     <label>Centro Escolar</label>
                     <p><?php echo $perfil['centro_escolar'] ?? ''; ?></p>
+                </div>
+            </div>
+
+            <div class="campo">
+                <div class="icono-campo"><i class="fa-solid fa-align-left"></i></div>
+                <div class="campo-contenido">
+                    <label>Descripción</label>
+                    <p><?php echo $perfil['descripcion'] ?? ''; ?></p>
                 </div>
             </div>
 

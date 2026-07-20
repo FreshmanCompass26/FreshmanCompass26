@@ -500,3 +500,69 @@ body {
     transition: none !important;
   }
 }
+
+
+
+/* ==========================================================================
+   Responsive 
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+
+  body {
+    padding: 24px 16px 32px;
+  }
+
+  .btn-back {
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-foto {
+    padding: 88px 20px 28px;
+  }
+
+  .card-form {
+    padding: 24px 20px;
+  }
+
+  .campo {
+    flex-wrap: wrap;
+  }
+
+  .campo-foto-input {
+    flex-wrap: wrap;
+  }
+
+  .campo-foto-input .nombre-archivo {
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  .guardar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mensaje-motivador {
+    padding: 18px 20px;
+  }
+
+  .mensaje-motivador .decoracion {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

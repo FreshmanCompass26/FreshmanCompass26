@@ -12,6 +12,15 @@ if ($pagina_actual == "index") {
 if ($pagina_actual == "nuestro_centro") {
     $pagina_actual = "centro";
 }
+
+$logueado = isset($_SESSION['nombre']);
+
+// Si no está logueado, todos los links van a login.php
+$link_teachers   = $logueado ? "teachers.php"       : "login.php";
+$link_consejos   = $logueado ? "consejos.php"       : "login.php";
+$link_actividades = $logueado ? "actividades.php"   : "login.php";
+$link_centro     = $logueado ? "nuestro_centro.php" : "login.php";
+$link_eventos    = $logueado ? "eventos.php"        : "login.php";
 ?>
 
 <div class="sidebar">
@@ -29,56 +38,42 @@ if ($pagina_actual == "nuestro_centro") {
             </a>
         </li>
 
-        <?php if (isset($_SESSION['nombre'])) { ?>
+        <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+            <a href="<?= $link_teachers ?>">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Teachers</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-                <a href="teachers.php">
-                    <i class="fa-solid fa-user-group"></i>
-                    <span>Teachers</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+            <a href="<?= $link_consejos ?>">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Consejos</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-                <a href="consejos.php">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span>Consejos</span>
-                </a>
-            </li>
-            <li class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
-                <a href="actividades.php">
-                    <i class="fa-solid fa-puzzle-piece"></i>
-                    <span>Actividades</span>
-                </a>
-            </li>
-            <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-                <a href="nuestro_centro.php">
-                    <i class="fa-solid fa-school"></i>
-                    <span>Nuestro centro</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
+            <a href="<?= $link_actividades ?>">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>Actividades</span>
+            </a>
+        </li>
 
-            <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-                <a href="eventos.php">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Eventos</span>
-                </a>
-            </li>
+        <li class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+            <a href="<?= $link_centro ?>">
+                <i class="fa-solid fa-school"></i>
+                <span>Nuestro centro</span>
+            </a>
+        </li>
 
-        <?php } ?>
+        <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+            <a href="<?= $link_eventos ?>">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Eventos</span>
+            </a>
+        </li>
 
     </ul>
-
-    <?php if (isset($_SESSION['nombre'])): ?>
-
-        <?php
-            $nombre  = $_SESSION['nombre'];
-            $inicial = strtoupper(substr($nombre, 0, 1));
-        ?>
-
-    <?php else: ?>
-
-
-    <?php endif; ?>
 
     <!-- Contenedor dinámico -->
     <div class="quote">
@@ -87,51 +82,40 @@ if ($pagina_actual == "nuestro_centro") {
     </div>
 
 </div>
+
 <!-- NAVBAR MÓVIL -->
 <div class="mobile-navbar">
-
-
-<script src="js/navbar.js"></script>
 
     <a href="index.php" class="<?= ($pagina_actual == 'inicio') ? 'active' : '' ?>">
         <i class="fa-solid fa-house"></i>
         <span>Inicio</span>
     </a>
 
+    <a href="<?= $link_teachers ?>" class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
+        <i class="fa-solid fa-user-group"></i>
+        <span>Teachers</span>
+    </a>
 
-    <?php if (isset($_SESSION['nombre'])) { ?>
+    <a href="<?= $link_consejos ?>" class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
+        <i class="fa-solid fa-lightbulb"></i>
+        <span>Consejos</span>
+    </a>
 
-        <a href="teachers.php" class="<?= ($pagina_actual == 'teachers') ? 'active' : '' ?>">
-            <i class="fa-solid fa-user-group"></i>
-            <span>Teachers</span>
-        </a>
+    <a href="<?= $link_actividades ?>" class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
+        <i class="fa-solid fa-puzzle-piece"></i>
+        <span>Actividades</span>
+    </a>
 
+    <a href="<?= $link_centro ?>" class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
+        <i class="fa-solid fa-school"></i>
+        <span>Centro</span>
+    </a>
 
-        <a href="consejos.php" class="<?= ($pagina_actual == 'consejos') ? 'active' : '' ?>">
-            <i class="fa-solid fa-lightbulb"></i>
-            <span>Consejos</span>
-        </a>
-
-
-        <a href="actividades.php" class="<?= ($pagina_actual == 'actividades') ? 'active' : '' ?>">
-            <i class="fa-solid fa-puzzle-piece"></i>
-            <span>Actividades</span>
-        </a>
-
-
-        <a href="nuestro_centro.php" class="<?= ($pagina_actual == 'centro') ? 'active' : '' ?>">
-            <i class="fa-solid fa-school"></i>
-            <span>Centro</span>
-        </a>
-
-
-        <a href="eventos.php" class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
-            <i class="fa-solid fa-calendar-days"></i>
-            <span>Eventos</span>
-        </a>
-
-
-    <?php } ?>
+    <a href="<?= $link_eventos ?>" class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Eventos</span>
+    </a>
 
 </div>
-<script src="../Js/navbar.js"></script>
+
+<script src="js/navbar.js"></script>

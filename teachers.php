@@ -111,7 +111,7 @@ if($materia != "English" && $materia != "Computing" && $materia != "Values"){
     </div>
 
     <div class="teacher-quote">
-        "<?= htmlspecialchars($teacher['frase']); ?>"
+        <?= htmlspecialchars($teacher['frase']); ?>
     </div>
 
     <div class="teacher-footer">

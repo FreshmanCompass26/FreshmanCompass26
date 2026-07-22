@@ -47,6 +47,7 @@ $recursos = $stmtRecursos->get_result();
     <link rel="stylesheet" href="styles/detalle_classroom.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 
 </head>
 

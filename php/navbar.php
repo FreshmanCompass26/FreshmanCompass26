@@ -66,12 +66,14 @@ $link_eventos    = $logueado ? "eventos.php"        : "login.php";
             </a>
         </li>
 
-        <li class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+        <li class="<?= ($pagina_actual == 'eventos'|| 'mas-eventos') ? 'active' : '' ?>">
             <a href="<?= $link_eventos ?>">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span>Eventos</span>
             </a>
         </li>
+
+        
 
     </ul>
 
@@ -111,7 +113,12 @@ $link_eventos    = $logueado ? "eventos.php"        : "login.php";
         <span>Centro</span>
     </a>
 
-    <a href="<?= $link_eventos ?>" class="<?= ($pagina_actual == 'eventos') ? 'active' : '' ?>">
+    <a href="<?= $link_evento ?>" class="<?= ($pagina_actual == 'eventos' ) ? 'active' : '' ?>">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Eventos</span>
+    </a>
+
+    <a href="<?= $link_eventos ?>" class="<?= ($pagina_actual == 'mas-eventos' ) ? 'active' : '' ?>">
         <i class="fa-solid fa-calendar-days"></i>
         <span>Eventos</span>
     </a>

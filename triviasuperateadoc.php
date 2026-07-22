@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia ¡Supérate! ADOC</title>
     <link rel="stylesheet" href="styles/triviasp.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 </head>
 <body>
 

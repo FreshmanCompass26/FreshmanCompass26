@@ -42,6 +42,7 @@ $casos = [
 
     <link rel="stylesheet"
           href="styles/correo.css">
+    <link rel="icon" type="favicon" href="img/favicon.png">
 
 </head>
 

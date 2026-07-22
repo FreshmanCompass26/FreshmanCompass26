@@ -34,6 +34,15 @@
     font-size: 16px;
 }
 
+/* ===== FIX GLOBAL ANTI-DESPLAZAMIENTO HORIZONTAL =====
+   Esto no depende de ningún breakpoint: bloquea cualquier
+   scroll lateral sin importar el ancho exacto del teléfono. */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -46,6 +55,7 @@ body {
     margin-top: 80px;
     padding: 30px;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 
@@ -174,16 +184,26 @@ body {
     object-fit: contain;
 }
 
+/* ===== INFO SALONES: responsive por defecto =====
+   Antes solo hacía flex-direction:column dentro del media
+   query de 375px. Si el teléfono mide más de 375px (la
+   mayoría: 390px, 393px, 412px...) esta sección seguía en
+   fila y se desbordaba. Con flex-wrap:wrap de base, si no
+   cabe en una línea, los elementos bajan solos SIN esperar
+   al breakpoint. */
 .info-salones {
     margin-top: 30px;
     background: white;
     border-radius: 20px;
     padding: 25px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .icono-info {
@@ -201,6 +221,7 @@ body {
 
 .texto-info {
     flex: 1;
+    min-width: 220px; /* evita que el texto se aplaste hasta desbordar */
 }
 
 .texto-info h2 {
@@ -214,9 +235,17 @@ body {
     font-size: 0.95rem;
 }
 
+/* ===== BENEFICIOS: responsive por defecto =====
+   Igual que arriba: flex-wrap:wrap ya en la regla base,
+   así los íconos (Aprende, Colabora, Comparte, Crea) bajan
+   de línea automáticamente cuando no caben, sin depender de
+   que se cumpla exactamente el breakpoint de 375px. */
 .beneficios {
     display: flex;
-    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 35px;
+    max-width: 100%;
 }
 
 .beneficios div {
@@ -387,6 +416,7 @@ html {
   .sidebar {
     display: none;
   }
+  
 
   /* Ajustar contenido principal */
   .contenido {
@@ -443,7 +473,6 @@ html {
 
   /* Beneficios en grid */
   .beneficios {
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
   }
@@ -499,5 +528,3 @@ html {
     align-items: center;
   }
 }
-
-

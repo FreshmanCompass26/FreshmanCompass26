@@ -144,13 +144,20 @@ $recursos = $stmtRecursos->get_result();
 
         <div class="video-card">
 
-            <video controls preload="metadata">
-
-                <source src="uploads/videos/<?php echo htmlspecialchars($classroom['video']); ?>" type="video/mp4">
-
-                Tu navegador no soporta la reproducción de videos.
-
-            </video>
+            <!-- ========================================================= -->
+            <!-- AQUÍ SE SUSTITUYE LA URL DEL VIDEO DESDE LA BASE DE DATOS -->
+            <!-- Asegúrate de guardar en la BD la URL en formato embebido: -->
+            <!-- Ejemplo: https://www.youtube.com/embed/TU_ID_DE_VIDEO      -->
+            <!-- ========================================================= -->
+            <iframe 
+                width="100%" 
+                height="450" 
+                src="<?php echo htmlspecialchars($classroom['video']); ?>" 
+                title="Video del classroom" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
 
         </div>
 

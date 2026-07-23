@@ -150,13 +150,19 @@ $casos = [
              Video Explicativo
         </h3>
 
-        <video controls>
-
-            <source
-                src="uploads/videos/crear-correo.mp4"
-                type="video/mp4">
-
-        </video>
+        <!-- ========================================================= -->
+        <!-- SUSTITUYE ÚNICAMENTE 'TU_ID_DE_VIDEO' POR EL ID DEL VIDEO  -->
+        <!-- Ejemplo: https://www.youtube.com/embed/dQw4w9WgXcQ       -->
+        <!-- ========================================================= -->
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/DqISek3qpVg" 
+            title="Video Explicativo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
 
     </div>
 
@@ -236,6 +242,7 @@ $casos = [
     </div>
 
 </div>
+
 <div id="screen-facil"
      class="screen">
 

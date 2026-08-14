@@ -299,7 +299,9 @@ body{
     justify-content:space-between;
     border:1px solid #edf2f7;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.35s;
+    transition:transform .35s ease, box-shadow .35s ease;
+    overflow:hidden;
+    will-change:transform;
 
 }
 
@@ -355,6 +357,7 @@ body{
     background:linear-gradient(135deg,#4fd8eb,#5cc8ff);
     color:#fff;
     font-size:34px;
+    transition:transform .35s ease;
 
 }
 
@@ -407,6 +410,7 @@ body{
     border-radius:50px;
     padding:12px;
     font-size:15px;
+    transition:background .3s ease, color .3s ease;
 
     }
 
@@ -415,10 +419,6 @@ body{
     background:#1d4d86;
 
     color:#ffffff;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 15px 30px rgba(23,59,103,.35);
 
 }
 
@@ -480,7 +480,8 @@ body{
 
     transform:rotate(25deg);
 
-    transition:.7s;
+    transition:left .7s ease;
+    pointer-events:none;
 
 }
 

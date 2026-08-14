@@ -410,6 +410,23 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #4b5563;
 }
+.btn-regresar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #0c1b33; /* Azul oscuro de tu menú */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-regresar:hover {
+  background-color: #1a2e50;
+}
 
 @media (max-width: 375px) {
   /* Ocultar sidebar en móvil */

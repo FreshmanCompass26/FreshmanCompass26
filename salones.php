@@ -119,7 +119,12 @@ $resultado = mysqli_query($conn, $sql);
 
         <!-- HERO -->
 
+            <a href="nuestro_centro.php" class="btn-regresar">
+  &#8592; Regresar
+</a>
+
         <section class="hero-salones">
+            
 
             <div class="hero-overlay">
 
